@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="La Elite" content="Comunidad exclusiva de American Truck Simulator y Euro Truck Simulator 2. Convoyes, rutas legendarias y eventos premium.">
+    <meta name="description" content="La Elite - Comunidad exclusiva de American Truck Simulator y Euro Truck Simulator 2. Convoyes, rutas legendarias y eventos premium.">
+    <title>LA ELITE | Comunidad ATS-ETS2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@700&amp;display=swap');
+        
+        :root {
+            --gold: #567a03;
+            --red: #490364;
+            --neon: #00f5ff;
+        }
+        
+        * {
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+        
+        .tail-container * {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .logo-font {
+            font-family: 'Playfair Display', sans-serif;
+        }
+        
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), url('https://media.discordapp.net/attachments/1451464336567435354/1495560892732149932/ats_20260419_180241_00.png?ex=69e6b11f&is=69e55f9f&hm=c76efd2935acbd8b106fba8b6b3fa781c9fdc7d1f2c270fbcb016b8b2302a1b8&=&format=webp&quality=lossless&width=1607&height=904');
+            background-size: cover;
+            background-position: center;
+            animation: subtleRoad 60s linear infinite;
+        }
+        
+        @keyframes subtleRoad {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        
+        .neon-gold {
+            text-shadow: 
+                0 0 10px var(--gold),
+                0 0 20px var(--gold),
+                0 0 40px var(--gold);
+        }
+        
+        .neon-red {
+            text-shadow: 
+                0 0 10px var(--red),
+                0 0 20px var(--red);
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 0 30px -5px rgb(107, 165, 1);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #f5c451;
+            box-shadow: 0 0 10px #f5c451;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .section-title {
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, #b3b000, #46046d);
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .gallery-img {
+            transition: all 0.5s ease;
+        }
+        
+        .gallery-img:hover {
+            transform: scale(1.08);
+            filter: brightness(1.15) contrast(1.1);
+        }
+        
+        .event-card {
+            background: linear-gradient(145deg, #1a1a1a, #111111);
+        }
+    </style>
+</head>
+<body class="tail-container bg-black text-white overflow-x-hidden">
+    <!-- NAVBAR -->
+    <nav class="bg-black border-b border-[#f5c451]/30 sticky top-0 z-50">
+        <div class="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <div class="flex items-center gap-x-3">
+                <img src="https://media.discordapp.net/attachments/1445217144882200726/1495920179836879018/IMG_9418.png?ex=69e7ffbb&is=69e6ae3b&hm=6f449d7ce49f513831eaee833e7196cff60f0405fb657bf60979063ac4bc0b95&=&format=webp&quality=lossless&width=1265&height=1008" class="h-14 w-auto drop-shadow-[0_0_15px_#f5c451]">
+                <div>
+                    <h1 class="logo-font text-3xl tracking-tighter neon-gold">LA ELITE</h1>
+                    <p class="text-xs text-[#f5c451]/70 -mt-1 tracking-[2px]">ATS • ETS2</p>
+                </div>
+            </div>
+
+            <!-- Menú -->
+            <div class="hidden md:flex items-center gap-x-8 text-sm font-medium uppercase tracking-widest">
+                <a href="#inicio" class="nav-link text-[#f5c451] hover:text-white">Inicio</a>
+                <a href="#galeria" class="nav-link hover:text-[#f5c451]">Galería</a>
+                <a href="#anuncios" class="nav-link hover:text-[#f5c451]">Anuncios</a>
+                <a href="#eventos" class="nav-link hover:text-[#f5c451]">Eventos</a>
+                <a href="#videos" class="nav-link hover:text-[#f5c451]">Videos</a>
+                <a href="#comunidad" class="nav-link hover:text-[#f5c451]">Comunidad</a>
+                <a href="#contacto" class="nav-link hover:text-[#f5c451]">Contacto</a>
+            </div>
+            <!-- Botón Discord -->
+            <a href="https://discord.gg/laeliteats" target="_blank" 
+               class="flex items-center gap-x-2 bg-[#c8102e] hover:bg-[#f5c451] hover:text-black text-white font-bold uppercase text-sm px-6 py-3 rounded-xl">
+               <img src="https://media.discordapp.net/attachments/1445217144882200726/1495920354395164763/discord.png?ex=69e7ffe5&is=69e6ae65&hm=9bdbda8cb8bd3aa6bc9e1294cc7bd9b73832ac87863374a2c7ad6ec73bb6f3f6&=&format=webp&quality=lossless&width=904&height=904" class="w-4 h-4">
+                <span>ÚNETE AL DISCORD</span>
+            </a>
+
+            <!-- Mobile menu button -->
+            <button onclick="toggleMobileMenu()" class="md:hidden text-2xl text-[#f5c451]">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black border-t border-[#f5c451]/30 px-8 py-6">
+            <div class="flex flex-col gap-y-6 text-center text-lg font-medium uppercase">
+                <a href="#inicio" onclick="toggleMobileMenu()" class="py-2">Inicio</a>
+                <a href="#galeria" onclick="toggleMobileMenu()" class="py-2">Galería</a>
+                <a href="#anuncios" onclick="toggleMobileMenu()" class="py-2">Anuncios</a>
+                <a href="#eventos" onclick="toggleMobileMenu()" class="py-2">Eventos</a>
+                <a href="#videos" onclick="toggleMobileMenu()" class="py-2">Videos</a>
+                <a href="#comunidad" onclick="toggleMobileMenu()" class="py-2">Comunidad</a>
+                <a href="#contacto" onclick="toggleMobileMenu()" class="py-2">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO - INICIO -->
+    <section id="inicio" class="hero-bg h-screen flex items-center relative">
+        <div class="max-w-screen-2xl mx-auto px-8 grid md:grid-cols-2 gap-12 items-center h-full">
+            <div class="space-y-8">
+                <!-- Logo grande -->
+                <div class="flex justify-center md:justify-start">
+                    <img src="https://media.discordapp.net/attachments/1445217144882200726/1495920179836879018/IMG_9418.png?ex=69e7ffbb&is=69e6ae3b&hm=6f449d7ce49f513831eaee833e7196cff60f0405fb657bf60979063ac4bc0b95&=&format=webp&quality=lossless&width=1265&height=1008" class="h-32 md:h-48 drop-shadow-[0_0_40px_#f5c451] neon-gold">
+                </div>
+                
+                <div class="text-center md:text-left">
+                    <h1 class="text-7xl md:text-8xl font-serif logo-font tracking-[-4px] leading-none neon-gold">
+                        LA ELITE
+                    </h1>
+                    <p class="text-3xl md:text-4xl mt-4 text-[#f5c451] font-light">ATS-ETS2</p>
+                    
+                    <div class="mt-8 max-w-md mx-auto md:mx-0">
+                        <p class="text-2xl italic font-light leading-tight">
+                            "Donde las mejores rutas se convierten en leyenda"
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <button onclick="document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' })"
+                            class="group relative overflow-hidden bg-gradient-to-r from-[#36024e] to-[#f5c451] hover:from-[#f5c451] hover:to-[#c8102e] text-black font-bold text-2xl px-12 py-6 rounded-2xl flex items-center gap-x-4 uppercase tracking-widest">
+                        <span>ÚNETE AL CONVOY</span>
+                    </button>
+                    
+                    <button onclick="document.getElementById('videos').scrollIntoView({ behavior: 'smooth' })" 
+                            class="border-2 border-[#36024e] hover:bg-[#f5c451] hover:text-black text-[#f5c451] font-medium text-xl px-10 py-6 rounded-2xl flex items-center gap-x-3">
+                        <span>TUTORIALES</span>
+                    </button>
+                </div>
+
+                <!-- Quiénes somos -->
+                <div class="max-w-lg mx-auto md:mx-0 bg-black/70 backdrop-blur-xl border border-[#f5c451]/20 rounded-3xl p-8 text-center md:text-left">
+                    <p class="text-[#f5c451] uppercase text-sm tracking-[1px] mb-3">Comunidad Exclusiva ATS-ETS2</p>
+                    <h2 class="text-2xl font-semibold mb-4">Somos La Elite</h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        La comunidad premium de American Truck Simulator y Euro Truck Simulator 2 enfocada en rutas épicas, convoyes profesionales y eventos legendarios dentro del mapa <strong class="text-[#f5c451]">Mapkalo</strong>. 
+                        Pasión por el transporte pesado, respeto y hermandad entre conductores élite.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Decorative truck icon -->
+            <div class="hidden md:flex justify-end items-center">
+                <div class="text-[300px] text-[#f5c451]/10 rotate-12 drop-shadow-2xl">
+                    <i class="fas fa-truck"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 flex flex-col items-center gap-y-2 text-[#f5c451]/60 text-sm">
+            <div class="animate-bounce">↓</div>
+            <p class="uppercase tracking-widest text-xs">Desplázate para descubrir la leyenda</p>
+        </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section id="galeria" class="max-w-screen-2xl mx-auto px-8 py-24">
+        <div class="text-center mb-16">
+            <span class="uppercase text-[#c8102e] text-sm tracking-[3px]">Capturas legendarias</span>
+            <h2 class="section-title text-5xl font-bold logo-font mx-auto">Galería de la Elite</h2>
+            <p class="text-gray-400 mt-4 max-w-md mx-auto">Momentos que solo los mejores conductores viven</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Imagen 1 -->
+            <div class="relative overflow-hidden rounded-3xl card-hover">
+                <img src="https://media.discordapp.net/attachments/1451464336567435354/1495560893189325022/ats_20260419_180245_00.png?ex=69e759df&is=69e6085f&hm=2a93dccda1989a53d33c4a7841d0c62f9279efe1526e07f27869ff3a0d671db4&=&format=webp&quality=lossless&width=1607&height=904" alt="Convoy nocturno Mapkalo" class="gallery-img w-full h-full object-cover">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
+                    <p class="text-xs uppercase text-[#f5c451]">Convoy vuelta por Colombia • 19 abr</p>
+                    <p class="text-xl font-semibold">Tumaco</p>
+                </div>
+            </div>
+            
+            <!-- Imagen 2 -->
+            <div class="relative overflow-hidden rounded-3xl card-hover">
+                <img src="https://media.discordapp.net/attachments/1451464336567435354/1494586629657071747/A33F9D5A-B444-425A-A834-D7A4BDCF2223.png?ex=69e7c304&is=69e67184&hm=49029fb287bad3514cf2cd73bb63cfe3acfa8fec0d1f3ecc1123bfb95556dd55&=&format=webp&quality=lossless&width=1373&height=915" alt="Ruta extrema Mapkalo" class="gallery-img w-full h-full object-cover">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
+                    <p class="text-xs uppercase text-[#f5c451]">Ruta Imposible • 15 abr</p>
+                    <p class="text-xl font-semibold">Destapada</p>
+                </div>
+            </div>
+            
+            <!-- Imagen 3 -->
+            <div class="relative overflow-hidden rounded-3xl card-hover">
+                <img src="https://media.discordapp.net/attachments/1451464336567435354/1493040847552516246/ChatGPT_Image_12_abr_2026_07_10_55_p.m..png?ex=69e76965&is=69e617e5&hm=973cdc8559bfd240bead928ba9076cb6bfba412076a22b979d8c57825c55ac3c&=&format=webp&quality=lossless&width=1373&height=915" alt="Evento especial Mapkalo" class="gallery-img w-full h-full object-cover">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
+                    <p class="text-xs uppercase text-[#f5c451]">Evento Reloj x9 • 12 abr</p>
+                    <p class="text-xl font-semibold">Autodromo Tocancipa</p>
+                </div>
+            </div>
+            
+            <!-- Imagen 4 -->
+            <div class="relative overflow-hidden rounded-3xl card-hover">
+                <img src="https://media.discordapp.net/attachments/1451464336567435354/1490541766296997938/ats_20260405_195810_00.png?ex=69e78c72&is=69e63af2&hm=426c6aa3513f07f8c7f8c9c870397b5670574b021917bfae6e34f4e525e60442&=&format=webp&quality=lossless&width=1607&height=904" alt="Maniobras Mapkalo" class="gallery-img w-full h-full object-cover">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
+                    <p class="text-xs uppercase text-[#f5c451]">Vuelta a Colombia 1• 10 abr</p>
+                    <p class="text-xl font-semibold">Primera vuelta a Colombia</p>
+                </div>
+            </div>
+            
+            <!-- Imagen 5 -->
+            <div class="relative overflow-hidden rounded-3xl card-hover">
+                <img src="https://media.discordapp.net/attachments/1451464336567435354/1490476017700175973/content.png?ex=69e7f7f6&is=69e6a676&hm=f9152ec23ffbb6515f6b68a209b7c1bffeb46a5e2ad562f343b2b92b669e8ed0&=&format=webp&quality=lossless&width=1607&height=904" alt="Convoy diurno" class="gallery-img w-full h-full object-cover">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
+                    <p class="text-xs uppercase text-[#f5c451]">Ruta aguardientera • 08 abr</p>
+                    <p class="text-xl font-semibold">Rutica con licor</p>
+                </div>
+            </div>
+            
+            <!-- Imagen 6 -->
+            <div class="relative overflow-hidden rounded-3xl card-hover">
+                <img src="https://media.discordapp.net/attachments/1451464336567435354/1488397074436325406/content.png?ex=69e7a80b&is=69e6568b&hm=c3f4e0ef0d499c2390ccc30de5dffd4a64aed800b824296b1e4864cef29416e5&=&format=webp&quality=lossless&width=1373&height=915" alt="Evento fin de semana" class="gallery-img w-full h-full object-cover">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
+                    <p class="text-xs uppercase text-[#f5c451]">Hacienda la Élite • 05 abr</p>
+                    <p class="text-xl font-semibold">la elite en acción</p>
+                </div>
+            </div>
+            
+            <!-- Imagen 7 -->
+            <div class="relative overflow-hidden rounded-3xl card-hover">
+                <img src="https://media.discordapp.net/attachments/1451464336567435354/1487953666420899972/file_000000000b5c71f581c6a32fbbbccfc2.png?ex=69e75c96&is=69e60b16&hm=f24ee210f32597680d93853ff5521d44cf177d13d532de02dd727d3316cc765b&=&format=webp&quality=lossless&width=1373&height=915" alt="Ruta oculta" class="gallery-img w-full h-full object-cover">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
+                    <p class="text-xs uppercase text-[#f5c451]">Mapkalo • 02 abr</p>
+                    <p class="text-xl font-semibold">Atardecer Mapkalo</p>
+                </div>
+            </div>
+            
+            <!-- Imagen 8 -->
+            <div class="relative overflow-hidden rounded-3xl card-hover">
+                <img src="https://media.discordapp.net/attachments/1451464336567435354/1486985157704679566/ChatGPT_Image_27_mar_2026_02_06_48_a.m..png?ex=69e7cb18&is=69e67998&hm=977e517c00f60ba38d7f3179d407994cfb7befa0de98a15eabd5efa5bafb7f52&=&format=webp&quality=lossless&width=1373&height=915" alt="Convoy élite" class="gallery-img w-full h-full object-cover">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
+                    <p class="text-xs uppercase text-[#f5c451]">Fonda de Arkamax • 30 mar</p>
+                    <p class="text-xl font-semibold">La Uvita</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ANUNCIOS -->
+    <section id="anuncios" class="bg-[#111111] py-24">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="text-center mb-16">
+                <span class="uppercase text-[#c8102e] text-sm tracking-[3px]">Últimas novedades</span>
+                <h2 class="section-title text-5xl font-bold logo-font mx-auto">Anuncios Oficiales</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Anuncio 1 -->
+                <div class="event-card border border-[#f5c451]/20 rounded-3xl p-8 card-hover">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <span class="px-4 py-1 bg-[#c8102e] text-white text-xs font-bold rounded-full">NUEVA RUTA</span>
+                            <h3 class="text-2xl font-semibold mt-6">Ruta del Cóndor Extremo</h3>
+                            <p class="text-gray-400 mt-2">Disponible desde hoy en Mapkalo v2.4</p>
+                        </div>
+                        <div class="text-right text-[#f5c451] text-sm font-mono">19 ABR 2026</div>
+                    </div>
+                    <p class="mt-8 text-sm leading-relaxed">Nueva ruta de alta dificultad con vistas impresionantes y maniobras técnicas. Solo para conductores nivel Élite.</p>
+                    <button onclick="alert('¡Ruta descargada en tu Discord!')" 
+                            class="mt-8 w-full py-4 bg-[#f5c451] text-black font-bold rounded-2xl">DESCARGAR MAPA</button>
+                </div>
+                
+                <!-- Anuncio 2 -->
+                <div class="event-card border border-[#f5c451]/20 rounded-3xl p-8 card-hover">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <span class="px-4 py-1 bg-[#f5c451] text-black text-xs font-bold rounded-full">CONVOY ESPECIAL</span>
+                            <h3 class="text-2xl font-semibold mt-6">Convoy de Independencia</h3>
+                            <p class="text-gray-400 mt-2">20 de abril - 21:00 COL</p>
+                        </div>
+                        <div class="text-right text-[#f5c451] text-sm font-mono">20 ABR 2026</div>
+                    </div>
+                    <p class="mt-8 text-sm leading-relaxed">Tema colombiano completo. Banderas, música y premios exclusivos para los primeros 50 conductores.</p>
+                    <button onclick="document.getElementById('eventos').scrollIntoView({ behavior: 'smooth' })" 
+                            class="mt-8 w-full py-4 border-2 border-[#f5c451] text-[#f5c451] hover:bg-[#f5c451] hover:text-black font-bold rounded-2xl">INSCRIBIRSE</button>
+                </div>
+                
+                <!-- Anuncio 3 -->
+                <div class="event-card border border-[#f5c451]/20 rounded-3xl p-8 card-hover">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <span class="px-4 py-1 bg-[#00f5ff] text-black text-xs font-bold rounded-full">ACTUALIZACIÓN</span>
+                            <h3 class="text-2xl font-semibold mt-6">Mapkalo 2.5 Live</h3>
+                            <p class="text-gray-400 mt-2">Nuevas carreteras y tráfico dinámico</p>
+                        </div>
+                        <div class="text-right text-[#f5c451] text-sm font-mono">18 ABR 2026</div>
+                    </div>
+                    <p class="mt-8 text-sm leading-relaxed">Ya disponible la nueva versión del mapa. Incluye 3 nuevas ciudades y mejoras en física.</p>
+                    <button onclick="window.open('https://mapkalo.com','_blank')" 
+                            class="mt-8 w-full py-4 bg-[#00f5ff] text-black font-bold rounded-2xl">VER NOTAS</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EVENTOS -->
+    <section id="eventos" class="max-w-screen-2xl mx-auto px-8 py-24">
+        <div class="text-center mb-16">
+            <span class="uppercase text-[#c8102e] text-sm tracking-[3px]">Próximos convoyes</span>
+            <h2 class="section-title text-5xl font-bold logo-font mx-auto">Eventos de la Elite</h2>
+            <p class="text-gray-400 mt-4">Solo para miembros verificados</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Evento 1 -->
+            <div class="event-card rounded-3xl p-8 border border-[#f5c451]/10">
+                <div class="flex justify-between">
+                    <div class="text-5xl font-mono font-bold text-[#f5c451]">25</div>
+                    <div>
+                        <p class="text-xs uppercase">ABRIL 2026</p>
+                        <p class="text-3xl font-semibold">20:00 COL</p>
+                    </div>
+                </div>
+                <h3 class="text-3xl font-semibold mt-6">Convoy Nocturno Élite</h3>
+                <p class="mt-3 text-gray-300">Recorrido completo por las montañas de Mapkalo con luces neón y música en vivo.</p>
+                <div class="flex gap-x-2 mt-8">
+                    <span class="text-xs px-4 py-2 bg-black rounded-3xl border border-[#f5c451]">80 km</span>
+                    <span class="text-xs px-4 py-2 bg-black rounded-3xl border border-[#f5c451]">Dificultad: ★★★★</span>
+                </div>
+                <button onclick="joinEvent(this)" 
+                        class="mt-8 w-full py-5 bg-gradient-to-r from-[#c8102e] to-[#f5c451] text-black font-bold text-lg rounded-3xl">CONFIRMAR ASISTENCIA</button>
+            </div>
+            
+            <!-- Evento 2 -->
+            <div class="event-card rounded-3xl p-8 border border-[#f5c451]/10">
+                <div class="flex justify-between">
+                    <div class="text-5xl font-mono font-bold text-[#f5c451]">27</div>
+                    <div>
+                        <p class="text-xs uppercase">ABRIL 2026</p>
+                        <p class="text-3xl font-semibold">19:30 COL</p>
+                    </div>
+                </div>
+                <h3 class="text-3xl font-semibold mt-6">Ruta Aguardientera</h3>
+                <p class="mt-3 text-gray-300">Temática 100% colombiana. Paradas en cantinas virtuales y premios especiales.</p>
+                <div class="flex gap-x-2 mt-8">
+                    <span class="text-xs px-4 py-2 bg-black rounded-3xl border border-[#f5c451]">120 km</span>
+                    <span class="text-xs px-4 py-2 bg-black rounded-3xl border border-[#f5c451]">Dificultad: ★★★</span>
+                </div>
+                <button onclick="joinEvent(this)" 
+                        class="mt-8 w-full py-5 bg-gradient-to-r from-[#c8102e] to-[#f5c451] text-black font-bold text-lg rounded-3xl">CONFIRMAR ASISTENCIA</button>
+            </div>
+            
+            <!-- Evento 3 -->
+            <div class="event-card rounded-3xl p-8 border border-[#f5c451]/10">
+                <div class="flex justify-between">
+                    <div class="text-5xl font-mono font-bold text-[#f5c451]">02</div>
+                    <div>
+                        <p class="text-xs uppercase">MAYO 2026</p>
+                        <p class="text-3xl font-semibold">21:00 COL</p>
+                    </div>
+                </div>
+                <h3 class="text-3xl font-semibold mt-6">Maniobras Difíciles</h3>
+                <p class="mt-3 text-gray-300">Competencia de precisión, estacionamiento y maniobras extremas. Premios VIP.</p>
+                <div class="flex gap-x-2 mt-8">
+                    <span class="text-xs px-4 py-2 bg-black rounded-3xl border border-[#f5c451]">Competencia</span>
+                    <span class="text-xs px-4 py-2 bg-black rounded-3xl border border-[#f5c451]">Dificultad: ★★★★★</span>
+                </div>
+                <button onclick="joinEvent(this)" 
+                        class="mt-8 w-full py-5 bg-gradient-to-r from-[#c8102e] to-[#f5c451] text-black font-bold text-lg rounded-3xl">INSCRIBIRME</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEOS -->
+    <section id="videos" class="bg-[#111111] py-24">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="text-center mb-16">
+                <span class="uppercase text-[#c8102e] text-sm tracking-[3px]">Creadores Élite</span>
+                <h2 class="section-title text-5xl font-bold logo-font mx-auto">Series y Videos</h2>
+                <p class="text-gray-400 mt-4">Contenido oficial y de Arkamax + miembros destacados</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Video 1 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-3xl">
+                        <img src="https://picsum.photos/id/1015/800/450" alt="Rutas imposibles" class="w-full">
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/10">
+                            <i class="fas fa-play-circle text-7xl text-white/80 group-hover:scale-110"></i>
+                        </div>
+                    </div>
+                    <h4 class="mt-4 text-xl font-semibold">Rutas Imposibles en Mapkalo • Ep. 12</h4>
+                    <p class="text-[#f5c451] text-sm">Arkamax • 1.2M vistas</p>
+                    <iframe width="100%" height="220" class="mt-4 rounded-3xl" src="https://www.youtube.com/embed/8z2w8a9k8b0" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                </div>
+                
+                <!-- Video 2 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-3xl">
+                        <img src="https://picsum.photos/id/133/800/450" alt="Mapkalo extremo" class="w-full">
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/10">
+                            <i class="fas fa-play-circle text-7xl text-white/80 group-hover:scale-110"></i>
+                        </div>
+                    </div>
+                    <h4 class="mt-4 text-xl font-semibold">Mapkalo Extremo - Convoy de 40 camiones</h4>
+                    <p class="text-[#f5c451] text-sm">La Elite Oficial • 843K vistas</p>
+                    <iframe width="100%" height="220" class="mt-4 rounded-3xl" src="https://www.youtube.com/embed/5q7bG8k9L0M" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                </div>
+                
+                <!-- Video 3 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-3xl">
+                        <img src="https://picsum.photos/id/201/800/450" alt="Reforma + Mapkalo" class="w-full">
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/10">
+                            <i class="fas fa-play-circle text-7xl text-white/80 group-hover:scale-110"></i>
+                        </div>
+                    </div>
+                    <h4 class="mt-4 text-xl font-semibold">Reforma + Mapkalo: La combinación perfecta</h4>
+                    <p class="text-[#f5c451] text-sm">Arkamax • 2.1M vistas</p>
+                    <iframe width="100%" height="220" class="mt-4 rounded-3xl" src="https://www.youtube.com/embed/9p0k8j7h6g5" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMUNIDAD -->
+    <section id="comunidad" class="max-w-screen-2xl mx-auto px-8 py-24">
+        <div class="text-center mb-16">
+            <span class="uppercase text-[#c8102e] text-sm tracking-[3px]">Nuestro equipo</span>
+            <h2 class="section-title text-5xl font-bold logo-font mx-auto">Integrantes de la Élite</h2>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            <!-- Miembro VIP -->
+            <div class="text-center">
+                <div class="relative mx-auto w-28 h-28">
+                    <img src="https://picsum.photos/id/64/300/300" alt="Owner" class="rounded-3xl w-full h-full object-cover border-4 border-[#f5c451]">
+                    <div class="absolute -top-1 -right-1 bg-[#f5c451] text-black text-xs font-bold px-3 py-1 rounded-3xl">Owner</div>
+                </div>
+                <h4 class="mt-4 font-semibold">Arkamax</h4>
+                <p class="text-[#f5c451] text-sm">Fundador la Élite</p>
+            </div>
+            
+            <!-- Admin -->
+            <div class="text-center">
+                <div class="relative mx-auto w-28 h-28">
+                    <img src="https://picsum.photos/id/1005/300/300" alt="Admin" class="rounded-3xl w-full h-full object-cover border-4 border-[#c8102e]">
+                    <div class="absolute -top-1 -right-1 bg-[#c8102e] text-white text-xs font-bold px-3 py-1 rounded-3xl">ADMIN</div>
+                </div>
+                <h4 class="mt-4 font-semibold">Anderson Montoya</h4>
+            </div>
+            
+            <!-- Moderador -->
+            <div class="text-center">
+                <div class="relative mx-auto w-28 h-28">
+                    <img src="https://picsum.photos/id/201/300/300" alt="Mod" class="rounded-3xl w-full h-full object-cover border-4 border-[#00f5ff]">
+                </div>
+                <h4 class="mt-4 font-semibold">Sori</h4>
+            </div>
+            
+            <!-- Más miembros -->
+            <div class="text-center">
+                <div class="relative mx-auto w-28 h-28">
+                    <img src="https://picsum.photos/id/251/300/300" alt="Miembro" class="rounded-3xl w-full h-full object-cover border-4 border-[#f5c451]/60">
+                </div>
+                <h4 class="mt-4 font-semibold">Caballero</h4>
+            </div>
+            <div class="text-center">
+                <div class="relative mx-auto w-28 h-28">
+                    <img src="https://picsum.photos/id/1009/300/300" alt="Miembro" class="rounded-3xl w-full h-full object-cover border-4 border-[#f5c451]/60">
+                </div>
+                <h4 class="mt-4 font-semibold">Alex</h4>
+            </div>
+            <div class="text-center">
+                <div class="relative mx-auto w-28 h-28">
+                    <img src="https://picsum.photos/id/870/300/300" alt="Miembro" class="rounded-3xl w-full h-full object-cover border-4 border-[#f5c451]/60">
+                </div>
+                <h4 class="mt-4 font-semibold">Ciro</h4>
+            </div>
+                        <div class="text-center">
+                <div class="relative mx-auto w-28 h-28">
+                    <img src="https://picsum.photos/id/870/300/300" alt="Miembro" class="rounded-3xl w-full h-full object-cover border-4 border-[#f5c451]/60">
+                </div>
+                <h4 class="mt-4 font-semibold">Fran</h4>
+            </div>
+                        <div class="text-center">
+                <div class="relative mx-auto w-28 h-28">
+                    <img src="https://picsum.photos/id/870/300/300" alt="Miembro" class="rounded-3xl w-full h-full object-cover border-4 border-[#f5c451]/60">
+                </div>
+                <h4 class="mt-4 font-semibold">Jesus</h4>
+            </div>
+                        <div class="text-center">
+                <div class="relative mx-auto w-28 h-28">
+                    <img src="https://picsum.photos/id/870/300/300" alt="Miembro" class="rounded-3xl w-full h-full object-cover border-4 border-[#f5c451]/60">
+                </div>
+                <h4 class="mt-4 font-semibold">Jose Gómez</h4>
+            </div>
+                        <div class="text-center">
+                <div class="relative mx-auto w-28 h-28">
+                    <img src="https://picsum.photos/id/870/300/300" alt="Miembro" class="rounded-3xl w-full h-full object-cover border-4 border-[#f5c451]/60">
+                </div>
+                <h4 class="mt-4 font-semibold">Kofla</h4>
+            </div>
+                        <div class="text-center">
+                <div class="relative mx-auto w-28 h-28">
+                    <img src="https://picsum.photos/id/870/300/300" alt="Miembro" class="rounded-3xl w-full h-full object-cover border-4 border-[#f5c451]/60">
+                </div>
+                <h4 class="mt-4 font-semibold">Malcri</h4>
+            </div>
+                        <div class="text-center">
+                <div class="relative mx-auto w-28 h-28">
+                    <img src="https://picsum.photos/id/870/300/300" alt="Miembro" class="rounded-3xl w-full h-full object-cover border-4 border-[#f5c451]/60">
+                </div>
+                <h4 class="mt-4 font-semibold">Mecato</h4>
+            </div>
+                        <div class="text-center">
+                <div class="relative mx-auto w-28 h-28">
+                    <img src="https://picsum.photos/id/870/300/300" alt="Miembro" class="rounded-3xl w-full h-full object-cover border-4 border-[#f5c451]/60">
+                </div>
+                <h4 class="mt-4 font-semibold">Nico</h4>
+            </div>
+                        <div class="text-center">
+                <div class="relative mx-auto w-28 h-28">
+                    <img src="https://picsum.photos/id/870/300/300" alt="Miembro" class="rounded-3xl w-full h-full object-cover border-4 border-[#f5c451]/60">
+                </div>
+                <h4 class="mt-4 font-semibold">David</h4>
+            </div>
+                        <div class="text-center">
+                <div class="relative mx-auto w-28 h-28">
+                    <img src="https://picsum.photos/id/870/300/300" alt="Miembro" class="rounded-3xl w-full h-full object-cover border-4 border-[#f5c451]/60">
+                </div>
+                <h4 class="mt-4 font-semibold">Sierra</h4>
+            </div>
+                        <div class="text-center">
+                <div class="relative mx-auto w-28 h-28">
+                    <img src="https://picsum.photos/id/870/300/300" alt="Miembro" class="rounded-3xl w-full h-full object-cover border-4 border-[#f5c451]/60">
+                </div>
+                <h4 class="mt-4 font-semibold">José Miguel</h4>
+            </div>
+                        <div class="text-center">
+                <div class="relative mx-auto w-28 h-28">
+                    <img src="https://picsum.photos/id/870/300/300" alt="Miembro" class="rounded-3xl w-full h-full object-cover border-4 border-[#f5c451]/60">
+                </div>
+                <h4 class="mt-4 font-semibold">Compa</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO / REDES -->
+    <section id="contacto" class="bg-black py-20 border-t border-[#f5c451]/20">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-5">
+                    <h2 class="text-5xl font-bold logo-font neon-gold">¿Listo para rodar con los mejores?</h2>
+                    <p class="mt-6 text-2xl text-gray-300">Únete a la comunidad más exclusiva de American Truck Simulator en Mapkalo.</p>
+                    <div class="mt-12 flex flex-wrap gap-4">
+                        <a href="https://discord.gg/PSp7kFkx" target="_checkbox" class="flex-1 md:flex-none flex items-center justify-center gap-x-3 bg-[#5865F2] text-white rounded-2xl py-5 px-8 text-xl font-medium">
+                            <span>DISCORD</span>
+                            <img src="c:\Users\USER\Downloads\discord-logo-icon-editorial-free-vector.jpg" alt="discord" class="w-4 h-4">
+                        </a>
+                        <a href="https://www.tiktok.com/@arkamax_24" target="_blank" class="flex-1 md:flex-none flex items-center justify-center gap-x-3 bg-black border border-[#f5c451] rounded-2xl py-5 px-8 text-xl font-medium">
+                            <span>TIKTOK</span>
+                            <img src="c:\Users\USER\Downloads\tl.webp" alt="tiktok" class="w-4 h-4">
+                        </a>
+                        <a href="https://www.youtube.com/@ARKAMAX24" target="_blank" class="flex-1 md:flex-none flex items-center justify-center gap-x-3 bg-red-600 rounded-2xl py-5 px-8 text-xl font-medium">
+                            <span>YOUTUBE</span>
+                            <img src="c:\Users\USER\Downloads\youtube.png" alt="youtube" class="w-4 h-4">
+                        </a>
+                        <a href="https://www.facebook.com/ARKAMAXOFICIAL" target="_blank" class="flex-1 md:flex-none flex items-center justify-center gap-x-3 bg-gradient-to-tr from-pink-500 to-blue-500 rounded-2xl py-5 px-8 text-xl font-medium text-white">
+                            <span>FACEBOOK</span>
+                            <img src="c:\Users\USER\Downloads\face.png" alt="facebook" class="w-4 h-4">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-7 bg-[#111] rounded-3xl p-10 text-center">
+                    <p class="uppercase text-sm mb-4 text-[#f5c451]">¿Tienes dudas o quieres ser parte?</p>
+                    <p class="text-4xl leading-none font-light">Escríbenos por Discord o Instagram.<br>La Elite te espera en la carretera.</p>
+                    <div class="mt-12 text-6xl flex justify-center gap-x-16 text-[#f5c451]">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black border-t border-[#f5c451]/10 py-12 text-center text-xs text-[#f5c451]/50">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            © 2026 LA ELITE • Comunidad Oficial de American Truck Simulator - Mapkalo<br>
+            Pasión, respeto y kilómetros infinitos. Solo para los mejores.
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind initialization
+        function initializeTailwind() {
+            return {
+                config(userConfig = {}) {
+                    return {
+                        content: [],
+                        theme: {
+                            extend: {}
+                        },
+                        plugins: [],
+                        ...userConfig,
+                    }
+                },
+                theme: {
+                    extend: {
+                        colors: {
+                            gold: '#f5c451',
+                            redelite: '#c8102e'
+                        }
+                    }
+                }
+            }
+        }
+        
+        // Contador online dinámico
+        function startOnlineCounter() {
+            let count = 187
+            const counterEl = document.getElementById('online-counter')
+            
+            setInterval(() => {
+                count += Math.floor(Math.random() * 7) - 2
+                if (count < 140) count = 140
+                counterEl.textContent = count
+            }, 8000)
+        }
+        
+        // Toggle música
+        let musicPlaying = false
+        function toggleMusic() {
+            const audio = document.getElementById('ambient-music')
+            const icon = document.getElementById('music-icon')
+            
+            // Si no hay source, solo mostramos mensaje
+            if (!audio.querySelector('source')) {
+                alert('🎵 Agrega tu archivo de música ambiental (trucking/gaming) en el <audio> del HTML. ¡Es opcional!')
+                return
+            }
+            
+            if (musicPlaying) {
+                audio.pause()
+                icon.classList.replace('fa-pause', 'fa-music')
+            } else {
+                audio.play()
+                icon.classList.replace('fa-music', 'fa-pause')
+            }
+            musicPlaying = !musicPlaying
+        }
+        
+        // Mobile menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu')
+            menu.classList.toggle('hidden')
+        }
+        
+        // Unirse a evento (demo)
+        function joinEvent(btn) {
+            btn.innerHTML = '✅ CONFIRMADO - TE ESPERAMOS EN EL CONVOY'
+            btn.style.background = 'linear-gradient(to right, #22c55e, #86efac)'
+            btn.disabled = true
+            
+            setTimeout(() => {
+                alert('¡Felicidades! Has sido añadido al evento. Recibirás recordatorio en Discord.')
+            }, 800)
+        }
+        
+        // Inicializar todo
+        window.onload = function() {
+            initializeTailwind()
+            startOnlineCounter()
+            
+            console.log('%c🚛 LA ELITE - Sitio web cargado con éxito. ¡Bienvenido a la carretera, conductor!', 'color:#f5c451; font-size:12px; font-family:monospace')
+            
+            // Animación suave al scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1'
+                        entry.target.style.transform = 'translateY(0)'
+                    }
+                })
+            }, { threshold: 0.2 })
+            
+            document.querySelectorAll('section').forEach(section => {
+                section.style.opacity = '0'
+                section.style.transform = 'translateY(30px)'
+                observer.observe(section)
+            })
+            
+            console.log('✅ Sitio web premium de La Elite listo para rodar.')
+        }
+    </script>
+</body>
+</html>
