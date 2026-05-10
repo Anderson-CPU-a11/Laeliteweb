@@ -714,31 +714,6 @@
             
             console.log('✅ Sitio web premium de La Elite listo para rodar.')
         }
-        <!-- Botón -->
-<button id="music-btn">🎵 Música</button>
-
-<!-- Audio (CAMBIA EL LINK AQUÍ) -->
-<audio id="music" loop>
-    <source src="https://laestacion.uno/" type="audio/mpeg">
-</audio>
-
-<script>
-const btn = document.getElementById("music-btn");
-const music = document.getElementById("music");
-
-let isPlaying = false;
-
-btn.addEventListener("click", () => {
-    if (isPlaying) {
-        music.pause();
-        btn.textContent = "🎵 Música";
-    } else {
-        music.play();
-        btn.textContent = "⏸️ Pausar";
-    }
-    isPlaying = !isPlaying;
-});
-</script>
     </script>
 </body>
 </html>
