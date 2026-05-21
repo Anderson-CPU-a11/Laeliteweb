@@ -111,7 +111,73 @@
             background: linear-gradient(145deg, #1a1a1a, #111111);
         }
         /* =========================
+<style>
+/* Fondo oscuro */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
 
+/* Caja */
+.news-box {
+  width: 90%;
+  max-width: 600px;
+  background: #1f2937;
+  border-radius: 18px;
+  padding: 30px;
+  position: relative;
+  box-shadow: 0 0 30px rgba(0,0,0,0.4);
+  border: 2px solid #3b82f6;
+  color: white;
+}
+
+/* Título */
+.news-title {
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: #60a5fa;
+}
+
+/* Texto */
+.news-content {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Botón cerrar */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: red;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Botón volver abrir */
+.open-news {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 14px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+}
+</style>
     </style>
 </head>
 <body class="tail-container bg-black text-white overflow-x-hidden">
@@ -722,5 +788,53 @@
             console.log('✅ Sitio web premium de La Elite listo para rodar.')
         }
     </script>
+    <!-- POPUP DE NOTICIAS -->
+<div class="overlay" id="newsOverlay">
+
+  <div class="news-box">
+
+    <button class="close-btn" onclick="closeNews()">✕</button>
+
+    <h2 class="news-title">📰 Noticias</h2>
+
+    <div class="news-content">
+
+      <p>🔥 Nuevo evento disponible.</p>
+
+      <br>
+
+      <p>🚛 Próximo convoy este sábado.</p>
+
+      <br>
+
+      <p>🎉 Únete al Discord oficial.</p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- BOTÓN REABRIR -->
+<button class="open-news" id="openBtn" onclick="openNews()">
+  📰 Ver Noticias
+</button>
+
+<script>
+
+const overlay = document.getElementById('newsOverlay');
+const openBtn = document.getElementById('openBtn');
+
+function closeNews() {
+  overlay.style.display = 'none';
+  openBtn.style.display = 'block';
+}
+
+function openNews() {
+  overlay.style.display = 'flex';
+  openBtn.style.display = 'none';
+}
+
+</script>
 </body>
 </html>
