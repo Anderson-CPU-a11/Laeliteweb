@@ -1085,7 +1085,7 @@
     </div>
 
 </section>
-<!-- RANKING TRUCKSBOOK -->
+<!-- RANKING -->
 <section id="ranking" class="bg-[#111111] py-24">
 
     <div class="max-w-screen-2xl mx-auto px-8">
@@ -1094,60 +1094,101 @@
         <div class="text-center mb-16">
 
             <span class="uppercase text-[#c8102e] text-sm tracking-[3px]">
-                Estadísticas en vivo
+                Estadísticas oficiales
             </span>
 
             <h2 class="section-title text-5xl font-bold logo-font mx-auto">
-                Ranking de Conductores
+                Ranking TrucksBook
             </h2>
 
             <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
-                Kilómetros, rutas y actividad actualizada automáticamente
-                desde TrucksBook en tiempo real.
+                Consulta las estadísticas oficiales, kilómetros y actividad
+                en tiempo real de La Elite.
             </p>
 
         </div>
 
-        <!-- CONTENEDOR -->
-        <div class="relative rounded-3xl overflow-hidden border border-[#f5c451]/20 bg-black shadow-2xl">
+        <!-- CARD -->
+        <div class="bg-gradient-to-br from-[#181818] to-[#0d0d0d]
+                    border border-[#f5c451]/20
+                    rounded-3xl
+                    p-10
+                    text-center
+                    max-w-4xl
+                    mx-auto
+                    shadow-2xl">
 
-            <!-- HEADER -->
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 px-6 py-5 border-b border-[#f5c451]/10 bg-[#0d0d0d]">
+            <!-- ICONO -->
+            <div class="text-7xl text-[#f5c451] mb-8">
 
-                <!-- LIVE -->
-                <div class="flex items-center gap-3">
+                <i class="fas fa-trophy"></i>
 
-                    <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+            </div>
 
-                    <p class="text-sm uppercase tracking-[3px] text-[#f5c451] font-semibold">
-                        TrucksBook Live
-                    </p>
+            <!-- TITULO -->
+            <h3 class="text-4xl font-bold mb-4">
 
-                </div>
+                LA ELITE en TrucksBook
 
-                <!-- BOTON -->
+            </h3>
+
+            <!-- TEXTO -->
+            <p class="text-gray-400 text-lg leading-relaxed max-w-2xl mx-auto">
+
+                Mira el ranking completo de conductores,
+                kilómetros recorridos, rutas y estadísticas
+                oficiales directamente desde TrucksBook.
+
+            </p>
+
+            <!-- BOTONES -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mt-10">
+
+                <!-- EMPRESA -->
                 <a href="https://trucksbook.eu/company/224432"
                    target="_blank"
-                   class="inline-flex items-center justify-center gap-2 bg-[#f5c451] hover:bg-[#ffd56a] text-black font-bold px-5 py-3 rounded-2xl text-sm uppercase tracking-wide transition-all duration-300 hover:scale-105">
+                   class="bg-[#f5c451]
+                          hover:bg-[#ffd56a]
+                          text-black
+                          font-bold
+                          px-8 py-5
+                          rounded-2xl
+                          text-lg
+                          flex items-center gap-3
+                          transition-all duration-300 hover:scale-105">
 
-                    <i class="fas fa-external-link-alt"></i>
+                    <i class="fas fa-building"></i>
 
                     <span>
-                        Ver empresa
+                        Ver Empresa
+                    </span>
+
+                </a>
+
+                <!-- RANKING -->
+                <a href="https://trucksbook.eu/company/224432/employees"
+                   target="_blank"
+                   class="border border-[#f5c451]/30
+                          hover:border-[#f5c451]
+                          hover:bg-[#f5c451]
+                          hover:text-black
+                          text-white
+                          font-bold
+                          px-8 py-5
+                          rounded-2xl
+                          text-lg
+                          flex items-center gap-3
+                          transition-all duration-300 hover:scale-105">
+
+                    <i class="fas fa-ranking-star"></i>
+
+                    <span>
+                        Ver Ranking
                     </span>
 
                 </a>
 
             </div>
-
-            <!-- IFRAME -->
-            <iframe
-                src="https://trucksbook.eu/company/224432"
-                width="100%"
-                height="850"
-                loading="lazy"
-                style="border:none; background:#111111;">
-            </iframe>
 
         </div>
 
