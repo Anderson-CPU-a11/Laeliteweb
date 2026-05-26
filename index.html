@@ -1171,71 +1171,161 @@
             }, 8000)
         }
         
-        // Toggle música
-        let musicPlaying = false
-        function toggleMusic() {
-            const audio = document.getElementById('ambient-music')
-            const icon = document.getElementById('music-icon')
-            
-            // Si no hay source, solo mostramos mensaje
-            if (!audio.querySelector('source')) {
-                alert('🎵 Agrega tu archivo de música ambiental (trucking/gaming) en el <audio> del HTML. ¡Es opcional!')
-                return
+<script>
+
+/* =========================
+   MÚSICA
+========================= */
+
+let musicPlaying = false;
+
+function toggleMusic() {
+
+    const audio = document.getElementById('ambient-music');
+    const icon = document.getElementById('music-icon');
+
+    // Verificar que exista el audio
+    if (!audio) {
+        console.error('❌ No existe el elemento #ambient-music');
+        return;
+    }
+
+    // Verificar si tiene source válido
+    const source = audio.querySelector('source');
+
+    if (!source || source.src === '') {
+        alert('🎵 Agrega un archivo .mp3 válido en el audio.');
+        return;
+    }
+
+    // PLAY / PAUSE
+    if (musicPlaying) {
+
+        audio.pause();
+
+        if (icon) {
+            icon.classList.remove('fa-pause');
+            icon.classList.add('fa-music');
+        }
+
+    } else {
+
+        audio.play()
+        .then(() => {
+
+            if (icon) {
+                icon.classList.remove('fa-music');
+                icon.classList.add('fa-pause');
             }
-            
-            if (musicPlaying) {
-                audio.pause()
-                icon.classList.replace('fa-pause', 'fa-music')
-            } else {
-                audio.play()
-                icon.classList.replace('fa-music', 'fa-pause')
+
+        })
+        .catch((error) => {
+            console.error('❌ Error reproduciendo audio:', error);
+            alert('⚠️ El navegador bloqueó la reproducción automática.');
+        });
+
+    }
+
+    musicPlaying = !musicPlaying;
+}
+
+/* =========================
+   MENÚ MOBILE
+========================= */
+
+function toggleMobileMenu() {
+
+    const menu = document.getElementById('mobile-menu');
+
+    if (!menu) return;
+
+    menu.classList.toggle('hidden');
+}
+
+/* =========================
+   EVENTOS
+========================= */
+
+function joinEvent(btn) {
+
+    if (!btn) return;
+
+    btn.innerHTML = '✅ CONFIRMADO';
+    btn.style.background = 'linear-gradient(to right, #22c55e, #86efac)';
+    btn.style.color = '#000';
+    btn.disabled = true;
+
+    setTimeout(() => {
+
+        alert('🚛 Has sido añadido al convoy.');
+
+    }, 600);
+}
+
+/* =========================
+   SCROLL ANIMATION
+========================= */
+
+function initScrollAnimations() {
+
+    const sections = document.querySelectorAll('section');
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+
             }
-            musicPlaying = !musicPlaying
-        }
-        
-        // Mobile menu
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu')
-            menu.classList.toggle('hidden')
-        }
-        
-        // Unirse a evento (demo)
-        function joinEvent(btn) {
-            btn.innerHTML = '✅ CONFIRMADO - TE ESPERAMOS EN EL CONVOY'
-            btn.style.background = 'linear-gradient(to right, #22c55e, #86efac)'
-            btn.disabled = true
-            
-            setTimeout(() => {
-                alert('¡Felicidades! Has sido añadido al evento. Recibirás recordatorio en Discord.')
-            }, 800)
-        }
-        
-        // Inicializar todo
-        window.onload = function() {
-            initializeTailwind()
-            startOnlineCounter()
-            
-            console.log('%c🚛 LA ELITE - Sitio web cargado con éxito. ¡Bienvenido a la carretera, conductor!', 'color:#f5c451; font-size:12px; font-family:monospace')
-            
-            // Animación suave al scroll
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1'
-                        entry.target.style.transform = 'translateY(0)'
-                    }
-                })
-            }, { threshold: 0.2 })
-            
-            document.querySelectorAll('section').forEach(section => {
-                section.style.opacity = '0'
-                section.style.transform = 'translateY(30px)'
-                observer.observe(section)
-            })
-            
-            console.log('✅ Sitio web premium de La Elite listo para rodar.')
-        }
-    </script>
+
+        });
+
+    }, {
+        threshold: 0.15
+    });
+
+    sections.forEach(section => {
+
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(40px)';
+        section.style.transition = 'all 0.8s ease';
+
+        observer.observe(section);
+
+    });
+
+}
+
+/* =========================
+   INICIALIZAR TODO
+========================= */
+
+window.addEventListener('load', () => {
+
+    // Tailwind
+    if (typeof initializeTailwind === 'function') {
+        initializeTailwind();
+    }
+
+    // Contador online
+    if (typeof startOnlineCounter === 'function') {
+        startOnlineCounter();
+    }
+
+    // Scroll animations
+    initScrollAnimations();
+
+    console.log(
+        '%c🚛 LA ELITE cargado correctamente.',
+        'color:#f5c451; font-size:14px; font-weight:bold;'
+    );
+
+});
+
+</script>
 <!-- POPUP DE NOTICIAS -->
 <div class="news-overlay" id="newsOverlay">
 
