@@ -236,65 +236,191 @@
         </div>
     </nav>
 
-    <!-- HERO - INICIO -->
-    <section id="inicio" class="hero-bg h-screen flex items-center relative">
-        <div class="max-w-screen-2xl mx-auto px-8 grid md:grid-cols-2 gap-12 items-center h-full">
-            <div class="space-y-8">
-                <!-- Logo grande -->
+<!-- HERO - INICIO -->
+<section id="inicio" class="hero-bg min-h-screen flex items-center relative overflow-hidden">
+
+    <!-- OVERLAY -->
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-[2px]"></div>
+
+    <!-- EFECTOS -->
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+
+        <div class="absolute top-20 left-20 w-72 h-72 bg-[#f5c451]/10 blur-[120px] rounded-full"></div>
+
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-[#36024e]/20 blur-[140px] rounded-full"></div>
+
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="relative z-10 max-w-screen-2xl mx-auto px-8 w-full">
+
+        <div class="grid md:grid-cols-2 gap-20 items-center min-h-screen py-24">
+
+            <!-- IZQUIERDA -->
+            <div class="space-y-10">
+
+                <!-- LOGO -->
                 <div class="flex justify-center md:justify-start">
-                    <img src="logo-elite.png" class="h-32 md:h-48 drop-shadow-[0_0_40px_#f5c451] neon-gold">
+
+                    <img src="logo-elite.png"
+                         class="h-36 md:h-52 drop-shadow-[0_0_45px_#f5c451] hover:scale-105 transition duration-500">
+
                 </div>
-                
+
+                <!-- TITULOS -->
                 <div class="text-center md:text-left">
-                    <h1 class="text-7xl md:text-8xl font-serif logo-font tracking-[-4px] leading-none neon-gold">
-                        LA ELITE
+
+                    <h1 class="text-7xl md:text-[110px] font-serif logo-font tracking-[-5px] leading-none text-white">
+
+                        <span class="text-[#f5c451] drop-shadow-[0_0_20px_#f5c451]">
+                            LA
+                        </span>
+
+                        ELITE
+
                     </h1>
-                    <p class="text-3xl md:text-4xl mt-4 text-[#f5c451] font-light">ATS-ETS2</p>
-                    
-                    <div class="mt-8 max-w-md mx-auto md:mx-0">
-                        <p class="text-2xl italic font-light leading-tight">
-                            "Donde las mejores rutas se convierten en leyenda"
+
+                    <p class="text-3xl md:text-5xl mt-5 text-[#f5c451] font-light tracking-[3px]">
+                        ATS • ETS2
+                    </p>
+
+                    <div class="mt-10 max-w-xl mx-auto md:mx-0">
+
+                        <p class="text-2xl italic font-light leading-relaxed text-gray-200">
+                            “Donde las mejores rutas se convierten en leyenda”
                         </p>
+
                     </div>
+
                 </div>
 
-                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <!-- BOTONES -->
+                <div class="flex flex-col sm:flex-row gap-5 justify-center md:justify-start">
+
+                    <!-- BOTON 1 -->
                     <button onclick="document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' })"
-                            class="group relative overflow-hidden bg-gradient-to-r from-[#36024e] to-[#f5c451] hover:from-[#f5c451] hover:to-[#c8102e] text-black font-bold text-2xl px-12 py-6 rounded-2xl flex items-center gap-x-4 uppercase tracking-widest">
-                        <span>ÚNETE AL CONVOY</span>
+                            class="hero-btn-primary">
+
+                        🚛 ÚNETE AL CONVOY
+
                     </button>
-                    
-                    <button onclick="document.getElementById('videos').scrollIntoView({ behavior: 'smooth' })" 
-                            class="border-2 border-[#36024e] hover:bg-[#f5c451] hover:text-black text-[#f5c451] font-medium text-xl px-10 py-6 rounded-2xl flex items-center gap-x-3">
-                        <span>VIDEOS</span>
+
+                    <!-- BOTON 2 -->
+                    <button onclick="document.getElementById('videos').scrollIntoView({ behavior: 'smooth' })"
+                            class="hero-btn-secondary">
+
+                        ▶ VIDEOS
+
                     </button>
+
                 </div>
 
-                <!-- Quiénes somos -->
-                <div class="max-w-lg mx-auto md:mx-0 bg-black/70 backdrop-blur-xl border border-[#f5c451]/20 rounded-3xl p-8 text-center md:text-left">
-                    <p class="text-[#f5c451] uppercase text-sm tracking-[1px] mb-3">Comunidad Exclusiva ATS-ETS2</p>
-                    <h2 class="text-2xl font-semibold mb-4">Somos La Elite</h2>
-                    <p class="text-gray-300 leading-relaxed">
-                        La comunidad premium de American Truck Simulator y Euro Truck Simulator 2 enfocada en rutas épicas, convoyes profesionales y eventos legendarios dentro del mapa <strong class="text-[#f5c451]">Mapkalo</strong>. 
+                <!-- QUIENES SOMOS -->
+                <div class="max-w-2xl bg-black/60 backdrop-blur-xl border border-[#f5c451]/20 rounded-3xl p-8 shadow-2xl">
+
+                    <p class="text-[#f5c451] uppercase text-sm tracking-[3px] mb-4">
+                        Comunidad Exclusiva ATS-ETS2
+                    </p>
+
+                    <h2 class="text-3xl font-bold mb-5 text-white">
+                        Somos La Elite
+                    </h2>
+
+                    <p class="text-gray-300 leading-relaxed text-lg">
+                        La comunidad premium de American Truck Simulator y Euro Truck Simulator 2 enfocada en rutas épicas,
+                        convoyes profesionales y eventos legendarios dentro del mapa
+                        <strong class="text-[#f5c451]">Mapkalo</strong>.
+
                         Pasión por el transporte pesado, respeto y hermandad entre conductores élite.
                     </p>
+
                 </div>
+
             </div>
 
-            <!-- Decorative truck icon -->
-            <div class="hidden md:flex justify-end items-center">
-                <div class="text-[300px] text-[#f5c451]/10 rotate-12 drop-shadow-2xl">
+            <!-- DERECHA -->
+            <div class="hidden md:flex justify-center items-center relative">
+
+                <!-- EFECTO -->
+                <div class="absolute w-[500px] h-[500px] bg-[#f5c451]/10 blur-[120px] rounded-full"></div>
+
+                <!-- ICONO -->
+                <div class="relative text-[320px] text-[#f5c451]/10 rotate-[8deg] drop-shadow-2xl animate-pulse">
+
                     <i class="fas fa-truck"></i>
+
                 </div>
+
             </div>
+
         </div>
 
-        <!-- Scroll indicator -->
-        <div class="absolute bottom-10 left-1/2 flex flex-col items-center gap-y-2 text-[#f5c451]/60 text-sm">
-            <div class="animate-bounce">↓</div>
-            <p class="uppercase tracking-widest text-xs">Desplázate para descubrir la leyenda</p>
+    </div>
+
+    <!-- INDICADOR -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-y-3 text-[#f5c451]/70 z-20">
+
+        <div class="animate-bounce text-3xl">
+            ↓
         </div>
-    </section>
+
+        <p class="uppercase tracking-[4px] text-xs text-center">
+            Desplázate para descubrir la leyenda
+        </p>
+
+    </div>
+
+    <!-- ESTILOS -->
+    <style>
+
+        .hero-btn-primary{
+            min-width:260px;
+            height:70px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:linear-gradient(to right,#36024e,#f5c451);
+            color:black;
+            font-size:18px;
+            font-weight:800;
+            border-radius:20px;
+            letter-spacing:2px;
+            transition:0.35s;
+            box-shadow:0 15px 35px rgba(245,196,81,0.18);
+        }
+
+        .hero-btn-primary:hover{
+            transform:translateY(-4px) scale(1.02);
+            background:linear-gradient(to right,#f5c451,#c8102e);
+            box-shadow:0 20px 40px rgba(245,196,81,0.28);
+        }
+
+        .hero-btn-secondary{
+            min-width:220px;
+            height:70px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            border:2px solid #f5c451;
+            color:#f5c451;
+            font-size:18px;
+            font-weight:700;
+            border-radius:20px;
+            background:rgba(0,0,0,0.3);
+            backdrop-filter:blur(10px);
+            transition:0.35s;
+        }
+
+        .hero-btn-secondary:hover{
+            background:#f5c451;
+            color:black;
+            transform:translateY(-4px) scale(1.02);
+            box-shadow:0 20px 40px rgba(245,196,81,0.25);
+        }
+
+    </style>
+
+</section>
 
 <!-- EMPRESA -->
 <section id="empresa" class="max-w-screen-2xl mx-auto px-8 py-24">
