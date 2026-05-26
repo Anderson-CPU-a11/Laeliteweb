@@ -202,7 +202,7 @@
             <!-- Menú -->
             <div class="hidden md:flex items-center gap-x-8 text-sm font-medium uppercase tracking-widest">
                 <a href="#inicio" class="nav-link text-[#f5c451] hover:text-white">Inicio</a>
-                <a href="#galeria" class="nav-link hover:text-[#f5c451]">Galería</a>
+                <a href="#empresa" class="nav-link hover:text-[#f5c451]">Galería</a>
                 <a href="#anuncios" class="nav-link hover:text-[#f5c451]">Anuncios</a>
                 <a href="#eventos" class="nav-link hover:text-[#f5c451]">Eventos</a>
                 <a href="#videos" class="nav-link hover:text-[#f5c451]">Videos</a>
@@ -226,7 +226,7 @@
         <div id="mobile-menu" class="hidden md:hidden bg-black border-t border-[#f5c451]/30 px-8 py-6">
             <div class="flex flex-col gap-y-6 text-center text-lg font-medium uppercase">
                 <a href="#inicio" onclick="toggleMobileMenu()" class="py-2">Inicio</a>
-                <a href="#galeria" onclick="toggleMobileMenu()" class="py-2">Galería</a>
+                <a href="#empresa" onclick="toggleMobileMenu()" class="py-2">Galería</a>
                 <a href="#anuncios" onclick="toggleMobileMenu()" class="py-2">Anuncios</a>
                 <a href="#eventos" onclick="toggleMobileMenu()" class="py-2">Eventos</a>
                 <a href="#videos" onclick="toggleMobileMenu()" class="py-2">Videos</a>
@@ -296,76 +296,21 @@
         </div>
     </section>
 
-    <!-- GALERÍA -->
-    <section id="galeria" class="max-w-screen-2xl mx-auto px-8 py-24">
+    <!-- EMPRESA -->
+    <section id="empresa" class="max-w-screen-2xl mx-auto px-8 py-24">
         <div class="text-center mb-16">
-            <span class="uppercase text-[#c8102e] text-sm tracking-[3px]">Capturas legendarias</span>
+            <span class="uppercase text-[#c8102e] text-sm tracking-[3px]">Estadisticas y mas</span>
             <h2 class="section-title text-5xl font-bold logo-font mx-auto">Galería de la Elite</h2>
-            <p class="text-gray-400 mt-4 max-w-md mx-auto">Momentos que solo los mejores conductores viven</p>
+            <p class="text-gray-400 mt-4 max-w-md mx-auto">TrucksBook</p>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             <!-- Imagen 1 -->
             <div class="relative overflow-hidden rounded-3xl card-hover">
-                <img src="medellin-turbo.jpg" alt="Convoy nocturno Mapkalo" class="gallery-img w-full h-full object-cover">
+                <img src="medellin-turbo.jpg" alt="Estadisticas" class="gallery-img w-full h-full object-cover">
                 <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
-                    <p class="text-xs uppercase text-[#f5c451]">Convoy vuelta por Colombia • 19 abr</p>
-                    <p class="text-xl font-semibold">Turbo</p>
                 </div>
             </div>
-            
-            <!-- Imagen 2 -->
-            <div class="relative overflow-hidden rounded-3xl card-hover">
-                <img src="trocha.png" class="gallery-img w-full h-full object-cover">
-                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
-                    <p class="text-xs uppercase text-[#f5c451]">Ruta Imposible • 15 abr</p>
-                    <p class="text-xl font-semibold">Destapada</p>
-                </div>
-            </div>
-            
-            <!-- Imagen 3 -->
-            <div class="relative overflow-hidden rounded-3xl card-hover">
-                <img src="autodromo.png" alt="Evento especial Mapkalo" class="gallery-img w-full h-full object-cover">
-                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
-                    <p class="text-xs uppercase text-[#f5c451]">Evento Reloj x9 • 12 abr</p>
-                    <p class="text-xl font-semibold">Autodromo Tocancipa</p>
-                </div>
-            </div>
-            
-            <!-- Imagen 4 -->
-            <div class="relative overflow-hidden rounded-3xl card-hover">
-                <img src="primera_vuelta_a_colombia.png" alt="Maniobras Mapkalo" class="gallery-img w-full h-full object-cover">
-                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
-                    <p class="text-xs uppercase text-[#f5c451]">Vuelta a Colombia 1• 10 abr</p>
-                    <p class="text-xl font-semibold">Primera vuelta a Colombia</p>
-                </div>
-            </div>
-            
-            <!-- Imagen 6 -->
-            <div class="relative overflow-hidden rounded-3xl card-hover">
-                <img src="hacienda.png" alt="Evento fin de semana" class="gallery-img w-full h-full object-cover">
-                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
-                    <p class="text-xs uppercase text-[#f5c451]">Hacienda la Élite • 05 abr</p>
-                    <p class="text-xl font-semibold">la elite en acción</p>
-                </div>
-            </div>
-            
-            <!-- Imagen 7 -->
-            <div class="relative overflow-hidden rounded-3xl card-hover">
-                <img src="atardecer.png" alt="Ruta oculta" class="gallery-img w-full h-full object-cover">
-                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
-                    <p class="text-xs uppercase text-[#f5c451]">Mapkalo • 02 abr</p>
-                    <p class="text-xl font-semibold">Atardecer Mapkalo</p>
-                </div>
-            </div>
-            
-            <!-- Imagen 8 -->
-            <div class="relative overflow-hidden rounded-3xl card-hover">
-                <img src="uvita.png" alt="Convoy élite" class="gallery-img w-full h-full object-cover">
-                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
-                    <p class="text-xs uppercase text-[#f5c451]">Fonda de Arkamax • 30 mar</p>
-                    <p class="text-xl font-semibold">La Uvita</p>
-                </div>
             </div>
         </div>
     </section>
