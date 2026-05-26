@@ -30,7 +30,7 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- FUENTES -->
+    <!-- ESTILOS -->
     <style>
 
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap');
@@ -171,57 +171,119 @@
         }
 
         /* =========================
-         /* =========================
-   NAV LINKS
-========================= */
+           NAVBAR
+        ========================= */
 
-.nav-link{
-    position:relative;
-    color:white;
-    font-weight:600;
-    opacity:0.92;
-    transition:0.3s ease;
-}
+        nav{
+            position:sticky;
+            top:0;
+            z-index:99999;
 
-.nav-link:hover{
-    color:var(--gold);
-    opacity:1;
-}
+            background:rgba(0,0,0,0.78);
+            backdrop-filter:blur(12px);
 
-.nav-link::after{
+            border-bottom:1px solid rgba(245,196,81,0.18);
+        }
 
-    content:'';
+        nav *{
+            position:relative;
+            z-index:2;
+        }
 
-    position:absolute;
+        .navbar-container{
+            max-width:1700px;
+            margin:auto;
 
-    left:0;
-    bottom:-6px;
+            padding:18px 32px;
 
-    width:0%;
-    height:2px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:20px;
+        }
 
-    background:var(--gold);
+        /* =========================
+           LOGO
+        ========================= */
 
-    box-shadow:0 0 12px var(--gold);
+        .logo-box{
+            display:flex;
+            align-items:center;
+            gap:14px;
+        }
 
-    transition:0.3s ease;
-}
+        .logo-box img{
+            height:58px;
+            width:auto;
+        }
 
-.nav-link:hover::after{
-    width:100%;
-}
-        /* NAVBAR FIX */
+        .logo-title{
+            font-size:34px;
+            font-weight:800;
+            color:var(--gold);
+            letter-spacing:-1px;
+            line-height:1;
+        }
 
-nav{
-    position:sticky;
-    top:0;
-    z-index:99999;
-}
+        .logo-sub{
+            font-size:11px;
+            color:rgba(245,196,81,0.7);
+            letter-spacing:3px;
+            margin-top:4px;
+        }
 
-nav *{
-    position:relative;
-    z-index:2;
-}
+        /* =========================
+           NAV LINKS
+        ========================= */
+
+        .nav-menu{
+            display:flex;
+            align-items:center;
+            gap:32px;
+        }
+
+        .nav-link{
+            position:relative;
+
+            color:white;
+
+            font-size:14px;
+            font-weight:700;
+
+            text-transform:uppercase;
+            letter-spacing:2px;
+
+            opacity:0.92;
+        }
+
+        .nav-link:hover{
+            color:var(--gold);
+            opacity:1;
+        }
+
+        .nav-link::after{
+
+            content:'';
+
+            position:absolute;
+
+            left:0;
+            bottom:-8px;
+
+            width:0%;
+            height:2px;
+
+            background:var(--gold);
+
+            box-shadow:0 0 12px var(--gold);
+
+            transition:0.3s ease;
+        }
+
+        .nav-link:hover::after{
+            width:100%;
+        }
+
         /* =========================
            SECTION TITLE
         ========================= */
@@ -292,6 +354,70 @@ nav *{
         }
 
         /* =========================
+           POPUP NOTICIAS
+        ========================= */
+
+        .news-overlay{
+            position:fixed;
+            inset:0;
+
+            background:rgba(0,0,0,0.78);
+            backdrop-filter:blur(6px);
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            z-index:99999;
+
+            opacity:0;
+            pointer-events:none;
+
+            transition:0.35s;
+        }
+
+        .news-overlay.show{
+            opacity:1;
+            pointer-events:auto;
+        }
+
+        .news-box{
+
+            width:92%;
+            max-width:430px;
+
+            background:#111111;
+
+            border-radius:28px;
+
+            border:1px solid rgba(245,196,81,0.15);
+
+            overflow:hidden;
+
+            position:relative;
+
+            box-shadow:
+            0 25px 60px rgba(0,0,0,0.5),
+            0 0 30px rgba(245,196,81,0.06);
+
+            animation:popupShow 0.35s ease;
+        }
+
+        @keyframes popupShow{
+
+            from{
+                opacity:0;
+                transform:scale(0.85) translateY(20px);
+            }
+
+            to{
+                opacity:1;
+                transform:scale(1) translateY(0);
+            }
+
+        }
+
+        /* =========================
            SCROLLBAR
         ========================= */
 
@@ -318,10 +444,30 @@ nav *{
            RESPONSIVE
         ========================= */
 
+        @media(max-width:900px){
+
+            .nav-menu{
+                display:none;
+            }
+
+        }
+
         @media(max-width:768px){
 
             .section-title{
                 font-size:38px !important;
+            }
+
+            .logo-title{
+                font-size:28px;
+            }
+
+            .logo-box img{
+                height:48px;
+            }
+
+            .navbar-container{
+                padding:16px 20px;
             }
 
         }
@@ -329,311 +475,72 @@ nav *{
     </style>
 
 </head>
-    <style>
-<!-- ESTILOS GENERALES -->
-<style>
-
-/* =========================
-   POPUP NOTICIAS
-========================= */
-
-.news-overlay{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,0.78);
-    backdrop-filter:blur(6px);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    z-index:99999;
-
-    opacity:0;
-    pointer-events:none;
-    transition:0.35s;
-}
-
-.news-overlay.show{
-    opacity:1;
-    pointer-events:auto;
-}
-
-/* CAJA */
-.news-box{
-    width:92%;
-    max-width:430px;
-    background:#111111;
-    border-radius:28px;
-    border:1px solid rgba(245,196,81,0.15);
-    overflow:hidden;
-    position:relative;
-
-    box-shadow:
-    0 25px 60px rgba(0,0,0,0.5),
-    0 0 30px rgba(245,196,81,0.06);
-
-    animation:popupShow 0.35s ease;
-}
-
-/* HEADER */
-.news-header{
-    padding:28px 28px 18px;
-    text-align:center;
-}
-
-.news-tag{
-    color:#f5c451;
-    font-size:11px;
-    text-transform:uppercase;
-    letter-spacing:4px;
-    margin-bottom:10px;
-}
-
-.news-title{
-    font-size:34px;
-    font-weight:800;
-    color:white;
-}
-
-/* CONTENIDO */
-.news-content{
-    padding:0 28px 30px;
-}
-
-/* IMAGEN */
-.news-image{
-    width:100%;
-    height:220px;
-    border-radius:22px;
-    overflow:hidden;
-    border:2px solid rgba(245,196,81,0.2);
-}
-
-.news-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-/* TEXTO */
-.news-text{
-    margin-top:22px;
-    text-align:center;
-}
-
-.news-text h3{
-    font-size:24px;
-    font-weight:700;
-    color:white;
-}
-
-.news-text p{
-    margin-top:10px;
-    color:#cfcfcf;
-    line-height:1.6;
-    font-size:15px;
-}
 
-/* BOTON CERRAR */
-.close-btn{
-    position:absolute;
-    top:15px;
-    right:15px;
+<body>
 
-    width:42px;
-    height:42px;
+    <!-- NAVBAR -->
+    <nav>
 
-    border:none;
-    border-radius:50%;
+        <div class="navbar-container">
 
-    background:#1f1f1f;
-    color:white;
+            <!-- LOGO -->
+            <div class="logo-box">
 
-    font-size:18px;
-    cursor:pointer;
+                <img src="logo-elite.png" alt="La Elite">
 
-    transition:0.3s;
-    z-index:10;
-}
+                <div>
 
-.close-btn:hover{
-    background:#c8102e;
-    transform:rotate(90deg);
-}
+                    <h1 class="logo-title logo-font">
+                        LA ELITE
+                    </h1>
 
-/* BOTON REABRIR */
-.open-news{
-    position:fixed;
-    bottom:25px;
-    right:25px;
+                    <p class="logo-sub">
+                        ATS • ETS2
+                    </p>
 
-    width:170px;
-    height:58px;
+                </div>
 
-    border:none;
-    border-radius:18px;
-
-    background:#f5c451;
-    color:black;
-
-    font-size:16px;
-    font-weight:700;
-
-    cursor:pointer;
-
-    display:none;
-    align-items:center;
-    justify-content:center;
-
-    z-index:9999;
-
-    transition:0.3s;
-
-    box-shadow:0 15px 35px rgba(245,196,81,0.18);
-}
-
-.open-news:hover{
-    transform:translateY(-3px);
-    background:#ffd56a;
-}
-
-.open-news.show-btn{
-    display:flex;
-}
-
-/* ANIMACION */
-@keyframes popupShow{
-
-    from{
-        opacity:0;
-        transform:scale(0.85) translateY(20px);
-    }
+            </div>
 
-    to{
-        opacity:1;
-        transform:scale(1) translateY(0);
-    }
+            <!-- MENU -->
+            <div class="nav-menu">
 
-}
+                <a href="#inicio" class="nav-link">
+                    Inicio
+                </a>
 
-/* =========================
-   BODY
-========================= */
+                <a href="#empresa" class="nav-link">
+                    Empresa
+                </a>
 
-body{
-    background:black;
-    color:white;
-    overflow-x:hidden;
-    font-family:Arial, sans-serif;
-}
+                <a href="#anuncios" class="nav-link">
+                    Anuncios
+                </a>
 
-/* =========================
-   NAVBAR
-========================= */
+                <a href="#eventos" class="nav-link">
+                    Eventos
+                </a>
 
-.navbar{
-    position:sticky;
-    top:0;
-    z-index:999;
+                <a href="#videos" class="nav-link">
+                    Videos
+                </a>
 
-    background:rgba(0,0,0,0.75);
-    backdrop-filter:blur(12px);
+                <a href="#comunidad" class="nav-link">
+                    Comunidad
+                </a>
 
-    border-bottom:1px solid rgba(245,196,81,0.15);
-}
-
-.nav-container{
-    max-width:1700px;
-    margin:auto;
-
-    padding:18px 32px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
-}
-
-/* LOGO */
-.logo-box{
-    display:flex;
-    align-items:center;
-    gap:14px;
-}
-
-.logo-box img{
-    height:58px;
-    width:auto;
-}
-
-.logo-title{
-    font-size:34px;
-    font-weight:800;
-    color:#f5c451;
-    letter-spacing:-1px;
-    line-height:1;
-}
-
-.logo-sub{
-    font-size:11px;
-    color:rgba(245,196,81,0.7);
-    letter-spacing:3px;
-    margin-top:4px;
-}
-
-/* RESPONSIVE */
-@media(max-width:640px){
-
-    .news-box{
-        max-width:92%;
-    }
-
-    .news-title{
-        font-size:28px;
-    }
-
-    .news-image{
-        height:180px;
-    }
-
-    .logo-title{
-        font-size:26px;
-    }
-
-    .logo-box img{
-        height:48px;
-    }
-
-}
-
-</style>
-
-<!-- NAVBAR -->
-<nav class="navbar">
-
-    <div class="nav-container">
-
-        <!-- LOGO -->
-        <div class="logo-box">
-
-            <img src="logo-elite.png" alt="La Elite">
-
-            <div>
-
-                <h1 class="logo-title">
-                    LA ELITE
-                </h1>
-
-                <p class="logo-sub">
-                    ATS • ETS2
-                </p>
+                <a href="#contacto" class="nav-link">
+                    Contacto
+                </a>
 
             </div>
 
         </div>
 
-    </div>
+    </nav>
 
-</nav>
+</body>
+</html>
 <!-- NAVBAR -->
 <nav class="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-xl border-b border-[#f5c451]/10">
 
