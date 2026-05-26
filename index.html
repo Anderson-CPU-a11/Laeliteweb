@@ -1236,44 +1236,271 @@
             console.log('✅ Sitio web premium de La Elite listo para rodar.')
         }
     </script>
-    <!-- POPUP DE NOTICIAS -->
-<div class="overlay" id="newsOverlay">
+<!-- POPUP DE NOTICIAS -->
+<div class="news-overlay" id="newsOverlay">
 
-  <div class="news-box">
+    <div class="news-box">
 
-    <button class="close-btn" onclick="closeNews()">✕</button>
+        <!-- BOTON CERRAR -->
+        <button class="close-btn" onclick="closeNews()">
+            ✕
+        </button>
 
-    <h2 class="news-title">📰 Noticias</h2>
+        <!-- TITULO -->
+        <div class="news-header">
 
-    <div class="news-content">
-<img src="costa.png" alt="Miembro" class="rounded-3xl w-full h-full object-cover border-4 border-[#567a03]/60">
-      <p>Partido con La Élite</p>
+            <p class="news-tag">
+                Última noticia
+            </p>
+
+            <h2 class="news-title">
+                📰 Noticias
+            </h2>
+
+        </div>
+
+        <!-- CONTENIDO -->
+        <div class="news-content">
+
+            <!-- IMAGEN -->
+            <div class="news-image">
+
+                <img src="costa.png"
+                     alt="Miembro"
+                     class="w-full h-full object-cover">
+
+            </div>
+
+            <!-- TEXTO -->
+            <div class="news-text">
+
+                <h3>
+                    Partido con La Élite
+                </h3>
+
+                <p>
+                    Únete al evento especial junto a la comunidad oficial de La Elite.
+                </p>
+
+            </div>
+
+        </div>
 
     </div>
-
-  </div>
 
 </div>
 
 <!-- BOTÓN REABRIR -->
 <button class="open-news" id="openBtn" onclick="openNews()">
-  📰 Ver Noticias
+    📰 Noticias
 </button>
 
+<!-- SCRIPT -->
 <script>
 
 const overlay = document.getElementById('newsOverlay');
 const openBtn = document.getElementById('openBtn');
 
 function closeNews() {
-  overlay.style.display = 'none';
-  openBtn.style.display = 'block';
+    overlay.classList.remove('show');
+    openBtn.classList.add('show-btn');
 }
 
 function openNews() {
-  overlay.style.display = 'flex';
-  openBtn.style.display = 'none';
+    overlay.classList.add('show');
+    openBtn.classList.remove('show-btn');
 }
+
+/* ABRIR AUTOMÁTICAMENTE */
+window.onload = () => {
+    overlay.classList.add('show');
+};
+
+</script>
+
+<!-- ESTILOS -->
+<style>
+
+/* OVERLAY */
+.news-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.75);
+    backdrop-filter:blur(6px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:99999;
+
+    opacity:0;
+    pointer-events:none;
+    transition:0.35s;
+}
+
+/* MOSTRAR */
+.news-overlay.show{
+    opacity:1;
+    pointer-events:auto;
+}
+
+/* CAJA */
+.news-box{
+    width:90%;
+    max-width:420px;
+    background:#111111;
+    border:1px solid rgba(245,196,81,0.2);
+    border-radius:28px;
+    overflow:hidden;
+    position:relative;
+    box-shadow:0 25px 60px rgba(0,0,0,0.45);
+
+    animation:popupShow 0.35s ease;
+}
+
+/* HEADER */
+.news-header{
+    padding:28px 28px 10px;
+    text-align:center;
+}
+
+.news-tag{
+    color:#f5c451;
+    font-size:11px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+
+.news-title{
+    color:white;
+    font-size:34px;
+    font-weight:800;
+}
+
+/* CONTENIDO */
+.news-content{
+    padding:0 28px 30px;
+}
+
+/* IMAGEN */
+.news-image{
+    width:100%;
+    height:220px;
+    overflow:hidden;
+    border-radius:22px;
+    border:2px solid rgba(245,196,81,0.2);
+}
+
+/* TEXTO */
+.news-text{
+    margin-top:22px;
+    text-align:center;
+}
+
+.news-text h3{
+    color:white;
+    font-size:24px;
+    font-weight:700;
+}
+
+.news-text p{
+    color:#cfcfcf;
+    margin-top:10px;
+    line-height:1.6;
+    font-size:15px;
+}
+
+/* BOTON CERRAR */
+.close-btn{
+    position:absolute;
+    top:15px;
+    right:15px;
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    background:#1f1f1f;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+    z-index:10;
+}
+
+.close-btn:hover{
+    background:#c8102e;
+    transform:rotate(90deg);
+}
+
+/* BOTON ABRIR */
+.open-news{
+    position:fixed;
+    bottom:25px;
+    left:25px;
+    width:170px;
+    height:58px;
+    border:none;
+    border-radius:18px;
+    background:#f5c451;
+    color:black;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    z-index:9999;
+
+    display:none;
+    transition:0.3s;
+
+    box-shadow:0 15px 35px rgba(245,196,81,0.2);
+}
+
+.open-news:hover{
+    transform:translateY(-3px);
+    background:#ffd56a;
+}
+
+/* MOSTRAR BOTON */
+.open-news.show-btn{
+    display:block;
+}
+
+/* ANIMACION */
+@keyframes popupShow{
+    from{
+        opacity:0;
+        transform:scale(0.85) translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1) translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media(max-width:500px){
+
+    .news-box{
+        max-width:92%;
+    }
+
+    .news-title{
+        font-size:28px;
+    }
+
+    .news-image{
+        height:180px;
+    }
+
+    .open-news{
+        width:150px;
+        height:54px;
+        font-size:15px;
+    }
+
+}
+
+</style>
 
 </script>
 </body>
