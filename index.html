@@ -18,12 +18,18 @@
     <meta name="keywords"
           content="ATS, ETS2, American Truck Simulator, Euro Truck Simulator 2, convoyes ATS, comunidad ATS, La Elite, Mapkalo">
 
-    <!-- TITULO -->
-<title>
-    ARKAMAX | LA ELITE Comunidad ATS-ETS2
-</title>
+    <meta name="theme-color"
+          content="#000000">
 
-<link rel="icon" type="image/png" href="logo-elite.png">
+    <!-- TITULO -->
+    <title>
+        ARKAMAX | LA ELITE Comunidad ATS-ETS2
+    </title>
+
+    <!-- FAVICON -->
+    <link rel="icon"
+          type="image/png"
+          href="logo-elite.png">
 
     <!-- TAILWIND -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -32,521 +38,657 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- ESTILOS -->
+    <!-- FUENTES + ESTILOS -->
     <style>
 
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap');
 
-        /* =========================
-           VARIABLES
-        ========================= */
 
-        :root{
+/* =========================
+   VARIABLES
+========================= */
 
-            --gold:#f5c451;
-            --gold-light:#ffd56a;
+:root{
 
-            --purple:#36024e;
-            --purple-light:#5b0a7a;
+    --gold:#f5c451;
+    --gold-light:#ffd56a;
 
-            --red:#c8102e;
+    --purple:#36024e;
+    --purple-light:#5b0a7a;
 
-            --dark:#0a0a0a;
-            --dark-light:#111111;
+    --red:#c8102e;
 
-        }
+    --dark:#0a0a0a;
+    --dark-light:#111111;
 
-        /* =========================
-           RESET
-        ========================= */
+}
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
+/* =========================
+   RESET
+========================= */
 
-            transition:
-            color 0.25s ease,
-            background-color 0.25s ease,
-            border-color 0.25s ease,
-            transform 0.25s ease;
-        }
+*{
+    margin:0;
+    padding:0;
 
-        html{
-            scroll-behavior:smooth;
-        }
+    box-sizing:border-box;
 
-        body{
-            background:#000;
-            color:white;
-            overflow-x:hidden;
-            font-family:'Inter', sans-serif;
-        }
+    transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
 
-        img{
-            user-select:none;
-            -webkit-user-drag:none;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        a{
-            text-decoration:none;
-        }
+body{
 
-        /* =========================
-           FUENTES
-        ========================= */
+    background:
+    linear-gradient(
+        to bottom,
+        #000000,
+        #050505
+    );
 
-        .logo-font{
-            font-family:'Playfair Display', serif;
-        }
+    color:white;
 
-        /* =========================
-           HERO
-        ========================= */
+    overflow-x:hidden;
 
-        .hero-bg{
+    font-family:'Inter', sans-serif;
+}
 
-            background:
-            linear-gradient(
-                rgba(0,0,0,0.75),
-                rgba(0,0,0,0.88)
-            ),
-            url('ruta_aguardientera.png');
+/* =========================
+   ELEMENTOS
+========================= */
 
-            background-size:cover;
-            background-position:center;
+img{
+    user-select:none;
+    -webkit-user-drag:none;
+}
 
-            animation:roadAnimation 80s linear infinite;
-        }
+a{
+    text-decoration:none;
+    color:inherit;
+}
 
-        @keyframes roadAnimation{
+button{
+    border:none;
+    outline:none;
+}
 
-            0%{
-                background-position:0% 50%;
-            }
+/* =========================
+   FUENTES
+========================= */
 
-            100%{
-                background-position:100% 50%;
-            }
+.logo-font{
+    font-family:'Playfair Display', serif;
+}
 
-        }
+/* =========================
+   HERO
+========================= */
 
-        /* =========================
-           EFECTOS
-        ========================= */
+.hero-bg{
 
-        .neon-gold{
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.76),
+        rgba(0,0,0,0.88)
+    ),
+    url('ruta_aguardientera.png');
 
-            text-shadow:
-            0 0 8px rgba(245,196,81,0.7),
-            0 0 18px rgba(245,196,81,0.55),
-            0 0 35px rgba(245,196,81,0.35);
-
-        }
-
-        .neon-purple{
-
-            text-shadow:
-            0 0 8px rgba(91,10,122,0.7),
-            0 0 18px rgba(91,10,122,0.45);
+    background-size:cover;
+    background-position:center;
 
-        }
-
-        /* =========================
-           CARDS
-        ========================= */
+    animation:roadAnimation 80s linear infinite;
+}
 
-        .card-hover{
-            transition:0.35s ease;
-        }
+@keyframes roadAnimation{
 
-        .card-hover:hover{
+    0%{
+        background-position:0% 50%;
+    }
 
-            transform:
-            translateY(-8px)
-            scale(1.02);
+    100%{
+        background-position:100% 50%;
+    }
 
-            box-shadow:
-            0 20px 45px rgba(0,0,0,0.4),
-            0 0 25px rgba(245,196,81,0.12);
+}
 
-        }
+/* =========================
+   EFECTOS
+========================= */
 
-        /* =========================
-           NAVBAR
-        ========================= */
+.neon-gold{
 
-        nav{
-            position:sticky;
-            top:0;
-            z-index:99999;
+    text-shadow:
+    0 0 8px rgba(245,196,81,0.7),
+    0 0 18px rgba(245,196,81,0.55),
+    0 0 35px rgba(245,196,81,0.35);
 
-            background:rgba(0,0,0,0.78);
-            backdrop-filter:blur(12px);
+}
 
-            border-bottom:1px solid rgba(245,196,81,0.18);
-        }
+.neon-purple{
 
-        nav *{
-            position:relative;
-            z-index:2;
-        }
+    text-shadow:
+    0 0 8px rgba(91,10,122,0.7),
+    0 0 18px rgba(91,10,122,0.45);
 
-        .navbar-container{
-            max-width:1700px;
-            margin:auto;
+}
 
-            padding:18px 32px;
+/* =========================
+   CARDS
+========================= */
 
-            display:flex;
-            align-items:center;
-            justify-content:space-between;
-            gap:20px;
-        }
+.card-hover{
+    transition:0.35s ease;
+}
 
-        /* =========================
-           LOGO
-        ========================= */
+.card-hover:hover{
 
-        .logo-box{
-            display:flex;
-            align-items:center;
-            gap:14px;
-        }
+    transform:
+    translateY(-8px)
+    scale(1.02);
 
-        .logo-box img{
-            height:58px;
-            width:auto;
-        }
+    box-shadow:
+    0 20px 45px rgba(0,0,0,0.4),
+    0 0 25px rgba(245,196,81,0.12);
 
-        .logo-title{
-            font-size:34px;
-            font-weight:800;
-            color:var(--gold);
-            letter-spacing:-1px;
-            line-height:1;
-        }
+}
 
-        .logo-sub{
-            font-size:11px;
-            color:rgba(245,196,81,0.7);
-            letter-spacing:3px;
-            margin-top:4px;
-        }
+/* =========================
+   NAVBAR
+========================= */
 
-        /* =========================
-           NAV LINKS
-        ========================= */
+nav{
 
-        .nav-menu{
-            display:flex;
-            align-items:center;
-            gap:32px;
-        }
+    position:sticky;
+    top:0;
 
-        .nav-link{
-            position:relative;
+    z-index:99999;
 
-            color:white;
+    background:
+    rgba(0,0,0,0.78);
 
-            font-size:14px;
-            font-weight:700;
+    backdrop-filter:blur(14px);
 
-            text-transform:uppercase;
-            letter-spacing:2px;
+    border-bottom:
+    1px solid rgba(245,196,81,0.15);
 
-            opacity:0.92;
-        }
+    box-shadow:
+    0 10px 40px rgba(0,0,0,0.35);
+}
 
-        .nav-link:hover{
-            color:var(--gold);
-            opacity:1;
-        }
+nav *{
+    position:relative;
+    z-index:2;
+}
 
-        .nav-link::after{
+.navbar-container{
 
-            content:'';
+    max-width:1700px;
 
-            position:absolute;
+    margin:auto;
 
-            left:0;
-            bottom:-8px;
+    padding:18px 32px;
 
-            width:0%;
-            height:2px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 
-            background:var(--gold);
+    gap:20px;
+}
 
-            box-shadow:0 0 12px var(--gold);
+/* =========================
+   LOGO
+========================= */
 
-            transition:0.3s ease;
-        }
+.logo-box{
 
-        .nav-link:hover::after{
-            width:100%;
-        }
+    display:flex;
+    align-items:center;
 
-        /* =========================
-           SECTION TITLE
-        ========================= */
+    gap:14px;
+}
 
-        .section-title{
-            position:relative;
-            display:inline-block;
-        }
+.logo-box img{
 
-        .section-title::after{
+    height:58px;
+    width:auto;
 
-            content:'';
+    filter:
+    drop-shadow(0 0 12px rgba(245,196,81,0.25));
 
-            position:absolute;
+    transition:0.3s ease;
+}
 
-            width:80px;
-            height:4px;
+.logo-box:hover img{
 
-            border-radius:999px;
+    transform:scale(1.04);
 
-            background:
-            linear-gradient(
-                to right,
-                var(--gold),
-                var(--purple)
-            );
+    filter:
+    drop-shadow(0 0 18px rgba(245,196,81,0.4));
 
-            bottom:-12px;
-            left:50%;
+}
 
-            transform:translateX(-50%);
-        }
+.logo-title{
 
-        /* =========================
-           GALERIA
-        ========================= */
+    font-size:34px;
+    font-weight:800;
 
-        .gallery-img{
-            transition:0.45s ease;
-        }
+    color:var(--gold);
 
-        .gallery-img:hover{
+    letter-spacing:-1px;
+    line-height:1;
 
-            transform:scale(1.08);
+    text-shadow:
+    0 0 12px rgba(245,196,81,0.2);
+}
 
-            filter:
-            brightness(1.12)
-            contrast(1.08);
+.logo-sub{
 
-        }
+    font-size:11px;
 
-        /* =========================
-           EVENT CARDS
-        ========================= */
+    color:rgba(245,196,81,0.7);
 
-        .event-card{
+    letter-spacing:3px;
 
-            background:
-            linear-gradient(
-                145deg,
-                #181818,
-                #101010
-            );
+    margin-top:4px;
+}
 
-            border-radius:28px;
+/* =========================
+   NAV LINKS
+========================= */
 
-            overflow:hidden;
-        }
+.nav-menu{
 
-        /* =========================
-           POPUP NOTICIAS
-        ========================= */
+    display:flex;
+    align-items:center;
 
-        .news-overlay{
-            position:fixed;
-            inset:0;
+    gap:32px;
+}
 
-            background:rgba(0,0,0,0.78);
-            backdrop-filter:blur(6px);
+.nav-link{
 
-            display:flex;
-            align-items:center;
-            justify-content:center;
+    position:relative;
 
-            z-index:99999;
+    color:white;
 
-            opacity:0;
-            pointer-events:none;
+    font-size:14px;
+    font-weight:700;
 
-            transition:0.35s;
-        }
+    text-transform:uppercase;
+    letter-spacing:2px;
 
-        .news-overlay.show{
-            opacity:1;
-            pointer-events:auto;
-        }
+    opacity:0.92;
 
-        .news-box{
+    padding-bottom:6px;
+}
 
-            width:92%;
-            max-width:430px;
+.nav-link:hover{
 
-            background:#111111;
+    color:var(--gold);
 
-            border-radius:28px;
+    opacity:1;
+}
 
-            border:1px solid rgba(245,196,81,0.15);
+.nav-link::after{
 
-            overflow:hidden;
+    content:'';
 
-            position:relative;
+    position:absolute;
 
-            box-shadow:
-            0 25px 60px rgba(0,0,0,0.5),
-            0 0 30px rgba(245,196,81,0.06);
+    left:0;
+    bottom:-2px;
 
-            animation:popupShow 0.35s ease;
-        }
+    width:0%;
+    height:2px;
 
-        @keyframes popupShow{
+    border-radius:999px;
 
-            from{
-                opacity:0;
-                transform:scale(0.85) translateY(20px);
-            }
+    background:var(--gold);
 
-            to{
-                opacity:1;
-                transform:scale(1) translateY(0);
-            }
+    box-shadow:
+    0 0 12px var(--gold);
 
-        }
+    transition:0.3s ease;
+}
 
-        /* =========================
-           SCROLLBAR
-        ========================= */
+.nav-link:hover::after{
+    width:100%;
+}
 
-        ::-webkit-scrollbar{
-            width:10px;
-        }
+/* =========================
+   SECTION TITLE
+========================= */
 
-        ::-webkit-scrollbar-track{
-            background:#0d0d0d;
-        }
+.section-title{
 
-        ::-webkit-scrollbar-thumb{
+    position:relative;
 
-            background:var(--gold);
-            border-radius:999px;
+    display:inline-block;
+}
 
-        }
+.section-title::after{
 
-        ::-webkit-scrollbar-thumb:hover{
-            background:var(--gold-light);
-        }
+    content:'';
 
-        /* =========================
-           RESPONSIVE
-        ========================= */
+    position:absolute;
 
-        @media(max-width:900px){
+    width:80px;
+    height:4px;
 
-            .nav-menu{
-                display:none;
-            }
+    border-radius:999px;
 
-        }
+    background:
+    linear-gradient(
+        to right,
+        var(--gold),
+        var(--purple)
+    );
 
-        @media(max-width:768px){
+    bottom:-12px;
+    left:50%;
 
-            .section-title{
-                font-size:38px !important;
-            }
+    transform:translateX(-50%);
+}
 
-            .logo-title{
-                font-size:28px;
-            }
+/* =========================
+   GALERIA
+========================= */
 
-            .logo-box img{
-                height:48px;
-            }
+.gallery-img{
+    transition:0.45s ease;
+}
 
-            .navbar-container{
-                padding:16px 20px;
-            }
+.gallery-img:hover{
 
-        }
+    transform:scale(1.08);
 
-    </style>
+    filter:
+    brightness(1.12)
+    contrast(1.08);
+}
+
+/* =========================
+   EVENT CARDS
+========================= */
+
+.event-card{
+
+    background:
+    linear-gradient(
+        145deg,
+        #181818,
+        #101010
+    );
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    border:
+    1px solid rgba(245,196,81,0.08);
+}
+
+/* =========================
+   POPUP NOTICIAS
+========================= */
+
+.news-overlay{
+
+    position:fixed;
+    inset:0;
+
+    background:
+    rgba(0,0,0,0.78);
+
+    backdrop-filter:blur(6px);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    z-index:99999;
+
+    opacity:0;
+    pointer-events:none;
+
+    transition:0.35s;
+}
+
+.news-overlay.show{
+
+    opacity:1;
+
+    pointer-events:auto;
+}
+
+.news-box{
+
+    width:92%;
+    max-width:430px;
+
+    background:#111111;
+
+    border-radius:28px;
+
+    border:
+    1px solid rgba(245,196,81,0.15);
+
+    overflow:hidden;
+
+    position:relative;
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,0.5),
+    0 0 30px rgba(245,196,81,0.06);
+
+    animation:
+    popupShow 0.35s ease;
+}
+
+@keyframes popupShow{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        scale(0.85)
+        translateY(20px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        scale(1)
+        translateY(0);
+    }
+
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#0d0d0d;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:
+    linear-gradient(
+        to bottom,
+        var(--gold),
+        var(--gold-light)
+    );
+
+    border-radius:999px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:var(--gold-light);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    .nav-menu{
+        display:none;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .section-title{
+        font-size:38px !important;
+    }
+
+    .logo-title{
+        font-size:28px;
+    }
+
+    .logo-box img{
+        height:48px;
+    }
+
+    .navbar-container{
+        padding:16px 20px;
+    }
+
+    .hero-bg{
+        background-position:center;
+    }
+
+}
+
+@media(max-width:640px){
+
+    .section-title{
+        font-size:32px !important;
+    }
+
+    .logo-title{
+        font-size:24px;
+    }
+
+    .logo-sub{
+        font-size:10px;
+        letter-spacing:2px;
+    }
+
+}
+
+/* =========================
+   ANIMACIONES SCROLL
+========================= */
+
+.scroll-reveal{
+
+    opacity:0;
+
+    transform:
+    translateY(60px);
+
+    transition:
+    opacity 1s ease,
+    transform 1s ease;
+}
+
+.scroll-reveal.show{
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+}
+
+</style>
 
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-    <nav>
+<!-- NAVBAR -->
+<nav>
 
-        <div class="navbar-container">
+    <div class="navbar-container">
 
-            <!-- LOGO -->
-            <div class="logo-box">
+        <!-- LOGO -->
+        <div class="logo-box scroll-reveal">
 
-                <img src="logo-elite.png" alt="La Elite">
+            <img src="logo-elite.png" alt="La Elite">
 
-                <div>
+            <div>
 
-                    <h1 class="logo-title logo-font">
-                        LA ELITE
-                    </h1>
+                <h1 class="logo-title logo-font neon-gold">
+                    LA ELITE
+                </h1>
 
-                    <p class="logo-sub">
-                        ATS • ETS2
-                    </p>
-
-                </div>
-
-            </div>
-
-            <!-- MENU -->
-            <div class="nav-menu">
-
-                <a href="#inicio" class="nav-link">
-                    Inicio
-                </a>
-                
-                <a href="#requisitos" class="nav-link hover:text-[#f5c451]">
-    Requisitos
-</a>
-
-                <a href="#empresa" class="nav-link">
-                    Empresa
-                </a>
-
-                <a href="#anuncios" class="nav-link">
-                    Anuncios
-                </a>
-
-                <a href="#eventos" class="nav-link">
-                    Eventos
-                </a>
-
-                <a href="#videos" class="nav-link">
-                    Videos
-                </a>
-
-                <a href="#comunidad" class="nav-link">
-                    Comunidad
-                </a>
-
-                <a href="#contacto" class="nav-link">
-                    Contacto
-                </a>
+                <p class="logo-sub">
+                    ATS • ETS2
+                </p>
 
             </div>
 
         </div>
 
-    </nav>
+        <!-- MENU -->
+        <div class="nav-menu scroll-reveal">
 
-</body>
-</html>
+            <a href="#inicio" class="nav-link">
+                Inicio
+            </a>
+
+            <a href="#requisitos" class="nav-link">
+                Requisitos
+            </a>
+
+            <a href="#empresa" class="nav-link">
+                Empresa
+            </a>
+
+            <a href="#anuncios" class="nav-link">
+                Anuncios
+            </a>
+
+            <a href="#eventos" class="nav-link">
+                Eventos
+            </a>
+
+            <a href="#videos" class="nav-link">
+                Videos
+            </a>
+
+            <a href="#comunidad" class="nav-link">
+                Comunidad
+            </a>
+
+            <a href="#contacto" class="nav-link">
+                Contacto
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
 <!-- NAVBAR -->
 <nav class="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-xl border-b border-[#f5c451]/10">
 
@@ -555,7 +697,8 @@
         <div class="flex items-center justify-between h-[90px]">
 
             <!-- LOGO -->
-            <a href="#inicio" class="flex items-center gap-4 group">
+            <a href="#inicio"
+               class="flex items-center gap-4 group scroll-reveal">
 
                 <img src="logo-elite.png"
                      alt="La Elite"
@@ -563,7 +706,7 @@
 
                 <div class="hidden sm:block">
 
-                    <h1 class="text-2xl font-bold logo-font text-[#f5c451] leading-none">
+                    <h1 class="text-2xl font-bold logo-font text-[#f5c451] leading-none neon-gold">
                         LA ELITE
                     </h1>
 
@@ -576,15 +719,15 @@
             </a>
 
             <!-- MENÚ DESKTOP -->
-            <div class="hidden lg:flex items-center gap-8 text-[13px] font-semibold uppercase tracking-[2px]">
+            <div class="hidden lg:flex items-center gap-8 text-[13px] font-semibold uppercase tracking-[2px] scroll-reveal">
 
                 <a href="#inicio" class="nav-link active-link">
                     Inicio
                 </a>
-                
-                <a href="#requisitos" onclick="toggleMobileMenu()" class="py-2">
-    Requisitos
-</a>
+
+                <a href="#requisitos" class="nav-link">
+                    Requisitos
+                </a>
 
                 <a href="#empresa" class="nav-link">
                     Empresa
@@ -613,12 +756,12 @@
             </div>
 
             <!-- DERECHA -->
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-4 scroll-reveal">
 
                 <!-- BOTON DISCORD -->
                 <a href="https://discord.gg/CSAJCSah"
                    target="_blank"
-                   class="discord-btn hidden md:flex">
+                   class="discord-btn hidden md:flex items-center gap-3 bg-[#5865F2] hover:bg-[#f5c451] hover:text-black text-white px-5 py-3 rounded-2xl font-bold text-sm transition duration-300 shadow-lg">
 
                     <img src="discord-negro.png"
                          alt="Discord"
@@ -632,7 +775,7 @@
 
                 <!-- BOTON MOBILE -->
                 <button onclick="toggleMobileMenu()"
-                        class="mobile-btn lg:hidden">
+                        class="mobile-btn lg:hidden text-[#f5c451] text-2xl hover:scale-110 transition duration-300">
 
                     <i class="fas fa-bars"></i>
 
@@ -644,190 +787,245 @@
 
     </div>
 
-    <!-- MOBILE MENU -->
-    <div id="mobile-menu"
-         class="hidden lg:hidden bg-[#0b0b0b] border-t border-[#f5c451]/10">
+</nav>
 
-        <div class="px-8 py-8 flex flex-col gap-4">
+<!-- MOBILE MENU -->
+<div id="mobile-menu"
+     class="hidden lg:hidden bg-[#0b0b0b]/95 backdrop-blur-xl border-t border-[#f5c451]/10">
 
-            <a href="#inicio" onclick="toggleMobileMenu()" class="mobile-link">
-                Inicio
-            </a>
+    <div class="px-8 py-8 flex flex-col gap-4 scroll-reveal">
 
-            <a href="#requisitos" onclick="toggleMobileMenu()" class="py-2">
-    Requisitos
-</a>
+        <a href="#inicio"
+           onclick="toggleMobileMenu()"
+           class="mobile-link text-white hover:text-[#f5c451] transition duration-300 uppercase tracking-[2px] font-semibold py-2">
+            Inicio
+        </a>
 
-            <a href="#empresa" onclick="toggleMobileMenu()" class="mobile-link">
-                Empresa
-            </a>
-            
-            <a href="#ranking" class="nav-link">
-    Ranking
-</a>
+        <a href="#requisitos"
+           onclick="toggleMobileMenu()"
+           class="mobile-link text-white hover:text-[#f5c451] transition duration-300 uppercase tracking-[2px] font-semibold py-2">
+            Requisitos
+        </a>
 
-            <a href="#anuncios" onclick="toggleMobileMenu()" class="mobile-link">
-                Anuncios
-            </a>
+        <a href="#empresa"
+           onclick="toggleMobileMenu()"
+           class="mobile-link text-white hover:text-[#f5c451] transition duration-300 uppercase tracking-[2px] font-semibold py-2">
+            Empresa
+        </a>
 
-            <a href="#eventos" onclick="toggleMobileMenu()" class="mobile-link">
-                Eventos
-            </a>
+        <a href="#ranking"
+           onclick="toggleMobileMenu()"
+           class="mobile-link text-white hover:text-[#f5c451] transition duration-300 uppercase tracking-[2px] font-semibold py-2">
+            Ranking
+        </a>
 
-            <a href="#videos" onclick="toggleMobileMenu()" class="mobile-link">
-                Videos
-            </a>
+        <a href="#anuncios"
+           onclick="toggleMobileMenu()"
+           class="mobile-link text-white hover:text-[#f5c451] transition duration-300 uppercase tracking-[2px] font-semibold py-2">
+            Anuncios
+        </a>
 
-            <a href="#comunidad" onclick="toggleMobileMenu()" class="mobile-link">
-                Comunidad
-            </a>
+        <a href="#eventos"
+           onclick="toggleMobileMenu()"
+           class="mobile-link text-white hover:text-[#f5c451] transition duration-300 uppercase tracking-[2px] font-semibold py-2">
+            Eventos
+        </a>
 
-            <a href="#contacto" onclick="toggleMobileMenu()" class="mobile-link">
-                Contacto
-            </a>
+        <a href="#videos"
+           onclick="toggleMobileMenu()"
+           class="mobile-link text-white hover:text-[#f5c451] transition duration-300 uppercase tracking-[2px] font-semibold py-2">
+            Videos
+        </a>
 
-            <!-- BOTON MOBILE DISCORD -->
-            <a href="https://discord.gg/CSAJCSah"
-               target="_blank"
-               class="discord-btn-mobile">
+        <a href="#comunidad"
+           onclick="toggleMobileMenu()"
+           class="mobile-link text-white hover:text-[#f5c451] transition duration-300 uppercase tracking-[2px] font-semibold py-2">
+            Comunidad
+        </a>
 
-                <img src="discord-negro.png"
-                     alt="Discord"
-                     class="w-5 h-5">
+        <a href="#contacto"
+           onclick="toggleMobileMenu()"
+           class="mobile-link text-white hover:text-[#f5c451] transition duration-300 uppercase tracking-[2px] font-semibold py-2">
+            Contacto
+        </a>
 
-                <span>
-                    Discord Oficial
-                </span>
+        <!-- BOTON MOBILE DISCORD -->
+        <a href="https://discord.gg/CSAJCSah"
+           target="_blank"
+           class="discord-btn-mobile mt-4 flex items-center justify-center gap-3 bg-[#5865F2] hover:bg-[#f5c451] hover:text-black text-white font-bold py-4 rounded-2xl transition duration-300 shadow-lg">
 
-            </a>
+            <img src="discord-negro.png"
+                 alt="Discord"
+                 class="w-5 h-5">
 
-        </div>
+            <span>
+                Discord Oficial
+            </span>
+
+        </a>
 
     </div>
 
-    <!-- ESTILOS -->
-    <style>
+</div>
 
-        /* LINKS */
-        .nav-link{
-            color:#d4d4d4;
-            position:relative;
-            transition:0.3s;
-        }
+<!-- ESTILOS -->
+<style>
 
-        .nav-link:hover{
-            color:#f5c451;
-        }
+    /* =========================
+       NAV LINKS
+    ========================= */
 
-        .nav-link::after{
-            content:'';
-            position:absolute;
-            left:0;
-            bottom:-8px;
-            width:0%;
-            height:2px;
-            background:#f5c451;
-            transition:0.3s;
-        }
+    .nav-link{
+        color:#d4d4d4;
+        position:relative;
+        transition:0.3s ease;
+    }
 
-        .nav-link:hover::after,
-        .active-link::after{
-            width:100%;
-        }
+    .nav-link:hover{
+        color:#f5c451;
+    }
 
-        .active-link{
-            color:#f5c451;
-        }
+    .nav-link::after{
+        content:'';
+        position:absolute;
+        left:0;
+        bottom:-8px;
+        width:0%;
+        height:2px;
+        background:#f5c451;
+        box-shadow:0 0 12px rgba(245,196,81,0.6);
+        transition:0.3s ease;
+    }
 
-        /* BOTON DISCORD */
-        .discord-btn{
-            height:52px;
-            padding:0 22px;
-            border-radius:18px;
-            background:#5865F2;
-            color:white;
-            font-size:13px;
-            font-weight:700;
-            display:flex;
-            align-items:center;
-            gap:10px;
-            transition:0.35s;
-            box-shadow:0 10px 30px rgba(88,101,242,0.2);
-        }
+    .nav-link:hover::after,
+    .active-link::after{
+        width:100%;
+    }
 
-        .discord-btn:hover{
-            transform:translateY(-3px);
-            background:#f5c451;
-            color:black;
-            box-shadow:0 15px 35px rgba(245,196,81,0.25);
-        }
+    .active-link{
+        color:#f5c451;
+    }
 
-        /* BOTON MOBILE */
-        .mobile-btn{
-            width:52px;
-            height:52px;
-            border-radius:16px;
-            background:#111111;
-            border:1px solid rgba(245,196,81,0.2);
-            color:#f5c451;
-            font-size:20px;
-            transition:0.3s;
-        }
+    /* =========================
+       BOTON DISCORD
+    ========================= */
 
-        .mobile-btn:hover{
-            background:#f5c451;
-            color:black;
-        }
+    .discord-btn{
+        height:52px;
+        padding:0 22px;
+        border-radius:18px;
+        background:#5865F2;
+        color:white;
+        font-size:13px;
+        font-weight:700;
+        display:flex;
+        align-items:center;
+        gap:10px;
+        transition:0.35s ease;
+        box-shadow:0 10px 30px rgba(88,101,242,0.2);
+    }
 
-        /* LINKS MOBILE */
-        .mobile-link{
-            height:58px;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            border-radius:18px;
-            background:#111111;
-            border:1px solid rgba(245,196,81,0.08);
-            color:white;
-            font-size:15px;
-            font-weight:600;
-            text-transform:uppercase;
-            letter-spacing:2px;
-            transition:0.3s;
-        }
+    .discord-btn:hover{
+        transform:translateY(-3px);
+        background:#f5c451;
+        color:black;
+        box-shadow:0 15px 35px rgba(245,196,81,0.25);
+    }
 
-        .mobile-link:hover{
-            background:#f5c451;
-            color:black;
-        }
+    /* =========================
+       BOTON MOBILE
+    ========================= */
 
-        /* DISCORD MOBILE */
-        .discord-btn-mobile{
-            margin-top:12px;
-            height:60px;
-            border-radius:20px;
-            background:#5865F2;
-            color:white;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            gap:12px;
-            font-size:15px;
-            font-weight:700;
-            transition:0.3s;
-        }
+    .mobile-btn{
+        width:52px;
+        height:52px;
+        border-radius:16px;
+        background:#111111;
+        border:1px solid rgba(245,196,81,0.2);
+        color:#f5c451;
+        font-size:20px;
+        transition:0.3s ease;
+    }
 
-        .discord-btn-mobile:hover{
-            background:#f5c451;
-            color:black;
-        }
+    .mobile-btn:hover{
+        background:#f5c451;
+        color:black;
+        transform:scale(1.05);
+    }
 
-    </style>
+    /* =========================
+       LINKS MOBILE
+    ========================= */
 
-</nav>
+    .mobile-link{
+        height:58px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        border-radius:18px;
+        background:#111111;
+        border:1px solid rgba(245,196,81,0.08);
+        color:white;
+        font-size:15px;
+        font-weight:600;
+        text-transform:uppercase;
+        letter-spacing:2px;
+        transition:0.3s ease;
+    }
 
+    .mobile-link:hover{
+        background:#f5c451;
+        color:black;
+        transform:translateY(-2px);
+    }
+
+    /* =========================
+       DISCORD MOBILE
+    ========================= */
+
+    .discord-btn-mobile{
+        margin-top:12px;
+        height:60px;
+        border-radius:20px;
+        background:#5865F2;
+        color:white;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        gap:12px;
+        font-size:15px;
+        font-weight:700;
+        transition:0.3s ease;
+        box-shadow:0 12px 30px rgba(88,101,242,0.2);
+    }
+
+    .discord-btn-mobile:hover{
+        background:#f5c451;
+        color:black;
+        transform:translateY(-3px);
+    }
+
+    /* =========================
+       SCROLL ANIMATION
+    ========================= */
+
+    .scroll-reveal{
+        opacity:0;
+        transform:translateY(50px);
+        transition:
+        opacity 1s ease,
+        transform 1s ease;
+    }
+
+    .scroll-reveal.show{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+</style>
 <!-- HERO - INICIO -->
-<section id="inicio" class="hero-bg min-h-screen flex items-center relative overflow-hidden">
+<section id="inicio"
+         class="hero-bg min-h-screen flex items-center relative overflow-hidden scroll-reveal">
 
     <!-- OVERLAY -->
     <div class="absolute inset-0 bg-black/60 backdrop-blur-[2px]"></div>
@@ -835,9 +1033,9 @@
     <!-- EFECTOS -->
     <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
 
-        <div class="absolute top-20 left-20 w-72 h-72 bg-[#f5c451]/10 blur-[120px] rounded-full"></div>
+        <div class="absolute top-20 left-20 w-72 h-72 bg-[#f5c451]/10 blur-[120px] rounded-full animate-pulse"></div>
 
-        <div class="absolute bottom-10 right-10 w-96 h-96 bg-[#36024e]/20 blur-[140px] rounded-full"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-[#36024e]/20 blur-[140px] rounded-full animate-pulse"></div>
 
     </div>
 
@@ -847,13 +1045,14 @@
         <div class="grid md:grid-cols-2 gap-20 items-center min-h-screen py-24">
 
             <!-- IZQUIERDA -->
-            <div class="space-y-10">
+            <div class="space-y-10 scroll-reveal">
 
                 <!-- LOGO -->
                 <div class="flex justify-center md:justify-start">
 
                     <img src="logo-elite.png"
-                         class="h-36 md:h-52 drop-shadow-[0_0_45px_#f5c451] hover:scale-105 transition duration-500">
+                         alt="La Elite"
+                         class="h-36 md:h-52 drop-shadow-[0_0_45px_#f5c451] hover:scale-105 transition duration-500 animate-[pulse_5s_infinite]">
 
                 </div>
 
@@ -863,14 +1062,12 @@
                     <h1 class="text-7xl md:text-[110px] font-serif logo-font tracking-[-5px] leading-none text-white">
 
                         <span class="text-[#f5c451] drop-shadow-[0_0_20px_#f5c451]">
-                            
+                            LA ELITE
                         </span>
-
-                       LA ELITE
 
                     </h1>
 
-                    <p class="text-3xl md:text-5xl mt-5 text-[#f5c451] font-light tracking-[3px]">
+                    <p class="text-3xl md:text-5xl mt-5 text-[#f5c451] font-light tracking-[3px] neon-gold">
                         ATS • ETS2
                     </p>
 
@@ -886,6 +1083,79 @@
 
                 <!-- BOTONES -->
                 <div class="flex flex-col sm:flex-row gap-5 justify-center md:justify-start">
+
+                    <a href="#contacto"
+                       class="px-10 py-5 rounded-2xl bg-[#f5c451] hover:bg-[#ffd56a] text-black font-bold uppercase tracking-[2px] transition duration-300 shadow-[0_0_30px_rgba(245,196,81,0.25)] hover:scale-105 text-center">
+
+                        ÚNETE AL CONVOY
+
+                    </a>
+
+                    <a href="#videos"
+                       class="px-10 py-5 rounded-2xl border border-[#f5c451]/30 hover:border-[#f5c451] hover:bg-[#f5c451]/10 text-[#f5c451] font-bold uppercase tracking-[2px] transition duration-300 text-center">
+
+                        VER VIDEOS
+
+                    </a>
+
+                </div>
+
+                <!-- INFO -->
+                <div class="bg-white/[0.03] border border-white/10 backdrop-blur-xl rounded-[28px] p-8 max-w-2xl">
+
+                    <p class="text-[#f5c451] uppercase tracking-[3px] text-xs mb-4">
+                        Comunidad Premium ATS • ETS2
+                    </p>
+
+                    <h2 class="text-3xl font-bold mb-5">
+                        Somos La Elite
+                    </h2>
+
+                    <p class="text-gray-300 leading-relaxed text-[16px]">
+
+                        La comunidad premium de American Truck Simulator y Euro Truck Simulator 2 enfocada en rutas épicas, convoyes profesionales y eventos legendarios dentro del mapa Mapkalo.
+
+                        Pasión por el transporte pesado, respeto y hermandad entre conductores élite.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- DERECHA -->
+            <div class="hidden md:flex justify-end items-center scroll-reveal">
+
+                <div class="relative">
+
+                    <div class="absolute inset-0 bg-[#f5c451]/10 blur-[120px] rounded-full"></div>
+
+                    <i class="fas fa-truck text-[280px] text-[#f5c451]/10 rotate-[8deg] drop-shadow-[0_0_40px_rgba(245,196,81,0.2)]"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- SCROLL -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center text-[#f5c451]/70 animate-bounce">
+
+        <span class="text-2xl">
+            ↓
+        </span>
+
+        <p class="uppercase tracking-[4px] text-[11px] mt-2">
+            Desplázate
+        </p>
+
+    </div>
+
+</section>
+                <!-- BOTONES -->
+                <div class="flex flex-col sm:flex-row gap-5 justify-center md:justify-start scroll-reveal">
 
                     <!-- BOTON 1 -->
                     <button onclick="document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' })"
@@ -906,7 +1176,7 @@
                 </div>
 
                 <!-- QUIENES SOMOS -->
-                <div class="max-w-2xl bg-black/60 backdrop-blur-xl border border-[#f5c451]/20 rounded-3xl p-8 shadow-2xl">
+                <div class="max-w-2xl bg-black/60 backdrop-blur-xl border border-[#f5c451]/20 rounded-3xl p-8 shadow-2xl scroll-reveal">
 
                     <p class="text-[#f5c451] uppercase text-sm tracking-[3px] mb-4">
                         Comunidad Exclusiva ATS-ETS2
@@ -929,7 +1199,7 @@
             </div>
 
             <!-- DERECHA -->
-            <div class="hidden md:flex justify-center items-center relative">
+            <div class="hidden md:flex justify-center items-center relative scroll-reveal">
 
                 <!-- EFECTO -->
                 <div class="absolute w-[500px] h-[500px] bg-[#f5c451]/10 blur-[120px] rounded-full"></div>
@@ -947,8 +1217,128 @@
 
     </div>
 
+</section>
+
+<!-- ESTILOS HERO -->
+<style>
+
+.hero-btn-primary{
+
+    height:62px;
+    padding:0 34px;
+
+    border:none;
+    border-radius:20px;
+
+    background:#f5c451;
+    color:black;
+
+    font-size:15px;
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    transition:0.35s;
+
+    box-shadow:
+    0 15px 35px rgba(245,196,81,0.22);
+
+}
+
+.hero-btn-primary:hover{
+
+    transform:
+    translateY(-4px)
+    scale(1.02);
+
+    background:#ffd56a;
+
+}
+
+.hero-btn-secondary{
+
+    height:62px;
+    padding:0 34px;
+
+    border-radius:20px;
+
+    border:1px solid rgba(245,196,81,0.25);
+
+    background:rgba(255,255,255,0.04);
+    backdrop-filter:blur(10px);
+
+    color:white;
+
+    font-size:15px;
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    transition:0.35s;
+
+}
+
+.hero-btn-secondary:hover{
+
+    transform:
+    translateY(-4px);
+
+    border-color:#f5c451;
+
+    background:#f5c451;
+    color:black;
+
+}
+
+</style>
+
+<!-- SCRIPT ANIMACIONES -->
+<script>
+
+const scrollElements = document.querySelectorAll('.scroll-reveal');
+
+const elementInView = (el, dividend = 1.2) => {
+    const elementTop = el.getBoundingClientRect().top;
+
+    return (
+        elementTop <=
+        (window.innerHeight || document.documentElement.clientHeight) / dividend
+    );
+};
+
+const displayScrollElement = (element) => {
+    element.classList.add('show');
+};
+
+const hideScrollElement = (element) => {
+    element.classList.remove('show');
+};
+
+const handleScrollAnimation = () => {
+
+    scrollElements.forEach((el) => {
+
+        if (elementInView(el, 1.15)) {
+            displayScrollElement(el);
+        } else {
+            hideScrollElement(el);
+        }
+
+    });
+
+};
+
+window.addEventListener('scroll', () => {
+
+    handleScrollAnimation();
+
+});
+
+handleScrollAnimation();
+
+</script>
     <!-- INDICADOR -->
-    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-y-3 text-[#f5c451]/70 z-20">
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-y-3 text-[#f5c451]/70 z-20 scroll-reveal">
 
         <div class="animate-bounce text-3xl">
             ↓
@@ -964,69 +1354,221 @@
     <style>
 
         .hero-btn-primary{
+
             min-width:260px;
             height:70px;
+
             display:flex;
             align-items:center;
             justify-content:center;
-            background:linear-gradient(to right,#36024e,#f5c451);
+
+            background:
+            linear-gradient(
+                to right,
+                #36024e,
+                #f5c451
+            );
+
             color:black;
+
             font-size:18px;
             font-weight:800;
+
             border-radius:20px;
+
             letter-spacing:2px;
+
             transition:0.35s;
-            box-shadow:0 15px 35px rgba(245,196,81,0.18);
+
+            box-shadow:
+            0 15px 35px rgba(245,196,81,0.18);
+
         }
 
         .hero-btn-primary:hover{
-            transform:translateY(-4px) scale(1.02);
-            background:linear-gradient(to right,#f5c451,#c8102e);
-            box-shadow:0 20px 40px rgba(245,196,81,0.28);
+
+            transform:
+            translateY(-4px)
+            scale(1.02);
+
+            background:
+            linear-gradient(
+                to right,
+                #f5c451,
+                #c8102e
+            );
+
+            box-shadow:
+            0 20px 40px rgba(245,196,81,0.28);
+
         }
 
         .hero-btn-secondary{
+
             min-width:220px;
             height:70px;
+
             display:flex;
             align-items:center;
             justify-content:center;
+
             border:2px solid #f5c451;
+
             color:#f5c451;
+
             font-size:18px;
             font-weight:700;
+
             border-radius:20px;
+
             background:rgba(0,0,0,0.3);
             backdrop-filter:blur(10px);
+
             transition:0.35s;
+
         }
 
         .hero-btn-secondary:hover{
+
             background:#f5c451;
             color:black;
-            transform:translateY(-4px) scale(1.02);
-            box-shadow:0 20px 40px rgba(245,196,81,0.25);
+
+            transform:
+            translateY(-4px)
+            scale(1.02);
+
+            box-shadow:
+            0 20px 40px rgba(245,196,81,0.25);
+
+        }
+
+        /* ANIMACION SCROLL */
+
+        .scroll-reveal{
+
+            opacity:0;
+
+            transform:
+            translateY(60px);
+
+            transition:
+            opacity 1s ease,
+            transform 1s ease;
+
+        }
+
+        .scroll-reveal.show{
+
+            opacity:1;
+
+            transform:
+            translateY(0);
+
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:768px){
+
+            .hero-btn-primary,
+            .hero-btn-secondary{
+
+                width:100%;
+
+                min-width:100%;
+
+                height:64px;
+
+                font-size:16px;
+
+            }
+
         }
 
     </style>
 
 </section>
-<!-- REQUISITOS -->
-<section id="requisitos" class="bg-[#0d0d0d] py-24 border-t border-[#f5c451]/10">
 
-    <div class="max-w-screen-2xl mx-auto px-8">
+<!-- SCRIPT ANIMACIONES -->
+<script>
+
+const scrollElements = document.querySelectorAll('.scroll-reveal');
+
+const elementInView = (el, dividend = 1.15) => {
+
+    const elementTop = el.getBoundingClientRect().top;
+
+    return (
+        elementTop <=
+        (window.innerHeight || document.documentElement.clientHeight) / dividend
+    );
+
+};
+
+const displayScrollElement = (element) => {
+
+    element.classList.add('show');
+
+};
+
+const hideScrollElement = (element) => {
+
+    element.classList.remove('show');
+
+};
+
+const handleScrollAnimation = () => {
+
+    scrollElements.forEach((el) => {
+
+        if (elementInView(el)) {
+
+            displayScrollElement(el);
+
+        } else {
+
+            hideScrollElement(el);
+
+        }
+
+    });
+
+};
+
+window.addEventListener('scroll', () => {
+
+    handleScrollAnimation();
+
+});
+
+handleScrollAnimation();
+
+</script>
+<!-- REQUISITOS -->
+<section id="requisitos"
+         class="bg-[#0d0d0d] py-24 border-t border-[#f5c451]/10 relative overflow-hidden">
+
+    <!-- EFECTOS -->
+    <div class="absolute top-0 left-0 w-72 h-72 bg-[#f5c451]/5 blur-[120px] rounded-full"></div>
+
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-[#36024e]/10 blur-[140px] rounded-full"></div>
+
+    <div class="max-w-screen-2xl mx-auto px-8 relative z-10">
 
         <!-- TITULO -->
-        <div class="text-center mb-20">
+        <div class="text-center mb-20 scroll-reveal">
 
-            </span>
+            <p class="uppercase tracking-[5px] text-[#f5c451] text-sm mb-5">
+                Ingreso Oficial
+            </p>
 
             <h2 class="section-title text-5xl font-bold logo-font mx-auto">
                 Requisitos para Entrar
             </h2>
 
-            <p class="text-gray-400 mt-6 max-w-2xl mx-auto text-lg">
-                En La Elite buscamos conductores activos, respetuosos y comprometidos con la comunidad. 
+            <p class="text-gray-400 mt-6 max-w-2xl mx-auto text-lg leading-relaxed">
+                En La Elite buscamos conductores activos, respetuosos y comprometidos
+                con la comunidad y los convoyes oficiales.
             </p>
 
         </div>
@@ -1035,7 +1577,7 @@
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
             <!-- CARD -->
-            <div class="event-card p-8 border border-[#f5c451]/10 card-hover">
+            <div class="event-card p-8 border border-[#f5c451]/10 card-hover scroll-reveal">
 
                 <div class="w-16 h-16 rounded-2xl bg-[#f5c451]/10 flex items-center justify-center text-3xl text-[#f5c451]">
                     <i class="fas fa-user-check"></i>
@@ -1046,13 +1588,14 @@
                 </h3>
 
                 <p class="text-gray-400 mt-4 leading-relaxed">
-                    Participar en convoyes, eventos y mantener actividad dentro de la comunidad.
+                    Participar constantemente en convoyes, eventos y actividades dentro
+                    de la comunidad.
                 </p>
 
             </div>
 
             <!-- CARD -->
-            <div class="event-card p-8 border border-[#f5c451]/10 card-hover">
+            <div class="event-card p-8 border border-[#f5c451]/10 card-hover scroll-reveal">
 
                 <div class="w-16 h-16 rounded-2xl bg-[#f5c451]/10 flex items-center justify-center text-3xl text-[#f5c451]">
                     <i class="fas fa-handshake"></i>
@@ -1063,13 +1606,14 @@
                 </h3>
 
                 <p class="text-gray-400 mt-4 leading-relaxed">
-                    Tener buen comportamiento con todos los integrantes y respetar las reglas.
+                    Mantener buena actitud con todos los integrantes y respetar las reglas
+                    oficiales de la comunidad.
                 </p>
 
             </div>
 
             <!-- CARD -->
-            <div class="event-card p-8 border border-[#f5c451]/10 card-hover">
+            <div class="event-card p-8 border border-[#f5c451]/10 card-hover scroll-reveal">
 
                 <div class="w-16 h-16 rounded-2xl bg-[#f5c451]/10 flex items-center justify-center text-3xl text-[#f5c451]">
                     <i class="fab fa-discord"></i>
@@ -1080,13 +1624,14 @@
                 </h3>
 
                 <p class="text-gray-400 mt-4 leading-relaxed">
-                    Es obligatorio usar Discord para comunicación y organización de convoyes.
+                    Es obligatorio usar Discord para comunicación, organización y asistencia
+                    en convoyes.
                 </p>
 
             </div>
 
             <!-- CARD -->
-            <div class="event-card p-8 border border-[#f5c451]/10 card-hover">
+            <div class="event-card p-8 border border-[#f5c451]/10 card-hover scroll-reveal">
 
                 <div class="w-16 h-16 rounded-2xl bg-[#f5c451]/10 flex items-center justify-center text-3xl text-[#f5c451]">
                     <i class="fas fa-truck"></i>
@@ -1097,13 +1642,14 @@
                 </h3>
 
                 <p class="text-gray-400 mt-4 leading-relaxed">
-                    Manejar correctamente en convoyes y evitar choques o desorden en carretera.
+                    Manejar correctamente durante convoyes y evitar accidentes, choques
+                    o desorden en carretera.
                 </p>
 
             </div>
 
             <!-- CARD -->
-            <div class="event-card p-8 border border-[#f5c451]/10 card-hover">
+            <div class="event-card p-8 border border-[#f5c451]/10 card-hover scroll-reveal">
 
                 <div class="w-16 h-16 rounded-2xl bg-[#f5c451]/10 flex items-center justify-center text-3xl text-[#f5c451]">
                     <i class="fas fa-clock"></i>
@@ -1114,13 +1660,14 @@
                 </h3>
 
                 <p class="text-gray-400 mt-4 leading-relaxed">
-                    Mantener responsabilidad y apoyo hacia la comunidad y los eventos oficiales.
+                    Tener responsabilidad y compromiso con la comunidad y los eventos
+                    oficiales de La Elite.
                 </p>
 
             </div>
 
             <!-- CARD -->
-            <div class="event-card p-8 border border-[#f5c451]/10 card-hover">
+            <div class="event-card p-8 border border-[#f5c451]/10 card-hover scroll-reveal">
 
                 <div class="w-16 h-16 rounded-2xl bg-[#f5c451]/10 flex items-center justify-center text-3xl text-[#f5c451]">
                     <i class="fas fa-crown"></i>
@@ -1131,7 +1678,8 @@
                 </h3>
 
                 <p class="text-gray-400 mt-4 leading-relaxed">
-                    Llevar el nombre de La Elite con respeto, disciplina y profesionalismo.(el nombre de la élite se lo pueden moner solo si ya son parte oficial de la élite)
+                    Llevar el nombre de La Elite con respeto, disciplina y profesionalismo.
+                    El tag oficial solo podrá ser usado por miembros aceptados oficialmente.
                 </p>
 
             </div>
@@ -1142,79 +1690,111 @@
 
 </section>
 <!-- EMPRESA -->
-<section id="empresa" class="max-w-screen-2xl mx-auto px-8 py-24">
+<section id="empresa"
+         class="max-w-screen-2xl mx-auto px-8 py-24 relative overflow-hidden">
 
-    <!-- TITULO -->
-    <div class="text-center mb-20">
+    <!-- EFECTOS -->
+    <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-[#f5c451]/5 blur-[140px] rounded-full"></div>
 
-        <span class="uppercase text-[#c8102e] text-sm tracking-[4px]">
-            Estadísticas y más
-        </span>
+    <div class="absolute bottom-0 left-0 w-[350px] h-[350px] bg-[#36024e]/10 blur-[120px] rounded-full"></div>
 
-        <h2 class="text-5xl font-bold logo-font mt-4">
-            Empresa de la Elite
-        </h2>
+    <!-- CONTENIDO -->
+    <div class="relative z-10">
 
-        <p class="text-gray-400 mt-5 text-lg">
-            TrucksBook
-        </p>
+        <!-- TITULO -->
+        <div class="text-center mb-20 scroll-reveal">
 
-    </div>
+            <span class="uppercase text-[#c8102e] text-sm tracking-[4px]">
+                Estadísticas y Más
+            </span>
 
-    <!-- GRID -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <h2 class="section-title text-5xl font-bold logo-font mt-5 mx-auto">
+                Empresa de La Elite
+            </h2>
 
-        <!-- CARD -->
-        <div class="group bg-[#111111] rounded-3xl overflow-hidden border border-[#f5c451]/10 shadow-2xl hover:border-[#f5c451]/40 transition-all duration-300">
+            <p class="text-gray-400 mt-6 text-lg max-w-2xl mx-auto">
+                Seguimiento oficial de la empresa dentro de TrucksBook y posicionamiento mundial.
+            </p>
 
-            <!-- IMAGEN -->
-            <div class="relative overflow-hidden">
+        </div>
 
-                <img src="65.png"
-                     alt="Estadisticas"
-                     class="w-full h-[500px] object-cover group-hover:scale-105 transition duration-500">
+        <!-- GRID -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-                <!-- OVERLAY -->
-                <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent"></div>
+            <!-- CARD PRINCIPAL -->
+            <div class="group bg-[#111111] rounded-[32px] overflow-hidden border border-[#f5c451]/10 shadow-2xl hover:border-[#f5c451]/40 transition-all duration-500 scroll-reveal">
 
-                <!-- BADGE -->
-                <div class="absolute top-5 left-5 bg-black/80 backdrop-blur-md border border-[#f5c451]/20 rounded-2xl px-5 py-3">
+                <!-- IMAGEN -->
+                <div class="relative overflow-hidden">
 
-                    <p class="text-[#f5c451] text-xs uppercase tracking-[3px]">
-                        Ranking Mundial
-                    </p>
+                    <img src="65.png"
+                         alt="Estadisticas"
+                         class="w-full h-[520px] object-cover group-hover:scale-105 transition duration-700">
 
-                    <p class="text-white text-2xl font-bold mt-1">
-                        #65
-                    </p>
+                    <!-- OVERLAY -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
 
-                </div>
+                    <!-- BADGE -->
+                    <div class="absolute top-5 left-5 bg-black/80 backdrop-blur-md border border-[#f5c451]/20 rounded-2xl px-5 py-3">
 
-                <!-- INFO ABAJO -->
-                <div class="absolute bottom-0 left-0 right-0 p-8">
+                        <p class="text-[#f5c451] text-xs uppercase tracking-[3px]">
+                            Ranking Mundial
+                        </p>
 
-                    <h3 class="text-3xl font-bold text-white">
-                        La Elite
-                    </h3>
+                        <p class="text-white text-2xl font-bold mt-1">
+                            #65
+                        </p>
 
-                    <p class="text-gray-300 mt-3 leading-relaxed">
-                        Posicionados entre las mejores empresas de TrucksBook a nivel internacional.
-                    </p>
+                    </div>
 
-                    <!-- TAGS -->
-                    <div class="flex flex-wrap gap-3 mt-6">
+                    <!-- INFO -->
+                    <div class="absolute bottom-0 left-0 right-0 p-8">
 
-                        <span class="px-4 py-2 text-xs rounded-full bg-black/70 border border-[#f5c451]/20 text-white">
-                            🚛 ATS
-                        </span>
+                        <h3 class="text-4xl font-bold text-white">
+                            La Elite
+                        </h3>
 
-                        <span class="px-4 py-2 text-xs rounded-full bg-black/70 border border-[#00AEEF]/30 text-white">
-                            🌎 Internacional
-                        </span>
+                        <p class="text-gray-300 mt-4 leading-relaxed">
+                            Posicionados entre las mejores empresas de TrucksBook
+                            a nivel internacional con una comunidad activa y organizada.
+                        </p>
 
-                        <span class="px-4 py-2 text-xs rounded-full bg-black/70 border border-[#5865F2]/30 text-white">
-                            📊 TrucksBook
-                        </span>
+                        <!-- TAGS -->
+                        <div class="flex flex-wrap gap-3 mt-7">
+
+                            <span class="px-4 py-2 text-xs rounded-full bg-black/70 border border-[#f5c451]/20 text-white">
+                                🚛 ATS
+                            </span>
+
+                            <span class="px-4 py-2 text-xs rounded-full bg-black/70 border border-[#00AEEF]/30 text-white">
+                                🌎 Internacional
+                            </span>
+
+                            <span class="px-4 py-2 text-xs rounded-full bg-black/70 border border-[#5865F2]/30 text-white">
+                                📊 TrucksBook
+                            </span>
+
+                        </div>
+
+                        <!-- BOTONES -->
+                        <div class="flex flex-col sm:flex-row gap-4 mt-8">
+
+                            <a href="#ranking"
+                               class="empresa-btn-primary">
+
+                                Ver Ranking
+
+                            </a>
+
+                            <a href="https://trucksbook.eu/"
+                               target="_blank"
+                               class="empresa-btn-secondary">
+
+                                TrucksBook
+
+                            </a>
+
+                        </div>
 
                     </div>
 
@@ -1227,25 +1807,101 @@
     </div>
 
 </section>
+
+<!-- ESTILOS -->
+<style>
+
+.empresa-btn-primary{
+
+    height:56px;
+    padding:0 26px;
+
+    border-radius:18px;
+
+    background:#f5c451;
+    color:black;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:14px;
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    transition:0.35s;
+
+}
+
+.empresa-btn-primary:hover{
+
+    transform:
+    translateY(-4px);
+
+    background:#ffd56a;
+
+    box-shadow:
+    0 15px 35px rgba(245,196,81,0.25);
+
+}
+
+.empresa-btn-secondary{
+
+    height:56px;
+    padding:0 26px;
+
+    border-radius:18px;
+
+    border:1px solid rgba(245,196,81,0.2);
+
+    background:rgba(255,255,255,0.04);
+
+    backdrop-filter:blur(10px);
+
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:14px;
+    font-weight:700;
+
+    transition:0.35s;
+
+}
+
+.empresa-btn-secondary:hover{
+
+    transform:
+    translateY(-4px);
+
+    background:#f5c451;
+    color:black;
+
+}
+
+</style>
 <!-- RANKING -->
-<section id="ranking" class="bg-[#111111] py-24">
+<section id="ranking" class="bg-[#111111] py-24 scroll-reveal">
 
     <div class="max-w-screen-2xl mx-auto px-8">
 
         <!-- TITULO -->
         <div class="text-center mb-20">
 
-        <span class="uppercase text-[#c8102e] text-sm tracking-[4px]">
+            <span class="uppercase text-[#c8102e] text-sm tracking-[4px]">
                 Estadísticas oficiales
             </span>
 
-            <h2 class="section-title text-5xl font-bold logo-font mx-auto">
+            <h2 class="section-title text-5xl font-bold logo-font mx-auto mt-4">
                 Ranking TrucksBook
             </h2>
 
-            <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
-                Consulta las estadísticas oficiales, kilómetros y actividad
-                en tiempo real de La Elite.
+            <p class="text-gray-400 mt-4 max-w-2xl mx-auto text-lg leading-relaxed">
+                Consulta las estadísticas oficiales, kilómetros recorridos y actividad
+                en tiempo real de La Elite dentro de TrucksBook.
             </p>
 
         </div>
@@ -1253,12 +1909,12 @@
         <!-- CARD -->
         <div class="bg-gradient-to-br from-[#181818] to-[#0d0d0d]
                     border border-[#f5c451]/20
-                    rounded-3xl
-                    p-10
+                    rounded-[32px]
+                    p-10 md:p-14
                     text-center
-                    max-w-4xl
+                    max-w-5xl
                     mx-auto
-                    shadow-2xl">
+                    shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
 
             <!-- ICONO -->
             <div class="text-7xl text-[#f5c451] mb-8">
@@ -1268,23 +1924,85 @@
             </div>
 
             <!-- TITULO -->
-            <h3 class="text-4xl font-bold mb-4">
+            <h3 class="text-4xl md:text-5xl font-bold mb-5 text-white">
 
                 LA ELITE en TrucksBook
 
             </h3>
 
             <!-- TEXTO -->
-            <p class="text-gray-400 text-lg leading-relaxed max-w-2xl mx-auto">
+            <p class="text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto">
 
-                Mira el ranking completo de conductores,
-                kilómetros recorridos, rutas y estadísticas
-                oficiales directamente desde TrucksBook.
+                Explora el ranking oficial de conductores, estadísticas,
+                kilómetros recorridos, entregas y actividad completa
+                directamente desde la empresa oficial de La Elite.
 
             </p>
 
+            <!-- STATS -->
+            <div class="grid md:grid-cols-3 gap-6 mt-14">
+
+                <!-- CARD -->
+                <div class="bg-black/40 border border-[#f5c451]/10 rounded-3xl p-8">
+
+                    <div class="text-5xl text-[#f5c451] mb-5">
+
+                        <i class="fas fa-road"></i>
+
+                    </div>
+
+                    <h4 class="text-2xl font-bold text-white">
+                        Kilómetros
+                    </h4>
+
+                    <p class="text-gray-400 mt-3 text-sm leading-relaxed">
+                        Consulta la distancia total recorrida por la empresa y sus conductores.
+                    </p>
+
+                </div>
+
+                <!-- CARD -->
+                <div class="bg-black/40 border border-[#f5c451]/10 rounded-3xl p-8">
+
+                    <div class="text-5xl text-[#f5c451] mb-5">
+
+                        <i class="fas fa-ranking-star"></i>
+
+                    </div>
+
+                    <h4 class="text-2xl font-bold text-white">
+                        Ranking
+                    </h4>
+
+                    <p class="text-gray-400 mt-3 text-sm leading-relaxed">
+                        Mira la posición oficial de La Elite frente a otras empresas.
+                    </p>
+
+                </div>
+
+                <!-- CARD -->
+                <div class="bg-black/40 border border-[#f5c451]/10 rounded-3xl p-8">
+
+                    <div class="text-5xl text-[#f5c451] mb-5">
+
+                        <i class="fas fa-truck"></i>
+
+                    </div>
+
+                    <h4 class="text-2xl font-bold text-white">
+                        Conductores
+                    </h4>
+
+                    <p class="text-gray-400 mt-3 text-sm leading-relaxed">
+                        Revisa la actividad y progreso de los miembros de la empresa.
+                    </p>
+
+                </div>
+
+            </div>
+
             <!-- BOTONES -->
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mt-10">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mt-14">
 
                 <!-- EMPRESA -->
                 <a href="https://trucksbook.eu/company/224432"
@@ -1293,11 +2011,11 @@
                           hover:bg-[#ffd56a]
                           text-black
                           font-bold
-                          px-8 py-5
+                          px-9 py-5
                           rounded-2xl
                           text-lg
                           flex items-center gap-3
-                          transition-all duration-300 hover:scale-105">
+                          transition-all duration-300 hover:scale-105 shadow-[0_15px_35px_rgba(245,196,81,0.20)]">
 
                     <i class="fas fa-building"></i>
 
@@ -1308,7 +2026,7 @@
                 </a>
 
                 <!-- RANKING -->
-                <a href="https://trucksbook.eu/company_logbook"
+                <a href="https://trucksbook.eu/company/224432"
                    target="_blank"
                    class="border border-[#f5c451]/30
                           hover:border-[#f5c451]
@@ -1316,7 +2034,7 @@
                           hover:text-black
                           text-white
                           font-bold
-                          px-8 py-5
+                          px-9 py-5
                           rounded-2xl
                           text-lg
                           flex items-center gap-3
@@ -1338,7 +2056,7 @@
 
 </section>
 <!-- ANUNCIOS -->
-<section id="anuncios" class="bg-[#111111] py-24">
+<section id="anuncios" class="bg-[#111111] py-24 scroll-reveal">
 
     <div class="max-w-screen-2xl mx-auto px-8">
 
@@ -1349,12 +2067,12 @@
                 Últimas novedades
             </span>
 
-            <h2 class="text-5xl font-bold logo-font mt-4">
+            <h2 class="section-title text-5xl font-bold logo-font mt-4">
                 Anuncios Oficiales
             </h2>
 
-            <p class="text-gray-400 mt-5 text-lg">
-                Mantente informado sobre eventos, noticias y actividades de La Elite
+            <p class="text-gray-400 mt-5 text-lg max-w-2xl mx-auto">
+                Mantente informado sobre eventos, novedades y actividades oficiales de La Elite.
             </p>
 
         </div>
@@ -1362,10 +2080,9 @@
         <!-- GRID -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-            <!-- ANUNCIO -->
-            <div class="group bg-[#181818] rounded-3xl border border-[#f5c451]/10 overflow-hidden shadow-2xl hover:border-[#f5c451]/40 transition-all duration-300">
+            <!-- ANUNCIO 1 -->
+            <div class="group bg-[#181818] rounded-3xl border border-[#f5c451]/10 overflow-hidden shadow-2xl hover:border-[#f5c451]/40 transition-all duration-300 hover:-translate-y-2">
 
-                <!-- CABECERA -->
                 <div class="p-8 flex flex-col h-full">
 
                     <!-- TOP -->
@@ -1382,7 +2099,7 @@
                             </h3>
 
                             <p class="text-[#f5c451] mt-3 text-sm uppercase tracking-[2px]">
-                                Discord de La Elite
+                                Discord Oficial
                             </p>
 
                         </div>
@@ -1395,7 +2112,7 @@
                             </p>
 
                             <p class="text-white text-sm font-semibold mt-1">
-                                1/06/2026
+                                01/06/2026
                             </p>
 
                         </div>
@@ -1432,6 +2149,151 @@
                            class="announcement-btn">
 
                             📢 Ver anuncio
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ANUNCIO 2 -->
+            <div class="group bg-[#181818] rounded-3xl border border-[#f5c451]/10 overflow-hidden shadow-2xl hover:border-[#f5c451]/40 transition-all duration-300 hover:-translate-y-2">
+
+                <div class="p-8 flex flex-col h-full">
+
+                    <div class="flex justify-between items-start gap-4">
+
+                        <div>
+
+                            <span class="inline-flex items-center px-4 py-2 bg-[#36024e] text-white text-xs font-bold rounded-full tracking-[1px] uppercase shadow-lg">
+                                Convoy
+                            </span>
+
+                            <h3 class="text-2xl font-bold mt-6 text-white leading-snug">
+                                Convoy Oficial Nocturno
+                            </h3>
+
+                            <p class="text-[#f5c451] mt-3 text-sm uppercase tracking-[2px]">
+                                ATS • Mapkalo
+                            </p>
+
+                        </div>
+
+                        <div class="bg-black border border-[#f5c451]/20 rounded-2xl px-4 py-3 text-center min-w-[95px]">
+
+                            <p class="text-[#f5c451] text-xs uppercase tracking-[2px]">
+                                Hora
+                            </p>
+
+                            <p class="text-white text-sm font-semibold mt-1">
+                                8:00 PM
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="mt-8">
+
+                        <p class="text-gray-300 leading-relaxed text-[15px]">
+                            Prepárate para recorrer rutas legendarias junto a los conductores de La Elite en un convoy nocturno exclusivo.
+                        </p>
+
+                    </div>
+
+                    <div class="flex flex-wrap gap-3 mt-8">
+
+                        <span class="px-4 py-2 text-xs rounded-full bg-black border border-[#f5c451]/20 text-gray-300">
+                            🚛 ATS
+                        </span>
+
+                        <span class="px-4 py-2 text-xs rounded-full bg-black border border-[#36024e]/40 text-gray-300">
+                            🌙 Nocturno
+                        </span>
+
+                    </div>
+
+                    <div class="mt-10">
+
+                        <a href="#eventos"
+                           class="announcement-btn">
+
+                            🚚 Ver convoy
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ANUNCIO 3 -->
+            <div class="group bg-[#181818] rounded-3xl border border-[#f5c451]/10 overflow-hidden shadow-2xl hover:border-[#f5c451]/40 transition-all duration-300 hover:-translate-y-2">
+
+                <div class="p-8 flex flex-col h-full">
+
+                    <div class="flex justify-between items-start gap-4">
+
+                        <div>
+
+                            <span class="inline-flex items-center px-4 py-2 bg-[#f5c451] text-black text-xs font-bold rounded-full tracking-[1px] uppercase shadow-lg">
+                                Comunidad
+                            </span>
+
+                            <h3 class="text-2xl font-bold mt-6 text-white leading-snug">
+                                Reclutamiento Abierto
+                            </h3>
+
+                            <p class="text-[#f5c451] mt-3 text-sm uppercase tracking-[2px]">
+                                Nuevos Conductores
+                            </p>
+
+                        </div>
+
+                        <div class="bg-black border border-[#f5c451]/20 rounded-2xl px-4 py-3 text-center min-w-[95px]">
+
+                            <p class="text-[#f5c451] text-xs uppercase tracking-[2px]">
+                                Estado
+                            </p>
+
+                            <p class="text-green-400 text-sm font-semibold mt-1">
+                                Activo
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="mt-8">
+
+                        <p class="text-gray-300 leading-relaxed text-[15px]">
+                            ¿Quieres formar parte de La Elite? Ya están abiertas las postulaciones para nuevos miembros oficiales.
+                        </p>
+
+                    </div>
+
+                    <div class="flex flex-wrap gap-3 mt-8">
+
+                        <span class="px-4 py-2 text-xs rounded-full bg-black border border-[#f5c451]/20 text-gray-300">
+                            👥 Comunidad
+                        </span>
+
+                        <span class="px-4 py-2 text-xs rounded-full bg-black border border-[#00ff99]/20 text-gray-300">
+                            ✅ Abierto
+                        </span>
+
+                    </div>
+
+                    <div class="mt-10">
+
+                        <a href="#requisitos"
+                           class="announcement-btn">
+
+                            📋 Ver requisitos
+
                         </a>
 
                     </div>
@@ -1446,6 +2308,7 @@
 
     <!-- ESTILOS -->
     <style>
+
         .announcement-btn{
             width:100%;
             height:58px;
@@ -1467,15 +2330,16 @@
             background:#ffd56a;
             box-shadow:0 15px 30px rgba(245,196,81,0.25);
         }
+
     </style>
 
 </section>
 
 <!-- EVENTOS -->
-<section id="eventos" class="max-w-screen-2xl mx-auto px-8 py-24">
+<section id="eventos" class="max-w-screen-2xl mx-auto px-8 py-24 scroll-reveal">
 
     <!-- TITULO -->
-    <div class="text-center mb-20">
+    <div class="text-center mb-20 scroll-reveal">
 
         <span class="uppercase text-[#c8102e] text-sm tracking-[4px]">
             Próximos convoyes
@@ -1495,7 +2359,7 @@
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
 
         <!-- EVENTO -->
-        <div class="group bg-[#111111] rounded-3xl overflow-hidden border border-[#f5c451]/10 shadow-2xl hover:border-[#f5c451]/40 transition-all duration-300">
+        <div class="group bg-[#111111] rounded-3xl overflow-hidden border border-[#f5c451]/10 shadow-2xl hover:border-[#f5c451]/40 transition-all duration-300 card-hover scroll-reveal">
 
             <!-- IMAGEN -->
             <div class="relative overflow-hidden">
@@ -1539,6 +2403,7 @@
 
                 <!-- TITULO EVENTO -->
                 <div>
+
                     <h3 class="text-2xl font-bold text-white leading-snug">
                         Convoy Costa Colombiana
                     </h3>
@@ -1546,6 +2411,7 @@
                     <p class="text-gray-400 mt-3 leading-relaxed">
                         Prepárate para una ruta brutal llena de paisajes, curvas y la mejor comunidad de ATS en Colombia.
                     </p>
+
                 </div>
 
                 <!-- BOTON -->
@@ -1554,6 +2420,7 @@
                    class="event-btn">
 
                     🚛 Participar en el evento
+
                 </a>
 
             </div>
@@ -1564,62 +2431,92 @@
 
     <!-- ESTILOS -->
     <style>
+
         .event-btn{
+
             width:100%;
             height:60px;
+
             display:flex;
             align-items:center;
             justify-content:center;
+
             background:#f5c451;
             color:black;
+
             font-size:18px;
             font-weight:700;
+
             border-radius:18px;
+
             text-decoration:none;
+
             transition:0.3s;
+
             box-shadow:0 10px 25px rgba(245,196,81,0.15);
+
         }
 
         .event-btn:hover{
+
             transform:translateY(-3px);
+
             background:#ffd56a;
+
             box-shadow:0 15px 30px rgba(245,196,81,0.25);
+
         }
+
     </style>
 
 </section>
 <!-- VIDEOS -->
-<section id="videos" class="bg-[#111111] py-24">
+<section id="videos" class="bg-[#111111] py-24 scroll-reveal">
 
     <div class="max-w-screen-2xl mx-auto px-8">
 
         <!-- TITULO -->
-        <div class="text-center mb-20">
+        <div class="text-center mb-20 scroll-reveal">
+
             <span class="uppercase text-[#c8102e] text-sm tracking-[4px]">
                 Creadores Élite
             </span>
 
-            <h2 class="text-5xl font-bold logo-font mt-4">
+            <h2 class="text-5xl font-bold logo-font mt-4 neon-gold">
                 Videos
             </h2>
 
             <p class="text-gray-400 mt-5 text-lg">
                 Contenido oficial y de Arkamax
             </p>
+
         </div>
 
         <!-- GRID -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
 
             <!-- VIDEO 1 -->
-            <div class="group bg-[#181818] rounded-3xl overflow-hidden shadow-2xl border border-white/5 hover:border-[#f5c451]/30 transition-all duration-300">
+            <div class="group bg-[#181818] rounded-3xl overflow-hidden shadow-2xl border border-white/5 hover:border-[#f5c451]/30 transition-all duration-500 card-hover scroll-reveal">
 
                 <div class="relative overflow-hidden">
+
                     <img src="medellin-turbo.jpg"
                          alt="Rutas imposibles"
-                         class="w-full h-[260px] object-cover group-hover:scale-105 transition duration-500">
+                         class="w-full h-[260px] object-cover group-hover:scale-110 transition duration-700">
 
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+                    <!-- PLAY -->
+                    <div class="absolute inset-0 flex items-center justify-center">
+
+                        <div class="w-20 h-20 rounded-full bg-[#f5c451]/20 backdrop-blur-md border border-[#f5c451]/30 flex items-center justify-center text-[#f5c451] text-3xl group-hover:scale-110 transition duration-300">
+
+                            <i class="fas fa-play"></i>
+
+                        </div>
+
+                    </div>
+
                 </div>
 
                 <div class="p-7 flex flex-col h-[260px]">
@@ -1633,26 +2530,43 @@
                     </p>
 
                     <div class="mt-auto pt-8">
+
                         <a href="https://youtu.be/xILYK8gYbEc?si=gi1Dn4VSlOWVqUzr"
                            target="_blank"
                            class="btn-video">
 
                             ▶ Ver video
+
                         </a>
+
                     </div>
 
                 </div>
+
             </div>
 
             <!-- VIDEO 2 -->
-            <div class="group bg-[#181818] rounded-3xl overflow-hidden shadow-2xl border border-white/5 hover:border-[#f5c451]/30 transition-all duration-300">
+            <div class="group bg-[#181818] rounded-3xl overflow-hidden shadow-2xl border border-white/5 hover:border-[#f5c451]/30 transition-all duration-500 card-hover scroll-reveal">
 
                 <div class="relative overflow-hidden">
+
                     <img src="quibdo-tumaco.png"
                          alt="Rutas imposibles"
-                         class="w-full h-[260px] object-cover group-hover:scale-105 transition duration-500">
+                         class="w-full h-[260px] object-cover group-hover:scale-110 transition duration-700">
 
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+                    <!-- PLAY -->
+                    <div class="absolute inset-0 flex items-center justify-center">
+
+                        <div class="w-20 h-20 rounded-full bg-[#f5c451]/20 backdrop-blur-md border border-[#f5c451]/30 flex items-center justify-center text-[#f5c451] text-3xl group-hover:scale-110 transition duration-300">
+
+                            <i class="fas fa-play"></i>
+
+                        </div>
+
+                    </div>
+
                 </div>
 
                 <div class="p-7 flex flex-col h-[260px]">
@@ -1666,15 +2580,19 @@
                     </p>
 
                     <div class="mt-auto pt-8">
+
                         <a href="https://youtu.be/6klAmSI4lGo?si=-Ik-hAJqePxIseib"
                            target="_blank"
                            class="btn-video">
 
                             ▶ Ver video
+
                         </a>
+
                     </div>
 
                 </div>
+
             </div>
 
         </div>
@@ -1683,41 +2601,60 @@
 
     <!-- ESTILOS -->
     <style>
+
         .btn-video{
+
             width:100%;
             height:60px;
+
             display:flex;
             align-items:center;
             justify-content:center;
+
             background:#f5c451;
             color:black;
+
             font-size:18px;
             font-weight:700;
+
             border-radius:18px;
+
             text-decoration:none;
-            transition:0.3s;
-            box-shadow:0 10px 25px rgba(245,196,81,0.15);
+
+            transition:0.35s;
+
+            box-shadow:
+            0 10px 25px rgba(245,196,81,0.15);
+
         }
 
         .btn-video:hover{
-            transform:translateY(-3px);
+
+            transform:
+            translateY(-4px)
+            scale(1.02);
+
             background:#ffd56a;
-            box-shadow:0 15px 30px rgba(245,196,81,0.25);
+
+            box-shadow:
+            0 15px 35px rgba(245,196,81,0.30);
+
         }
+
     </style>
 
 </section>
 <!-- COMUNIDAD -->
-<section id="comunidad" class="max-w-screen-2xl mx-auto px-8 py-24">
+<section id="comunidad" class="max-w-screen-2xl mx-auto px-8 py-24 scroll-reveal">
 
     <!-- TITULO -->
-    <div class="text-center mb-20">
+    <div class="text-center mb-20 scroll-reveal">
 
         <span class="uppercase text-[#c8102e] text-sm tracking-[4px]">
             Nuestro equipo
         </span>
 
-        <h2 class="text-5xl font-bold logo-font mt-4">
+        <h2 class="text-5xl font-bold logo-font mt-4 neon-gold">
             Integrantes de La Élite
         </h2>
 
@@ -1731,7 +2668,7 @@
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-8">
 
         <!-- OWNER -->
-        <div class="member-card owner-card">
+        <div class="member-card owner-card scroll-reveal">
 
             <div class="member-image">
 
@@ -1754,7 +2691,7 @@
         </div>
 
         <!-- ADMIN -->
-        <div class="member-card admin-card">
+        <div class="member-card admin-card scroll-reveal">
 
             <div class="member-image">
 
@@ -1777,7 +2714,7 @@
         </div>
 
         <!-- ADMIN -->
-        <div class="member-card admin-card">
+        <div class="member-card admin-card scroll-reveal">
 
             <div class="member-image">
 
@@ -1800,8 +2737,8 @@
         </div>
 
         <!-- MIEMBROS -->
-        
-        <div class="member-card">
+
+        <div class="member-card scroll-reveal">
             <div class="member-image">
                 <img src="caballero.png" alt="Miembro">
                 <span class="member-badge elite-badge">Elite</span>
@@ -1809,7 +2746,7 @@
             <h4>Caballero</h4>
         </div>
 
-        <div class="member-card">
+        <div class="member-card scroll-reveal">
             <div class="member-image">
                 <img src="alex.png" alt="Miembro">
                 <span class="member-badge elite-badge">Elite</span>
@@ -1817,7 +2754,7 @@
             <h4>Alex</h4>
         </div>
 
-        <div class="member-card">
+        <div class="member-card scroll-reveal">
             <div class="member-image">
                 <img src="ciro.png" alt="Miembro">
                 <span class="member-badge elite-badge">Elite</span>
@@ -1825,7 +2762,7 @@
             <h4>Emmanuel Ciro</h4>
         </div>
 
-        <div class="member-card">
+        <div class="member-card scroll-reveal">
             <div class="member-image">
                 <img src="fran1.png" alt="Miembro">
                 <span class="member-badge elite-badge">Elite</span>
@@ -1833,7 +2770,7 @@
             <h4>Fran</h4>
         </div>
 
-        <div class="member-card">
+        <div class="member-card scroll-reveal">
             <div class="member-image">
                 <img src="logo-elite.png" alt="Miembro">
                 <span class="member-badge elite-badge">Elite</span>
@@ -1841,7 +2778,7 @@
             <h4>Jose Gómez</h4>
         </div>
 
-        <div class="member-card">
+        <div class="member-card scroll-reveal">
             <div class="member-image">
                 <img src="logo-elite.png" alt="Miembro">
                 <span class="member-badge elite-badge">Elite</span>
@@ -1849,7 +2786,7 @@
             <h4>Malcri</h4>
         </div>
 
-        <div class="member-card">
+        <div class="member-card scroll-reveal">
             <div class="member-image">
                 <img src="mecato.png" alt="Miembro">
                 <span class="member-badge elite-badge">Elite</span>
@@ -1857,7 +2794,7 @@
             <h4>Mecato</h4>
         </div>
 
-        <div class="member-card">
+        <div class="member-card scroll-reveal">
             <div class="member-image">
                 <img src="nico.png" alt="Miembro">
                 <span class="member-badge elite-badge">Elite</span>
@@ -1865,7 +2802,7 @@
             <h4>Nico</h4>
         </div>
 
-        <div class="member-card">
+        <div class="member-card scroll-reveal">
             <div class="member-image">
                 <img src="sierra.png" alt="Miembro">
                 <span class="member-badge elite-badge">Elite</span>
@@ -1873,7 +2810,7 @@
             <h4>Maicol Sierra</h4>
         </div>
 
-        <div class="member-card">
+        <div class="member-card scroll-reveal">
             <div class="member-image">
                 <img src="josetruck.png" alt="Miembro">
                 <span class="member-badge elite-badge">Elite</span>
@@ -1881,7 +2818,7 @@
             <h4>Jose Trucks</h4>
         </div>
 
-        <div class="member-card">
+        <div class="member-card scroll-reveal">
             <div class="member-image">
                 <img src="compa.png" alt="Miembro">
                 <span class="member-badge elite-badge">Elite</span>
@@ -1889,7 +2826,7 @@
             <h4>Compa</h4>
         </div>
 
-        <div class="member-card">
+        <div class="member-card scroll-reveal">
             <div class="member-image">
                 <img src="ñaño.png" alt="Miembro">
                 <span class="member-badge elite-badge">Elite</span>
@@ -1897,7 +2834,7 @@
             <h4>Ñaño</h4>
         </div>
 
-        <div class="member-card">
+        <div class="member-card scroll-reveal">
             <div class="member-image">
                 <img src="tavo.jpg" alt="Miembro">
                 <span class="member-badge elite-badge">Elite</span>
@@ -1905,7 +2842,7 @@
             <h4>Tavo</h4>
         </div>
 
-        <div class="member-card">
+        <div class="member-card scroll-reveal">
             <div class="member-image">
                 <img src="brayan.jpg" alt="Miembro">
                 <span class="member-badge elite-badge">Elite</span>
@@ -1913,7 +2850,7 @@
             <h4>Bam Ban</h4>
         </div>
 
-        <div class="member-card">
+        <div class="member-card scroll-reveal">
             <div class="member-image">
                 <img src="Benya.jpg" alt="Miembro">
                 <span class="member-badge elite-badge">Elite</span>
@@ -1921,7 +2858,7 @@
             <h4>Benya</h4>
         </div>
 
-        <div class="member-card">
+        <div class="member-card scroll-reveal">
             <div class="member-image">
                 <img src="sori.png" alt="Miembro">
                 <span class="member-badge elite-badge">Elite</span>
@@ -1929,7 +2866,7 @@
             <h4>Andres Soriano</h4>
         </div>
 
-        <div class="member-card">
+        <div class="member-card scroll-reveal">
             <div class="member-image">
                 <img src="logo-elite.png" alt="Miembro">
                 <span class="member-badge elite-badge">Elite</span>
@@ -1943,100 +2880,213 @@
     <style>
 
         .member-card{
-            background:#111111;
+
+            background:
+            linear-gradient(
+                145deg,
+                #161616,
+                #0f0f0f
+            );
+
             border:1px solid rgba(245,196,81,0.08);
+
             border-radius:28px;
+
             padding:26px 18px;
+
             text-align:center;
-            transition:0.35s;
+
+            transition:0.45s ease;
+
             position:relative;
+
             overflow:hidden;
+
+            backdrop-filter:blur(10px);
+
+        }
+
+        .member-card::before{
+
+            content:'';
+
+            position:absolute;
+
+            top:-100%;
+            left:-100%;
+
+            width:220%;
+            height:220%;
+
+            background:
+            linear-gradient(
+                120deg,
+                transparent,
+                rgba(245,196,81,0.06),
+                transparent
+            );
+
+            transform:rotate(25deg);
+
+            transition:0.8s;
+
+        }
+
+        .member-card:hover::before{
+
+            top:0;
+            left:0;
+
         }
 
         .member-card:hover{
-            transform:translateY(-8px);
+
+            transform:
+            translateY(-10px)
+            scale(1.03);
+
             border-color:rgba(245,196,81,0.35);
-            box-shadow:0 20px 40px rgba(0,0,0,0.35);
+
+            box-shadow:
+            0 20px 45px rgba(0,0,0,0.4),
+            0 0 30px rgba(245,196,81,0.12);
+
         }
 
         .member-image{
+
             width:120px;
             height:120px;
+
             margin:auto;
+
             position:relative;
+
         }
 
         .member-image img{
+
             width:100%;
             height:100%;
+
             object-fit:cover;
+
             border-radius:30px;
+
             border:4px solid rgba(245,196,81,0.5);
+
+            transition:0.4s ease;
+
+        }
+
+        .member-card:hover .member-image img{
+
+            transform:scale(1.05);
+
         }
 
         .owner-card .member-image img{
+
             border-color:#f5c451;
-            box-shadow:0 0 25px rgba(245,196,81,0.3);
+
+            box-shadow:
+            0 0 25px rgba(245,196,81,0.35);
+
         }
 
         .admin-card .member-image img{
+
             border-color:#c8102e;
-            box-shadow:0 0 25px rgba(200,16,46,0.25);
+
+            box-shadow:
+            0 0 25px rgba(200,16,46,0.28);
+
         }
 
         .member-badge{
+
             position:absolute;
+
             top:-6px;
             right:-6px;
+
             padding:6px 12px;
+
             border-radius:999px;
+
             font-size:11px;
             font-weight:700;
+
             letter-spacing:1px;
+
+            box-shadow:
+            0 10px 20px rgba(0,0,0,0.25);
+
         }
 
         .owner-badge{
+
             background:#f5c451;
             color:black;
+
         }
 
         .admin-badge{
+
             background:#c8102e;
             color:white;
+
         }
 
         .elite-badge{
+
             background:#efb810;
             color:black;
+
         }
 
         .member-card h4{
+
             color:white;
+
             margin-top:18px;
+
             font-size:17px;
             font-weight:700;
+
             line-height:1.4;
+
         }
 
         .member-card p{
+
             color:#f5c451;
+
             margin-top:6px;
+
             font-size:14px;
+
         }
 
         @media(max-width:640px){
 
             .member-image{
+
                 width:100px;
                 height:100px;
+
             }
 
             .member-card{
+
                 padding:20px 12px;
+
             }
 
             .member-card h4{
+
                 font-size:15px;
+
             }
 
         }
@@ -2045,147 +3095,1071 @@
 
 </section>
 <!-- CONTACTO / REDES -->
-<section id="contacto" class="bg-black py-20 border-t border-[#f5c451]/20">
-    <div class="max-w-screen-2xl mx-auto px-8">
+<section id="contacto" class="bg-black py-24 border-t border-[#f5c451]/10 relative overflow-hidden">
 
-        <div class="grid md:grid-cols-12 gap-12 items-center">
+    <!-- EFECTOS -->
+    <div class="absolute top-0 left-0 w-96 h-96 bg-[#f5c451]/10 blur-[140px] rounded-full"></div>
 
-            <!-- TEXTO -->
-            <div class="md:col-span-5">
-                <h2 class="text-5xl font-bold logo-font neon-gold">
-                    ¿Listo para rodar con los mejores?
-                </h2>
+    <div class="absolute bottom-0 right-0 w-[420px] h-[420px] bg-[#36024e]/20 blur-[160px] rounded-full"></div>
 
-                <p class="mt-6 text-2xl text-gray-300">
-                    Únete a la comunidad más exclusiva de American Truck Simulator en Mapkalo.
-                </p>
+    <div class="max-w-screen-2xl mx-auto px-8 relative z-10">
 
-                <!-- BOTONES -->
-                <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <!-- TITULO -->
+        <div class="text-center mb-20">
+
+            <span class="uppercase text-[#c8102e] text-sm tracking-[4px]">
+                Redes Oficiales
+            </span>
+
+            <h2 class="text-5xl md:text-6xl font-bold logo-font mt-4 neon-gold">
+                Contacto & Comunidad
+            </h2>
+
+            <p class="text-gray-400 mt-6 text-lg max-w-3xl mx-auto leading-relaxed">
+                Forma parte de una de las comunidades más grandes y activas
+                de ATS y ETS2 en Colombia. Vive convoyes legendarios,
+                eventos exclusivos y rutas inolvidables.
+            </p>
+
+        </div>
+
+        <!-- GRID -->
+        <div class="grid lg:grid-cols-12 gap-10 items-stretch">
+
+            <!-- IZQUIERDA -->
+            <div class="lg:col-span-5">
+
+                <div class="h-full bg-[#111111]/80 backdrop-blur-xl border border-[#f5c451]/15 rounded-[34px] p-10 shadow-2xl">
+
+                    <p class="uppercase text-[#f5c451] tracking-[4px] text-sm">
+                        La Elite ATS • ETS2
+                    </p>
+
+                    <h3 class="text-4xl font-bold text-white mt-5 leading-tight">
+                        ¿Listo para rodar con los mejores?
+                    </h3>
+
+                    <p class="mt-7 text-gray-300 text-lg leading-relaxed">
+                        Únete a nuestros convoyes, comparte rutas épicas
+                        y conviértete en parte de la hermandad más legendaria
+                        de la carretera virtual.
+                    </p>
+
+                    <!-- STATS -->
+                    <div class="grid grid-cols-2 gap-5 mt-10">
+
+                        <div class="bg-black/60 border border-[#f5c451]/10 rounded-2xl p-6 text-center">
+
+                            <h4 class="text-4xl font-bold text-[#f5c451]">
+                                65
+                            </h4>
+
+                            <p class="text-gray-400 mt-2 text-sm uppercase tracking-[2px]">
+                                Ranking Mundial
+                            </p>
+
+                        </div>
+
+                        <div class="bg-black/60 border border-[#f5c451]/10 rounded-2xl p-6 text-center">
+
+                            <h4 class="text-4xl font-bold text-[#f5c451]">
+                                ATS
+                            </h4>
+
+                            <p class="text-gray-400 mt-2 text-sm uppercase tracking-[2px]">
+                                Comunidad Elite
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- FRASE -->
+                    <div class="mt-10 border-l-4 border-[#f5c451] pl-6">
+
+                        <p class="text-2xl italic text-white leading-relaxed">
+                            “Donde las mejores rutas se convierten en leyenda”
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- DERECHA -->
+            <div class="lg:col-span-7">
+
+                <!-- REDES -->
+                <div class="grid sm:grid-cols-2 gap-6">
 
                     <!-- DISCORD -->
                     <a href="https://discord.gg/CSAJCSah"
                        target="_blank"
-                       class="h-20 flex items-center justify-center gap-3 bg-[#5865F2] hover:bg-[#4752c4] transition-all duration-300 text-white rounded-2xl px-6 text-lg font-semibold shadow-lg">
+                       class="social-card bg-[#5865F2]">
 
-                        <img src="discord.jpg" alt="discord" class="w-7 h-7 object-contain">
-                        <span>DISCORD</span>
+                        <img src="discord.jpg"
+                             alt="Discord"
+                             class="social-icon">
+
+                        <div>
+
+                            <h4 class="social-title">
+                                Discord Oficial
+                            </h4>
+
+                            <p class="social-text">
+                                Convoyes, eventos y comunidad activa.
+                            </p>
+
+                        </div>
+
                     </a>
 
                     <!-- TIKTOK -->
                     <a href="https://www.tiktok.com/@arkamax_24"
                        target="_blank"
-                       class="h-20 flex items-center justify-center gap-3 bg-[#111111] border border-[#25F4EE] hover:border-[#FE2C55] transition-all duration-300 text-white rounded-2xl px-6 text-lg font-semibold shadow-lg">
+                       class="social-card bg-[#111111] border border-[#25F4EE]/30">
 
-                        <img src="tiktok.webp" alt="tiktok" class="w-7 h-7 object-contain">
-                        <span>TIKTOK</span>
+                        <img src="tiktok.webp"
+                             alt="TikTok"
+                             class="social-icon">
+
+                        <div>
+
+                            <h4 class="social-title">
+                                TikTok
+                            </h4>
+
+                            <p class="social-text">
+                                Clips, rutas y momentos legendarios.
+                            </p>
+
+                        </div>
+
                     </a>
 
                     <!-- YOUTUBE -->
                     <a href="https://www.youtube.com/@ARKAMAX24"
                        target="_blank"
-                       class="h-20 flex items-center justify-center gap-3 bg-[#FF0000] hover:bg-[#cc0000] transition-all duration-300 text-white rounded-2xl px-6 text-lg font-semibold shadow-lg">
+                       class="social-card bg-[#FF0000]">
 
-                        <img src="youtube.png" alt="youtube" class="w-7 h-7 object-contain">
-                        <span>YOUTUBE</span>
+                        <img src="youtube.png"
+                             alt="YouTube"
+                             class="social-icon">
+
+                        <div>
+
+                            <h4 class="social-title">
+                                YouTube
+                            </h4>
+
+                            <p class="social-text">
+                                Videos oficiales y contenido ATS.
+                            </p>
+
+                        </div>
+
                     </a>
 
                     <!-- FACEBOOK -->
                     <a href="https://www.facebook.com/ARKAMAXOFICIAL"
                        target="_blank"
-                       class="h-20 flex items-center justify-center gap-3 bg-[#1877F2] hover:bg-[#145dbd] transition-all duration-300 text-white rounded-2xl px-6 text-lg font-semibold shadow-lg">
+                       class="social-card bg-[#1877F2]">
 
-                        <img src="facebook.png" alt="facebook" class="w-7 h-7 object-contain">
-                        <span>FACEBOOK</span>
+                        <img src="facebook.png"
+                             alt="Facebook"
+                             class="social-icon">
+
+                        <div>
+
+                            <h4 class="social-title">
+                                Facebook
+                            </h4>
+
+                            <p class="social-text">
+                                Noticias, publicaciones y comunidad.
+                            </p>
+
+                        </div>
+
                     </a>
+
                     <!-- WHATSAPP -->
                     <a href="https://whatsapp.com/channel/0029VbClP1KI7BeAPLzZcT3c"
                        target="_blank"
-                       class="h-20 flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#25D366] transition-all duration-300 text-white rounded-2xl px-6 text-lg font-semibold shadow-lg">
+                       class="social-card bg-[#25D366]">
 
-                        <img src="whatsapp.png" alt="youtube" class="w-7 h-7 object-contain">
-                        <span>WHATSAPP</span>
+                        <img src="whatsapp.png"
+                             alt="WhatsApp"
+                             class="social-icon">
+
+                        <div>
+
+                            <h4 class="social-title">
+                                WhatsApp
+                            </h4>
+
+                            <p class="social-text">
+                                Canal oficial y anuncios rápidos.
+                            </p>
+
+                        </div>
+
                     </a>
 
                     <!-- TRUCKSBOOK -->
                     <a href="https://trucksbook.eu/company/224432"
                        target="_blank"
-                       class="h-20 flex items-center justify-center gap-3 bg-[#00AEEF] hover:bg-[#008ac2] transition-all duration-300 text-white rounded-2xl px-6 text-lg font-semibold shadow-lg">
+                       class="social-card bg-[#00AEEF]">
 
-                        <img src="tb.jpg" alt="trucksbook" class="w-7 h-7 object-contain">
-                        <span>TRUCKSBOOK</span>
+                        <img src="tb.jpg"
+                             alt="TrucksBook"
+                             class="social-icon">
+
+                        <div>
+
+                            <h4 class="social-title">
+                                TrucksBook
+                            </h4>
+
+                            <p class="social-text">
+                                Estadísticas oficiales y ranking.
+                            </p>
+
+                        </div>
+
                     </a>
 
                 </div>
-            </div>
 
-            <!-- PANEL DERECHO -->
-            <div class="md:col-span-7 bg-[#111] rounded-3xl p-10 text-center border border-[#f5c451]/20 shadow-2xl">
+                <!-- PANEL -->
+                <div class="mt-8 bg-[#111111]/90 border border-[#f5c451]/15 rounded-[34px] p-10 text-center shadow-2xl">
 
-                <p class="uppercase text-sm mb-4 tracking-[3px] text-[#f5c451]">
-                    ¿Tienes dudas o quieres ser parte?
-                </p>
+                    <p class="uppercase text-[#f5c451] tracking-[4px] text-sm">
+                        Comunidad Oficial
+                    </p>
 
-                <p class="text-4xl leading-tight font-light text-white">
-                    Escríbenos por Discord.<br>
-                    La Elite te espera en la carretera.
-                </p>
+                    <h3 class="text-4xl font-bold text-white mt-5 leading-tight">
+                        La carretera nos une.
+                    </h3>
 
-                <div class="mt-10 w-32 h-1 bg-[#f5c451] mx-auto rounded-full"></div>
+                    <p class="text-gray-400 text-lg leading-relaxed mt-6 max-w-3xl mx-auto">
+                        Miles de kilómetros recorridos, convoyes inolvidables
+                        y una comunidad creada para verdaderos apasionados
+                        del transporte pesado virtual.
+                    </p>
+
+                </div>
 
             </div>
 
         </div>
 
     </div>
+
+    <!-- ESTILOS -->
+    <style>
+
+        .social-card{
+            min-height:130px;
+            border-radius:28px;
+            padding:28px;
+            display:flex;
+            align-items:center;
+            gap:22px;
+            transition:0.35s;
+            box-shadow:0 15px 35px rgba(0,0,0,0.25);
+        }
+
+        .social-card:hover{
+            transform:translateY(-6px) scale(1.02);
+            box-shadow:0 25px 50px rgba(0,0,0,0.35);
+        }
+
+        .social-icon{
+            width:68px;
+            height:68px;
+            border-radius:22px;
+            object-fit:cover;
+            background:white;
+            padding:10px;
+            flex-shrink:0;
+        }
+
+        .social-title{
+            color:white;
+            font-size:22px;
+            font-weight:800;
+        }
+
+        .social-text{
+            color:rgba(255,255,255,0.85);
+            margin-top:8px;
+            line-height:1.6;
+            font-size:15px;
+        }
+
+        @media(max-width:768px){
+
+            .social-card{
+                padding:24px;
+                border-radius:24px;
+            }
+
+            .social-title{
+                font-size:20px;
+            }
+
+            .social-icon{
+                width:58px;
+                height:58px;
+            }
+
+        }
+
+    </style>
+
 </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-black border-t border-[#f5c451]/10 py-12 text-center text-xs text-[#f5c451]/50">
-        <div class="max-w-screen-2xl mx-auto px-8">
-            © 2026 LA ELITE • Comunidad Oficial de American Truck Simulator - Mapkalo<br>
-            Pasión, respeto y kilómetros infinitos. Solo para los mejores.
-        </div>
-    </footer>
+ <!-- FOOTER -->
+<footer class="relative bg-[#050505] border-t border-[#f5c451]/10 overflow-hidden">
 
-    <script>
-        // Tailwind initialization
-        function initializeTailwind() {
-            return {
-                config(userConfig = {}) {
-                    return {
-                        content: [],
-                        theme: {
-                            extend: {}
-                        },
-                        plugins: [],
-                        ...userConfig,
-                    }
-                },
-                theme: {
-                    extend: {
-                        colors: {
-                            gold: '#f5c451',
-                            redelite: '#c8102e'
-                        }
-                    }
-                }
+    <!-- EFECTOS -->
+    <div class="absolute top-0 left-0 w-72 h-72 bg-[#f5c451]/5 blur-[120px] rounded-full"></div>
+
+    <div class="absolute bottom-0 right-0 w-80 h-80 bg-[#36024e]/10 blur-[140px] rounded-full"></div>
+
+    <div class="relative z-10 max-w-screen-2xl mx-auto px-8">
+
+        <!-- TOP -->
+        <div class="py-20 grid lg:grid-cols-12 gap-14">
+
+            <!-- IZQUIERDA -->
+            <div class="lg:col-span-5">
+
+                <!-- LOGO -->
+                <div class="flex items-center gap-5">
+
+                    <img src="logo-elite.png"
+                         alt="La Elite"
+                         class="h-20 drop-shadow-[0_0_20px_#f5c451]">
+
+                    <div>
+
+                        <h2 class="text-4xl font-bold logo-font text-[#f5c451] leading-none">
+                            LA ELITE
+                        </h2>
+
+                        <p class="uppercase tracking-[4px] text-xs text-gray-500 mt-2">
+                            ATS • ETS2
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- TEXTO -->
+                <p class="text-gray-400 leading-relaxed text-lg mt-8 max-w-xl">
+                    Comunidad oficial de American Truck Simulator y Euro Truck Simulator 2.
+                    Convoyes, rutas épicas, eventos legendarios y pasión por la carretera virtual.
+                </p>
+
+                <!-- FRASE -->
+                <div class="mt-10 border-l-4 border-[#f5c451] pl-6">
+
+                    <p class="text-2xl italic text-white leading-relaxed">
+                        “Pasión, respeto y kilómetros infinitos.”
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CENTRO -->
+            <div class="lg:col-span-3">
+
+                <h3 class="footer-title">
+                    Navegación
+                </h3>
+
+                <div class="footer-links">
+
+                    <a href="#inicio">
+                        Inicio
+                    </a>
+
+                    <a href="#requisitos">
+                        Requisitos
+                    </a>
+
+                    <a href="#empresa">
+                        Empresa
+                    </a>
+
+                    <a href="#ranking">
+                        Ranking
+                    </a>
+
+                    <a href="#eventos">
+                        Eventos
+                    </a>
+
+                    <a href="#videos">
+                        Videos
+                    </a>
+
+                    <a href="#comunidad">
+                        Comunidad
+                    </a>
+
+                    <a href="#contacto">
+                        Contacto
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- DERECHA -->
+            <div class="lg:col-span-4">
+
+                <h3 class="footer-title">
+                    Comunidad Oficial
+                </h3>
+
+                <!-- STATS -->
+                <div class="grid grid-cols-2 gap-5 mt-8">
+
+                    <div class="footer-stat">
+
+                        <h4>
+                            #65
+                        </h4>
+
+                        <p>
+                            Ranking Mundial
+                        </p>
+
+                    </div>
+
+                    <div class="footer-stat">
+
+                        <h4>
+                            ATS
+                        </h4>
+
+                        <p>
+                            Comunidad Elite
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- REDES -->
+                <div class="flex flex-wrap gap-4 mt-10">
+
+                    <a href="https://discord.gg/CSAJCSah"
+                       target="_blank"
+                       class="footer-social">
+
+                        <i class="fab fa-discord"></i>
+
+                    </a>
+
+                    <a href="https://www.youtube.com/@ARKAMAX24"
+                       target="_blank"
+                       class="footer-social">
+
+                        <i class="fab fa-youtube"></i>
+
+                    </a>
+
+                    <a href="https://www.tiktok.com/@arkamax_24"
+                       target="_blank"
+                       class="footer-social">
+
+                        <i class="fab fa-tiktok"></i>
+
+                    </a>
+
+                    <a href="https://www.facebook.com/ARKAMAXOFICIAL"
+                       target="_blank"
+                       class="footer-social">
+
+                        <i class="fab fa-facebook-f"></i>
+
+                    </a>
+
+                    <a href="https://trucksbook.eu/company/224432"
+                       target="_blank"
+                       class="footer-social">
+
+                        <i class="fas fa-truck"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- BOTTOM -->
+        <div class="border-t border-[#f5c451]/10 py-8 flex flex-col md:flex-row items-center justify-between gap-5">
+
+            <p class="text-sm text-gray-500 text-center md:text-left">
+                © 2026 LA ELITE • Comunidad Oficial ATS-ETS2 Mapkalo
+            </p>
+
+            <p class="text-sm text-[#f5c451]/60 text-center md:text-right">
+                Diseñado por ARKAMAX 🚛
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- ESTILOS -->
+    <style>
+
+        .footer-title{
+            color:white;
+            font-size:24px;
+            font-weight:800;
+            margin-bottom:28px;
+        }
+
+        .footer-links{
+            display:flex;
+            flex-direction:column;
+            gap:18px;
+        }
+
+        .footer-links a{
+            color:#9ca3af;
+            font-size:16px;
+            transition:0.3s;
+        }
+
+        .footer-links a:hover{
+            color:#f5c451;
+            transform:translateX(6px);
+        }
+
+        .footer-stat{
+            background:#111111;
+            border:1px solid rgba(245,196,81,0.12);
+            border-radius:24px;
+            padding:28px 20px;
+            text-align:center;
+            transition:0.35s;
+        }
+
+        .footer-stat:hover{
+            transform:translateY(-5px);
+            border-color:rgba(245,196,81,0.3);
+        }
+
+        .footer-stat h4{
+            color:#f5c451;
+            font-size:36px;
+            font-weight:800;
+        }
+
+        .footer-stat p{
+            color:#9ca3af;
+            margin-top:10px;
+            font-size:13px;
+            letter-spacing:2px;
+            text-transform:uppercase;
+        }
+
+        .footer-social{
+            width:60px;
+            height:60px;
+            border-radius:20px;
+            background:#111111;
+            border:1px solid rgba(245,196,81,0.12);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color:#f5c451;
+            font-size:22px;
+            transition:0.35s;
+        }
+
+        .footer-social:hover{
+            background:#f5c451;
+            color:black;
+            transform:translateY(-5px) scale(1.05);
+            box-shadow:0 15px 30px rgba(245,196,81,0.2);
+        }
+
+        @media(max-width:768px){
+
+            .footer-title{
+                margin-top:10px;
             }
+
         }
-        
-        // Contador online dinámico
-        function startOnlineCounter() {
-            let count = 187
-            const counterEl = document.getElementById('online-counter')
-            
-            setInterval(() => {
-                count += Math.floor(Math.random() * 7) - 2
-                if (count < 140) count = 140
-                counterEl.textContent = count
-            }, 8000)
-        }
-        
+
+    </style>
+
+</footer>
+
 <script>
+
+    // Tailwind initialization
+    function initializeTailwind() {
+
+        return {
+
+            config(userConfig = {}) {
+
+                return {
+
+                    content: [],
+                    theme: {
+                        extend: {}
+                    },
+                    plugins: [],
+                    ...userConfig,
+
+                }
+
+            },
+
+            theme: {
+
+                extend: {
+
+                    colors: {
+
+                        gold:'#f5c451',
+                        redelite:'#c8102e'
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+<script>
+
+    /* =========================
+       CONTADOR ONLINE
+    ========================= */
+
+    function startOnlineCounter() {
+
+        let count = 187;
+
+        const counterEl =
+        document.getElementById('online-counter');
+
+        // Verificar existencia
+        if (!counterEl) return;
+
+        setInterval(() => {
+
+            count += Math.floor(Math.random() * 7) - 2;
+
+            // Límite mínimo
+            if (count < 140) {
+                count = 140;
+            }
+
+            // Límite máximo
+            if (count > 260) {
+                count = 260;
+            }
+
+            counterEl.textContent = count;
+
+        }, 8000);
+
+    }
+
+    /* =========================
+       MÚSICA
+    ========================= */
+
+    let musicPlaying = false;
+
+    function toggleMusic() {
+
+        const audio =
+        document.getElementById('ambient-music');
+
+        const icon =
+        document.getElementById('music-icon');
+
+        // Verificar audio
+        if (!audio) {
+
+            console.error(
+                '❌ No existe #ambient-music'
+            );
+
+            return;
+
+        }
+
+        // Verificar source
+        const source =
+        audio.querySelector('source');
+
+        if (!source || source.src === '') {
+
+            alert(
+                '🎵 Agrega un archivo .mp3 válido.'
+            );
+
+            return;
+
+        }
+
+        // PAUSAR
+        if (musicPlaying) {
+
+            audio.pause();
+
+            if (icon) {
+
+                icon.classList.remove('fa-pause');
+                icon.classList.add('fa-music');
+
+            }
+
+        }
+
+        // REPRODUCIR
+        else {
+
+            audio.play()
+
+            .then(() => {
+
+                if (icon) {
+
+                    icon.classList.remove('fa-music');
+                    icon.classList.add('fa-pause');
+
+                }
+
+            })
+
+            .catch((error) => {
+
+                console.error(
+                    '❌ Error audio:',
+                    error
+                );
+
+                alert(
+                    '⚠️ El navegador bloqueó la reproducción automática.'
+                );
+
+            });
+
+        }
+
+        musicPlaying = !musicPlaying;
+
+    }
+
+    /* =========================
+       MENÚ MOBILE
+    ========================= */
+
+    function toggleMobileMenu() {
+
+        const menu =
+        document.getElementById('mobile-menu');
+
+        if (!menu) return;
+
+        menu.classList.toggle('hidden');
+
+    }
+
+    /* =========================
+       EVENTOS
+    ========================= */
+
+    function joinEvent(btn) {
+
+        if (!btn) return;
+
+        btn.innerHTML =
+        '✅ CONFIRMADO';
+
+        btn.style.background =
+        'linear-gradient(to right, #22c55e, #86efac)';
+
+        btn.style.color = '#000';
+
+        btn.style.cursor = 'default';
+
+        btn.disabled = true;
+
+        setTimeout(() => {
+
+            alert(
+                '🚛 Has sido añadido al convoy.'
+            );
+
+        }, 600);
+
+    }
+
+</script>
+<!-- =========================
+     SCROLL ANIMATIONS
+========================= -->
+
+<script>
+
+    function initScrollAnimations() {
+
+        const elements =
+        document.querySelectorAll(
+            'section, .member-card, .event-card'
+        );
+
+        // Verificar elementos
+        if (!elements.length) return;
+
+        const observer =
+        new IntersectionObserver((entries) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.style.opacity = '1';
+
+                    entry.target.style.transform =
+                    'translateY(0)';
+
+                    // Dejar de observar
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        }, {
+
+            threshold: 0.12
+
+        });
+
+        elements.forEach(el => {
+
+            el.style.opacity = '0';
+
+            el.style.transform =
+            'translateY(45px)';
+
+            el.style.transition =
+            'all 0.8s ease';
+
+            observer.observe(el);
+
+        });
+
+    }
+
+    /* =========================
+       POPUP NOTICIAS
+    ========================= */
+
+    function openNews() {
+
+        const overlay =
+        document.getElementById('newsOverlay');
+
+        if (!overlay) return;
+
+        overlay.classList.add('show');
+
+    }
+
+    function closeNews() {
+
+        const overlay =
+        document.getElementById('newsOverlay');
+
+        if (!overlay) return;
+
+        overlay.classList.remove('show');
+
+    }
+
+    /* =========================
+       INICIALIZAR TODO
+    ========================= */
+
+    window.addEventListener('load', () => {
+
+        // Tailwind
+        if (
+            typeof initializeTailwind === 'function'
+        ) {
+
+            initializeTailwind();
+
+        }
+
+        // Counter
+        startOnlineCounter();
+
+        // Animaciones
+        initScrollAnimations();
+
+        // Popup automático
+        setTimeout(() => {
+
+            openNews();
+
+        }, 1800);
+
+        console.log(
+            '%c🚛 LA ELITE cargado correctamente.',
+            'color:#f5c451; font-size:14px; font-weight:bold;'
+        );
+
+    });
+
+</script>
+
+<!-- =========================
+     POPUP DE NOTICIAS
+========================= -->
+
+<div class="news-overlay" id="newsOverlay">
+
+    <div class="news-box">
+
+        <!-- BOTON CERRAR -->
+        <button
+            class="close-btn"
+            onclick="closeNews()"
+            aria-label="Cerrar noticias">
+
+            ✕
+
+        </button>
+
+        <!-- HEADER -->
+        <div class="news-header">
+
+            <p class="news-tag">
+                Última noticia
+            </p>
+
+            <h2 class="news-title">
+                📰 Noticias
+            </h2>
+
+        </div>
+
+        <!-- CONTENIDO -->
+        <div class="news-content">
+
+            <!-- IMAGEN -->
+            <div class="news-image">
+
+                <img
+                    src="costa.png"
+                    alt="Evento de La Elite"
+                    class="w-full h-full object-cover">
+
+            </div>
+
+            <!-- TEXTO -->
+            <div class="news-text">
+
+                <h3>
+                    Partido con La Elite
+                </h3>
+
+                <p>
+                    Únete al evento especial junto
+                    a la comunidad oficial de
+                    La Elite y disfruta el partido
+                    en Discord.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================
+     SCRIPT PRINCIPAL
+========================= -->
+<script>
+
+/* =========================
+   TAILWIND
+========================= */
+
+function initializeTailwind() {
+
+    return {
+
+        config(userConfig = {}) {
+
+            return {
+                content: [],
+                theme: {
+                    extend: {}
+                },
+                plugins: [],
+                ...userConfig,
+            };
+
+        }
+
+    };
+
+}
+
+/* =========================
+   CONTADOR ONLINE
+========================= */
+
+function startOnlineCounter() {
+
+    let count = 187;
+
+    const counterEl =
+    document.getElementById('online-counter');
+
+    if (!counterEl) return;
+
+    setInterval(() => {
+
+        count += Math.floor(Math.random() * 7) - 2;
+
+        if (count < 140) count = 140;
+
+        counterEl.textContent = count;
+
+    }, 8000);
+
+}
 
 /* =========================
    MÚSICA
@@ -2195,52 +4169,61 @@ let musicPlaying = false;
 
 function toggleMusic() {
 
-    const audio = document.getElementById('ambient-music');
-    const icon = document.getElementById('music-icon');
+    const audio =
+    document.getElementById('ambient-music');
 
-    // Verificar que exista el audio
-    if (!audio) {
-        console.error('❌ No existe el elemento #ambient-music');
-        return;
-    }
+    const icon =
+    document.getElementById('music-icon');
 
-    // Verificar si tiene source válido
+    if (!audio) return;
+
     const source = audio.querySelector('source');
 
     if (!source || source.src === '') {
-        alert('🎵 Agrega un archivo .mp3 válido en el audio.');
+
+        alert('🎵 Agrega un archivo .mp3 válido.');
         return;
+
     }
 
-    // PLAY / PAUSE
     if (musicPlaying) {
 
         audio.pause();
 
         if (icon) {
+
             icon.classList.remove('fa-pause');
             icon.classList.add('fa-music');
+
         }
 
     } else {
 
         audio.play()
+
         .then(() => {
 
             if (icon) {
+
                 icon.classList.remove('fa-music');
                 icon.classList.add('fa-pause');
+
             }
 
         })
-        .catch((error) => {
-            console.error('❌ Error reproduciendo audio:', error);
-            alert('⚠️ El navegador bloqueó la reproducción automática.');
+
+        .catch(() => {
+
+            alert(
+                '⚠️ El navegador bloqueó la reproducción automática.'
+            );
+
         });
 
     }
 
     musicPlaying = !musicPlaying;
+
 }
 
 /* =========================
@@ -2249,11 +4232,13 @@ function toggleMusic() {
 
 function toggleMobileMenu() {
 
-    const menu = document.getElementById('mobile-menu');
+    const menu =
+    document.getElementById('mobile-menu');
 
     if (!menu) return;
 
     menu.classList.toggle('hidden');
+
 }
 
 /* =========================
@@ -2265,8 +4250,12 @@ function joinEvent(btn) {
     if (!btn) return;
 
     btn.innerHTML = '✅ CONFIRMADO';
-    btn.style.background = 'linear-gradient(to right, #22c55e, #86efac)';
+
+    btn.style.background =
+    'linear-gradient(to right, #22c55e, #86efac)';
+
     btn.style.color = '#000';
+
     btn.disabled = true;
 
     setTimeout(() => {
@@ -2274,42 +4263,93 @@ function joinEvent(btn) {
         alert('🚛 Has sido añadido al convoy.');
 
     }, 600);
+
 }
 
 /* =========================
-   SCROLL ANIMATION
+   SCROLL ANIMATIONS
 ========================= */
 
 function initScrollAnimations() {
 
-    const sections = document.querySelectorAll('section');
+    const elements =
+    document.querySelectorAll(
+        'section, .member-card, .event-card'
+    );
 
-    const observer = new IntersectionObserver((entries) => {
+    const observer =
+    new IntersectionObserver((entries) => {
 
         entries.forEach(entry => {
 
             if (entry.isIntersecting) {
 
                 entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+
+                entry.target.style.transform =
+                'translateY(0)';
 
             }
 
         });
 
     }, {
-        threshold: 0.15
+        threshold: 0.12
     });
 
-    sections.forEach(section => {
+    elements.forEach(el => {
 
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(40px)';
-        section.style.transition = 'all 0.8s ease';
+        el.style.opacity = '0';
 
-        observer.observe(section);
+        el.style.transform =
+        'translateY(45px)';
+
+        el.style.transition =
+        'all 0.8s ease';
+
+        observer.observe(el);
 
     });
+
+}
+
+/* =========================
+   POPUP NOTICIAS
+========================= */
+
+function openNews() {
+
+    const overlay =
+    document.getElementById('newsOverlay');
+
+    const openBtn =
+    document.getElementById('openBtn');
+
+    if (!overlay) return;
+
+    overlay.classList.add('show');
+
+    if (openBtn) {
+        openBtn.classList.remove('show-btn');
+    }
+
+}
+
+function closeNews() {
+
+    const overlay =
+    document.getElementById('newsOverlay');
+
+    const openBtn =
+    document.getElementById('openBtn');
+
+    if (!overlay) return;
+
+    overlay.classList.remove('show');
+
+    if (openBtn) {
+        openBtn.classList.add('show-btn');
+    }
 
 }
 
@@ -2319,18 +4359,20 @@ function initScrollAnimations() {
 
 window.addEventListener('load', () => {
 
-    // Tailwind
     if (typeof initializeTailwind === 'function') {
         initializeTailwind();
     }
 
-    // Contador online
-    if (typeof startOnlineCounter === 'function') {
-        startOnlineCounter();
-    }
+    startOnlineCounter();
 
-    // Scroll animations
     initScrollAnimations();
+
+    // Mostrar popup automáticamente
+    setTimeout(() => {
+
+        openNews();
+
+    }, 1800);
 
     console.log(
         '%c🚛 LA ELITE cargado correctamente.',
@@ -2340,17 +4382,24 @@ window.addEventListener('load', () => {
 });
 
 </script>
-<!-- POPUP DE NOTICIAS -->
+
+<!-- =========================
+     POPUP DE NOTICIAS
+========================= -->
+
 <div class="news-overlay" id="newsOverlay">
 
     <div class="news-box">
 
         <!-- BOTON CERRAR -->
-        <button class="close-btn" onclick="closeNews()">
+        <button class="close-btn"
+                onclick="closeNews()">
+
             ✕
+
         </button>
 
-        <!-- TITULO -->
+        <!-- HEADER -->
         <div class="news-header">
 
             <p class="news-tag">
@@ -2370,7 +4419,7 @@ window.addEventListener('load', () => {
             <div class="news-image">
 
                 <img src="costa.png"
-                     alt="Miembro"
+                     alt="Evento"
                      class="w-full h-full object-cover">
 
             </div>
@@ -2379,11 +4428,12 @@ window.addEventListener('load', () => {
             <div class="news-text">
 
                 <h3>
-                    Partido con La Élite
+                    Partido con La Elite
                 </h3>
 
                 <p>
-                    Únete al evento especial junto a la comunidad oficial de La Elite.
+                    Únete al evento especial junto a la comunidad oficial
+                    de La Elite y disfruta el partido en Discord.
                 </p>
 
             </div>
@@ -2394,218 +4444,321 @@ window.addEventListener('load', () => {
 
 </div>
 
-<!-- BOTÓN REABRIR -->
-<button class="open-news" id="openBtn" onclick="openNews()">
+<!-- =========================
+     BOTÓN REABRIR
+========================= -->
+
+<button class="open-news"
+        id="openBtn"
+        onclick="openNews()">
+
     📰 Noticias
+
 </button>
 
-<!-- SCRIPT -->
-<script>
+<!-- =========================
+     ESTILOS
+========================= -->
 
-const overlay = document.getElementById('newsOverlay');
-const openBtn = document.getElementById('openBtn');
-
-function closeNews() {
-    overlay.classList.remove('show');
-    openBtn.classList.add('show-btn');
-}
-
-function openNews() {
-    overlay.classList.add('show');
-    openBtn.classList.remove('show-btn');
-}
-
-/* ABRIR AUTOMÁTICAMENTE */
-window.onload = () => {
-    overlay.classList.add('show');
-};
-
-</script>
-
-<!-- ESTILOS -->
 <style>
 
 /* OVERLAY */
+
 .news-overlay{
+
     position:fixed;
     inset:0;
+
     background:rgba(0,0,0,0.75);
+
     backdrop-filter:blur(6px);
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     z-index:99999;
 
     opacity:0;
     pointer-events:none;
+
     transition:0.35s;
+
 }
 
 /* MOSTRAR */
+
 .news-overlay.show{
+
     opacity:1;
     pointer-events:auto;
+
 }
 
 /* CAJA */
+
 .news-box{
+
     width:90%;
     max-width:420px;
+
     background:#111111;
+
     border:1px solid rgba(245,196,81,0.2);
+
     border-radius:28px;
+
     overflow:hidden;
+
     position:relative;
-    box-shadow:0 25px 60px rgba(0,0,0,0.45);
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,0.45);
 
     animation:popupShow 0.35s ease;
+
 }
 
 /* HEADER */
+
 .news-header{
+
     padding:28px 28px 10px;
+
     text-align:center;
+
 }
 
 .news-tag{
+
     color:#f5c451;
+
     font-size:11px;
+
     letter-spacing:3px;
+
     text-transform:uppercase;
+
     margin-bottom:10px;
+
 }
 
 .news-title{
+
     color:white;
+
     font-size:34px;
+
     font-weight:800;
+
 }
 
 /* CONTENIDO */
+
 .news-content{
+
     padding:0 28px 30px;
+
 }
 
 /* IMAGEN */
+
 .news-image{
+
     width:100%;
     height:220px;
+
     overflow:hidden;
+
     border-radius:22px;
+
     border:2px solid rgba(245,196,81,0.2);
+
 }
 
 /* TEXTO */
+
 .news-text{
+
     margin-top:22px;
+
     text-align:center;
+
 }
 
 .news-text h3{
+
     color:white;
+
     font-size:24px;
+
     font-weight:700;
+
 }
 
 .news-text p{
+
     color:#cfcfcf;
+
     margin-top:10px;
+
     line-height:1.6;
+
     font-size:15px;
+
 }
 
 /* BOTON CERRAR */
+
 .close-btn{
+
     position:absolute;
+
     top:15px;
     right:15px;
+
     width:42px;
     height:42px;
+
     border:none;
+
     border-radius:50%;
+
     background:#1f1f1f;
+
     color:white;
+
     font-size:18px;
+
     cursor:pointer;
+
     transition:0.3s;
+
     z-index:10;
+
 }
 
 .close-btn:hover{
+
     background:#c8102e;
+
     transform:rotate(90deg);
+
 }
 
 /* BOTON ABRIR */
+
 .open-news{
+
     position:fixed;
+
     bottom:25px;
     left:25px;
+
     width:170px;
     height:58px;
+
     border:none;
+
     border-radius:18px;
+
     background:#f5c451;
+
     color:black;
+
     font-size:16px;
+
     font-weight:700;
+
     cursor:pointer;
+
     z-index:9999;
 
     display:none;
+
     transition:0.3s;
 
-    box-shadow:0 15px 35px rgba(245,196,81,0.2);
+    box-shadow:
+    0 15px 35px rgba(245,196,81,0.2);
+
 }
 
 .open-news:hover{
+
     transform:translateY(-3px);
+
     background:#ffd56a;
+
 }
 
 /* MOSTRAR BOTON */
+
 .open-news.show-btn{
+
     display:block;
+
 }
 
 /* ANIMACION */
+
 @keyframes popupShow{
+
     from{
+
         opacity:0;
-        transform:scale(0.85) translateY(20px);
+
+        transform:
+        scale(0.85)
+        translateY(20px);
+
     }
 
     to{
+
         opacity:1;
-        transform:scale(1) translateY(0);
+
+        transform:
+        scale(1)
+        translateY(0);
+
     }
+
 }
 
 /* RESPONSIVE */
+
 @media(max-width:500px){
 
     .news-box{
+
         max-width:92%;
+
     }
 
     .news-title{
+
         font-size:28px;
+
     }
 
     .news-image{
+
         height:180px;
+
     }
 
     .open-news{
+
         width:150px;
         height:54px;
+
         font-size:15px;
+
     }
 
 }
 
 </style>
 
-</script>
 </body>
 </html>
