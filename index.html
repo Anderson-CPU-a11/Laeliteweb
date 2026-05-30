@@ -3655,51 +3655,6 @@ function startOnlineCounter() {
 
 </script>
 
-/* =========================
-   MENÚ MOBILE
-========================= */
-
-function toggleMobileMenu() {
-
-    const menu =
-    document.getElementById('mobile-menu');
-
-    if (!menu) return;
-
-    menu.classList.toggle('hidden');
-
-}
-
-/* =========================
-   EVENTOS
-========================= */
-
-function joinEvent(btn) {
-
-    if (!btn) return;
-
-    btn.textContent =
-    '✅ CONFIRMADO';
-
-    btn.style.background =
-    'linear-gradient(to right, #22c55e, #86efac)';
-
-    btn.style.color = '#000';
-
-    btn.style.cursor = 'default';
-
-    btn.disabled = true;
-
-    setTimeout(() => {
-
-        alert(
-            '🚛 Has sido añadido al convoy.'
-        );
-
-    }, 600);
-
-}
-
 </script>
 <!-- =========================
      SCROLL ANIMATIONS
