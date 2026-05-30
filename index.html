@@ -3786,10 +3786,9 @@ window.addEventListener('load', () => {
     <div class="news-box">
 
         <!-- BOTON CERRAR -->
-        <button
-            class="close-btn"
-            onclick="closeNews()"
-            aria-label="Cerrar noticias">
+        <button class="close-btn"
+                onclick="closeNews()"
+                aria-label="Cerrar noticias">
 
             ✕
 
@@ -3811,17 +3810,6 @@ window.addEventListener('load', () => {
         <!-- CONTENIDO -->
         <div class="news-content">
 
-            <!-- IMAGEN -->
-            <div class="news-image">
-
-                <img
-                    src="costa.png"
-                    alt="Evento de La Elite"
-                    class="w-full h-full object-cover"
-                    loading="lazy">
-
-            </div>
-
             <!-- NOTICIA 1 -->
             <div class="news-text">
 
@@ -3830,16 +3818,11 @@ window.addEventListener('load', () => {
                 </h3>
 
                 <p>
-                    Únete al evento especial junto
-                    a la comunidad oficial de
-                    La Elite y disfruta el partido
-                    en Discord.
+                    Únete al evento especial junto a la comunidad oficial
+                    de La Elite y disfruta el partido en Discord.
                 </p>
 
             </div>
-
-            <!-- SEPARADOR -->
-            <div style="margin:15px 0; height:1px; background:rgba(245,196,81,0.2);"></div>
 
             <!-- NOTICIA 2 -->
             <div class="news-text">
@@ -3865,14 +3848,13 @@ window.addEventListener('load', () => {
     </div>
 
 </div>
-
 <!-- =========================
      SCRIPT PRINCIPAL
 ========================= -->
 <script>
 
 /* =========================
-   TAILWIND
+   TAILWIND (CONFIG BASE)
 ========================= */
 
 function initializeTailwind() {
@@ -3887,7 +3869,7 @@ function initializeTailwind() {
                     extend: {}
                 },
                 plugins: [],
-                ...userConfig,
+                ...userConfig
             };
 
         }
@@ -3904,8 +3886,7 @@ function startOnlineCounter() {
 
     let count = 187;
 
-    const counterEl =
-    document.getElementById('online-counter');
+    const counterEl = document.getElementById('online-counter');
 
     if (!counterEl) return;
 
@@ -3923,29 +3904,26 @@ function startOnlineCounter() {
 
 }
 
+</script>
 
-/* =========================
+<!-- =========================
    SCROLL ANIMATIONS
-========================= */
+========================= -->
 
 function initScrollAnimations() {
 
-const elements =
-document.querySelectorAll(
-    '.member-card, .event-card, .news-box'
-);
+    const elements = document.querySelectorAll(
+        '.member-card, .event-card, .news-box'
+    );
 
-    const observer =
-    new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver((entries) => {
 
         entries.forEach(entry => {
 
             if (entry.isIntersecting) {
 
                 entry.target.style.opacity = '1';
-
-                entry.target.style.transform =
-                'translateY(0)';
+                entry.target.style.transform = 'translateY(0)';
 
             }
 
@@ -3958,12 +3936,100 @@ document.querySelectorAll(
     elements.forEach(el => {
 
         el.style.opacity = '0';
+        el.style.transform = 'translateY(45px)';
+        el.style.transition = 'all 0.8s ease';
 
-        el.style.transform =
-        'translateY(45px)';
+        observer.observe(el);
 
-        el.style.transition =
-        'all 0.8s ease';
+    });
+
+}
+
+</script>
+
+<!-- =========================
+   SCRIPT PRINCIPAL
+========================= -->
+
+<script>
+
+function initializeTailwind() {
+
+    return {
+
+        config(userConfig = {}) {
+
+            return {
+                content: [],
+                theme: { extend: {} },
+                plugins: [],
+                ...userConfig
+            };
+
+        }
+
+    };
+
+}
+
+/* =========================
+   CONTADOR ONLINE
+========================= */
+
+function startOnlineCounter() {
+
+    let count = 187;
+
+    const counterEl = document.getElementById('online-counter');
+
+    if (!counterEl) return;
+
+    counterEl.textContent = count;
+
+    setInterval(() => {
+
+        count += Math.floor(Math.random() * 7) - 2;
+
+        if (count < 140) count = 140;
+
+        counterEl.textContent = count;
+
+    }, 8000);
+
+}
+
+/* =========================
+   SCROLL ANIMATIONS
+========================= */
+
+function initScrollAnimations() {
+
+    const elements = document.querySelectorAll(
+        '.member-card, .event-card'
+    );
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.12
+    });
+
+    elements.forEach(el => {
+
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(45px)';
+        el.style.transition = 'all 0.8s ease';
 
         observer.observe(el);
 
@@ -3977,37 +4043,27 @@ document.querySelectorAll(
 
 function openNews() {
 
-    const overlay =
-    document.getElementById('newsOverlay');
-
-    const openBtn =
-    document.getElementById('openBtn');
+    const overlay = document.getElementById('newsOverlay');
+    const openBtn = document.getElementById('openBtn');
 
     if (!overlay) return;
 
     overlay.classList.add('show');
 
-    if (openBtn) {
-        openBtn.classList.remove('show-btn');
-    }
+    if (openBtn) openBtn.classList.remove('show-btn');
 
 }
 
 function closeNews() {
 
-    const overlay =
-    document.getElementById('newsOverlay');
-
-    const openBtn =
-    document.getElementById('openBtn');
+    const overlay = document.getElementById('newsOverlay');
+    const openBtn = document.getElementById('openBtn');
 
     if (!overlay) return;
 
     overlay.classList.remove('show');
 
-    if (openBtn) {
-        openBtn.classList.add('show-btn');
-    }
+    if (openBtn) openBtn.classList.add('show-btn');
 
 }
 
@@ -4022,16 +4078,10 @@ window.addEventListener('load', () => {
     }
 
     startOnlineCounter();
-
     initScrollAnimations();
 
-    // Mostrar popup automáticamente
     setTimeout(() => {
-
-        if (typeof openNews === 'function') {
-            openNews();
-        }
-
+        openNews();
     }, 1800);
 
     console.log(
@@ -4044,7 +4094,7 @@ window.addEventListener('load', () => {
 </script>
 
 <!-- =========================
-     POPUP DE NOTICIAS
+   POPUP DE NOTICIAS
 ========================= -->
 
 <div class="news-overlay" id="newsOverlay">
@@ -4052,48 +4102,47 @@ window.addEventListener('load', () => {
     <div class="news-box">
 
         <!-- BOTON CERRAR -->
-        <button class="close-btn"
-                onclick="closeNews()">
-
+        <button class="close-btn" onclick="closeNews()">
             ✕
-
         </button>
 
         <!-- HEADER -->
         <div class="news-header">
 
-            <p class="news-tag">
-                Última noticia
-            </p>
+            <p class="news-tag">Última noticia</p>
 
-            <h2 class="news-title">
-                📰 Noticias
-            </h2>
+            <h2 class="news-title">📰 Noticias</h2>
 
         </div>
 
         <!-- CONTENIDO -->
         <div class="news-content">
 
-            <!-- IMAGEN -->
-            <div class="news-image">
-
-                <img src="costa.png"
-                     alt="Evento"
-                     class="w-full h-full object-cover">
-
-            </div>
-
-            <!-- TEXTO -->
+            <!-- NOTICIA 1 -->
             <div class="news-text">
 
-                <h3>
-                    Partido con La Elite
-                </h3>
+                <h3>Partido con La Elite</h3>
 
                 <p>
                     Únete al evento especial junto a la comunidad oficial
                     de La Elite y disfruta el partido en Discord.
+                </p>
+
+            </div>
+
+            <!-- NOTICIA 2 -->
+            <div class="news-text">
+
+                <h3>Información importante</h3>
+
+                <p>
+                    En <strong>LA ÉLITE</strong> existen dos niveles:
+                    la <strong>empresa</strong>, abierta a todos, y
+                    <strong>LA ÉLITE</strong>, exclusiva para miembros comprometidos.
+                </p>
+
+                <p style="margin-top:10px; font-weight:800; text-transform:uppercase; color:#f5c451; letter-spacing:2px;">
+                    Este criterio es fundamental para el ingreso
                 </p>
 
             </div>
@@ -4105,15 +4154,11 @@ window.addEventListener('load', () => {
 </div>
 
 <!-- =========================
-     BOTÓN REABRIR
+   BOTÓN REABRIR
 ========================= -->
 
-<button class="open-news"
-        id="openBtn"
-        onclick="openNews()">
-
+<button class="open-news" id="openBtn" onclick="openNews()">
     📰 Noticias
-
 </button>
 
 <!-- =========================
@@ -4123,7 +4168,6 @@ window.addEventListener('load', () => {
 <style>
 
 /* OVERLAY */
-
 .news-overlay{
 
     position:fixed;
@@ -4147,7 +4191,6 @@ window.addEventListener('load', () => {
 }
 
 /* MOSTRAR */
-
 .news-overlay.show{
 
     opacity:1;
@@ -4155,20 +4198,19 @@ window.addEventListener('load', () => {
 
 }
 
-/* CAJA */
-
+/* CAJA (IMPORTANTE: EVITA QUE SE ALARGUE) */
 .news-box{
 
     width:90%;
     max-width:420px;
+    max-height:85vh;      /* 👈 clave */
+    overflow:hidden;
 
     background:#111111;
 
     border:1px solid rgba(245,196,81,0.2);
 
     border-radius:28px;
-
-    overflow:hidden;
 
     position:relative;
 
@@ -4179,8 +4221,17 @@ window.addEventListener('load', () => {
 
 }
 
-/* HEADER */
+/* CONTENIDO CON SCROLL */
+.news-content{
 
+    padding:0 28px 30px;
+
+    max-height:65vh;     /* 👈 clave */
+    overflow-y:auto;     /* 👈 scroll interno */
+
+}
+
+/* HEADER */
 .news-header{
 
     padding:28px 28px 10px;
@@ -4213,16 +4264,7 @@ window.addEventListener('load', () => {
 
 }
 
-/* CONTENIDO */
-
-.news-content{
-
-    padding:0 28px 30px;
-
-}
-
 /* IMAGEN */
-
 .news-image{
 
     width:100%;
@@ -4237,7 +4279,6 @@ window.addEventListener('load', () => {
 }
 
 /* TEXTO */
-
 .news-text{
 
     margin-top:22px;
@@ -4267,8 +4308,17 @@ window.addEventListener('load', () => {
     font-size:15px;
 
 }
-/* BOTON CERRAR */
 
+/* SEPARADOR (MEJORADO) */
+.news-separator{
+
+    margin:18px 0;
+    height:1px;
+    background:rgba(245,196,81,0.25);
+
+}
+
+/* BOTON CERRAR */
 .close-btn{
 
     position:absolute;
@@ -4305,133 +4355,124 @@ window.addEventListener('load', () => {
 
 }
 
-/* BOTON ABRIR */
-
-.open-news{
-
-    position:fixed;
-
-    bottom:25px;
-    left:25px;
-
-    width:170px;
-    height:58px;
-
-    border:none;
-
-    border-radius:18px;
-
-    background:#f5c451;
-
-    color:black;
-
-    font-size:16px;
-
-    font-weight:700;
-
-    cursor:pointer;
-
-    z-index:9999;
-
-    display:none;
-
-    transition:0.3s;
-
-    box-shadow:
-    0 15px 35px rgba(245,196,81,0.2);
-
-}
-
-.open-news:hover{
-
-    transform:translateY(-3px);
-
-    background:#ffd56a;
-
-}
-
-/* MOSTRAR BOTON */
-
-.open-news.show-btn{
-
-    display:block;
-
-}
-
 /* ANIMACION */
-
 @keyframes popupShow{
 
     from{
-
         opacity:0;
-
-        transform:
-        scale(0.85)
-        translateY(20px);
-
+        transform:scale(0.85) translateY(20px);
     }
 
     to{
-
         opacity:1;
-
-        transform:
-        scale(1)
-        translateY(0);
-
-    }
-
-}
-
-/* RESPONSIVE */
-
-@media(max-width:500px){
-
-    .news-box{
-
-        max-width:92%;
-
-    }
-
-    .news-title{
-
-        font-size:28px;
-
-    }
-
-    .news-image{
-
-        height:180px;
-
-    }
-
-    .open-news{
-
-        width:150px;
-        height:54px;
-
-        font-size:15px;
-
+        transform:scale(1) translateY(0);
     }
 
 }
 
 </style>
+
+<!-- =========================
+     POPUP DE NOTICIAS
+========================= -->
+
+<div class="news-overlay" id="newsOverlay">
+
+    <div class="news-box">
+
+        <button class="close-btn" onclick="closeNews()">✕</button>
+
+        <div class="news-header">
+
+            <p class="news-tag">Última noticia</p>
+
+            <h2 class="news-title">📰 Noticias</h2>
+
+        </div>
+
+        <div class="news-content">
+
+            <!-- NOTICIA 1 -->
+            <div class="news-image">
+                <img src="costa.png" class="w-full h-full object-cover">
+            </div>
+
+            <div class="news-text">
+                <h3>Partido con La Elite</h3>
+                <p>Únete al evento especial junto a la comunidad oficial de La Elite y disfruta el partido en Discord.</p>
+            </div>
+
+            <div class="news-separator"></div>
+
+            <!-- NOTICIA 2 -->
+            <div class="news-text">
+                <h3>Información importante</h3>
+                <p>
+                    En <strong>LA ÉLITE</strong> existen dos niveles dentro de la comunidad:
+                    la <strong>empresa</strong> y <strong>LA ÉLITE</strong> grupo exclusivo.
+                </p>
+
+                <p style="margin-top:12px; font-weight:800; color:#f5c451; letter-spacing:2px;">
+                    Este criterio es fundamental para el ingreso
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================
+     JS
+========================= -->
+
+<script>
+
+function openNews(){
+
+    const overlay = document.getElementById('newsOverlay');
+    if(!overlay) return;
+
+    overlay.classList.add('show');
+
+}
+
+function closeNews(){
+
+    const overlay = document.getElementById('newsOverlay');
+    if(!overlay) return;
+
+    overlay.classList.remove('show');
+
+}
+
+window.addEventListener('load', () => {
+
+    setTimeout(() => {
+        openNews();
+    }, 1800);
+
+});
+
+</script>
+            
 <script>
 
 window.addEventListener('scroll', () => {
 
     const navbar = document.getElementById('navbar');
 
-    if(window.scrollY > 50){
+    if (!navbar) return;
+
+    if (window.scrollY > 50) {
 
         navbar.classList.add(
             'bg-black/90',
             'shadow-2xl'
         );
 
-    }else{
+    } else {
 
         navbar.classList.remove(
             'bg-black/90',
@@ -4443,5 +4484,6 @@ window.addEventListener('scroll', () => {
 });
 
 </script>
+
 </body>
 </html>
