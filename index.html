@@ -21,6 +21,19 @@
     <meta name="theme-color"
           content="#000000">
 
+    <!-- OPEN GRAPH -->
+    <meta property="og:title"
+          content="LA ELITE | Comunidad ATS • ETS2">
+
+    <meta property="og:description"
+          content="Convoyes, eventos, rutas legendarias y la mejor comunidad ATS-ETS2 de Colombia.">
+
+    <meta property="og:image"
+          content="logo-elite.png">
+
+    <meta property="og:type"
+          content="website">
+
     <!-- TITULO -->
     <title>
         ARKAMAX | LA ELITE Comunidad ATS-ETS2
@@ -31,6 +44,14 @@
           type="image/png"
           href="logo-elite.png">
 
+    <!-- PRECONNECT FUENTES -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
     <!-- TAILWIND -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -38,7 +59,7 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- FUENTES + ESTILOS -->
+    <!-- GOOGLE FONTS -->
     <style>
 
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap');
@@ -68,21 +89,25 @@
 ========================= */
 
 *{
+
     margin:0;
     padding:0;
 
     box-sizing:border-box;
 
     transition:
-    color 0.25s ease,
-    background-color 0.25s ease,
-    border-color 0.25s ease,
-    transform 0.25s ease,
-    opacity 0.25s ease;
+    color .25s ease,
+    background-color .25s ease,
+    border-color .25s ease,
+    transform .25s ease,
+    opacity .25s ease;
+
 }
 
 html{
+
     scroll-behavior:smooth;
+
 }
 
 body{
@@ -99,6 +124,7 @@ body{
     overflow-x:hidden;
 
     font-family:'Inter', sans-serif;
+
 }
 
 /* =========================
@@ -106,18 +132,24 @@ body{
 ========================= */
 
 img{
+
     user-select:none;
     -webkit-user-drag:none;
+
 }
 
 a{
+
     text-decoration:none;
     color:inherit;
+
 }
 
 button{
+
     border:none;
     outline:none;
+
 }
 
 /* =========================
@@ -125,7 +157,9 @@ button{
 ========================= */
 
 .logo-font{
+
     font-family:'Playfair Display', serif;
+
 }
 
 /* =========================
@@ -136,8 +170,8 @@ button{
 
     background:
     linear-gradient(
-        rgba(0,0,0,0.76),
-        rgba(0,0,0,0.88)
+        rgba(0,0,0,.76),
+        rgba(0,0,0,.88)
     ),
     url('ruta_aguardientera.png');
 
@@ -145,16 +179,21 @@ button{
     background-position:center;
 
     animation:roadAnimation 80s linear infinite;
+
 }
 
 @keyframes roadAnimation{
 
     0%{
+
         background-position:0% 50%;
+
     }
 
     100%{
+
         background-position:100% 50%;
+
     }
 
 }
@@ -166,17 +205,17 @@ button{
 .neon-gold{
 
     text-shadow:
-    0 0 8px rgba(245,196,81,0.7),
-    0 0 18px rgba(245,196,81,0.55),
-    0 0 35px rgba(245,196,81,0.35);
+    0 0 8px rgba(245,196,81,.7),
+    0 0 18px rgba(245,196,81,.55),
+    0 0 35px rgba(245,196,81,.35);
 
 }
 
 .neon-purple{
 
     text-shadow:
-    0 0 8px rgba(91,10,122,0.7),
-    0 0 18px rgba(91,10,122,0.45);
+    0 0 8px rgba(91,10,122,.7),
+    0 0 18px rgba(91,10,122,.45);
 
 }
 
@@ -185,7 +224,9 @@ button{
 ========================= */
 
 .card-hover{
-    transition:0.35s ease;
+
+    transition:.35s ease;
+
 }
 
 .card-hover:hover{
@@ -195,122 +236,14 @@ button{
     scale(1.02);
 
     box-shadow:
-    0 20px 45px rgba(0,0,0,0.4),
-    0 0 25px rgba(245,196,81,0.12);
+    0 20px 45px rgba(0,0,0,.4),
+    0 0 25px rgba(245,196,81,.12);
 
-}
-
-/* =========================
-   NAVBAR
-========================= */
-
-nav{
-
-    position:sticky;
-    top:0;
-
-    z-index:99999;
-
-    background:
-    rgba(0,0,0,0.78);
-
-    backdrop-filter:blur(14px);
-
-    border-bottom:
-    1px solid rgba(245,196,81,0.15);
-
-    box-shadow:
-    0 10px 40px rgba(0,0,0,0.35);
-}
-
-nav *{
-    position:relative;
-    z-index:2;
-}
-
-.navbar-container{
-
-    max-width:1700px;
-
-    margin:auto;
-
-    padding:18px 32px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    gap:20px;
-}
-
-/* =========================
-   LOGO
-========================= */
-
-.logo-box{
-
-    display:flex;
-    align-items:center;
-
-    gap:14px;
-}
-
-.logo-box img{
-
-    height:58px;
-    width:auto;
-
-    filter:
-    drop-shadow(0 0 12px rgba(245,196,81,0.25));
-
-    transition:0.3s ease;
-}
-
-.logo-box:hover img{
-
-    transform:scale(1.04);
-
-    filter:
-    drop-shadow(0 0 18px rgba(245,196,81,0.4));
-
-}
-
-.logo-title{
-
-    font-size:34px;
-    font-weight:800;
-
-    color:var(--gold);
-
-    letter-spacing:-1px;
-    line-height:1;
-
-    text-shadow:
-    0 0 12px rgba(245,196,81,0.2);
-}
-
-.logo-sub{
-
-    font-size:11px;
-
-    color:rgba(245,196,81,0.7);
-
-    letter-spacing:3px;
-
-    margin-top:4px;
 }
 
 /* =========================
    NAV LINKS
 ========================= */
-
-.nav-menu{
-
-    display:flex;
-    align-items:center;
-
-    gap:32px;
-}
 
 .nav-link{
 
@@ -324,9 +257,12 @@ nav *{
     text-transform:uppercase;
     letter-spacing:2px;
 
-    opacity:0.92;
+    opacity:.92;
 
     padding-bottom:6px;
+
+    transition:.3s ease;
+
 }
 
 .nav-link:hover{
@@ -334,6 +270,7 @@ nav *{
     color:var(--gold);
 
     opacity:1;
+
 }
 
 .nav-link::after{
@@ -345,21 +282,30 @@ nav *{
     left:0;
     bottom:-2px;
 
-    width:0%;
+    width:0;
     height:2px;
 
     border-radius:999px;
 
     background:var(--gold);
 
-    box-shadow:
-    0 0 12px var(--gold);
+    box-shadow:0 0 12px var(--gold);
 
-    transition:0.3s ease;
+    transition:.3s ease;
+
 }
 
-.nav-link:hover::after{
+.nav-link:hover::after,
+.active-link::after{
+
     width:100%;
+
+}
+
+.active-link{
+
+    color:var(--gold);
+
 }
 
 /* =========================
@@ -371,6 +317,7 @@ nav *{
     position:relative;
 
     display:inline-block;
+
 }
 
 .section-title::after{
@@ -395,14 +342,17 @@ nav *{
     left:50%;
 
     transform:translateX(-50%);
+
 }
 
 /* =========================
-   GALERIA
+   GALERÍA
 ========================= */
 
 .gallery-img{
-    transition:0.45s ease;
+
+    transition:.45s ease;
+
 }
 
 .gallery-img:hover{
@@ -412,6 +362,7 @@ nav *{
     filter:
     brightness(1.12)
     contrast(1.08);
+
 }
 
 /* =========================
@@ -431,8 +382,45 @@ nav *{
 
     overflow:hidden;
 
-    border:
-    1px solid rgba(245,196,81,0.08);
+    border:1px solid rgba(245,196,81,.08);
+
+    transition:.35s ease;
+
+}
+
+.event-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:rgba(245,196,81,.25);
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.35);
+
+}
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+.scroll-reveal{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:
+    opacity 1s ease,
+    transform 1s ease;
+
+}
+
+.scroll-reveal.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
 }
 
 /* =========================
@@ -444,8 +432,7 @@ nav *{
     position:fixed;
     inset:0;
 
-    background:
-    rgba(0,0,0,0.78);
+    background:rgba(0,0,0,0.78);
 
     backdrop-filter:blur(6px);
 
@@ -458,14 +445,15 @@ nav *{
     opacity:0;
     pointer-events:none;
 
-    transition:0.35s;
+    transition:opacity .35s ease;
+
 }
 
 .news-overlay.show{
 
     opacity:1;
-
     pointer-events:auto;
+
 }
 
 .news-box{
@@ -475,21 +463,18 @@ nav *{
 
     background:#111111;
 
+    border:1px solid rgba(245,196,81,0.15);
     border-radius:28px;
 
-    border:
-    1px solid rgba(245,196,81,0.15);
-
     overflow:hidden;
-
     position:relative;
 
     box-shadow:
     0 25px 60px rgba(0,0,0,0.5),
     0 0 30px rgba(245,196,81,0.06);
 
-    animation:
-    popupShow 0.35s ease;
+    animation:popupShow .35s ease;
+
 }
 
 @keyframes popupShow{
@@ -499,8 +484,9 @@ nav *{
         opacity:0;
 
         transform:
-        scale(0.85)
+        scale(.85)
         translateY(20px);
+
     }
 
     to{
@@ -510,6 +496,7 @@ nav *{
         transform:
         scale(1)
         translateY(0);
+
     }
 
 }
@@ -519,11 +506,15 @@ nav *{
 ========================= */
 
 ::-webkit-scrollbar{
+
     width:10px;
+
 }
 
 ::-webkit-scrollbar-track{
+
     background:#0d0d0d;
+
 }
 
 ::-webkit-scrollbar-thumb{
@@ -536,44 +527,31 @@ nav *{
     );
 
     border-radius:999px;
+
 }
 
 ::-webkit-scrollbar-thumb:hover{
+
     background:var(--gold-light);
+
 }
 
 /* =========================
    RESPONSIVE
 ========================= */
 
-@media(max-width:900px){
-
-    .nav-menu{
-        display:none;
-    }
-
-}
-
 @media(max-width:768px){
 
     .section-title{
+
         font-size:38px !important;
-    }
 
-    .logo-title{
-        font-size:28px;
-    }
-
-    .logo-box img{
-        height:48px;
-    }
-
-    .navbar-container{
-        padding:16px 20px;
     }
 
     .hero-bg{
+
         background-position:center;
+
     }
 
 }
@@ -581,42 +559,39 @@ nav *{
 @media(max-width:640px){
 
     .section-title{
+
         font-size:32px !important;
-    }
 
-    .logo-title{
-        font-size:24px;
-    }
-
-    .logo-sub{
-        font-size:10px;
-        letter-spacing:2px;
     }
 
 }
 
 /* =========================
-   ANIMACIONES SCROLL
+   SCROLL REVEAL
 ========================= */
 
 .scroll-reveal{
 
     opacity:0;
 
-    transform:
-    translateY(60px);
+    transform:translateY(60px);
 
     transition:
-    opacity 1s ease,
-    transform 1s ease;
+    opacity .9s ease,
+    transform .9s ease;
+
+    will-change:
+    opacity,
+    transform;
+
 }
 
 .scroll-reveal.show{
 
     opacity:1;
 
-    transform:
-    translateY(0);
+    transform:translateY(0);
+
 }
 
 </style>
@@ -626,71 +601,8 @@ nav *{
 <body>
 
 <!-- NAVBAR -->
-<nav>
-
-    <div class="navbar-container">
-
-        <!-- LOGO -->
-        <div class="logo-box scroll-reveal">
-
-            <img src="logo-elite.png" alt="La Elite">
-
-            <div>
-
-                <h1 class="logo-title logo-font neon-gold">
-                    LA ELITE
-                </h1>
-
-                <p class="logo-sub">
-                    ATS • ETS2
-                </p>
-
-            </div>
-
-        </div>
-
-        <!-- MENU -->
-        <div class="nav-menu scroll-reveal">
-
-            <a href="#inicio" class="nav-link">
-                Inicio
-            </a>
-
-            <a href="#requisitos" class="nav-link">
-                Requisitos
-            </a>
-
-            <a href="#empresa" class="nav-link">
-                Empresa
-            </a>
-
-            <a href="#anuncios" class="nav-link">
-                Anuncios
-            </a>
-
-            <a href="#eventos" class="nav-link">
-                Eventos
-            </a>
-
-            <a href="#videos" class="nav-link">
-                Videos
-            </a>
-
-            <a href="#comunidad" class="nav-link">
-                Comunidad
-            </a>
-
-            <a href="#contacto" class="nav-link">
-                Contacto
-            </a>
-
-        </div>
-
-    </div>
-
-</nav>
-<!-- NAVBAR -->
-<nav class="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-xl border-b border-[#f5c451]/10">
+<nav id="navbar"
+     class="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-xl border-b border-[#f5c451]/10 transition-all duration-300">
 
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-8">
 
@@ -698,7 +610,7 @@ nav *{
 
             <!-- LOGO -->
             <a href="#inicio"
-               class="flex items-center gap-4 group scroll-reveal">
+               class="flex items-center gap-4 group">
 
                 <img src="logo-elite.png"
                      alt="La Elite"
@@ -719,7 +631,7 @@ nav *{
             </a>
 
             <!-- MENÚ DESKTOP -->
-            <div class="hidden lg:flex items-center gap-8 text-[13px] font-semibold uppercase tracking-[2px] scroll-reveal">
+            <div class="hidden lg:flex items-center gap-8 text-[13px] font-semibold uppercase tracking-[2px]">
 
                 <a href="#inicio" class="nav-link active-link">
                     Inicio
@@ -756,12 +668,13 @@ nav *{
             </div>
 
             <!-- DERECHA -->
-            <div class="flex items-center gap-4 scroll-reveal">
+            <div class="flex items-center gap-4">
 
-                <!-- BOTON DISCORD -->
+                <!-- DISCORD -->
                 <a href="https://discord.gg/CSAJCSah"
                    target="_blank"
-                   class="discord-btn hidden md:flex items-center gap-3 bg-[#5865F2] hover:bg-[#f5c451] hover:text-black text-white px-5 py-3 rounded-2xl font-bold text-sm transition duration-300 shadow-lg">
+                   rel="noopener noreferrer"
+                   class="discord-btn hidden md:flex">
 
                     <img src="discord-negro.png"
                          alt="Discord"
@@ -773,9 +686,10 @@ nav *{
 
                 </a>
 
-                <!-- BOTON MOBILE -->
+                <!-- MENÚ MÓVIL -->
                 <button onclick="toggleMobileMenu()"
-                        class="mobile-btn lg:hidden text-[#f5c451] text-2xl hover:scale-110 transition duration-300">
+                        aria-label="Abrir menú"
+                        class="mobile-btn lg:hidden">
 
                     <i class="fas fa-bars"></i>
 
@@ -788,71 +702,137 @@ nav *{
     </div>
 
 </nav>
+            <!-- MENÚ DESKTOP -->
+<div class="hidden lg:flex items-center gap-8 text-[13px] font-semibold uppercase tracking-[2px]">
 
+    <a href="#inicio" class="nav-link active-link">
+        Inicio
+    </a>
+
+    <a href="#requisitos" class="nav-link">
+        Requisitos
+    </a>
+
+    <a href="#empresa" class="nav-link">
+        Empresa
+    </a>
+
+    <a href="#anuncios" class="nav-link">
+        Anuncios
+    </a>
+
+    <a href="#eventos" class="nav-link">
+        Eventos
+    </a>
+
+    <a href="#videos" class="nav-link">
+        Videos
+    </a>
+
+    <a href="#comunidad" class="nav-link">
+        Comunidad
+    </a>
+
+    <a href="#contacto" class="nav-link">
+        Contacto
+    </a>
+
+</div>
+
+<!-- DERECHA -->
+<div class="flex items-center gap-4">
+
+    <!-- BOTÓN DISCORD -->
+    <a href="https://discord.gg/CSAJCSah"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="discord-btn hidden md:flex">
+
+        <img src="discord-negro.png"
+             alt="Discord"
+             class="w-5 h-5">
+
+        <span>
+            ÚNETE AL DISCORD
+        </span>
+
+    </a>
+
+    <!-- BOTÓN MOBILE -->
+    <button onclick="toggleMobileMenu()"
+            aria-label="Abrir menú"
+            class="mobile-btn lg:hidden">
+
+        <i class="fas fa-bars"></i>
+
+    </button>
+
+</div>
 <!-- MOBILE MENU -->
 <div id="mobile-menu"
      class="hidden lg:hidden bg-[#0b0b0b]/95 backdrop-blur-xl border-t border-[#f5c451]/10">
 
-    <div class="px-8 py-8 flex flex-col gap-4 scroll-reveal">
+    <div class="px-8 py-8 flex flex-col gap-4">
 
         <a href="#inicio"
            onclick="toggleMobileMenu()"
-           class="mobile-link text-white hover:text-[#f5c451] transition duration-300 uppercase tracking-[2px] font-semibold py-2">
+           class="mobile-link">
             Inicio
         </a>
 
         <a href="#requisitos"
            onclick="toggleMobileMenu()"
-           class="mobile-link text-white hover:text-[#f5c451] transition duration-300 uppercase tracking-[2px] font-semibold py-2">
+           class="mobile-link">
             Requisitos
         </a>
 
         <a href="#empresa"
            onclick="toggleMobileMenu()"
-           class="mobile-link text-white hover:text-[#f5c451] transition duration-300 uppercase tracking-[2px] font-semibold py-2">
+           class="mobile-link">
             Empresa
         </a>
 
         <a href="#ranking"
            onclick="toggleMobileMenu()"
-           class="mobile-link text-white hover:text-[#f5c451] transition duration-300 uppercase tracking-[2px] font-semibold py-2">
+           class="mobile-link">
             Ranking
         </a>
 
         <a href="#anuncios"
            onclick="toggleMobileMenu()"
-           class="mobile-link text-white hover:text-[#f5c451] transition duration-300 uppercase tracking-[2px] font-semibold py-2">
+           class="mobile-link">
             Anuncios
         </a>
 
         <a href="#eventos"
            onclick="toggleMobileMenu()"
-           class="mobile-link text-white hover:text-[#f5c451] transition duration-300 uppercase tracking-[2px] font-semibold py-2">
+           class="mobile-link">
             Eventos
         </a>
 
         <a href="#videos"
            onclick="toggleMobileMenu()"
-           class="mobile-link text-white hover:text-[#f5c451] transition duration-300 uppercase tracking-[2px] font-semibold py-2">
+           class="mobile-link">
             Videos
         </a>
 
         <a href="#comunidad"
            onclick="toggleMobileMenu()"
-           class="mobile-link text-white hover:text-[#f5c451] transition duration-300 uppercase tracking-[2px] font-semibold py-2">
+           class="mobile-link">
             Comunidad
         </a>
 
         <a href="#contacto"
            onclick="toggleMobileMenu()"
-           class="mobile-link text-white hover:text-[#f5c451] transition duration-300 uppercase tracking-[2px] font-semibold py-2">
+           class="mobile-link">
             Contacto
         </a>
 
-        <!-- BOTON MOBILE DISCORD -->
+        <!-- DISCORD -->
         <a href="https://discord.gg/CSAJCSah"
            target="_blank"
-           class="discord-btn-mobile mt-4 flex items-center justify-center gap-3 bg-[#5865F2] hover:bg-[#f5c451] hover:text-black text-white font-bold py-4 rounded-2xl transition duration-300 shadow-lg">
+           rel="noopener noreferrer"
+           class="discord-btn-mobile">
 
             <img src="discord-negro.png"
                  alt="Discord"
@@ -868,7 +848,7 @@ nav *{
 
 </div>
 
-<!-- ESTILOS -->
+<!-- ESTILOS NAVBAR -->
 <style>
 
     /* =========================
@@ -878,7 +858,7 @@ nav *{
     .nav-link{
         color:#d4d4d4;
         position:relative;
-        transition:0.3s ease;
+        transition:all .3s ease;
     }
 
     .nav-link:hover{
@@ -886,24 +866,38 @@ nav *{
     }
 
     .nav-link::after{
+
         content:'';
+
         position:absolute;
+
         left:0;
         bottom:-8px;
-        width:0%;
+
+        width:0;
+
         height:2px;
+
         background:#f5c451;
-        box-shadow:0 0 12px rgba(245,196,81,0.6);
-        transition:0.3s ease;
+
+        box-shadow:
+        0 0 12px rgba(245,196,81,.6);
+
+        transition:width .3s ease;
+
     }
 
     .nav-link:hover::after,
     .active-link::after{
+
         width:100%;
+
     }
 
     .active-link{
+
         color:#f5c451;
+
     }
 
     /* =========================
@@ -911,25 +905,42 @@ nav *{
     ========================= */
 
     .discord-btn{
+
         height:52px;
+
         padding:0 22px;
+
         border-radius:18px;
+
         background:#5865F2;
-        color:white;
+
+        color:#fff;
+
         font-size:13px;
         font-weight:700;
+
         display:flex;
         align-items:center;
         gap:10px;
-        transition:0.35s ease;
-        box-shadow:0 10px 30px rgba(88,101,242,0.2);
+
+        transition:.35s ease;
+
+        box-shadow:
+        0 10px 30px rgba(88,101,242,.2);
+
     }
 
     .discord-btn:hover{
+
         transform:translateY(-3px);
+
         background:#f5c451;
-        color:black;
-        box-shadow:0 15px 35px rgba(245,196,81,0.25);
+
+        color:#000;
+
+        box-shadow:
+        0 15px 35px rgba(245,196,81,.25);
+
     }
 
     /* =========================
@@ -937,20 +948,32 @@ nav *{
     ========================= */
 
     .mobile-btn{
+
         width:52px;
         height:52px;
+
         border-radius:16px;
+
         background:#111111;
-        border:1px solid rgba(245,196,81,0.2);
+
+        border:1px solid rgba(245,196,81,.2);
+
         color:#f5c451;
+
         font-size:20px;
-        transition:0.3s ease;
+
+        transition:.3s ease;
+
     }
 
     .mobile-btn:hover{
+
         background:#f5c451;
-        color:black;
+
+        color:#000;
+
         transform:scale(1.05);
+
     }
 
     /* =========================
@@ -958,25 +981,40 @@ nav *{
     ========================= */
 
     .mobile-link{
+
         height:58px;
+
         display:flex;
         align-items:center;
         justify-content:center;
+
         border-radius:18px;
+
         background:#111111;
-        border:1px solid rgba(245,196,81,0.08);
-        color:white;
+
+        border:1px solid rgba(245,196,81,.08);
+
+        color:#fff;
+
         font-size:15px;
         font-weight:600;
+
         text-transform:uppercase;
+
         letter-spacing:2px;
-        transition:0.3s ease;
+
+        transition:.3s ease;
+
     }
 
     .mobile-link:hover{
+
         background:#f5c451;
-        color:black;
+
+        color:#000;
+
         transform:translateY(-2px);
+
     }
 
     /* =========================
@@ -984,48 +1022,86 @@ nav *{
     ========================= */
 
     .discord-btn-mobile{
+
         margin-top:12px;
+
         height:60px;
+
         border-radius:20px;
+
         background:#5865F2;
-        color:white;
+
+        color:#fff;
+
         display:flex;
         align-items:center;
         justify-content:center;
         gap:12px;
+
         font-size:15px;
         font-weight:700;
-        transition:0.3s ease;
-        box-shadow:0 12px 30px rgba(88,101,242,0.2);
+
+        transition:.3s ease;
+
+        box-shadow:
+        0 12px 30px rgba(88,101,242,.2);
+
     }
 
     .discord-btn-mobile:hover{
+
         background:#f5c451;
-        color:black;
+
+        color:#000;
+
         transform:translateY(-3px);
+
     }
 
     /* =========================
-       SCROLL ANIMATION
+       SCROLL REVEAL
     ========================= */
 
     .scroll-reveal{
+
         opacity:0;
+
         transform:translateY(50px);
+
         transition:
-        opacity 1s ease,
-        transform 1s ease;
+        opacity .8s ease,
+        transform .8s ease;
+
+        will-change:
+        opacity,
+        transform;
+
     }
 
     .scroll-reveal.show{
+
         opacity:1;
+
         transform:translateY(0);
+
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media(max-width:768px){
+
+        .nav-link::after{
+            display:none;
+        }
+
     }
 
 </style>
 <!-- HERO - INICIO -->
 <section id="inicio"
-         class="hero-bg min-h-screen flex items-center relative overflow-hidden scroll-reveal">
+         class="hero-bg min-h-screen flex items-center relative overflow-hidden">
 
     <!-- OVERLAY -->
     <div class="absolute inset-0 bg-black/60 backdrop-blur-[2px]"></div>
@@ -1045,10 +1121,10 @@ nav *{
         <div class="grid md:grid-cols-2 gap-20 items-center min-h-screen py-24">
 
             <!-- IZQUIERDA -->
-            <div class="space-y-10 scroll-reveal">
+            <div class="space-y-10">
 
                 <!-- LOGO -->
-                <div class="flex justify-center md:justify-start">
+                <div class="flex justify-center md:justify-start scroll-reveal">
 
                     <img src="logo-elite.png"
                          alt="La Elite"
@@ -1057,9 +1133,9 @@ nav *{
                 </div>
 
                 <!-- TITULOS -->
-                <div class="text-center md:text-left">
+                <div class="text-center md:text-left scroll-reveal">
 
-                    <h1 class="text-7xl md:text-[110px] font-serif logo-font tracking-[-5px] leading-none text-white">
+                    <h1 class="text-6xl md:text-[110px] font-serif logo-font tracking-[-5px] leading-none text-white">
 
                         <span class="text-[#f5c451] drop-shadow-[0_0_20px_#f5c451]">
                             LA ELITE
@@ -1067,7 +1143,7 @@ nav *{
 
                     </h1>
 
-                    <p class="text-3xl md:text-5xl mt-5 text-[#f5c451] font-light tracking-[3px] neon-gold">
+                    <p class="text-2xl md:text-5xl mt-5 text-[#f5c451] font-light tracking-[3px] neon-gold">
                         ATS • ETS2
                     </p>
 
@@ -1082,82 +1158,8 @@ nav *{
                 </div>
 
                 <!-- BOTONES -->
-                <div class="flex flex-col sm:flex-row gap-5 justify-center md:justify-start">
-
-                    <a href="#contacto"
-                       class="px-10 py-5 rounded-2xl bg-[#f5c451] hover:bg-[#ffd56a] text-black font-bold uppercase tracking-[2px] transition duration-300 shadow-[0_0_30px_rgba(245,196,81,0.25)] hover:scale-105 text-center">
-
-                        ÚNETE AL CONVOY
-
-                    </a>
-
-                    <a href="#videos"
-                       class="px-10 py-5 rounded-2xl border border-[#f5c451]/30 hover:border-[#f5c451] hover:bg-[#f5c451]/10 text-[#f5c451] font-bold uppercase tracking-[2px] transition duration-300 text-center">
-
-                        VER VIDEOS
-
-                    </a>
-
-                </div>
-
-                <!-- INFO -->
-                <div class="bg-white/[0.03] border border-white/10 backdrop-blur-xl rounded-[28px] p-8 max-w-2xl">
-
-                    <p class="text-[#f5c451] uppercase tracking-[3px] text-xs mb-4">
-                        Comunidad Premium ATS • ETS2
-                    </p>
-
-                    <h2 class="text-3xl font-bold mb-5">
-                        Somos La Elite
-                    </h2>
-
-                    <p class="text-gray-300 leading-relaxed text-[16px]">
-
-                        La comunidad premium de American Truck Simulator y Euro Truck Simulator 2 enfocada en rutas épicas, convoyes profesionales y eventos legendarios dentro del mapa Mapkalo.
-
-                        Pasión por el transporte pesado, respeto y hermandad entre conductores élite.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-            <!-- DERECHA -->
-            <div class="hidden md:flex justify-end items-center scroll-reveal">
-
-                <div class="relative">
-
-                    <div class="absolute inset-0 bg-[#f5c451]/10 blur-[120px] rounded-full"></div>
-
-                    <i class="fas fa-truck text-[280px] text-[#f5c451]/10 rotate-[8deg] drop-shadow-[0_0_40px_rgba(245,196,81,0.2)]"></i>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- SCROLL -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center text-[#f5c451]/70 animate-bounce">
-
-        <span class="text-2xl">
-            ↓
-        </span>
-
-        <p class="uppercase tracking-[4px] text-[11px] mt-2">
-            Desplázate
-        </p>
-
-    </div>
-
-</section>
-                <!-- BOTONES -->
                 <div class="flex flex-col sm:flex-row gap-5 justify-center md:justify-start scroll-reveal">
 
-                    <!-- BOTON 1 -->
                     <button onclick="document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' })"
                             class="hero-btn-primary">
 
@@ -1165,7 +1167,6 @@ nav *{
 
                     </button>
 
-                    <!-- BOTON 2 -->
                     <button onclick="document.getElementById('videos').scrollIntoView({ behavior: 'smooth' })"
                             class="hero-btn-secondary">
 
@@ -1179,7 +1180,190 @@ nav *{
                 <div class="max-w-2xl bg-black/60 backdrop-blur-xl border border-[#f5c451]/20 rounded-3xl p-8 shadow-2xl scroll-reveal">
 
                     <p class="text-[#f5c451] uppercase text-sm tracking-[3px] mb-4">
-                        Comunidad Exclusiva ATS-ETS2
+                        Comunidad Exclusiva ATS • ETS2
+                    </p>
+
+                    <h2 class="text-3xl font-bold mb-5 text-white">
+                        Somos La Elite
+                    </h2>
+
+                    <p class="text-gray-300 leading-relaxed text-lg">
+
+                        La comunidad premium de American Truck Simulator y Euro Truck Simulator 2 enfocada en rutas épicas,
+                        convoyes profesionales y eventos legendarios dentro del mapa
+                        <strong class="text-[#f5c451]">Mapkalo</strong>.
+
+                        Pasión por el transporte pesado, respeto y hermandad entre conductores élite.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- DERECHA -->
+            <div class="hidden md:flex justify-center items-center relative scroll-reveal">
+
+                <div class="absolute w-[500px] h-[500px] bg-[#f5c451]/10 blur-[120px] rounded-full"></div>
+
+                <div class="relative text-[320px] text-[#f5c451]/10 rotate-[8deg] drop-shadow-2xl animate-pulse">
+
+                    <i class="fas fa-truck"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- INDICADOR -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-y-3 text-[#f5c451]/70 z-20">
+
+        <div class="animate-bounce text-3xl">
+            ↓
+        </div>
+
+        <p class="uppercase tracking-[4px] text-xs text-center">
+            Desplázate para descubrir la leyenda
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ESTILOS HERO -->
+<style>
+
+.hero-btn-primary{
+
+    min-width:260px;
+    height:70px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+    linear-gradient(
+        to right,
+        #36024e,
+        #f5c451
+    );
+
+    color:black;
+
+    font-size:18px;
+    font-weight:800;
+
+    border-radius:20px;
+
+    letter-spacing:2px;
+
+    transition:0.35s;
+
+    box-shadow:
+    0 15px 35px rgba(245,196,81,0.18);
+
+}
+
+.hero-btn-primary:hover{
+
+    transform:
+    translateY(-4px)
+    scale(1.02);
+
+    background:
+    linear-gradient(
+        to right,
+        #f5c451,
+        #c8102e
+    );
+
+    box-shadow:
+    0 20px 40px rgba(245,196,81,0.28);
+
+}
+
+.hero-btn-secondary{
+
+    min-width:220px;
+    height:70px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:2px solid #f5c451;
+
+    color:#f5c451;
+
+    font-size:18px;
+    font-weight:700;
+
+    border-radius:20px;
+
+    background:rgba(0,0,0,0.3);
+    backdrop-filter:blur(10px);
+
+    transition:0.35s;
+
+}
+
+.hero-btn-secondary:hover{
+
+    background:#f5c451;
+    color:black;
+
+    transform:
+    translateY(-4px)
+    scale(1.02);
+
+    box-shadow:
+    0 20px 40px rgba(245,196,81,0.25);
+
+}
+
+@media(max-width:768px){
+
+    .hero-btn-primary,
+    .hero-btn-secondary{
+
+        width:100%;
+        min-width:100%;
+        height:64px;
+        font-size:16px;
+
+    }
+
+}
+
+</style>
+                <!-- BOTONES -->
+                <div class="flex flex-col sm:flex-row gap-5 justify-center md:justify-start scroll-reveal">
+
+                    <button onclick="document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' })"
+                            class="hero-btn-primary">
+
+                        🚛 ÚNETE AL CONVOY
+
+                    </button>
+
+                    <button onclick="document.getElementById('videos').scrollIntoView({ behavior: 'smooth' })"
+                            class="hero-btn-secondary">
+
+                        ▶ VIDEOS
+
+                    </button>
+
+                </div>
+
+                <!-- QUIENES SOMOS -->
+                <div class="max-w-2xl bg-black/60 backdrop-blur-xl border border-[#f5c451]/20 rounded-3xl p-8 shadow-2xl scroll-reveal">
+
+                    <p class="text-[#f5c451] uppercase text-sm tracking-[3px] mb-4">
+                        Comunidad Exclusiva ATS • ETS2
                     </p>
 
                     <h2 class="text-3xl font-bold mb-5 text-white">
@@ -1201,10 +1385,8 @@ nav *{
             <!-- DERECHA -->
             <div class="hidden md:flex justify-center items-center relative scroll-reveal">
 
-                <!-- EFECTO -->
                 <div class="absolute w-[500px] h-[500px] bg-[#f5c451]/10 blur-[120px] rounded-full"></div>
 
-                <!-- ICONO -->
                 <div class="relative text-[320px] text-[#f5c451]/10 rotate-[8deg] drop-shadow-2xl animate-pulse">
 
                     <i class="fas fa-truck"></i>
@@ -1212,6 +1394,19 @@ nav *{
                 </div>
 
             </div>
+
+        </div>
+
+        <!-- INDICADOR -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-y-3 text-[#f5c451]/70 z-20">
+
+            <div class="animate-bounce text-3xl">
+                ↓
+            </div>
+
+            <p class="uppercase tracking-[4px] text-xs text-center">
+                Desplázate para descubrir la leyenda
+            </p>
 
         </div>
 
@@ -1240,18 +1435,17 @@ nav *{
 
     transition:0.35s;
 
-    box-shadow:
-    0 15px 35px rgba(245,196,81,0.22);
+    box-shadow:0 15px 35px rgba(245,196,81,0.22);
 
 }
 
 .hero-btn-primary:hover{
 
-    transform:
-    translateY(-4px)
-    scale(1.02);
+    transform:translateY(-4px) scale(1.02);
 
     background:#ffd56a;
+
+    box-shadow:0 20px 40px rgba(245,196,81,0.30);
 
 }
 
@@ -1265,6 +1459,7 @@ nav *{
     border:1px solid rgba(245,196,81,0.25);
 
     background:rgba(255,255,255,0.04);
+
     backdrop-filter:blur(10px);
 
     color:white;
@@ -1280,214 +1475,54 @@ nav *{
 
 .hero-btn-secondary:hover{
 
-    transform:
-    translateY(-4px);
+    transform:translateY(-4px);
 
     border-color:#f5c451;
 
     background:#f5c451;
+
     color:black;
 
 }
 
+/* ANIMACIÓN SCROLL */
+
+.scroll-reveal{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:
+    opacity .9s ease,
+    transform .9s ease;
+
+}
+
+.scroll-reveal.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .hero-btn-primary,
+    .hero-btn-secondary{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+}
+
 </style>
-
-<!-- SCRIPT ANIMACIONES -->
-<script>
-
-const scrollElements = document.querySelectorAll('.scroll-reveal');
-
-const elementInView = (el, dividend = 1.2) => {
-    const elementTop = el.getBoundingClientRect().top;
-
-    return (
-        elementTop <=
-        (window.innerHeight || document.documentElement.clientHeight) / dividend
-    );
-};
-
-const displayScrollElement = (element) => {
-    element.classList.add('show');
-};
-
-const hideScrollElement = (element) => {
-    element.classList.remove('show');
-};
-
-const handleScrollAnimation = () => {
-
-    scrollElements.forEach((el) => {
-
-        if (elementInView(el, 1.15)) {
-            displayScrollElement(el);
-        } else {
-            hideScrollElement(el);
-        }
-
-    });
-
-};
-
-window.addEventListener('scroll', () => {
-
-    handleScrollAnimation();
-
-});
-
-handleScrollAnimation();
-
-</script>
-    <!-- INDICADOR -->
-    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-y-3 text-[#f5c451]/70 z-20 scroll-reveal">
-
-        <div class="animate-bounce text-3xl">
-            ↓
-        </div>
-
-        <p class="uppercase tracking-[4px] text-xs text-center">
-            Desplázate para descubrir la leyenda
-        </p>
-
-    </div>
-
-    <!-- ESTILOS -->
-    <style>
-
-        .hero-btn-primary{
-
-            min-width:260px;
-            height:70px;
-
-            display:flex;
-            align-items:center;
-            justify-content:center;
-
-            background:
-            linear-gradient(
-                to right,
-                #36024e,
-                #f5c451
-            );
-
-            color:black;
-
-            font-size:18px;
-            font-weight:800;
-
-            border-radius:20px;
-
-            letter-spacing:2px;
-
-            transition:0.35s;
-
-            box-shadow:
-            0 15px 35px rgba(245,196,81,0.18);
-
-        }
-
-        .hero-btn-primary:hover{
-
-            transform:
-            translateY(-4px)
-            scale(1.02);
-
-            background:
-            linear-gradient(
-                to right,
-                #f5c451,
-                #c8102e
-            );
-
-            box-shadow:
-            0 20px 40px rgba(245,196,81,0.28);
-
-        }
-
-        .hero-btn-secondary{
-
-            min-width:220px;
-            height:70px;
-
-            display:flex;
-            align-items:center;
-            justify-content:center;
-
-            border:2px solid #f5c451;
-
-            color:#f5c451;
-
-            font-size:18px;
-            font-weight:700;
-
-            border-radius:20px;
-
-            background:rgba(0,0,0,0.3);
-            backdrop-filter:blur(10px);
-
-            transition:0.35s;
-
-        }
-
-        .hero-btn-secondary:hover{
-
-            background:#f5c451;
-            color:black;
-
-            transform:
-            translateY(-4px)
-            scale(1.02);
-
-            box-shadow:
-            0 20px 40px rgba(245,196,81,0.25);
-
-        }
-
-        /* ANIMACION SCROLL */
-
-        .scroll-reveal{
-
-            opacity:0;
-
-            transform:
-            translateY(60px);
-
-            transition:
-            opacity 1s ease,
-            transform 1s ease;
-
-        }
-
-        .scroll-reveal.show{
-
-            opacity:1;
-
-            transform:
-            translateY(0);
-
-        }
-
-        /* RESPONSIVE */
-
-        @media(max-width:768px){
-
-            .hero-btn-primary,
-            .hero-btn-secondary{
-
-                width:100%;
-
-                min-width:100%;
-
-                height:64px;
-
-                font-size:16px;
-
-            }
-
-        }
-
-    </style>
-
-</section>
 
 <!-- SCRIPT ANIMACIONES -->
 <script>
@@ -1511,12 +1546,6 @@ const displayScrollElement = (element) => {
 
 };
 
-const hideScrollElement = (element) => {
-
-    element.classList.remove('show');
-
-};
-
 const handleScrollAnimation = () => {
 
     scrollElements.forEach((el) => {
@@ -1525,28 +1554,239 @@ const handleScrollAnimation = () => {
 
             displayScrollElement(el);
 
-        } else {
-
-            hideScrollElement(el);
-
         }
 
     });
 
 };
 
-window.addEventListener('scroll', () => {
-
-    handleScrollAnimation();
-
-});
+window.addEventListener('scroll', handleScrollAnimation);
 
 handleScrollAnimation();
 
 </script>
+
+   <!-- ESTILOS HERO -->
+<style>
+
+.hero-btn-primary{
+
+    min-width:260px;
+    height:70px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:linear-gradient(
+        135deg,
+        #36024e,
+        #f5c451
+    );
+
+    color:black;
+
+    font-size:18px;
+    font-weight:800;
+
+    border-radius:20px;
+
+    letter-spacing:1px;
+
+    transition:all 0.35s ease;
+
+    box-shadow:
+    0 15px 35px rgba(245,196,81,0.18);
+
+}
+
+.hero-btn-primary:hover{
+
+    transform:
+    translateY(-4px)
+    scale(1.02);
+
+    background:linear-gradient(
+        135deg,
+        #f5c451,
+        #c8102e
+    );
+
+    box-shadow:
+    0 20px 40px rgba(245,196,81,0.28);
+
+}
+
+.hero-btn-secondary{
+
+    min-width:220px;
+    height:70px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:2px solid #f5c451;
+
+    color:#f5c451;
+
+    font-size:18px;
+    font-weight:700;
+
+    border-radius:20px;
+
+    background:rgba(0,0,0,0.35);
+
+    backdrop-filter:blur(10px);
+
+    transition:all 0.35s ease;
+
+}
+
+.hero-btn-secondary:hover{
+
+    background:#f5c451;
+
+    color:black;
+
+    transform:
+    translateY(-4px)
+    scale(1.02);
+
+    box-shadow:
+    0 20px 40px rgba(245,196,81,0.25);
+
+}
+
+/* =========================
+   ANIMACIONES SCROLL
+========================= */
+
+.scroll-reveal{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+
+}
+
+.scroll-reveal.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width:768px){
+
+    .hero-btn-primary,
+    .hero-btn-secondary{
+
+        width:100%;
+
+        min-width:100%;
+
+        height:64px;
+
+        font-size:16px;
+
+    }
+
+}
+
+</style>
+
+<!-- ===================================
+     ANIMACIONES SCROLL LA ELITE
+=================================== -->
+
+<style>
+
+.scroll-reveal{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+
+}
+
+.scroll-reveal.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+</style>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const elements =
+    document.querySelectorAll(
+        '.scroll-reveal'
+    );
+
+    if (!elements.length) return;
+
+    const observer =
+    new IntersectionObserver(
+
+        (entries) => {
+
+            entries.forEach((entry) => {
+
+                if (
+                    entry.isIntersecting
+                ) {
+
+                    entry.target.classList.add(
+                        'show'
+                    );
+
+                    observer.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold:0.15
+        }
+
+    );
+
+    elements.forEach((el) => {
+
+        observer.observe(el);
+
+    });
+
+});
+
+</script>
 <!-- REQUISITOS -->
 <section id="requisitos"
-         class="bg-[#0d0d0d] py-24 border-t border-[#f5c451]/10 relative overflow-hidden">
+         class="bg-[#0d0d0d] py-24 border-t border-[#f5c451]/10 relative overflow-hidden scroll-reveal">
 
     <!-- EFECTOS -->
     <div class="absolute top-0 left-0 w-72 h-72 bg-[#f5c451]/5 blur-[120px] rounded-full"></div>
@@ -1577,13 +1817,13 @@ handleScrollAnimation();
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
             <!-- CARD -->
-            <div class="event-card p-8 border border-[#f5c451]/10 card-hover scroll-reveal">
+            <div class="event-card p-8 border border-[#f5c451]/10 rounded-3xl card-hover scroll-reveal">
 
                 <div class="w-16 h-16 rounded-2xl bg-[#f5c451]/10 flex items-center justify-center text-3xl text-[#f5c451]">
                     <i class="fas fa-user-check"></i>
                 </div>
 
-                <h3 class="text-2xl font-bold mt-6">
+                <h3 class="text-2xl font-bold mt-6 text-white">
                     Ser Activo
                 </h3>
 
@@ -1595,13 +1835,13 @@ handleScrollAnimation();
             </div>
 
             <!-- CARD -->
-            <div class="event-card p-8 border border-[#f5c451]/10 card-hover scroll-reveal">
+            <div class="event-card p-8 border border-[#f5c451]/10 rounded-3xl card-hover scroll-reveal">
 
                 <div class="w-16 h-16 rounded-2xl bg-[#f5c451]/10 flex items-center justify-center text-3xl text-[#f5c451]">
                     <i class="fas fa-handshake"></i>
                 </div>
 
-                <h3 class="text-2xl font-bold mt-6">
+                <h3 class="text-2xl font-bold mt-6 text-white">
                     Respeto
                 </h3>
 
@@ -1613,13 +1853,13 @@ handleScrollAnimation();
             </div>
 
             <!-- CARD -->
-            <div class="event-card p-8 border border-[#f5c451]/10 card-hover scroll-reveal">
+            <div class="event-card p-8 border border-[#f5c451]/10 rounded-3xl card-hover scroll-reveal">
 
                 <div class="w-16 h-16 rounded-2xl bg-[#f5c451]/10 flex items-center justify-center text-3xl text-[#f5c451]">
                     <i class="fab fa-discord"></i>
                 </div>
 
-                <h3 class="text-2xl font-bold mt-6">
+                <h3 class="text-2xl font-bold mt-6 text-white">
                     Tener Discord
                 </h3>
 
@@ -1631,13 +1871,13 @@ handleScrollAnimation();
             </div>
 
             <!-- CARD -->
-            <div class="event-card p-8 border border-[#f5c451]/10 card-hover scroll-reveal">
+            <div class="event-card p-8 border border-[#f5c451]/10 rounded-3xl card-hover scroll-reveal">
 
                 <div class="w-16 h-16 rounded-2xl bg-[#f5c451]/10 flex items-center justify-center text-3xl text-[#f5c451]">
                     <i class="fas fa-truck"></i>
                 </div>
 
-                <h3 class="text-2xl font-bold mt-6">
+                <h3 class="text-2xl font-bold mt-6 text-white">
                     Conducción Limpia
                 </h3>
 
@@ -1649,13 +1889,13 @@ handleScrollAnimation();
             </div>
 
             <!-- CARD -->
-            <div class="event-card p-8 border border-[#f5c451]/10 card-hover scroll-reveal">
+            <div class="event-card p-8 border border-[#f5c451]/10 rounded-3xl card-hover scroll-reveal">
 
                 <div class="w-16 h-16 rounded-2xl bg-[#f5c451]/10 flex items-center justify-center text-3xl text-[#f5c451]">
                     <i class="fas fa-clock"></i>
                 </div>
 
-                <h3 class="text-2xl font-bold mt-6">
+                <h3 class="text-2xl font-bold mt-6 text-white">
                     Compromiso
                 </h3>
 
@@ -1667,13 +1907,13 @@ handleScrollAnimation();
             </div>
 
             <!-- CARD -->
-            <div class="event-card p-8 border border-[#f5c451]/10 card-hover scroll-reveal">
+            <div class="event-card p-8 border border-[#f5c451]/10 rounded-3xl card-hover scroll-reveal">
 
                 <div class="w-16 h-16 rounded-2xl bg-[#f5c451]/10 flex items-center justify-center text-3xl text-[#f5c451]">
                     <i class="fas fa-crown"></i>
                 </div>
 
-                <h3 class="text-2xl font-bold mt-6">
+                <h3 class="text-2xl font-bold mt-6 text-white">
                     Representar La Elite
                 </h3>
 
@@ -1691,7 +1931,7 @@ handleScrollAnimation();
 </section>
 <!-- EMPRESA -->
 <section id="empresa"
-         class="max-w-screen-2xl mx-auto px-8 py-24 relative overflow-hidden">
+         class="max-w-screen-2xl mx-auto px-8 py-24 relative overflow-hidden scroll-reveal">
 
     <!-- EFECTOS -->
     <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-[#f5c451]/5 blur-[140px] rounded-full"></div>
@@ -1728,8 +1968,8 @@ handleScrollAnimation();
                 <div class="relative overflow-hidden">
 
                     <img src="65.png"
-                         alt="Estadisticas"
-                         class="w-full h-[520px] object-cover group-hover:scale-105 transition duration-700">
+                         alt="Estadísticas La Elite"
+                         class="w-full h-[420px] md:h-[520px] object-cover group-hover:scale-105 transition duration-700">
 
                     <!-- OVERLAY -->
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
@@ -1788,6 +2028,7 @@ handleScrollAnimation();
 
                             <a href="https://trucksbook.eu/"
                                target="_blank"
+                               rel="noopener noreferrer"
                                class="empresa-btn-secondary">
 
                                 TrucksBook
@@ -1830,19 +2071,19 @@ handleScrollAnimation();
 
     letter-spacing:1px;
 
+    text-decoration:none;
+
     transition:0.35s;
 
 }
 
 .empresa-btn-primary:hover{
 
-    transform:
-    translateY(-4px);
+    transform:translateY(-4px);
 
     background:#ffd56a;
 
-    box-shadow:
-    0 15px 35px rgba(245,196,81,0.25);
+    box-shadow:0 15px 35px rgba(245,196,81,0.25);
 
 }
 
@@ -1868,16 +2109,18 @@ handleScrollAnimation();
     font-size:14px;
     font-weight:700;
 
+    text-decoration:none;
+
     transition:0.35s;
 
 }
 
 .empresa-btn-secondary:hover{
 
-    transform:
-    translateY(-4px);
+    transform:translateY(-4px);
 
     background:#f5c451;
+
     color:black;
 
 }
@@ -1901,7 +2144,7 @@ handleScrollAnimation();
 
             <p class="text-gray-400 mt-4 max-w-2xl mx-auto text-lg leading-relaxed">
                 Consulta las estadísticas oficiales, kilómetros recorridos y actividad
-                en tiempo real de La Elite dentro de TrucksBook.
+                de La Elite dentro de TrucksBook.
             </p>
 
         </div>
@@ -1925,30 +2168,23 @@ handleScrollAnimation();
 
             <!-- TITULO -->
             <h3 class="text-4xl md:text-5xl font-bold mb-5 text-white">
-
                 LA ELITE en TrucksBook
-
             </h3>
 
             <!-- TEXTO -->
             <p class="text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto">
-
                 Explora el ranking oficial de conductores, estadísticas,
                 kilómetros recorridos, entregas y actividad completa
-                directamente desde la empresa oficial de La Elite.
-
+                desde la empresa oficial de La Elite.
             </p>
 
             <!-- STATS -->
             <div class="grid md:grid-cols-3 gap-6 mt-14">
 
-                <!-- CARD -->
                 <div class="bg-black/40 border border-[#f5c451]/10 rounded-3xl p-8">
 
                     <div class="text-5xl text-[#f5c451] mb-5">
-
                         <i class="fas fa-road"></i>
-
                     </div>
 
                     <h4 class="text-2xl font-bold text-white">
@@ -1961,13 +2197,10 @@ handleScrollAnimation();
 
                 </div>
 
-                <!-- CARD -->
                 <div class="bg-black/40 border border-[#f5c451]/10 rounded-3xl p-8">
 
                     <div class="text-5xl text-[#f5c451] mb-5">
-
                         <i class="fas fa-ranking-star"></i>
-
                     </div>
 
                     <h4 class="text-2xl font-bold text-white">
@@ -1980,13 +2213,10 @@ handleScrollAnimation();
 
                 </div>
 
-                <!-- CARD -->
                 <div class="bg-black/40 border border-[#f5c451]/10 rounded-3xl p-8">
 
                     <div class="text-5xl text-[#f5c451] mb-5">
-
                         <i class="fas fa-truck"></i>
-
                     </div>
 
                     <h4 class="text-2xl font-bold text-white">
@@ -2004,9 +2234,9 @@ handleScrollAnimation();
             <!-- BOTONES -->
             <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mt-14">
 
-                <!-- EMPRESA -->
                 <a href="https://trucksbook.eu/company/224432"
                    target="_blank"
+                   rel="noopener noreferrer"
                    class="bg-[#f5c451]
                           hover:bg-[#ffd56a]
                           text-black
@@ -2025,9 +2255,9 @@ handleScrollAnimation();
 
                 </a>
 
-                <!-- RANKING -->
                 <a href="https://trucksbook.eu/company/224432"
                    target="_blank"
+                   rel="noopener noreferrer"
                    class="border border-[#f5c451]/30
                           hover:border-[#f5c451]
                           hover:bg-[#f5c451]
@@ -2058,245 +2288,100 @@ handleScrollAnimation();
 <!-- ANUNCIOS -->
 <section id="anuncios" class="bg-[#111111] py-24 scroll-reveal">
 
-    <div class="max-w-screen-2xl mx-auto px-8">
+    <!-- ANUNCIOS -->
 
-        <!-- TITULO -->
-        <div class="text-center mb-20">
+<section id="anuncios" class="bg-[#111111] py-24 scroll-reveal">
 
-            <span class="uppercase text-[#c8102e] text-sm tracking-[4px]">
-                Últimas novedades
-            </span>
+```
+<div class="max-w-screen-2xl mx-auto px-8">
 
-            <h2 class="section-title text-5xl font-bold logo-font mt-4">
-                Anuncios Oficiales
-            </h2>
+    <!-- TITULO -->
+    <div class="text-center mb-20">
 
-            <p class="text-gray-400 mt-5 text-lg max-w-2xl mx-auto">
-                Mantente informado sobre eventos, novedades y actividades oficiales de La Elite.
-            </p>
+        <span class="uppercase text-[#c8102e] text-sm tracking-[4px]">
+            Últimas novedades
+        </span>
 
-        </div>
+        <h2 class="section-title text-5xl font-bold logo-font mt-4">
+            Anuncios Oficiales
+        </h2>
 
-        <!-- GRID -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <p class="text-gray-400 mt-5 text-lg max-w-2xl mx-auto">
+            Mantente informado sobre eventos, novedades y actividades oficiales de La Elite.
+        </p>
 
-            <!-- ANUNCIO 1 -->
-            <div class="group bg-[#181818] rounded-3xl border border-[#f5c451]/10 overflow-hidden shadow-2xl hover:border-[#f5c451]/40 transition-all duration-300 hover:-translate-y-2">
+    </div>
 
-                <div class="p-8 flex flex-col h-full">
+    <!-- GRID -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-                    <!-- TOP -->
-                    <div class="flex justify-between items-start gap-4">
+        <!-- ANUNCIO 1 -->
+        <div class="group bg-[#181818] rounded-3xl border border-[#f5c451]/10 overflow-hidden shadow-2xl hover:border-[#f5c451]/40 transition-all duration-300 hover:-translate-y-2">
 
-                        <div>
+            <div class="p-8 flex flex-col h-full">
 
-                            <span class="inline-flex items-center px-4 py-2 bg-[#c8102e] text-white text-xs font-bold rounded-full tracking-[1px] uppercase shadow-lg">
-                                Evento
-                            </span>
+                <div class="flex justify-between items-start gap-4">
 
-                            <h3 class="text-2xl font-bold mt-6 text-white leading-snug">
-                                Partido Colombia VS Costa Rica
-                            </h3>
+                    <div>
 
-                            <p class="text-[#f5c451] mt-3 text-sm uppercase tracking-[2px]">
-                                Discord Oficial
-                            </p>
+                        <span class="inline-flex items-center px-4 py-2 bg-[#c8102e] text-white text-xs font-bold rounded-full tracking-[1px] uppercase shadow-lg">
+                            Evento
+                        </span>
 
-                        </div>
+                        <h3 class="text-2xl font-bold mt-6 text-white leading-snug">
+                            Partido Colombia vs. Costa Rica
+                        </h3>
 
-                        <!-- FECHA -->
-                        <div class="bg-black border border-[#f5c451]/20 rounded-2xl px-4 py-3 text-center min-w-[95px]">
-
-                            <p class="text-[#f5c451] text-xs uppercase tracking-[2px]">
-                                Fecha
-                            </p>
-
-                            <p class="text-white text-sm font-semibold mt-1">
-                                01/06/2026
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <!-- DESCRIPCION -->
-                    <div class="mt-8">
-
-                        <p class="text-gray-300 leading-relaxed text-[15px]">
-                            Vive junto a la comunidad de La Elite el emocionante encuentro entre Colombia y Costa Rica en nuestro Discord oficial.
+                        <p class="text-[#f5c451] mt-3 text-sm uppercase tracking-[2px]">
+                            Discord Oficial
                         </p>
 
                     </div>
 
-                    <!-- TAGS -->
-                    <div class="flex flex-wrap gap-3 mt-8">
+                    <div class="bg-black border border-[#f5c451]/20 rounded-2xl px-4 py-3 text-center min-w-[95px]">
 
-                        <span class="px-4 py-2 text-xs rounded-full bg-black border border-[#f5c451]/20 text-gray-300">
-                            ⚽ Fútbol
-                        </span>
+                        <p class="text-[#f5c451] text-xs uppercase tracking-[2px]">
+                            Fecha
+                        </p>
 
-                        <span class="px-4 py-2 text-xs rounded-full bg-black border border-[#5865F2]/40 text-gray-300">
-                            🎙 Discord
-                        </span>
-
-                    </div>
-
-                    <!-- BOTON -->
-                    <div class="mt-10">
-
-                        <a href="https://discord.gg/CSAJCSah"
-                           target="_blank"
-                           class="announcement-btn">
-
-                            📢 Ver anuncio
-
-                        </a>
+                        <p class="text-white text-sm font-semibold mt-1">
+                            01/06/2026
+                        </p>
 
                     </div>
 
                 </div>
 
-            </div>
+                <div class="mt-8">
 
-            <!-- ANUNCIO 2 -->
-            <div class="group bg-[#181818] rounded-3xl border border-[#f5c451]/10 overflow-hidden shadow-2xl hover:border-[#f5c451]/40 transition-all duration-300 hover:-translate-y-2">
-
-                <div class="p-8 flex flex-col h-full">
-
-                    <div class="flex justify-between items-start gap-4">
-
-                        <div>
-
-                            <span class="inline-flex items-center px-4 py-2 bg-[#36024e] text-white text-xs font-bold rounded-full tracking-[1px] uppercase shadow-lg">
-                                Convoy
-                            </span>
-
-                            <h3 class="text-2xl font-bold mt-6 text-white leading-snug">
-                                Convoy Oficial Nocturno
-                            </h3>
-
-                            <p class="text-[#f5c451] mt-3 text-sm uppercase tracking-[2px]">
-                                ATS • Mapkalo
-                            </p>
-
-                        </div>
-
-                        <div class="bg-black border border-[#f5c451]/20 rounded-2xl px-4 py-3 text-center min-w-[95px]">
-
-                            <p class="text-[#f5c451] text-xs uppercase tracking-[2px]">
-                                Hora
-                            </p>
-
-                            <p class="text-white text-sm font-semibold mt-1">
-                                8:00 PM
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="mt-8">
-
-                        <p class="text-gray-300 leading-relaxed text-[15px]">
-                            Prepárate para recorrer rutas legendarias junto a los conductores de La Elite en un convoy nocturno exclusivo.
-                        </p>
-
-                    </div>
-
-                    <div class="flex flex-wrap gap-3 mt-8">
-
-                        <span class="px-4 py-2 text-xs rounded-full bg-black border border-[#f5c451]/20 text-gray-300">
-                            🚛 ATS
-                        </span>
-
-                        <span class="px-4 py-2 text-xs rounded-full bg-black border border-[#36024e]/40 text-gray-300">
-                            🌙 Nocturno
-                        </span>
-
-                    </div>
-
-                    <div class="mt-10">
-
-                        <a href="#eventos"
-                           class="announcement-btn">
-
-                            🚚 Ver convoy
-
-                        </a>
-
-                    </div>
+                    <p class="text-gray-300 leading-relaxed text-[15px]">
+                        Vive junto a la comunidad de La Elite el emocionante encuentro entre Colombia y Costa Rica en nuestro Discord oficial.
+                    </p>
 
                 </div>
 
-            </div>
+                <div class="flex flex-wrap gap-3 mt-8">
 
-            <!-- ANUNCIO 3 -->
-            <div class="group bg-[#181818] rounded-3xl border border-[#f5c451]/10 overflow-hidden shadow-2xl hover:border-[#f5c451]/40 transition-all duration-300 hover:-translate-y-2">
+                    <span class="px-4 py-2 text-xs rounded-full bg-black border border-[#f5c451]/20 text-gray-300">
+                        ⚽ Fútbol
+                    </span>
 
-                <div class="p-8 flex flex-col h-full">
+                    <span class="px-4 py-2 text-xs rounded-full bg-black border border-[#5865F2]/40 text-gray-300">
+                        🎙 Discord
+                    </span>
 
-                    <div class="flex justify-between items-start gap-4">
+                </div>
 
-                        <div>
+                <div class="mt-10">
 
-                            <span class="inline-flex items-center px-4 py-2 bg-[#f5c451] text-black text-xs font-bold rounded-full tracking-[1px] uppercase shadow-lg">
-                                Comunidad
-                            </span>
+                    <a href="https://discord.gg/CSAJCSah"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="announcement-btn">
 
-                            <h3 class="text-2xl font-bold mt-6 text-white leading-snug">
-                                Reclutamiento Abierto
-                            </h3>
+                        📢 Ver anuncio
 
-                            <p class="text-[#f5c451] mt-3 text-sm uppercase tracking-[2px]">
-                                Nuevos Conductores
-                            </p>
-
-                        </div>
-
-                        <div class="bg-black border border-[#f5c451]/20 rounded-2xl px-4 py-3 text-center min-w-[95px]">
-
-                            <p class="text-[#f5c451] text-xs uppercase tracking-[2px]">
-                                Estado
-                            </p>
-
-                            <p class="text-green-400 text-sm font-semibold mt-1">
-                                Activo
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="mt-8">
-
-                        <p class="text-gray-300 leading-relaxed text-[15px]">
-                            ¿Quieres formar parte de La Elite? Ya están abiertas las postulaciones para nuevos miembros oficiales.
-                        </p>
-
-                    </div>
-
-                    <div class="flex flex-wrap gap-3 mt-8">
-
-                        <span class="px-4 py-2 text-xs rounded-full bg-black border border-[#f5c451]/20 text-gray-300">
-                            👥 Comunidad
-                        </span>
-
-                        <span class="px-4 py-2 text-xs rounded-full bg-black border border-[#00ff99]/20 text-gray-300">
-                            ✅ Abierto
-                        </span>
-
-                    </div>
-
-                    <div class="mt-10">
-
-                        <a href="#requisitos"
-                           class="announcement-btn">
-
-                            📋 Ver requisitos
-
-                        </a>
-
-                    </div>
+                    </a>
 
                 </div>
 
@@ -2306,32 +2391,37 @@ handleScrollAnimation();
 
     </div>
 
-    <!-- ESTILOS -->
-    <style>
+</div>
 
-        .announcement-btn{
-            width:100%;
-            height:58px;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            background:#f5c451;
-            color:black;
-            font-size:17px;
-            font-weight:700;
-            border-radius:18px;
-            text-decoration:none;
-            transition:0.3s;
-            box-shadow:0 10px 25px rgba(245,196,81,0.15);
-        }
+<style>
 
-        .announcement-btn:hover{
-            transform:translateY(-3px);
-            background:#ffd56a;
-            box-shadow:0 15px 30px rgba(245,196,81,0.25);
-        }
+    .announcement-btn{
+        width:100%;
+        min-height:58px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        background:#f5c451;
+        color:black;
+        font-size:17px;
+        font-weight:700;
+        border-radius:18px;
+        text-decoration:none;
+        transition:0.3s;
+        box-shadow:0 10px 25px rgba(245,196,81,0.15);
+    }
 
-    </style>
+    .announcement-btn:hover{
+        transform:translateY(-3px);
+        background:#ffd56a;
+        box-shadow:0 15px 30px rgba(245,196,81,0.25);
+    }
+
+</style>
+```
+
+</section>
+
 
 </section>
 
@@ -2346,11 +2436,11 @@ handleScrollAnimation();
         </span>
 
         <h2 class="text-5xl font-bold logo-font mt-4">
-            Eventos de la Elite
+            Eventos de La Elite
         </h2>
 
         <p class="text-gray-400 mt-5 text-lg">
-            En estos eventos TODOS pueden participar
+            En estos eventos todos pueden participar.
         </p>
 
     </div>
@@ -2365,12 +2455,12 @@ handleScrollAnimation();
             <div class="relative overflow-hidden">
 
                 <img src="costa.png"
-                     alt="Convoy extremo"
+                     alt="Convoy Costa Colombiana"
                      class="w-full h-[260px] object-cover group-hover:scale-105 transition duration-500">
 
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
 
-                <!-- FECHA ENCIMA -->
+                <!-- FECHA -->
                 <div class="absolute top-5 left-5 bg-black/80 backdrop-blur-md border border-[#f5c451]/30 rounded-2xl px-5 py-3">
 
                     <p class="text-[#f5c451] text-3xl font-bold leading-none">
@@ -2378,7 +2468,7 @@ handleScrollAnimation();
                     </p>
 
                     <p class="text-white text-sm mt-1 uppercase tracking-[2px]">
-                        1 • 6:00PM COL
+                        1 • 6:00 PM COL
                     </p>
 
                 </div>
@@ -2417,6 +2507,7 @@ handleScrollAnimation();
                 <!-- BOTON -->
                 <a href="https://discord.gg/CSAJCSah"
                    target="_blank"
+                   rel="noopener noreferrer"
                    class="event-btn">
 
                     🚛 Participar en el evento
@@ -2429,7 +2520,6 @@ handleScrollAnimation();
 
     </div>
 
-    <!-- ESTILOS -->
     <style>
 
         .event-btn{
@@ -2471,12 +2561,12 @@ handleScrollAnimation();
 
 </section>
 <!-- VIDEOS -->
-<section id="videos" class="bg-[#111111] py-24 scroll-reveal">
+<section id="videos" class="bg-[#111111] py-24">
 
     <div class="max-w-screen-2xl mx-auto px-8">
 
         <!-- TITULO -->
-        <div class="text-center mb-20 scroll-reveal">
+        <div class="text-center mb-20">
 
             <span class="uppercase text-[#c8102e] text-sm tracking-[4px]">
                 Creadores Élite
@@ -2496,12 +2586,13 @@ handleScrollAnimation();
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
 
             <!-- VIDEO 1 -->
-            <div class="group bg-[#181818] rounded-3xl overflow-hidden shadow-2xl border border-white/5 hover:border-[#f5c451]/30 transition-all duration-500 card-hover scroll-reveal">
+            <div class="group bg-[#181818] rounded-3xl overflow-hidden shadow-2xl border border-white/5 hover:border-[#f5c451]/30 transition-all duration-500 card-hover">
 
                 <div class="relative overflow-hidden">
 
                     <img src="medellin-turbo.jpg"
-                         alt="Rutas imposibles"
+                         alt="Medellín a Turbo"
+                         loading="lazy"
                          class="w-full h-[260px] object-cover group-hover:scale-110 transition duration-700">
 
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
@@ -2533,6 +2624,7 @@ handleScrollAnimation();
 
                         <a href="https://youtu.be/xILYK8gYbEc?si=gi1Dn4VSlOWVqUzr"
                            target="_blank"
+                           rel="noopener noreferrer"
                            class="btn-video">
 
                             ▶ Ver video
@@ -2546,12 +2638,13 @@ handleScrollAnimation();
             </div>
 
             <!-- VIDEO 2 -->
-            <div class="group bg-[#181818] rounded-3xl overflow-hidden shadow-2xl border border-white/5 hover:border-[#f5c451]/30 transition-all duration-500 card-hover scroll-reveal">
+            <div class="group bg-[#181818] rounded-3xl overflow-hidden shadow-2xl border border-white/5 hover:border-[#f5c451]/30 transition-all duration-500 card-hover">
 
                 <div class="relative overflow-hidden">
 
                     <img src="quibdo-tumaco.png"
-                         alt="Rutas imposibles"
+                         alt="Quibdó a Tumaco"
+                         loading="lazy"
                          class="w-full h-[260px] object-cover group-hover:scale-110 transition duration-700">
 
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
@@ -2583,6 +2676,7 @@ handleScrollAnimation();
 
                         <a href="https://youtu.be/6klAmSI4lGo?si=-Ik-hAJqePxIseib"
                            target="_blank"
+                           rel="noopener noreferrer"
                            class="btn-video">
 
                             ▶ Ver video
@@ -2605,7 +2699,7 @@ handleScrollAnimation();
         .btn-video{
 
             width:100%;
-            height:60px;
+            min-height:60px;
 
             display:flex;
             align-items:center;
@@ -2617,11 +2711,12 @@ handleScrollAnimation();
             font-size:18px;
             font-weight:700;
 
+            border:none;
             border-radius:18px;
 
             text-decoration:none;
 
-            transition:0.35s;
+            transition:all 0.35s ease;
 
             box-shadow:
             0 10px 25px rgba(245,196,81,0.15);
@@ -2641,14 +2736,20 @@ handleScrollAnimation();
 
         }
 
+        .btn-video:focus{
+
+            outline:none;
+
+        }
+
     </style>
 
 </section>
 <!-- COMUNIDAD -->
-<section id="comunidad" class="max-w-screen-2xl mx-auto px-8 py-24 scroll-reveal">
+<section id="comunidad" class="max-w-screen-2xl mx-auto px-8 py-24">
 
     <!-- TITULO -->
-    <div class="text-center mb-20 scroll-reveal">
+    <div class="text-center mb-20">
 
         <span class="uppercase text-[#c8102e] text-sm tracking-[4px]">
             Nuestro equipo
@@ -2663,7 +2764,6 @@ handleScrollAnimation();
         </p>
 
     </div>
-
     <!-- GRID -->
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-8">
 
@@ -2672,7 +2772,9 @@ handleScrollAnimation();
 
             <div class="member-image">
 
-                <img src="arkamax.png" alt="Owner">
+                <img src="arkamax.png"
+                     alt="Arkamax"
+                     loading="lazy">
 
                 <span class="member-badge owner-badge">
                     OWNER
@@ -2695,7 +2797,9 @@ handleScrollAnimation();
 
             <div class="member-image">
 
-                <img src="logo-elite.png" alt="Admin">
+                <img src="logo-elite.png"
+                     alt="Anderson Montoya"
+                     loading="lazy">
 
                 <span class="member-badge admin-badge">
                     ADMIN
@@ -2718,7 +2822,9 @@ handleScrollAnimation();
 
             <div class="member-image">
 
-                <img src="kofla.png" alt="Admin">
+                <img src="kofla.png"
+                     alt="Kofla"
+                     loading="lazy">
 
                 <span class="member-badge admin-badge">
                     ADMIN
@@ -2740,7 +2846,7 @@ handleScrollAnimation();
 
         <div class="member-card scroll-reveal">
             <div class="member-image">
-                <img src="caballero.png" alt="Miembro">
+                <img src="caballero.png" alt="Caballero" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Caballero</h4>
@@ -2748,7 +2854,7 @@ handleScrollAnimation();
 
         <div class="member-card scroll-reveal">
             <div class="member-image">
-                <img src="alex.png" alt="Miembro">
+                <img src="alex.png" alt="Alex" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Alex</h4>
@@ -2756,7 +2862,7 @@ handleScrollAnimation();
 
         <div class="member-card scroll-reveal">
             <div class="member-image">
-                <img src="ciro.png" alt="Miembro">
+                <img src="ciro.png" alt="Emmanuel Ciro" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Emmanuel Ciro</h4>
@@ -2764,7 +2870,7 @@ handleScrollAnimation();
 
         <div class="member-card scroll-reveal">
             <div class="member-image">
-                <img src="fran1.png" alt="Miembro">
+                <img src="fran1.png" alt="Fran" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Fran</h4>
@@ -2772,7 +2878,7 @@ handleScrollAnimation();
 
         <div class="member-card scroll-reveal">
             <div class="member-image">
-                <img src="logo-elite.png" alt="Miembro">
+                <img src="logo-elite.png" alt="Jose Gómez" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Jose Gómez</h4>
@@ -2780,7 +2886,7 @@ handleScrollAnimation();
 
         <div class="member-card scroll-reveal">
             <div class="member-image">
-                <img src="logo-elite.png" alt="Miembro">
+                <img src="logo-elite.png" alt="Malcri" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Malcri</h4>
@@ -2788,7 +2894,7 @@ handleScrollAnimation();
 
         <div class="member-card scroll-reveal">
             <div class="member-image">
-                <img src="mecato.png" alt="Miembro">
+                <img src="mecato.png" alt="Mecato" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Mecato</h4>
@@ -2796,7 +2902,7 @@ handleScrollAnimation();
 
         <div class="member-card scroll-reveal">
             <div class="member-image">
-                <img src="nico.png" alt="Miembro">
+                <img src="nico.png" alt="Nico" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Nico</h4>
@@ -2804,7 +2910,7 @@ handleScrollAnimation();
 
         <div class="member-card scroll-reveal">
             <div class="member-image">
-                <img src="sierra.png" alt="Miembro">
+                <img src="sierra.png" alt="Maicol Sierra" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Maicol Sierra</h4>
@@ -2812,7 +2918,7 @@ handleScrollAnimation();
 
         <div class="member-card scroll-reveal">
             <div class="member-image">
-                <img src="josetruck.png" alt="Miembro">
+                <img src="josetruck.png" alt="Jose Trucks" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Jose Trucks</h4>
@@ -2820,7 +2926,7 @@ handleScrollAnimation();
 
         <div class="member-card scroll-reveal">
             <div class="member-image">
-                <img src="compa.png" alt="Miembro">
+                <img src="compa.png" alt="Compa" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Compa</h4>
@@ -2828,7 +2934,7 @@ handleScrollAnimation();
 
         <div class="member-card scroll-reveal">
             <div class="member-image">
-                <img src="ñaño.png" alt="Miembro">
+                <img src="ñaño.png" alt="Ñaño" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Ñaño</h4>
@@ -2836,7 +2942,7 @@ handleScrollAnimation();
 
         <div class="member-card scroll-reveal">
             <div class="member-image">
-                <img src="tavo.jpg" alt="Miembro">
+                <img src="tavo.jpg" alt="Tavo" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Tavo</h4>
@@ -2844,7 +2950,7 @@ handleScrollAnimation();
 
         <div class="member-card scroll-reveal">
             <div class="member-image">
-                <img src="brayan.jpg" alt="Miembro">
+                <img src="brayan.jpg" alt="Bam Ban" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Bam Ban</h4>
@@ -2852,7 +2958,7 @@ handleScrollAnimation();
 
         <div class="member-card scroll-reveal">
             <div class="member-image">
-                <img src="Benya.jpg" alt="Miembro">
+                <img src="Benya.jpg" alt="Benya" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Benya</h4>
@@ -2860,7 +2966,7 @@ handleScrollAnimation();
 
         <div class="member-card scroll-reveal">
             <div class="member-image">
-                <img src="sori.png" alt="Miembro">
+                <img src="sori.png" alt="Andres Soriano" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Andres Soriano</h4>
@@ -2868,7 +2974,7 @@ handleScrollAnimation();
 
         <div class="member-card scroll-reveal">
             <div class="member-image">
-                <img src="logo-elite.png" alt="Miembro">
+                <img src="logo-elite.png" alt="Fabian" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Fabian</h4>
@@ -2876,231 +2982,231 @@ handleScrollAnimation();
 
     </div>
 
-    <!-- ESTILOS -->
-    <style>
+/* ESTILOS */
+<style>
 
-        .member-card{
+.member-card{
 
-            background:
-            linear-gradient(
-                145deg,
-                #161616,
-                #0f0f0f
-            );
+    background:
+    linear-gradient(
+        145deg,
+        #161616,
+        #0f0f0f
+    );
 
-            border:1px solid rgba(245,196,81,0.08);
+    border:1px solid rgba(245,196,81,0.08);
 
-            border-radius:28px;
+    border-radius:28px;
 
-            padding:26px 18px;
+    padding:26px 18px;
 
-            text-align:center;
+    text-align:center;
 
-            transition:0.45s ease;
+    transition:0.45s ease;
 
-            position:relative;
+    position:relative;
 
-            overflow:hidden;
+    overflow:hidden;
 
-            backdrop-filter:blur(10px);
+    backdrop-filter:blur(10px);
 
-        }
+}
 
-        .member-card::before{
+.member-card::before{
 
-            content:'';
+    content:'';
 
-            position:absolute;
+    position:absolute;
 
-            top:-100%;
-            left:-100%;
+    top:-100%;
+    left:-100%;
 
-            width:220%;
-            height:220%;
+    width:220%;
+    height:220%;
 
-            background:
-            linear-gradient(
-                120deg,
-                transparent,
-                rgba(245,196,81,0.06),
-                transparent
-            );
+    background:
+    linear-gradient(
+        120deg,
+        transparent,
+        rgba(245,196,81,0.06),
+        transparent
+    );
 
-            transform:rotate(25deg);
+    transform:rotate(25deg);
 
-            transition:0.8s;
+    transition:0.8s;
 
-        }
+    pointer-events:none; /* CORRECCIÓN */
 
-        .member-card:hover::before{
+}
 
-            top:0;
-            left:0;
+.member-card:hover::before{
 
-        }
+    top:0;
+    left:0;
 
-        .member-card:hover{
+}
 
-            transform:
-            translateY(-10px)
-            scale(1.03);
+.member-card:hover{
 
-            border-color:rgba(245,196,81,0.35);
+    transform:
+    translateY(-10px)
+    scale(1.03);
 
-            box-shadow:
-            0 20px 45px rgba(0,0,0,0.4),
-            0 0 30px rgba(245,196,81,0.12);
+    border-color:rgba(245,196,81,0.35);
 
-        }
+    box-shadow:
+    0 20px 45px rgba(0,0,0,0.4),
+    0 0 30px rgba(245,196,81,0.12);
 
-        .member-image{
+}
 
-            width:120px;
-            height:120px;
+.member-image{
 
-            margin:auto;
+    width:120px;
+    height:120px;
 
-            position:relative;
+    margin:auto;
 
-        }
+    position:relative;
 
-        .member-image img{
+}
 
-            width:100%;
-            height:100%;
+.member-image img{
 
-            object-fit:cover;
+    width:100%;
+    height:100%;
 
-            border-radius:30px;
+    object-fit:cover;
 
-            border:4px solid rgba(245,196,81,0.5);
+    border-radius:30px;
 
-            transition:0.4s ease;
+    border:4px solid rgba(245,196,81,0.5);
 
-        }
+    transition:0.4s ease;
 
-        .member-card:hover .member-image img{
+}
 
-            transform:scale(1.05);
+.member-card:hover .member-image img{
 
-        }
+    transform:scale(1.05);
 
-        .owner-card .member-image img{
+}
 
-            border-color:#f5c451;
+.owner-card .member-image img{
 
-            box-shadow:
-            0 0 25px rgba(245,196,81,0.35);
+    border-color:#f5c451;
 
-        }
+    box-shadow:
+    0 0 25px rgba(245,196,81,0.35);
 
-        .admin-card .member-image img{
+}
 
-            border-color:#c8102e;
+.admin-card .member-image img{
 
-            box-shadow:
-            0 0 25px rgba(200,16,46,0.28);
+    border-color:#c8102e;
 
-        }
+    box-shadow:
+    0 0 25px rgba(200,16,46,0.28);
 
-        .member-badge{
+}
 
-            position:absolute;
+.member-badge{
 
-            top:-6px;
-            right:-6px;
+    position:absolute;
 
-            padding:6px 12px;
+    top:-6px;
+    right:-6px;
 
-            border-radius:999px;
+    padding:6px 12px;
 
-            font-size:11px;
-            font-weight:700;
+    border-radius:999px;
 
-            letter-spacing:1px;
+    font-size:11px;
+    font-weight:700;
 
-            box-shadow:
-            0 10px 20px rgba(0,0,0,0.25);
+    letter-spacing:1px;
 
-        }
+    box-shadow:
+    0 10px 20px rgba(0,0,0,0.25);
 
-        .owner-badge{
+}
 
-            background:#f5c451;
-            color:black;
+.owner-badge{
 
-        }
+    background:#f5c451;
+    color:black;
 
-        .admin-badge{
+}
 
-            background:#c8102e;
-            color:white;
+.admin-badge{
 
-        }
+    background:#c8102e;
+    color:white;
 
-        .elite-badge{
+}
 
-            background:#efb810;
-            color:black;
+.elite-badge{
 
-        }
+    background:#efb810;
+    color:black;
 
-        .member-card h4{
+}
 
-            color:white;
+.member-card h4{
 
-            margin-top:18px;
+    color:white;
 
-            font-size:17px;
-            font-weight:700;
+    margin-top:18px;
 
-            line-height:1.4;
+    font-size:17px;
+    font-weight:700;
 
-        }
+    line-height:1.4;
 
-        .member-card p{
+}
 
-            color:#f5c451;
+.member-card p{
 
-            margin-top:6px;
+    color:#f5c451;
 
-            font-size:14px;
+    margin-top:6px;
 
-        }
+    font-size:14px;
 
-        @media(max-width:640px){
+}
 
-            .member-image{
+@media(max-width:640px){
 
-                width:100px;
-                height:100px;
+    .member-image{
 
-            }
+        width:100px;
+        height:100px;
 
-            .member-card{
+    }
 
-                padding:20px 12px;
+    .member-card{
 
-            }
+        padding:20px 12px;
 
-            .member-card h4{
+    }
 
-                font-size:15px;
+    .member-card h4{
 
-            }
+        font-size:15px;
 
-        }
+    }
 
-    </style>
+}
 
-</section>
+</style>
 <!-- CONTACTO / REDES -->
 <section id="contacto" class="bg-black py-24 border-t border-[#f5c451]/10 relative overflow-hidden">
 
     <!-- EFECTOS -->
-    <div class="absolute top-0 left-0 w-96 h-96 bg-[#f5c451]/10 blur-[140px] rounded-full"></div>
+    <div class="absolute top-0 left-0 w-96 h-96 bg-[#f5c451]/10 blur-[140px] rounded-full pointer-events-none"></div>
 
-    <div class="absolute bottom-0 right-0 w-[420px] h-[420px] bg-[#36024e]/20 blur-[160px] rounded-full"></div>
+    <div class="absolute bottom-0 right-0 w-[420px] h-[420px] bg-[#36024e]/20 blur-[160px] rounded-full pointer-events-none"></div>
 
     <div class="max-w-screen-2xl mx-auto px-8 relative z-10">
 
@@ -3333,96 +3439,72 @@ handleScrollAnimation();
 
                 </div>
 
-                <!-- PANEL -->
-                <div class="mt-8 bg-[#111111]/90 border border-[#f5c451]/15 rounded-[34px] p-10 text-center shadow-2xl">
+                <!-- ESTILOS -->
+<style>
 
-                    <p class="uppercase text-[#f5c451] tracking-[4px] text-sm">
-                        Comunidad Oficial
-                    </p>
+    .social-card{
+        min-height:130px;
+        border-radius:28px;
+        padding:28px;
+        display:flex;
+        align-items:center;
+        gap:22px;
+        transition:all 0.35s ease;
+        box-shadow:0 15px 35px rgba(0,0,0,0.25);
+    }
 
-                    <h3 class="text-4xl font-bold text-white mt-5 leading-tight">
-                        La carretera nos une.
-                    </h3>
+    .social-card:hover{
+        transform:translateY(-6px) scale(1.02);
+        box-shadow:0 25px 50px rgba(0,0,0,0.35);
+    }
 
-                    <p class="text-gray-400 text-lg leading-relaxed mt-6 max-w-3xl mx-auto">
-                        Miles de kilómetros recorridos, convoyes inolvidables
-                        y una comunidad creada para verdaderos apasionados
-                        del transporte pesado virtual.
-                    </p>
+    .social-icon{
+        width:68px;
+        height:68px;
+        border-radius:22px;
+        object-fit:cover;
+        background:white;
+        padding:10px;
+        flex-shrink:0;
+        display:block;
+    }
 
-                </div>
+    .social-title{
+        color:white;
+        font-size:22px;
+        font-weight:800;
+    }
 
-            </div>
+    .social-text{
+        color:rgba(255,255,255,0.85);
+        margin-top:8px;
+        line-height:1.6;
+        font-size:15px;
+    }
 
-        </div>
-
-    </div>
-
-    <!-- ESTILOS -->
-    <style>
+    @media(max-width:768px){
 
         .social-card{
-            min-height:130px;
-            border-radius:28px;
-            padding:28px;
-            display:flex;
-            align-items:center;
-            gap:22px;
-            transition:0.35s;
-            box-shadow:0 15px 35px rgba(0,0,0,0.25);
-        }
-
-        .social-card:hover{
-            transform:translateY(-6px) scale(1.02);
-            box-shadow:0 25px 50px rgba(0,0,0,0.35);
-        }
-
-        .social-icon{
-            width:68px;
-            height:68px;
-            border-radius:22px;
-            object-fit:cover;
-            background:white;
-            padding:10px;
-            flex-shrink:0;
+            padding:24px;
+            border-radius:24px;
         }
 
         .social-title{
-            color:white;
-            font-size:22px;
-            font-weight:800;
+            font-size:20px;
         }
 
-        .social-text{
-            color:rgba(255,255,255,0.85);
-            margin-top:8px;
-            line-height:1.6;
-            font-size:15px;
+        .social-icon{
+            width:58px;
+            height:58px;
         }
 
-        @media(max-width:768px){
+    }
 
-            .social-card{
-                padding:24px;
-                border-radius:24px;
-            }
-
-            .social-title{
-                font-size:20px;
-            }
-
-            .social-icon{
-                width:58px;
-                height:58px;
-            }
-
-        }
-
-    </style>
+</style>
 
 </section>
 
- <!-- FOOTER -->
+<!-- FOOTER -->
 <footer class="relative bg-[#050505] border-t border-[#f5c451]/10 overflow-hidden">
 
     <!-- EFECTOS -->
@@ -3432,179 +3514,7 @@ handleScrollAnimation();
 
     <div class="relative z-10 max-w-screen-2xl mx-auto px-8">
 
-        <!-- TOP -->
-        <div class="py-20 grid lg:grid-cols-12 gap-14">
-
-            <!-- IZQUIERDA -->
-            <div class="lg:col-span-5">
-
-                <!-- LOGO -->
-                <div class="flex items-center gap-5">
-
-                    <img src="logo-elite.png"
-                         alt="La Elite"
-                         class="h-20 drop-shadow-[0_0_20px_#f5c451]">
-
-                    <div>
-
-                        <h2 class="text-4xl font-bold logo-font text-[#f5c451] leading-none">
-                            LA ELITE
-                        </h2>
-
-                        <p class="uppercase tracking-[4px] text-xs text-gray-500 mt-2">
-                            ATS • ETS2
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <!-- TEXTO -->
-                <p class="text-gray-400 leading-relaxed text-lg mt-8 max-w-xl">
-                    Comunidad oficial de American Truck Simulator y Euro Truck Simulator 2.
-                    Convoyes, rutas épicas, eventos legendarios y pasión por la carretera virtual.
-                </p>
-
-                <!-- FRASE -->
-                <div class="mt-10 border-l-4 border-[#f5c451] pl-6">
-
-                    <p class="text-2xl italic text-white leading-relaxed">
-                        “Pasión, respeto y kilómetros infinitos.”
-                    </p>
-
-                </div>
-
-            </div>
-
-            <!-- CENTRO -->
-            <div class="lg:col-span-3">
-
-                <h3 class="footer-title">
-                    Navegación
-                </h3>
-
-                <div class="footer-links">
-
-                    <a href="#inicio">
-                        Inicio
-                    </a>
-
-                    <a href="#requisitos">
-                        Requisitos
-                    </a>
-
-                    <a href="#empresa">
-                        Empresa
-                    </a>
-
-                    <a href="#ranking">
-                        Ranking
-                    </a>
-
-                    <a href="#eventos">
-                        Eventos
-                    </a>
-
-                    <a href="#videos">
-                        Videos
-                    </a>
-
-                    <a href="#comunidad">
-                        Comunidad
-                    </a>
-
-                    <a href="#contacto">
-                        Contacto
-                    </a>
-
-                </div>
-
-            </div>
-
-            <!-- DERECHA -->
-            <div class="lg:col-span-4">
-
-                <h3 class="footer-title">
-                    Comunidad Oficial
-                </h3>
-
-                <!-- STATS -->
-                <div class="grid grid-cols-2 gap-5 mt-8">
-
-                    <div class="footer-stat">
-
-                        <h4>
-                            #65
-                        </h4>
-
-                        <p>
-                            Ranking Mundial
-                        </p>
-
-                    </div>
-
-                    <div class="footer-stat">
-
-                        <h4>
-                            ATS
-                        </h4>
-
-                        <p>
-                            Comunidad Elite
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <!-- REDES -->
-                <div class="flex flex-wrap gap-4 mt-10">
-
-                    <a href="https://discord.gg/CSAJCSah"
-                       target="_blank"
-                       class="footer-social">
-
-                        <i class="fab fa-discord"></i>
-
-                    </a>
-
-                    <a href="https://www.youtube.com/@ARKAMAX24"
-                       target="_blank"
-                       class="footer-social">
-
-                        <i class="fab fa-youtube"></i>
-
-                    </a>
-
-                    <a href="https://www.tiktok.com/@arkamax_24"
-                       target="_blank"
-                       class="footer-social">
-
-                        <i class="fab fa-tiktok"></i>
-
-                    </a>
-
-                    <a href="https://www.facebook.com/ARKAMAXOFICIAL"
-                       target="_blank"
-                       class="footer-social">
-
-                        <i class="fab fa-facebook-f"></i>
-
-                    </a>
-
-                    <a href="https://trucksbook.eu/company/224432"
-                       target="_blank"
-                       class="footer-social">
-
-                        <i class="fas fa-truck"></i>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
+        <!-- TODO TU CONTENIDO DEL FOOTER -->
 
         <!-- BOTTOM -->
         <div class="border-t border-[#f5c451]/10 py-8 flex flex-col md:flex-row items-center justify-between gap-5">
@@ -3615,6 +3525,176 @@ handleScrollAnimation();
 
             <p class="text-sm text-[#f5c451]/60 text-center md:text-right">
                 Diseñado por ARKAMAX 🚛
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- ESTILOS -->
+    <style>
+
+        .footer-title{
+            color:white;
+            font-size:24px;
+            font-weight:800;
+            margin-bottom:28px;
+        }
+
+        .footer-links{
+            display:flex;
+            flex-direction:column;
+            gap:18px;
+        }
+
+        .footer-links a{
+            color:#9ca3af;
+            font-size:16px;
+            transition:0.3s;
+        }
+
+        .footer-links a:hover{
+            color:#f5c451;
+            transform:translateX(6px);
+        }
+
+        .footer-stat{
+            background:#111111;
+            border:1px solid rgba(245,196,81,0.12);
+            border-radius:24px;
+            padding:28px 20px;
+            text-align:center;
+            transition:0.35s;
+        }
+
+        .footer-stat:hover{
+            transform:translateY(-5px);
+            border-color:rgba(245,196,81,0.3);
+        }
+
+        .footer-stat h4{
+            color:#f5c451;
+            font-size:36px;
+            font-weight:800;
+        }
+
+        .footer-stat p{
+            color:#9ca3af;
+            margin-top:10px;
+            font-size:13px;
+            letter-spacing:2px;
+            text-transform:uppercase;
+        }
+
+        .footer-social{
+            width:60px;
+            height:60px;
+            border-radius:20px;
+            background:#111111;
+            border:1px solid rgba(245,196,81,0.12);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color:#f5c451;
+            font-size:22px;
+            transition:0.35s;
+        }
+
+        .footer-social:hover{
+            background:#f5c451;
+            color:black;
+            transform:translateY(-5px) scale(1.05);
+            box-shadow:0 15px 30px rgba(245,196,81,0.2);
+        }
+
+        @media(max-width:768px){
+
+            .footer-title{
+                margin-top:10px;
+            }
+
+        }
+
+    </style>
+
+</footer>
+
+<script>
+
+function initializeTailwind() {
+
+    return {
+
+        config(userConfig = {}) {
+
+            return {
+
+                content: [],
+                theme: {
+                    extend: {}
+                },
+                plugins: [],
+                ...userConfig
+
+            };
+
+        },
+
+        theme: {
+
+            extend: {
+
+                colors: {
+
+                    gold:'#f5c451',
+                    redelite:'#c8102e'
+
+                }
+
+            }
+
+        }
+
+    };
+
+}
+
+/* =========================
+   CONTADOR ONLINE
+========================= */
+
+function startOnlineCounter() {
+
+    let count = 187;
+
+    const counterEl =
+    document.getElementById('online-counter');
+
+    if (!counterEl) return;
+
+    setInterval(() => {
+
+        count += Math.floor(Math.random() * 7) - 2;
+
+        if (count < 140) count = 140;
+        if (count > 260) count = 260;
+
+        counterEl.textContent = count;
+
+    }, 8000);
+
+}
+
+</script>
+        <!-- BOTTOM -->
+        <div class="border-t border-[#f5c451]/10 py-8 flex flex-col md:flex-row items-center justify-between gap-5">
+
+            <p class="text-sm text-gray-500 text-center md:text-left">
+                © 2026 LA ELITE • Comunidad Oficial ATS-ETS2
+            </p>
+
+            <p class="text-sm text-[#f5c451]/60 text-center md:text-right">
+                Diseñado por Anderson Montoya 
             </p>
 
         </div>
@@ -3725,9 +3805,9 @@ handleScrollAnimation();
                         extend: {}
                     },
                     plugins: [],
-                    ...userConfig,
+                    ...userConfig
 
-                }
+                };
 
             },
 
@@ -3746,11 +3826,9 @@ handleScrollAnimation();
 
             }
 
-        }
+        };
 
     }
-
-<script>
 
     /* =========================
        CONTADOR ONLINE
@@ -3763,19 +3841,18 @@ handleScrollAnimation();
         const counterEl =
         document.getElementById('online-counter');
 
-        // Verificar existencia
         if (!counterEl) return;
+
+        counterEl.textContent = count;
 
         setInterval(() => {
 
             count += Math.floor(Math.random() * 7) - 2;
 
-            // Límite mínimo
             if (count < 140) {
                 count = 140;
             }
 
-            // Límite máximo
             if (count > 260) {
                 count = 260;
             }
@@ -3786,138 +3863,144 @@ handleScrollAnimation();
 
     }
 
-    /* =========================
-       MÚSICA
-    ========================= */
+</script>
 
-    let musicPlaying = false;
+/* =========================
+   MÚSICA
+========================= */
 
-    function toggleMusic() {
+let musicPlaying = false;
 
-        const audio =
-        document.getElementById('ambient-music');
+function toggleMusic() {
 
-        const icon =
-        document.getElementById('music-icon');
+    const audio =
+    document.getElementById('ambient-music');
 
-        // Verificar audio
-        if (!audio) {
+    const icon =
+    document.getElementById('music-icon');
 
-            console.error(
-                '❌ No existe #ambient-music'
-            );
+    // Verificar audio
+    if (!audio) {
 
-            return;
+        console.error(
+            '❌ No existe #ambient-music'
+        );
+
+        return;
+
+    }
+
+    // Verificar source
+    const source =
+    audio.querySelector('source');
+
+    if (!source || source.src === '') {
+
+        alert(
+            '🎵 Agrega un archivo .mp3 válido.'
+        );
+
+        return;
+
+    }
+
+    // PAUSAR
+    if (musicPlaying) {
+
+        audio.pause();
+
+        if (icon) {
+
+            icon.classList.remove('fa-pause');
+            icon.classList.add('fa-music');
 
         }
 
-        // Verificar source
-        const source =
-        audio.querySelector('source');
+        musicPlaying = false;
 
-        if (!source || source.src === '') {
+    }
 
-            alert(
-                '🎵 Agrega un archivo .mp3 válido.'
-            );
+    // REPRODUCIR
+    else {
 
-            return;
+        audio.play()
 
-        }
-
-        // PAUSAR
-        if (musicPlaying) {
-
-            audio.pause();
+        .then(() => {
 
             if (icon) {
 
-                icon.classList.remove('fa-pause');
-                icon.classList.add('fa-music');
+                icon.classList.remove('fa-music');
+                icon.classList.add('fa-pause');
 
             }
 
-        }
+            musicPlaying = true;
 
-        // REPRODUCIR
-        else {
+        })
 
-            audio.play()
+        .catch((error) => {
 
-            .then(() => {
-
-                if (icon) {
-
-                    icon.classList.remove('fa-music');
-                    icon.classList.add('fa-pause');
-
-                }
-
-            })
-
-            .catch((error) => {
-
-                console.error(
-                    '❌ Error audio:',
-                    error
-                );
-
-                alert(
-                    '⚠️ El navegador bloqueó la reproducción automática.'
-                );
-
-            });
-
-        }
-
-        musicPlaying = !musicPlaying;
-
-    }
-
-    /* =========================
-       MENÚ MOBILE
-    ========================= */
-
-    function toggleMobileMenu() {
-
-        const menu =
-        document.getElementById('mobile-menu');
-
-        if (!menu) return;
-
-        menu.classList.toggle('hidden');
-
-    }
-
-    /* =========================
-       EVENTOS
-    ========================= */
-
-    function joinEvent(btn) {
-
-        if (!btn) return;
-
-        btn.innerHTML =
-        '✅ CONFIRMADO';
-
-        btn.style.background =
-        'linear-gradient(to right, #22c55e, #86efac)';
-
-        btn.style.color = '#000';
-
-        btn.style.cursor = 'default';
-
-        btn.disabled = true;
-
-        setTimeout(() => {
-
-            alert(
-                '🚛 Has sido añadido al convoy.'
+            console.error(
+                '❌ Error audio:',
+                error
             );
 
-        }, 600);
+            alert(
+                '⚠️ El navegador bloqueó la reproducción automática.'
+            );
+
+            musicPlaying = false;
+
+        });
 
     }
+
+}
+
+/* =========================
+   MENÚ MOBILE
+========================= */
+
+function toggleMobileMenu() {
+
+    const menu =
+    document.getElementById('mobile-menu');
+
+    if (!menu) return;
+
+    menu.classList.toggle('hidden');
+
+}
+
+/* =========================
+   EVENTOS
+========================= */
+
+function joinEvent(btn) {
+
+    if (!btn) return;
+
+    btn.textContent =
+    '✅ CONFIRMADO';
+
+    btn.style.background =
+    'linear-gradient(to right, #22c55e, #86efac)';
+
+    btn.style.color = '#000';
+
+    btn.style.cursor = 'default';
+
+    btn.disabled = true;
+
+    setTimeout(() => {
+
+        alert(
+            '🚛 Has sido añadido al convoy.'
+        );
+
+    }, 600);
+
+}
 
 </script>
 <!-- =========================
@@ -3926,117 +4009,111 @@ handleScrollAnimation();
 
 <script>
 
-    function initScrollAnimations() {
+function initScrollAnimations() {
 
-        const elements =
-        document.querySelectorAll(
-            'section, .member-card, .event-card'
-        );
+    const elements =
+    document.querySelectorAll(
+        '.member-card, .event-card'
+    );
 
-        // Verificar elementos
-        if (!elements.length) return;
+    if (!elements.length) return;
 
-        const observer =
-        new IntersectionObserver((entries) => {
+    const observer =
+    new IntersectionObserver((entries) => {
 
-            entries.forEach(entry => {
+        entries.forEach(entry => {
 
-                if (entry.isIntersecting) {
+            if (entry.isIntersecting) {
 
-                    entry.target.style.opacity = '1';
+                entry.target.style.opacity = '1';
 
-                    entry.target.style.transform =
-                    'translateY(0)';
+                entry.target.style.transform =
+                'translateY(0)';
 
-                    // Dejar de observar
-                    observer.unobserve(entry.target);
+                observer.unobserve(entry.target);
 
-                }
-
-            });
-
-        }, {
-
-            threshold: 0.12
+            }
 
         });
 
-        elements.forEach(el => {
+    }, {
+        threshold: 0.12
+    });
 
-            el.style.opacity = '0';
+    elements.forEach(el => {
 
-            el.style.transform =
-            'translateY(45px)';
+        el.style.opacity = '0';
 
-            el.style.transition =
-            'all 0.8s ease';
+        el.style.transform =
+        'translateY(45px)';
 
-            observer.observe(el);
+        el.style.transition =
+        'all 0.8s ease';
 
-        });
-
-    }
-
-    /* =========================
-       POPUP NOTICIAS
-    ========================= */
-
-    function openNews() {
-
-        const overlay =
-        document.getElementById('newsOverlay');
-
-        if (!overlay) return;
-
-        overlay.classList.add('show');
-
-    }
-
-    function closeNews() {
-
-        const overlay =
-        document.getElementById('newsOverlay');
-
-        if (!overlay) return;
-
-        overlay.classList.remove('show');
-
-    }
-
-    /* =========================
-       INICIALIZAR TODO
-    ========================= */
-
-    window.addEventListener('load', () => {
-
-        // Tailwind
-        if (
-            typeof initializeTailwind === 'function'
-        ) {
-
-            initializeTailwind();
-
-        }
-
-        // Counter
-        startOnlineCounter();
-
-        // Animaciones
-        initScrollAnimations();
-
-        // Popup automático
-        setTimeout(() => {
-
-            openNews();
-
-        }, 1800);
-
-        console.log(
-            '%c🚛 LA ELITE cargado correctamente.',
-            'color:#f5c451; font-size:14px; font-weight:bold;'
-        );
+        observer.observe(el);
 
     });
+
+}
+
+/* =========================
+   POPUP NOTICIAS
+========================= */
+
+function openNews() {
+
+    const overlay =
+    document.getElementById('newsOverlay');
+
+    if (!overlay) return;
+
+    overlay.classList.add('show');
+
+}
+
+function closeNews() {
+
+    const overlay =
+    document.getElementById('newsOverlay');
+
+    if (!overlay) return;
+
+    overlay.classList.remove('show');
+
+}
+
+/* =========================
+   INICIALIZAR TODO
+========================= */
+
+window.addEventListener('load', () => {
+
+    if (
+        typeof initializeTailwind === 'function'
+    ) {
+        initializeTailwind();
+    }
+
+    if (
+        typeof startOnlineCounter === 'function'
+    ) {
+        startOnlineCounter();
+    }
+
+    initScrollAnimations();
+
+    setTimeout(() => {
+
+        openNews();
+
+    }, 1800);
+
+    console.log(
+        '%c🚛 LA ELITE cargado correctamente.',
+        'color:#f5c451; font-size:14px; font-weight:bold;'
+    );
+
+});
 
 </script>
 
@@ -4075,15 +4152,15 @@ handleScrollAnimation();
         <div class="news-content">
 
             <!-- IMAGEN -->
-            <div class="news-image">
+<div class="news-image">
 
-                <img
-                    src="costa.png"
-                    alt="Evento de La Elite"
-                    class="w-full h-full object-cover">
+    <img
+        src="costa.png"
+        alt="Evento de La Elite"
+        class="w-full h-full object-cover"
+        loading="lazy">
 
-            </div>
-
+</div>
             <!-- TEXTO -->
             <div class="news-text">
 
@@ -4148,6 +4225,8 @@ function startOnlineCounter() {
     document.getElementById('online-counter');
 
     if (!counterEl) return;
+
+    counterEl.textContent = count;
 
     setInterval(() => {
 
@@ -4272,10 +4351,10 @@ function joinEvent(btn) {
 
 function initScrollAnimations() {
 
-    const elements =
-    document.querySelectorAll(
-        'section, .member-card, .event-card'
-    );
+const elements =
+document.querySelectorAll(
+    '.member-card, .event-card, .news-box'
+);
 
     const observer =
     new IntersectionObserver((entries) => {
@@ -4370,7 +4449,9 @@ window.addEventListener('load', () => {
     // Mostrar popup automáticamente
     setTimeout(() => {
 
-        openNews();
+        if (typeof openNews === 'function') {
+            openNews();
+        }
 
     }, 1800);
 
@@ -4607,7 +4688,6 @@ window.addEventListener('load', () => {
     font-size:15px;
 
 }
-
 /* BOTON CERRAR */
 
 .close-btn{
@@ -4759,6 +4839,30 @@ window.addEventListener('load', () => {
 }
 
 </style>
+<script>
 
+window.addEventListener('scroll', () => {
+
+    const navbar = document.getElementById('navbar');
+
+    if(window.scrollY > 50){
+
+        navbar.classList.add(
+            'bg-black/90',
+            'shadow-2xl'
+        );
+
+    }else{
+
+        navbar.classList.remove(
+            'bg-black/90',
+            'shadow-2xl'
+        );
+
+    }
+
+});
+
+</script>
 </body>
 </html>
