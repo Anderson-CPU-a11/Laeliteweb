@@ -3321,33 +3321,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </section>
 
-<!-- FOOTER -->
-<footer class="relative bg-[#050505] border-t border-[#f5c451]/10 overflow-hidden">
-
-    <!-- EFECTOS -->
-    <div class="absolute top-0 left-0 w-72 h-72 bg-[#f5c451]/5 blur-[120px] rounded-full"></div>
-
-    <div class="absolute bottom-0 right-0 w-80 h-80 bg-[#36024e]/10 blur-[140px] rounded-full"></div>
-
-    <div class="relative z-10 max-w-screen-2xl mx-auto px-8">
-
-        <!-- TODO TU CONTENIDO DEL FOOTER -->
-
-        <!-- BOTTOM -->
-        <div class="border-t border-[#f5c451]/10 py-8 flex flex-col md:flex-row items-center justify-between gap-5">
-
-            <p class="text-sm text-gray-500 text-center md:text-left">
-                © 2026 LA ELITE • Comunidad Oficial ATS-ETS2 Mapkalo
-            </p>
-
-            <p class="text-sm text-[#f5c451]/60 text-center md:text-right">
-                Diseñado por ARKAMAX 🚛
-            </p>
-
-        </div>
-
-    </div>
-
     <!-- ESTILOS -->
     <style>
 
@@ -3683,98 +3656,6 @@ function startOnlineCounter() {
 </script>
 
 /* =========================
-   MÚSICA
-========================= */
-
-let musicPlaying = false;
-
-function toggleMusic() {
-
-    const audio =
-    document.getElementById('ambient-music');
-
-    const icon =
-    document.getElementById('music-icon');
-
-    // Verificar audio
-    if (!audio) {
-
-        console.error(
-            '❌ No existe #ambient-music'
-        );
-
-        return;
-
-    }
-
-    // Verificar source
-    const source =
-    audio.querySelector('source');
-
-    if (!source || source.src === '') {
-
-        alert(
-            '🎵 Agrega un archivo .mp3 válido.'
-        );
-
-        return;
-
-    }
-
-    // PAUSAR
-    if (musicPlaying) {
-
-        audio.pause();
-
-        if (icon) {
-
-            icon.classList.remove('fa-pause');
-            icon.classList.add('fa-music');
-
-        }
-
-        musicPlaying = false;
-
-    }
-
-    // REPRODUCIR
-    else {
-
-        audio.play()
-
-        .then(() => {
-
-            if (icon) {
-
-                icon.classList.remove('fa-music');
-                icon.classList.add('fa-pause');
-
-            }
-
-            musicPlaying = true;
-
-        })
-
-        .catch((error) => {
-
-            console.error(
-                '❌ Error audio:',
-                error
-            );
-
-            alert(
-                '⚠️ El navegador bloqueó la reproducción automática.'
-            );
-
-            musicPlaying = false;
-
-        });
-
-    }
-
-}
-
-/* =========================
    MENÚ MOBILE
 ========================= */
 
@@ -4054,71 +3935,6 @@ function startOnlineCounter() {
         counterEl.textContent = count;
 
     }, 8000);
-
-}
-
-/* =========================
-   MÚSICA
-========================= */
-
-let musicPlaying = false;
-
-function toggleMusic() {
-
-    const audio =
-    document.getElementById('ambient-music');
-
-    const icon =
-    document.getElementById('music-icon');
-
-    if (!audio) return;
-
-    const source = audio.querySelector('source');
-
-    if (!source || source.src === '') {
-
-        alert('🎵 Agrega un archivo .mp3 válido.');
-        return;
-
-    }
-
-    if (musicPlaying) {
-
-        audio.pause();
-
-        if (icon) {
-
-            icon.classList.remove('fa-pause');
-            icon.classList.add('fa-music');
-
-        }
-
-    } else {
-
-        audio.play()
-
-        .then(() => {
-
-            if (icon) {
-
-                icon.classList.remove('fa-music');
-                icon.classList.add('fa-pause');
-
-            }
-
-        })
-
-        .catch(() => {
-
-            alert(
-                '⚠️ El navegador bloqueó la reproducción automática.'
-            );
-
-        });
-
-    }
-
-    musicPlaying = !musicPlaying;
 
 }
 
