@@ -1495,142 +1495,183 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 </style>
 <!-- ANUNCIOS -->
-<section id="anuncios" class="bg-[#111111] py-24 scroll-reveal">
+<section id="anuncios" class="bg-[#111111] py-16 md:py-24 relative overflow-hidden">
 
-    <!-- ANUNCIOS -->
+    <!-- EFECTOS DE LUCES EN EL FONDO -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#36024e]/5 blur-[130px] rounded-full pointer-events-none"></div>
 
-<section id="anuncios" class="bg-[#111111] py-24 scroll-reveal">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
 
-<div class="max-w-screen-2xl mx-auto px-8">
+        <!-- TITULO DE LA SECCIÓN -->
+        <div class="text-center mb-12 md:mb-20 scroll-reveal">
+            <span class="uppercase text-[#c8102e] text-xs md:text-sm font-bold tracking-[4px]">
+                Últimas novedades
+            </span>
+            <h2 class="section-title text-3xl sm:text-4xl md:text-5xl font-bold logo-font mt-4 text-white">
+                Anuncios Oficiales
+            </h2>
+            <p class="text-gray-400 mt-4 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
+                Mantente informado sobre eventos, novedades, mantenimiento y actividades oficiales de La Elite.
+            </p>
+        </div>
 
-    <!-- TITULO -->
-    <div class="text-center mb-20">
+        <!-- GRID DE ANUNCIOS (3 Columnas en PC, 1 en Móvil) -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
 
-        <span class="uppercase text-[#c8102e] text-sm tracking-[4px]">
-            Últimas novedades
-        </span>
-
-        <h2 class="section-title text-5xl font-bold logo-font mt-4">
-            Anuncios Oficiales
-        </h2>
-
-        <p class="text-gray-400 mt-5 text-lg max-w-2xl mx-auto">
-            Mantente informado sobre eventos, novedades y actividades oficiales de La Elite.
-        </p>
-
-    </div>
-
-    <!-- GRID -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-
-        <!-- ANUNCIO 1 -->
-        <div class="group bg-[#181818] rounded-3xl border border-[#f5c451]/10 overflow-hidden shadow-2xl hover:border-[#f5c451]/40 transition-all duration-300 hover:-translate-y-2">
-
-            <div class="p-8 flex flex-col h-full">
-
-                <div class="flex justify-between items-start gap-4">
-
+            <!-- ANUNCIO 1: CONVOY OFICIAL -->
+            <div class="group bg-[#181818] rounded-2xl md:rounded-3xl border border-[#f5c451]/10 overflow-hidden shadow-2xl hover:border-[#f5c451]/30 transition-all duration-300 hover:-translate-y-2 flex flex-col h-full scroll-reveal">
+                <div class="p-6 md:p-8 flex flex-col h-full justify-between flex-1">
+                    
                     <div>
+                        <!-- CABECERA: CATEGORÍA Y FECHA -->
+                        <div class="flex justify-between items-start gap-4">
+                            <span class="inline-flex items-center px-3 py-1.5 bg-[#c8102e] text-white text-[10px] font-bold rounded-full tracking-[1px] uppercase shadow-lg">
+                                Evento
+                            </span>
+                            <div class="bg-black border border-[#f5c451]/10 rounded-xl px-3 py-1.5 text-center min-w-[85px]">
+                                <p class="text-[#f5c451] text-[9px] uppercase tracking-[1px] font-bold">Fecha</p>
+                                <p class="text-white text-xs font-semibold mt-0.5">Próximamente</p>
+                            </div>
+                        </div>
 
-                        <span class="inline-flex items-center px-4 py-2 bg-[#c8102e] text-white text-xs font-bold rounded-full tracking-[1px] uppercase shadow-lg">
-                            Evento
-                        </span>
-
-                        <h3 class="text-2xl font-bold mt-6 text-white leading-snug">
-                            xxxx
+                        <!-- CUERPO DEL ANUNCIO -->
+                        <h3 class="text-xl md:text-2xl font-bold mt-5 md:mt-6 text-white leading-snug logo-font">
+                            Gran Convoy de Fin de Semana
                         </h3>
-
-                        <p class="text-[#f5c451] mt-3 text-sm uppercase tracking-[2px]">
+                        <p class="text-[#f5c451] mt-2 text-[11px] uppercase tracking-[1.5px] font-medium">
                             Discord Oficial
                         </p>
-
+                        <p class="text-gray-400 mt-4 leading-relaxed text-sm md:text-[15px]">
+                            Prepara tu camión para nuestra ruta oficial programada en American Truck Simulator. Alistaremos motores en la hora habitual compartida en los canales de logística.
+                        </p>
                     </div>
 
-                    <div class="bg-black border border-[#f5c451]/20 rounded-2xl px-4 py-3 text-center min-w-[95px]">
-
-                        <p class="text-[#f5c451] text-xs uppercase tracking-[2px]">
-                            Fecha
-                        </p>
-
-                        <p class="text-white text-sm font-semibold mt-1">
-                            xxxx
-                        </p>
-
+                    <!-- FOOTER DE LA CARD: TAGS Y BOTÓN -->
+                    <div>
+                        <div class="flex flex-wrap gap-2 mt-6">
+                            <span class="px-3 py-1 text-[11px] rounded-lg bg-black border border-[#f5c451]/10 text-gray-400">🚛 ATS / ETS2</span>
+                            <span class="px-3 py-1 text-[11px] rounded-lg bg-black border border-[#5865F2]/20 text-gray-400">🎙️ Voz</span>
+                        </div>
+                        <div class="mt-6 md:mt-8">
+                            <a href="https://discord.gg/CSAJCSah" target="_blank" rel="noopener noreferrer" class="announcement-btn">
+                                📢 Ver Detalle en Discord
+                            </a>
+                        </div>
                     </div>
 
                 </div>
+            </div>
 
-                <div class="mt-8">
+            <!-- ANUNCIO 2: MANTENIMIENTO WEB / COMUNIDAD -->
+            <div class="group bg-[#181818] rounded-2xl md:rounded-3xl border border-[#f5c451]/10 overflow-hidden shadow-2xl hover:border-[#f5c451]/30 transition-all duration-300 hover:-translate-y-2 flex flex-col h-full scroll-reveal">
+                <div class="p-6 md:p-8 flex flex-col h-full justify-between flex-1">
+                    
+                    <div>
+                        <div class="flex justify-between items-start gap-4">
+                            <span class="inline-flex items-center px-3 py-1.5 bg-[#36024e] text-white text-[10px] font-bold rounded-full tracking-[1px] uppercase shadow-lg">
+                                Soporte
+                            </span>
+                            <div class="bg-black border border-[#f5c451]/10 rounded-xl px-3 py-1.5 text-center min-w-[85px]">
+                                <p class="text-[#f5c451] text-[9px] uppercase tracking-[1px] font-bold">Estado</p>
+                                <p class="text-green-400 text-xs font-bold mt-0.5">Completado</p>
+                            </div>
+                        </div>
 
-                    <p class="text-gray-300 leading-relaxed text-[15px]">
-                        xxxx
-                    </p>
+                        <h3 class="text-xl md:text-2xl font-bold mt-5 md:mt-6 text-white leading-snug logo-font">
+                            Mantenimiento de Plataformas
+                        </h3>
+                        <p class="text-[#f5c451] mt-2 text-[11px] uppercase tracking-[1.5px] font-medium">
+                            Infraestructura Web
+                        </p>
+                        <p class="text-gray-400 mt-4 leading-relaxed text-sm md:text-[15px]">
+                            Se han actualizado los módulos internos y las tarjetas informativas de arkamax24.com para optimizar el rendimiento y la velocidad de carga de la comunidad "La Élite".
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="flex flex-wrap gap-2 mt-6">
+                            <span class="px-3 py-1 text-[11px] rounded-lg bg-black border border-[#00AEEF]/20 text-gray-400">🌐 Sitio Web</span>
+                            <span class="px-3 py-1 text-[11px] rounded-lg bg-black border border-[#f5c451]/10 text-gray-400">⚙️ Ajustes</span>
+                        </div>
+                        <div class="mt-6 md:mt-8">
+                            <a href="https://discord.gg/CSAJCSah" target="_blank" rel="noopener noreferrer" class="announcement-btn">
+                                🔧 Reportar un Error
+                            </a>
+                        </div>
+                    </div>
 
                 </div>
+            </div>
 
-                <div class="flex flex-wrap gap-3 mt-8">
+            <!-- ANUNCIO 3: CONVOCATORIAS -->
+            <div class="group bg-[#181818] rounded-2xl md:rounded-3xl border border-[#f5c451]/10 overflow-hidden shadow-2xl hover:border-[#f5c451]/30 transition-all duration-300 hover:-translate-y-2 flex flex-col h-full scroll-reveal">
+                <div class="p-6 md:p-8 flex flex-col h-full justify-between flex-1">
+                    
+                    <div>
+                        <div class="flex justify-between items-start gap-4">
+                            <span class="inline-flex items-center px-3 py-1.5 bg-amber-600 text-white text-[10px] font-bold rounded-full tracking-[1px] uppercase shadow-lg">
+                                Ingresos
+                            </span>
+                            <div class="bg-black border border-[#f5c451]/10 rounded-xl px-3 py-1.5 text-center min-w-[85px]">
+                                <p class="text-[#f5c451] text-[9px] uppercase tracking-[1px] font-bold">Cupos</p>
+                                <p class="text-white text-xs font-semibold mt-0.5">Disponibles</p>
+                            </div>
+                        </div>
 
-                    <span class="px-4 py-2 text-xs rounded-full bg-black border border-[#f5c451]/20 text-gray-300">
-                        Convoy
-                    </span>
+                        <h3 class="text-xl md:text-2xl font-bold mt-5 md:mt-6 text-white leading-snug logo-font">
+                            Apertura de Nuevos Cupos
+                        </h3>
+                        <p class="text-[#f5c451] mt-2 text-[11px] uppercase tracking-[1.5px] font-medium">
+                            Reclutamiento VTC
+                        </p>
+                        <p class="text-gray-400 mt-4 leading-relaxed text-sm md:text-[15px]">
+                            ¿Quieres unirte a nuestras filas? Las postulaciones oficiales están abiertas en el canal correspondiente. Revisa nuestra sección de requisitos y envía tu solicitud hoy.
+                        </p>
+                    </div>
 
-                    <span class="px-4 py-2 text-xs rounded-full bg-black border border-[#5865F2]/40 text-gray-300">
-                        🎙 Discord
-                    </span>
+                    <div>
+                        <div class="flex flex-wrap gap-2 mt-6">
+                            <span class="px-3 py-1 text-[11px] rounded-lg bg-black border border-[#f5c451]/10 text-gray-400">👑 Postulación</span>
+                            <span class="px-3 py-1 text-[11px] rounded-lg bg-black border border-[#22c55e]/20 text-gray-400">✅ Activo</span>
+                        </div>
+                        <div class="mt-6 md:mt-8">
+                            <a href="#requisitos" class="announcement-btn">
+                                📝 Ver Requisitos Básicos
+                            </a>
+                        </div>
+                    </div>
 
                 </div>
-
-                <div class="mt-10">
-
-                    <a href="https://discord.gg/CSAJCSah"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="announcement-btn">
-
-                        📢 Ver anuncio
-
-                    </a>
-
-                </div>
-
             </div>
 
         </div>
-
     </div>
+</section>
 
-</div>
-
+<!-- ESTILOS EXCLUSIVOS -->
 <style>
-
-    .announcement-btn{
-        width:100%;
-        min-height:58px;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        background:#f5c451;
-        color:black;
-        font-size:17px;
-        font-weight:700;
-        border-radius:18px;
-        text-decoration:none;
-        transition:0.3s;
-        box-shadow:0 10px 25px rgba(245,196,81,0.15);
+    .announcement-btn {
+        width: 100%;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f5c451;
+        color: black;
+        font-size: 14px;
+        font-weight: 800;
+        border-radius: 14px;
+        text-decoration: none;
+        transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 8px 20px rgba(245, 196, 81, 0.1);
     }
 
-    .announcement-btn:hover{
-        transform:translateY(-3px);
-        background:#ffd56a;
-        box-shadow:0 15px 30px rgba(245,196,81,0.25);
+    .announcement-btn:hover {
+        transform: translateY(-3px);
+        background: #ffd56a;
+        box-shadow: 0 12px 25px rgba(245, 196, 81, 0.25);
     }
-
 </style>
-
-</section>
-
-
-</section>
 
 <!-- EVENTOS -->
 <section id="eventos" class="max-w-screen-2xl mx-auto px-8 py-24 scroll-reveal">
