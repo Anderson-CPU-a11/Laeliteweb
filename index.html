@@ -2247,1004 +2247,715 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 </style>
 <!-- CONTACTO / REDES -->
-<section id="contacto" class="bg-black py-24 border-t border-[#f5c451]/10 relative overflow-hidden">
+<section id="contacto" class="bg-black py-16 md:py-24 border-t border-[#f5c451]/10 relative overflow-hidden">
 
-    <!-- EFECTOS -->
-    <div class="absolute top-0 left-0 w-96 h-96 bg-[#f5c451]/10 blur-[140px] rounded-full pointer-events-none"></div>
+    <!-- EFECTOS DE FONDO BLUR -->
+    <div class="absolute top-0 left-0 w-72 md:w-96 h-72 md:h-96 bg-[#f5c451]/5 md:bg-[#f5c451]/10 blur-[100px] md:blur-[140px] rounded-full pointer-events-none"></div>
+    <div class="absolute bottom-0 right-0 w-80 md:w-[420px] h-80 md:h-[420px] bg-[#36024e]/10 md:bg-[#36024e]/20 blur-[120px] md:blur-[160px] rounded-full pointer-events-none"></div>
 
-    <div class="absolute bottom-0 right-0 w-[420px] h-[420px] bg-[#36024e]/20 blur-[160px] rounded-full pointer-events-none"></div>
-
-    <div class="max-w-screen-2xl mx-auto px-8 relative z-10">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-8 relative z-10">
 
         <!-- TITULO -->
-        <div class="text-center mb-20">
-
-            <span class="uppercase text-[#c8102e] text-sm tracking-[4px]">
+        <div class="text-center mb-12 md:mb-20">
+            <span class="uppercase text-[#c8102e] text-xs md:text-sm font-bold tracking-[4px]">
                 Redes Oficiales
             </span>
-
-            <h2 class="text-5xl md:text-6xl font-bold logo-font mt-4 neon-gold">
+            <h2 class="text-3xl sm:text-5xl md:text-6xl font-bold logo-font mt-4 neon-gold tracking-wide text-white">
                 Contacto & Comunidad
             </h2>
-
-            <p class="text-gray-400 mt-6 text-lg max-w-3xl mx-auto leading-relaxed">
-                Forma parte de una de las comunidades más grandes y activas
-                de ATS y ETS2 en Colombia. Vive convoyes legendarios,
-                eventos exclusivos y rutas inolvidables.
+            <p class="text-gray-400 mt-4 md:mt-6 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
+                Forma parte de una de las comunidades más grandes y activas de ATS y ETS2 en Colombia. Vive convoyes legendarios, eventos exclusivos y rutas inolvidables.
             </p>
-
         </div>
 
-        <!-- GRID -->
-        <div class="grid lg:grid-cols-12 gap-10 items-stretch">
+        <!-- GRID PRINCIPAL -->
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
 
-            <!-- IZQUIERDA -->
+            <!-- COLUMNA IZQUIERDA (INFO & STATS) -->
             <div class="lg:col-span-5">
-
-                <div class="h-full bg-[#111111]/80 backdrop-blur-xl border border-[#f5c451]/15 rounded-[34px] p-10 shadow-2xl">
-
-                    <p class="uppercase text-[#f5c451] tracking-[4px] text-sm">
-                        La Elite ATS • ETS2
-                    </p>
-
-                    <h3 class="text-4xl font-bold text-white mt-5 leading-tight">
-                        ¿Listo para rodar con los mejores?
-                    </h3>
-
-                    <p class="mt-7 text-gray-300 text-lg leading-relaxed">
-                        Únete a nuestros convoyes, comparte rutas épicas
-                        y conviértete en parte de la hermandad más legendaria
-                        de la carretera virtual.
-                    </p>
-
-                    <!-- STATS -->
-                    <div class="grid grid-cols-2 gap-5 mt-10">
-
-                        <div class="bg-black/60 border border-[#f5c451]/10 rounded-2xl p-6 text-center">
-
-                            <h4 class="text-4xl font-bold text-[#f5c451]">
-                                3
-                            </h4>
-
-                            <p class="text-gray-400 mt-2 text-sm uppercase tracking-[2px]">
-                                Ranking Nacional 
-                            </p>
-
-                        </div>
-
-                        <div class="bg-black/60 border border-[#f5c451]/10 rounded-2xl p-6 text-center">
-
-                            <h4 class="text-4xl font-bold text-[#f5c451]">
-                                ATS
-                            </h4>
-
-                            <p class="text-gray-400 mt-2 text-sm uppercase tracking-[2px]">
-                                Comunidad Elite
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <!-- FRASE -->
-                    <div class="mt-10 border-l-4 border-[#f5c451] pl-6">
-
-                        <p class="text-2xl italic text-white leading-relaxed">
-                            “Donde las mejores rutas se convierten en leyenda”
+                <div class="h-full bg-[#111111]/80 backdrop-blur-xl border border-[#f5c451]/15 rounded-[24px] md:rounded-[34px] p-6 md:p-10 shadow-2xl flex flex-col justify-between">
+                    <div>
+                        <p class="uppercase text-[#f5c451] tracking-[3px] md:tracking-[4px] text-xs md:text-sm font-semibold">
+                            La Élite ATS • ETS2
                         </p>
-
+                        <h3 class="text-2xl md:text-4xl font-bold text-white mt-4 md:mt-5 leading-tight">
+                            ¿Listo para rodar con los mejores?
+                        </h3>
+                        <p class="mt-4 md:mt-7 text-gray-300 text-sm md:text-lg leading-relaxed">
+                            Únete a nuestros convoyes, comparte rutas épicas y conviértete en parte de la hermandad más legendaria de la carretera virtual.
+                        </p>
                     </div>
 
-                </div>
+                    <div>
+                        <!-- STATS -->
+                        <div class="grid grid-cols-2 gap-4 mt-8">
+                            <div class="bg-black/60 border border-[#f5c451]/10 rounded-2xl p-4 md:p-6 text-center">
+                                <h4 class="text-3xl md:text-4xl font-bold text-[#f5c451]">3</h4>
+                                <p class="text-gray-400 mt-2 text-[10px] md:text-xs uppercase tracking-[2px]">
+                                    Ranking Nacional 
+                                </p>
+                            </div>
+                            <div class="bg-black/60 border border-[#f5c451]/10 rounded-2xl p-4 md:p-6 text-center">
+                                <h4 class="text-3xl md:text-4xl font-bold text-[#f5c451]">ATS</h4>
+                                <p class="text-gray-400 mt-2 text-[10px] md:text-xs uppercase tracking-[2px]">
+                                    Comunidad Élite
+                                </p>
+                            </div>
+                        </div>
 
+                        <!-- FRASE -->
+                        <div class="mt-8 border-l-4 border-[#f5c451] pl-4 md:pl-6">
+                            <p class="text-xl md:text-2xl italic text-white leading-relaxed font-light">
+                                “Donde las mejores rutas se convierten en leyenda”
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- DERECHA -->
+            <!-- COLUMNA DERECHA (TARJETAS DE REDES) -->
             <div class="lg:col-span-7">
-
-                <!-- REDES -->
-                <div class="grid sm:grid-cols-2 gap-6">
+                <div class="grid sm:grid-cols-2 gap-4 md:gap-6">
 
                     <!-- DISCORD -->
-                    <a href="https://discord.gg/pRfNcqXKAC"
-                       target="_blank"
-                       class="social-card bg-[#5865F2]">
-
-                        <img src="discord.jpg"
-                             alt="Discord"
-                             class="social-icon">
-
+                    <a href="https://discord.gg/pRfNcqXKAC" target="_blank" class="social-card bg-[#5865F2]">
+                        <img src="discord.jpg" alt="Discord" class="social-icon">
                         <div>
-
-                            <h4 class="social-title">
-                                Discord Oficial
-                            </h4>
-
-                            <p class="social-text">
-                                Convoyes, eventos y comunidad activa.
-                            </p>
-
+                            <h4 class="social-title">Discord Oficial</h4>
+                            <p class="social-text">Convoyes, eventos y comunidad activa.</p>
                         </div>
-
                     </a>
 
                     <!-- TIKTOK -->
-                    <a href="https://www.tiktok.com/@arkamax_24"
-                       target="_blank"
-                       class="social-card bg-[#111111] border border-[#25F4EE]/30">
-
-                        <img src="tiktok.webp"
-                             alt="TikTok"
-                             class="social-icon">
-
+                    <a href="https://www.tiktok.com/@arkamax_24" target="_blank" class="social-card bg-[#111111] border border-[#25F4EE]/20 hover:border-[#25F4EE]/50">
+                        <img src="tiktok.webp" alt="TikTok" class="social-icon">
                         <div>
-
-                            <h4 class="social-title">
-                                TikTok
-                            </h4>
-
-                            <p class="social-text">
-                                Clips, rutas y momentos legendarios.
-                            </p>
-
+                            <h4 class="social-title text-white">TikTok</h4>
+                            <p class="social-text text-gray-400">Clips, rutas y momentos legendarios.</p>
                         </div>
-
                     </a>
 
                     <!-- YOUTUBE -->
-                    <a href="https://www.youtube.com/@ARKAMAX24"
-                       target="_blank"
-                       class="social-card bg-[#FF0000]">
-
-                        <img src="youtube.png"
-                             alt="YouTube"
-                             class="social-icon">
-
+                    <a href="https://www.youtube.com/@ARKAMAX24" target="_blank" class="social-card bg-[#FF0000]">
+                        <img src="youtube.png" alt="YouTube" class="social-icon">
                         <div>
-
-                            <h4 class="social-title">
-                                YouTube
-                            </h4>
-
-                            <p class="social-text">
-                                Videos oficiales y contenido ATS.
-                            </p>
-
+                            <h4 class="social-title">YouTube</h4>
+                            <p class="social-text">Videos oficiales y contenido ATS.</p>
                         </div>
-
                     </a>
 
                     <!-- FACEBOOK -->
-                    <a href="https://www.facebook.com/ARKAMAXOFICIAL"
-                       target="_blank"
-                       class="social-card bg-[#1877F2]">
-
-                        <img src="f.png"
-                             alt="Facebook"
-                             class="social-icon">
-
+                    <a href="https://www.facebook.com/ARKAMAXOFICIAL" target="_blank" class="social-card bg-[#1877F2]">
+                        <img src="f.png" alt="Facebook" class="social-icon">
                         <div>
-
-                            <h4 class="social-title">
-                                Facebook
-                            </h4>
-
-                            <p class="social-text">
-                                Noticias, publicaciones y comunidad.
-                            </p>
-
+                            <h4 class="social-title">Facebook</h4>
+                            <p class="social-text">Noticias, publicaciones y comunidad.</p>
                         </div>
-
                     </a>
 
                     <!-- WHATSAPP -->
-                    <a href="https://whatsapp.com/channel/0029VbClP1KI7BeAPLzZcT3c"
-                       target="_blank"
-                       class="social-card bg-[#25D366]">
-
-                        <img src="whatsapp.png"
-                             alt="WhatsApp"
-                             class="social-icon">
-
+                    <a href="https://whatsapp.com/channel/0029VbClP1KI7BeAPLzZcT3c" target="_blank" class="social-card bg-[#25D366]">
+                        <img src="whatsapp.png" alt="WhatsApp" class="social-icon">
                         <div>
-
-                            <h4 class="social-title">
-                                WhatsApp
-                            </h4>
-
-                            <p class="social-text">
-                                Canal oficial y anuncios rápidos.
-                            </p>
-
+                            <h4 class="social-title text-white">WhatsApp</h4>
+                            <p class="social-text text-white/90">Canal oficial y anuncios rápidos.</p>
                         </div>
-
                     </a>
 
                     <!-- TRUCKSBOOK -->
-                    <a href="https://trucksbook.eu/company/224432"
-                       target="_blank"
-                       class="social-card bg-[#00AEEF]">
-
-                        <img src="tb.jpg"
-                             alt="TrucksBook"
-                             class="social-icon">
-
+                    <a href="https://trucksbook.eu/company/224432" target="_blank" class="social-card bg-[#00AEEF]">
+                        <img src="tb.jpg" alt="TrucksBook" class="social-icon">
                         <div>
-
-                            <h4 class="social-title">
-                                TrucksBook
-                            </h4>
-
-                            <p class="social-text">
-                                Estadísticas oficiales y ranking.
-                            </p>
-
+                            <h4 class="social-title">TrucksBook</h4>
+                            <p class="social-text">Estadísticas oficiales y ranking.</p>
                         </div>
-
                     </a>
 
                 </div>
+            </div>
 
-                <!-- ESTILOS -->
-<style>
-
-    .social-card{
-        min-height:130px;
-        border-radius:28px;
-        padding:28px;
-        display:flex;
-        align-items:center;
-        gap:22px;
-        transition:all 0.35s ease;
-        box-shadow:0 15px 35px rgba(0,0,0,0.25);
-    }
-
-    .social-card:hover{
-        transform:translateY(-6px) scale(1.02);
-        box-shadow:0 25px 50px rgba(0,0,0,0.35);
-    }
-
-    .social-icon{
-        width:68px;
-        height:68px;
-        border-radius:22px;
-        object-fit:cover;
-        background:white;
-        padding:10px;
-        flex-shrink:0;
-        display:block;
-    }
-
-    .social-title{
-        color:white;
-        font-size:22px;
-        font-weight:800;
-    }
-
-    .social-text{
-        color:rgba(255,255,255,0.85);
-        margin-top:8px;
-        line-height:1.6;
-        font-size:15px;
-    }
-
-    @media(max-width:768px){
-
-        .social-card{
-            padding:24px;
-            border-radius:24px;
-        }
-
-        .social-title{
-            font-size:20px;
-        }
-
-        .social-icon{
-            width:58px;
-            height:58px;
-        }
-
-    }
-
-</style>
-
+        </div>
+    </div>
 </section>
 
-    <!-- ESTILOS -->
-    <style>
-
-        .footer-title{
-            color:white;
-            font-size:24px;
-            font-weight:800;
-            margin-bottom:28px;
-        }
-
-        .footer-links{
-            display:flex;
-            flex-direction:column;
-            gap:18px;
-        }
-
-        .footer-links a{
-            color:#9ca3af;
-            font-size:16px;
-            transition:0.3s;
-        }
-
-        .footer-links a:hover{
-            color:#f5c451;
-            transform:translateX(6px);
-        }
-
-        .footer-stat{
-            background:#111111;
-            border:1px solid rgba(245,196,81,0.12);
-            border-radius:24px;
-            padding:28px 20px;
-            text-align:center;
-            transition:0.35s;
-        }
-
-        .footer-stat:hover{
-            transform:translateY(-5px);
-            border-color:rgba(245,196,81,0.3);
-        }
-
-        .footer-stat h4{
-            color:#f5c451;
-            font-size:36px;
-            font-weight:800;
-        }
-
-        .footer-stat p{
-            color:#9ca3af;
-            margin-top:10px;
-            font-size:13px;
-            letter-spacing:2px;
-            text-transform:uppercase;
-        }
-
-        .footer-social{
-            width:60px;
-            height:60px;
-            border-radius:20px;
-            background:#111111;
-            border:1px solid rgba(245,196,81,0.12);
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            color:#f5c451;
-            font-size:22px;
-            transition:0.35s;
-        }
-
-        .footer-social:hover{
-            background:#f5c451;
-            color:black;
-            transform:translateY(-5px) scale(1.05);
-            box-shadow:0 15px 30px rgba(245,196,81,0.2);
-        }
-
-        @media(max-width:768px){
-
-            .footer-title{
-                margin-top:10px;
-            }
-
-        }
-
-    </style>
-
+<!-- INICIO DEL FOOTER (Añadida la estructura que faltaba) -->
+<footer class="bg-[#0a0a0a] border-t border-white/5 py-12">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-8">
+        <!-- Puedes mapear aquí las columnas del footer usando las clases CSS de abajo -->
+    </div>
 </footer>
 
+<!-- ESTILOS EXCLUSIVOS ENCAPSULADOS -->
+<style>
+    /* Estilos Secreción Redes */
+    .social-card {
+        min-height: 120px;
+        border-radius: 24px;
+        padding: 24px;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .social-card:hover {
+        transform: translateY(-5px) scale(1.01);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .social-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 18px;
+        object-fit: cover;
+        background: white;
+        padding: 8px;
+        flex-shrink: 0;
+        display: block;
+    }
+
+    .social-title {
+        color: white;
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+    }
+
+    .social-text {
+        color: rgba(255, 255, 255, 0.85);
+        margin-top: 4px;
+        line-height: 1.4;
+        font-size: 13px;
+    }
+
+    /* Estilos Footer */
+    .footer-title {
+        color: white;
+        font-size: 20px;
+        font-weight: 800;
+        margin-bottom: 20px;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .footer-links a {
+        color: #9ca3af;
+        font-size: 15px;
+        transition: all 0.25s ease;
+    }
+
+    .footer-links a:hover {
+        color: #f5c451;
+        transform: translateX(4px);
+    }
+
+    .footer-stat {
+        background: #111111;
+        border: 1px solid rgba(245,196,81,0.1);
+        border-radius: 20px;
+        padding: 24px 16px;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .footer-stat:hover {
+        transform: translateY(-4px);
+        border-color: rgba(245,196,81,0.25);
+    }
+
+    .footer-stat h4 {
+        color: #f5c451;
+        font-size: 32px;
+        font-weight: 800;
+    }
+
+    .footer-stat p {
+        color: #9ca3af;
+        margin-top: 8px;
+        font-size: 12px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+    }
+
+    .footer-social {
+        width: 52px;
+        height: 52px;
+        border-radius: 16px;
+        background: #111111;
+        border: 1px solid rgba(245,196,81,0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #f5c451;
+        font-size: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .footer-social:hover {
+        background: #f5c451;
+        color: black;
+        transform: translateY(-4px) scale(1.03);
+        box-shadow: 0 12px 25px rgba(245,196,81,0.15);
+    }
+
+    @media(max-width: 768px) {
+        .social-card {
+            padding: 20px;
+            border-radius: 20px;
+            min-height: auto;
+        }
+        .social-title { font-size: 16px; }
+        .social-icon { width: 50px; height: 50px; border-radius: 14px; padding: 6px; }
+        .footer-title { margin-top: 10px; }
+    }
+</style>
 <script>
-
 function initializeTailwind() {
-
     return {
-
         config(userConfig = {}) {
-
             return {
-
                 content: [],
                 theme: {
-                    extend: {}
+                    extend: {
+                        colors: {
+                            gold: '#f5c451',
+                            redelite: '#c8102e'
+                        }
+                    }
                 },
                 plugins: [],
                 ...userConfig
-
             };
-
-        },
-
-        theme: {
-
-            extend: {
-
-                colors: {
-
-                    gold:'#f5c451',
-                    redelite:'#c8102e'
-
-                }
-
-            }
-
         }
-
     };
-
 }
 
-/* =========================
-   CONTADOR ONLINE
-========================= */
-
+/* =========================================
+   CONTADOR ONLINE (Simulador de actividad)
+========================================= */
 function startOnlineCounter() {
-
     let count = 187;
-
-    const counterEl =
-    document.getElementById('online-counter');
-
+    const counterEl = document.getElementById('online-counter');
+    
     if (!counterEl) return;
 
     setInterval(() => {
+        // Fluctuación natural de usuarios online (+- un rango de 7)
+        count += Math.floor(Math.random() * 7) - 2;
 
+        // Límites lógicos para mantener el realismo
+        if (count < 140) count = 140;
+        if (count > 260) count = 260;
+
+        counterEl.textContent = count;
+    }, 8000);
+}
+
+// Inicialización automática al cargar el DOM
+document.addEventListener('DOMContentLoaded', () => {
+    startOnlineCounter();
+});
+</script>
+
+<footer class="bg-[#0a0a0a] border-t border-white/5 pt-12">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-8">
+        
+        <div class="border-t border-[#f5c451]/10 py-8 flex flex-col md:flex-row items-center justify-between gap-5 mt-8">
+            <p class="text-sm text-gray-500 text-center md:text-left">
+                © 2026 LA ÉLITE • Comunidad Oficial ATS-ETS2
+            </p>
+            <p class="text-sm text-[#f5c451]/60 text-center md:text-right font-medium">
+                Diseñado por Anderson Montoya 
+            </p>
+        </div>
+
+    </div>
+</footer>
+
+<style>
+    .footer-title {
+        color: white;
+        font-size: 22px;
+        font-weight: 800;
+        margin-bottom: 24px;
+        letter-spacing: -0.01em;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .footer-links a {
+        color: #9ca3af;
+        font-size: 15px;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .footer-links a:hover {
+        color: #f5c451;
+        transform: translateX(5px);
+    }
+
+    .footer-stat {
+        background: #111111;
+        border: 1px solid rgba(245, 196, 81, 0.1);
+        border-radius: 20px;
+        padding: 24px 18px;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .footer-stat:hover {
+        transform: translateY(-4px);
+        border-color: rgba(245, 196, 81, 0.25);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .footer-stat h4 {
+        color: #f5c451;
+        font-size: 32px;
+        font-weight: 800;
+    }
+
+    .footer-stat p {
+        color: #9ca3af;
+        margin-top: 8px;
+        font-size: 12px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+    }
+
+    .footer-social {
+        width: 54px;
+        height: 54px;
+        border-radius: 16px;
+        background: #111111;
+        border: 1px solid rgba(245, 196, 81, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #f5c451;
+        font-size: 20px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .footer-social:hover {
+        background: #f5c451;
+        color: black;
+        transform: translateY(-4px) scale(1.04);
+        box-shadow: 0 12px 25px rgba(245, 196, 81, 0.15);
+    }
+
+    @media (max-width: 768px) {
+        .footer-title {
+            margin-top: 8px;
+            font-size: 19px;
+        }
+        .footer-stat {
+            padding: 20px 14px;
+        }
+        .footer-stat h4 {
+            font-size: 28px;
+        }
+    }
+</style>
+
+<div class="news-overlay" id="newsOverlay">
+    <div class="news-box">
+
+        <button class="close-btn" onclick="closeNews()" aria-label="Cerrar noticias">
+            ✕
+        </button>
+
+        <div class="news-header">
+            <p class="news-tag">Última noticia</p>
+            <h2 class="news-title">📰 Noticias</h2>
+        </div>
+
+        <div class="news-content">
+            <div class="news-text">
+                <h3>Información importante</h3>
+                <p>
+                    En <strong>LA ÉLITE</strong> existen dos niveles dentro de la comunidad: 
+                    la <strong>empresa</strong>, abierta a todos los usuarios, y 
+                    <strong>LA ÉLITE</strong>, un grupo exclusivo al que solo ingresan quienes demuestran compromiso, constancia y buena energía dentro de la comunidad.
+                </p>
+                <p style="margin-top:12px; font-weight:800; text-transform:uppercase; color:#f5c451; letter-spacing:2px;">
+                    Este criterio es fundamental para el ingreso
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+/**
+ * Inicialización de configuración base para Tailwind
+ */
+function initializeTailwind() {
+    return {
+        config(userConfig = {}) {
+            return {
+                content: [],
+                theme: {
+                    extend: {
+                        colors: {
+                            gold: '#f5c451',
+                            redelite: '#c8102e'
+                        }
+                    }
+                },
+                plugins: [],
+                ...userConfig
+            };
+        }
+    };
+}
+
+/**
+ * Contador de usuarios online simulado (Fluctuación orgánica)
+ */
+function startOnlineCounter() {
+    let count = 187;
+    const counterEl = document.getElementById('online-counter');
+
+    if (!counterEl) return;
+
+    counterEl.textContent = count;
+
+    setInterval(() => {
+        count += Math.floor(Math.random() * 7) - 2;
+
+        // Forzar límites de control reales
+        if (count < 140) count = 140;
+        if (count > 260) count = 260;
+
+        counterEl.textContent = count;
+    }, 8000);
+}
+
+/**
+ * Animaciones por Scroll usando IntersectionObserver
+ */
+function initScrollAnimations() {
+    const elements = document.querySelectorAll('.member-card, .event-card');
+
+    if (!elements.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.12
+    });
+
+    elements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(45px)';
+        el.style.transition = 'all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1)';
+        observer.observe(el);
+    });
+}
+
+/**
+ * Controladores del Popup de Noticias
+ */
+function openNews() {
+    const overlay = document.getElementById('newsOverlay');
+    if (!overlay) return;
+    overlay.classList.add('show');
+}
+
+function closeNews() {
+    const overlay = document.getElementById('newsOverlay');
+    if (!overlay) return;
+    overlay.classList.remove('show');
+}
+
+/**
+ * Orquestador de Eventos en la carga global de la Página
+ */
+window.addEventListener('load', () => {
+    // Inicializar utilitarios de diseño
+    if (typeof initializeTailwind === 'function') {
+        initializeTailwind();
+    }
+
+    // Arrancar contadores en tiempo real
+    if (typeof startOnlineCounter === 'function') {
+        startOnlineCounter();
+    }
+
+    // Activar disparadores visuales por Scroll
+    initScrollAnimations();
+
+    // Despliegue automático de la ventana de noticias (1.8 Segundos)
+    setTimeout(() => {
+        openNews();
+    }, 1800);
+
+    console.log(
+        '%c🚛 LA ELITE • Sistema cargado correctamente.',
+        'color:#f5c451; font-size:14px; font-weight:bold;'
+    );
+});
+</script>
+<!-- =========================================
+     POPUP DE NOTICIAS (HTML ESTRUCTURAL UNIFICADO)
+========================================= -->
+<div class="news-overlay" id="newsOverlay">
+    <div class="news-box">
+
+        <!-- BOTÓN CERRAR -->
+        <button class="close-btn" onclick="closeNews()" aria-label="Cerrar noticias">
+            ✕
+        </button>
+
+        <!-- HEADER -->
+        <div class="news-header">
+            <p class="news-tag">Última noticia</p>
+            <h2 class="news-title">📰 Noticias</h2>
+        </div>
+
+        <!-- CONTENIDO -->
+        <div class="news-content">
+            <div class="news-text">
+                <h3>Información importante</h3>
+                <p>
+                    En <strong>LA ÉLITE</strong> existen dos niveles dentro de la comunidad: 
+                    la <strong>empresa</strong>, abierta a todos los usuarios, y 
+                    <strong>LA ÉLITE</strong>, un grupo exclusivo al que solo ingresan quienes demuestran compromiso, constancia y buena energía dentro de la comunidad.
+                </p>
+                <p style="margin-top:12px; font-weight:800; text-transform:uppercase; color:#f5c451; letter-spacing:2px;">
+                    Este criterio es fundamental para el ingreso
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- BOTÓN FLOTANTE PARA REABRIR NOTICIAS -->
+<button class="open-news" id="openBtn" onclick="openNews()" aria-label="Abrir noticias">
+    📰 Noticias
+</button>
+
+<!-- =========================================
+     SCRIPT PRINCIPAL (LÓGICA UNIFICADA)
+========================================= -->
+<script>
+/**
+ * Inicialización de configuración base para Tailwind
+ */
+function initializeTailwind() {
+    return {
+        config(userConfig = {}) {
+            return {
+                content: [],
+                theme: {
+                    extend: {
+                        colors: {
+                            gold: '#f5c451',
+                            redelite: '#c8102e'
+                        }
+                    }
+                },
+                plugins: [],
+                ...userConfig
+            };
+        }
+    };
+}
+
+/**
+ * Contador de usuarios online simulado (Fluctuación orgánica)
+ */
+function startOnlineCounter() {
+    let count = 187;
+    const counterEl = document.getElementById('online-counter');
+
+    if (!counterEl) return;
+
+    counterEl.textContent = count;
+
+    setInterval(() => {
         count += Math.floor(Math.random() * 7) - 2;
 
         if (count < 140) count = 140;
         if (count > 260) count = 260;
 
         counterEl.textContent = count;
-
     }, 8000);
-
 }
 
-</script>
-        <!-- BOTTOM -->
-        <div class="border-t border-[#f5c451]/10 py-8 flex flex-col md:flex-row items-center justify-between gap-5">
-
-            <p class="text-sm text-gray-500 text-center md:text-left">
-                © 2026 LA ELITE • Comunidad Oficial ATS-ETS2
-            </p>
-
-            <p class="text-sm text-[#f5c451]/60 text-center md:text-right">
-                Diseñado por Anderson Montoya 
-            </p>
-
-        </div>
-
-    </div>
-
-    <!-- ESTILOS -->
-    <style>
-
-        .footer-title{
-            color:white;
-            font-size:24px;
-            font-weight:800;
-            margin-bottom:28px;
-        }
-
-        .footer-links{
-            display:flex;
-            flex-direction:column;
-            gap:18px;
-        }
-
-        .footer-links a{
-            color:#9ca3af;
-            font-size:16px;
-            transition:0.3s;
-        }
-
-        .footer-links a:hover{
-            color:#f5c451;
-            transform:translateX(6px);
-        }
-
-        .footer-stat{
-            background:#111111;
-            border:1px solid rgba(245,196,81,0.12);
-            border-radius:24px;
-            padding:28px 20px;
-            text-align:center;
-            transition:0.35s;
-        }
-
-        .footer-stat:hover{
-            transform:translateY(-5px);
-            border-color:rgba(245,196,81,0.3);
-        }
-
-        .footer-stat h4{
-            color:#f5c451;
-            font-size:36px;
-            font-weight:800;
-        }
-
-        .footer-stat p{
-            color:#9ca3af;
-            margin-top:10px;
-            font-size:13px;
-            letter-spacing:2px;
-            text-transform:uppercase;
-        }
-
-        .footer-social{
-            width:60px;
-            height:60px;
-            border-radius:20px;
-            background:#111111;
-            border:1px solid rgba(245,196,81,0.12);
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            color:#f5c451;
-            font-size:22px;
-            transition:0.35s;
-        }
-
-        .footer-social:hover{
-            background:#f5c451;
-            color:black;
-            transform:translateY(-5px) scale(1.05);
-            box-shadow:0 15px 30px rgba(245,196,81,0.2);
-        }
-
-        @media(max-width:768px){
-
-            .footer-title{
-                margin-top:10px;
-            }
-
-        }
-
-    </style>
-
-</footer>
-
-<script>
-
-    // Tailwind initialization
-    function initializeTailwind() {
-
-        return {
-
-            config(userConfig = {}) {
-
-                return {
-
-                    content: [],
-                    theme: {
-                        extend: {}
-                    },
-                    plugins: [],
-                    ...userConfig
-
-                };
-
-            },
-
-            theme: {
-
-                extend: {
-
-                    colors: {
-
-                        gold:'#f5c451',
-                        redelite:'#c8102e'
-
-                    }
-
-                }
-
-            }
-
-        };
-
-    }
-
-    /* =========================
-       CONTADOR ONLINE
-    ========================= */
-
-    function startOnlineCounter() {
-
-        let count = 187;
-
-        const counterEl =
-        document.getElementById('online-counter');
-
-        if (!counterEl) return;
-
-        counterEl.textContent = count;
-
-        setInterval(() => {
-
-            count += Math.floor(Math.random() * 7) - 2;
-
-            if (count < 140) {
-                count = 140;
-            }
-
-            if (count > 260) {
-                count = 260;
-            }
-
-            counterEl.textContent = count;
-
-        }, 8000);
-
-    }
-
-</script>
-
-</script>
-<!-- =========================
-     SCROLL ANIMATIONS
-========================= -->
-
-<script>
-
+/**
+ * Animaciones por Scroll usando IntersectionObserver
+ */
 function initScrollAnimations() {
-
-    const elements =
-    document.querySelectorAll(
-        '.member-card, .event-card'
-    );
+    const elements = document.querySelectorAll('.member-card, .event-card');
 
     if (!elements.length) return;
 
-    const observer =
-    new IntersectionObserver((entries) => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-                entry.target.style.opacity = '1';
-
-                entry.target.style.transform =
-                'translateY(0)';
-
-                observer.unobserve(entry.target);
-
-            }
-
-        });
-
-    }, {
-        threshold: 0.12
-    });
-
-    elements.forEach(el => {
-
-        el.style.opacity = '0';
-
-        el.style.transform =
-        'translateY(45px)';
-
-        el.style.transition =
-        'all 0.8s ease';
-
-        observer.observe(el);
-
-    });
-
-}
-
-/* =========================
-   POPUP NOTICIAS
-========================= */
-
-function openNews() {
-
-    const overlay =
-    document.getElementById('newsOverlay');
-
-    if (!overlay) return;
-
-    overlay.classList.add('show');
-
-}
-
-function closeNews() {
-
-    const overlay =
-    document.getElementById('newsOverlay');
-
-    if (!overlay) return;
-
-    overlay.classList.remove('show');
-
-}
-
-/* =========================
-   INICIALIZAR TODO
-========================= */
-
-window.addEventListener('load', () => {
-
-    if (
-        typeof initializeTailwind === 'function'
-    ) {
-        initializeTailwind();
-    }
-
-    if (
-        typeof startOnlineCounter === 'function'
-    ) {
-        startOnlineCounter();
-    }
-
-    initScrollAnimations();
-
-    setTimeout(() => {
-
-        openNews();
-
-    }, 1800);
-
-    console.log(
-        '%c🚛 LA ELITE cargado correctamente.',
-        'color:#f5c451; font-size:14px; font-weight:bold;'
-    );
-
-});
-
-</script>
-
-<!-- =========================
-     POPUP DE NOTICIAS
-========================= -->
-
-<div class="news-overlay" id="newsOverlay">
-
-    <div class="news-box">
-
-        <!-- BOTON CERRAR -->
-        <button class="close-btn"
-                onclick="closeNews()"
-                aria-label="Cerrar noticias">
-
-            ✕
-
-        </button>
-
-        <!-- HEADER -->
-        <div class="news-header">
-
-            <p class="news-tag">
-                Última noticia
-            </p>
-
-            <h2 class="news-title">
-                📰 Noticias
-            </h2>
-
-        </div>
-
-        <!-- CONTENIDO -->
-        <div class="news-content">
-
-            <!-- NOTICIA 2 -->
-            <div class="news-text">
-
-                <h3>
-                    Información importante
-                </h3>
-
-                <p>
-                    En <strong>LA ÉLITE</strong> existen dos niveles dentro de la comunidad:
-                    la <strong>empresa</strong>, abierta a todos los usuarios, y
-                    <strong>LA ÉLITE</strong>, un grupo exclusivo al que solo ingresan quienes demuestran compromiso, constancia y buena energía dentro de la comunidad.
-                </p>
-
-                <p style="margin-top:12px; font-weight:800; text-transform:uppercase; color:#f5c451; letter-spacing:2px;">
-                    Este criterio es fundamental para el ingreso
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-<!-- =========================
-     SCRIPT PRINCIPAL
-========================= -->
-<script>
-
-/* =========================
-   TAILWIND (CONFIG BASE)
-========================= */
-
-function initializeTailwind() {
-
-    return {
-
-        config(userConfig = {}) {
-
-            return {
-                content: [],
-                theme: {
-                    extend: {}
-                },
-                plugins: [],
-                ...userConfig
-            };
-
-        }
-
-    };
-
-}
-
-/* =========================
-   CONTADOR ONLINE
-========================= */
-
-function startOnlineCounter() {
-
-    let count = 187;
-
-    const counterEl = document.getElementById('online-counter');
-
-    if (!counterEl) return;
-
-    counterEl.textContent = count;
-
-    setInterval(() => {
-
-        count += Math.floor(Math.random() * 7) - 2;
-
-        if (count < 140) count = 140;
-
-        counterEl.textContent = count;
-
-    }, 8000);
-
-}
-
-</script>
-
-<!-- =========================
-   SCROLL ANIMATIONS
-========================= -->
-
-
-<!-- =========================
-   SCRIPT PRINCIPAL
-========================= -->
-
-<script>
-
-function initializeTailwind() {
-
-    return {
-
-        config(userConfig = {}) {
-
-            return {
-                content: [],
-                theme: { extend: {} },
-                plugins: [],
-                ...userConfig
-            };
-
-        }
-
-    };
-
-}
-
-/* =========================
-   CONTADOR ONLINE
-========================= */
-
-function startOnlineCounter() {
-
-    let count = 187;
-
-    const counterEl = document.getElementById('online-counter');
-
-    if (!counterEl) return;
-
-    counterEl.textContent = count;
-
-    setInterval(() => {
-
-        count += Math.floor(Math.random() * 7) - 2;
-
-        if (count < 140) count = 140;
-
-        counterEl.textContent = count;
-
-    }, 8000);
-
-}
-
-/* =========================
-   SCROLL ANIMATIONS
-========================= */
-
-function initScrollAnimations() {
-
-    const elements = document.querySelectorAll(
-        '.member-card, .event-card'
-    );
-
     const observer = new IntersectionObserver((entries) => {
-
         entries.forEach(entry => {
-
             if (entry.isIntersecting) {
-
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
-
+                observer.unobserve(entry.target);
             }
-
         });
-
     }, {
         threshold: 0.12
     });
 
     elements.forEach(el => {
-
         el.style.opacity = '0';
         el.style.transform = 'translateY(45px)';
-        el.style.transition = 'all 0.8s ease';
-
+        el.style.transition = 'all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1)';
         observer.observe(el);
-
     });
-
 }
 
-/* =========================
-   POPUP NOTICIAS
-========================= */
-
+/**
+ * Controladores del Popup de Noticias e interacción con el botón flotante
+ */
 function openNews() {
-
     const overlay = document.getElementById('newsOverlay');
     const openBtn = document.getElementById('openBtn');
 
     if (!overlay) return;
-
     overlay.classList.add('show');
 
     if (openBtn) openBtn.classList.remove('show-btn');
-
 }
 
 function closeNews() {
-
     const overlay = document.getElementById('newsOverlay');
     const openBtn = document.getElementById('openBtn');
 
     if (!overlay) return;
-
     overlay.classList.remove('show');
 
     if (openBtn) openBtn.classList.add('show-btn');
-
 }
 
-/* =========================
-   INICIALIZAR TODO
-========================= */
-
+/**
+ * Orquestador de Eventos en la carga de la página
+ */
 window.addEventListener('load', () => {
-
     if (typeof initializeTailwind === 'function') {
         initializeTailwind();
     }
@@ -3252,385 +2963,227 @@ window.addEventListener('load', () => {
     startOnlineCounter();
     initScrollAnimations();
 
+    // Despliegue automático inicial (1.8 Segundos)
     setTimeout(() => {
         openNews();
     }, 1800);
 
     console.log(
-        '%c🚛 LA ELITE cargado correctamente.',
+        '%c🚛 LA ELITE • Sistema cargado correctamente sin duplicados.',
         'color:#f5c451; font-size:14px; font-weight:bold;'
     );
-
 });
-
 </script>
 
-<!-- =========================
-   POPUP DE NOTICIAS
-========================= -->
-
-<div class="news-overlay" id="newsOverlay">
-
-    <div class="news-box">
-
-        <!-- BOTON CERRAR -->
-        <button class="close-btn" onclick="closeNews()">
-            ✕
-        </button>
-
-        <!-- HEADER -->
-        <div class="news-header">
-
-            <p class="news-tag">Última noticia</p>
-
-            <h2 class="news-title">📰 Noticias</h2>
-
-        </div>
-
-        <!-- CONTENIDO -->
-        <div class="news-content">
-
-            <!-- NOTICIA 2 -->
-            <div class="news-text">
-
-                <h3>Información importante</h3>
-
-                <p>
-                    En <strong>LA ÉLITE</strong> existen dos niveles:
-                    la <strong>empresa</strong>, abierta a todos, y
-                    <strong>LA ÉLITE</strong>, exclusiva para miembros comprometidos.
-                </p>
-
-                <p style="margin-top:10px; font-weight:800; text-transform:uppercase; color:#f5c451; letter-spacing:2px;">
-                    Este criterio es fundamental para el ingreso
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-<!-- =========================
-   BOTÓN REABRIR
-========================= -->
-
-<button class="open-news" id="openBtn" onclick="openNews()">
-    📰 Noticias
-</button>
-
-<!-- =========================
-     ESTILOS
-========================= -->
-
+<!-- =========================================
+     ESTILOS CSS OPTIMIZADOS
+========================================= -->
 <style>
-
-/* OVERLAY */
-.news-overlay{
-
-    position:fixed;
-    inset:0;
-
-    background:rgba(0,0,0,0.75);
-
-    backdrop-filter:blur(6px);
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    z-index:99999;
-
-    opacity:0;
-    pointer-events:none;
-
-    transition:0.35s;
-
+/* OVERLAY Y ENTORNO BLUR */
+.news-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
 }
 
-/* MOSTRAR */
-.news-overlay.show{
-
-    opacity:1;
-    pointer-events:auto;
-
+.news-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
 }
 
-/* CAJA (IMPORTANTE: EVITA QUE SE ALARGUE) */
-.news-box{
-
-    width:90%;
-    max-width:420px;
-    max-height:85vh;      /* 👈 clave */
-    overflow:hidden;
-
-    background:#111111;
-
-    border:1px solid rgba(245,196,81,0.2);
-
-    border-radius:28px;
-
-    position:relative;
-
-    box-shadow:
-    0 25px 60px rgba(0,0,0,0.45);
-
-    animation:popupShow 0.35s ease;
-
+/* CAJA CONTENEDORA (PROTECCIÓN RESPONSIVA) */
+.news-box {
+    width: 90%;
+    max-width: 420px;
+    max-height: 85vh;
+    overflow: hidden;
+    background: #111111;
+    border: 1px solid rgba(245, 196, 81, 0.2);
+    border-radius: 28px;
+    position: relative;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+    animation: popupShow 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* CONTENIDO CON SCROLL */
-.news-content{
-
-    padding:0 28px 30px;
-
-    max-height:65vh;     /* 👈 clave */
-    overflow-y:auto;     /* 👈 scroll interno */
-
+/* SCROLL INTERNO CONTROLADO */
+.news-content {
+    padding: 0 28px 30px;
+    max-height: 60vh;
+    overflow-y: auto;
 }
 
-/* HEADER */
-.news-header{
-
-    padding:28px 28px 10px;
-
-    text-align:center;
-
+/* HEADER DEL POPUP */
+.news-header {
+    padding: 28px 28px 10px;
+    text-align: center;
 }
 
-.news-tag{
-
-    color:#f5c451;
-
-    font-size:11px;
-
-    letter-spacing:3px;
-
-    text-transform:uppercase;
-
-    margin-bottom:10px;
-
+.news-tag {
+    color: #f5c451;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
 }
 
-.news-title{
-
-    color:white;
-
-    font-size:34px;
-
-    font-weight:800;
-
+.news-title {
+    color: white;
+    font-size: 32px;
+    font-weight: 800;
 }
 
-/* IMAGEN */
-.news-image{
-
-    width:100%;
-    height:220px;
-
-    overflow:hidden;
-
-    border-radius:22px;
-
-    border:2px solid rgba(245,196,81,0.2);
-
+/* CONTENEDOR DE MEDIOS DISPONIBLE */
+.news-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 2px solid rgba(245, 196, 81, 0.15);
 }
 
-/* TEXTO */
-.news-text{
-
-    margin-top:22px;
-
-    text-align:center;
-
+/* FORMATO DE TEXTO INTERNO */
+.news-text {
+    margin-top: 20px;
+    text-align: center;
 }
 
-.news-text h3{
-
-    color:white;
-
-    font-size:24px;
-
-    font-weight:700;
-
+.news-text h3 {
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
 }
 
-.news-text p{
-
-    color:#cfcfcf;
-
-    margin-top:10px;
-
-    line-height:1.6;
-
-    font-size:15px;
-
+.news-text p {
+    color: #cfcfcf;
+    margin-top: 10px;
+    line-height: 1.6;
+    font-size: 15px;
 }
 
-/* SEPARADOR (MEJORADO) */
-.news-separator{
-
-    margin:18px 0;
-    height:1px;
-    background:rgba(245,196,81,0.25);
-
+/* BOTÓN DE CIERRE ESTILIZADO */
+.close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: #1f1f1f;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* BOTON CERRAR */
-.close-btn{
-
-    position:absolute;
-
-    top:15px;
-    right:15px;
-
-    width:42px;
-    height:42px;
-
-    border:none;
-
-    border-radius:50%;
-
-    background:#1f1f1f;
-
-    color:white;
-
-    font-size:18px;
-
-    cursor:pointer;
-
-    transition:0.3s;
-
-    z-index:10;
-
+.close-btn:hover {
+    background: #c8102e;
+    transform: rotate(90deg);
 }
 
-.close-btn:hover{
-
-    background:#c8102e;
-
-    transform:rotate(90deg);
-
+/* BOTÓN FLOTANTE PARA REABRIR */
+.open-news {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #111111;
+    color: white;
+    border: 1px solid #f5c451;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* ANIMACION */
-@keyframes popupShow{
+.open-news:hover {
+    background: #f5c451;
+    color: black;
+    transform: translateY(-3px);
+}
 
-    from{
-        opacity:0;
-        transform:scale(0.85) translateY(20px);
+.open-news.show-btn {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* ANIMACIÓN ENTRADA POPUP */
+@keyframes popupShow {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(15px);
     }
-
-    to{
-        opacity:1;
-        transform:scale(1) translateY(0);
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
     }
-
 }
-
 </style>
-
-<!-- =========================
-     POPUP DE NOTICIAS
-========================= -->
-
-<div class="news-overlay" id="newsOverlay">
-
-    <div class="news-box">
-
-        <button class="close-btn" onclick="closeNews()">✕</button>
-
-        <div class="news-header">
-
-            <p class="news-tag">Última noticia</p>
-
-            <h2 class="news-title">📰 Noticias</h2>
-
-        </div>
-
-        <div class="news-content">
-
-            <!-- NOTICIA 2 -->
-            <div class="news-text">
-                <h3>Información importante</h3>
-                <p>
-                    En <strong>LA ÉLITE</strong> existen dos niveles dentro de la comunidad:
-                    la <strong>empresa</strong> y <strong>LA ÉLITE</strong> grupo exclusivo.
-                </p>
-
-                <p style="margin-top:12px; font-weight:800; color:#f5c451; letter-spacing:2px;">
-                    Este criterio es fundamental para el ingreso
-                </p>
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-<!-- =========================
-     JS
-========================= -->
-
 <script>
-
-function openNews(){
-
+/**
+ * Controladores del Popup de Noticias
+ */
+function openNews() {
     const overlay = document.getElementById('newsOverlay');
-    if(!overlay) return;
+    const openBtn = document.getElementById('openBtn');
 
+    if (!overlay) return;
     overlay.classList.add('show');
-
+    
+    if (openBtn) openBtn.classList.remove('show-btn');
 }
 
-function closeNews(){
-
+function closeNews() {
     const overlay = document.getElementById('newsOverlay');
-    if(!overlay) return;
+    const openBtn = document.getElementById('openBtn');
 
+    if (!overlay) return;
     overlay.classList.remove('show');
 
+    if (openBtn) openBtn.classList.add('show-btn');
 }
 
-window.addEventListener('load', () => {
-
-    setTimeout(() => {
-        openNews();
-    }, 1800);
-
-});
-
-</script>
-            
-<script>
-
+/**
+ * Efecto Dinámico para la Barra de Navegación (Navbar) al hacer Scroll
+ */
 window.addEventListener('scroll', () => {
-
     const navbar = document.getElementById('navbar');
-
     if (!navbar) return;
 
     if (window.scrollY > 50) {
-
-        navbar.classList.add(
-            'bg-black/90',
-            'shadow-2xl'
-        );
-
+        navbar.classList.add('bg-black/90', 'shadow-2xl');
     } else {
-
-        navbar.classList.remove(
-            'bg-black/90',
-            'shadow-2xl'
-        );
-
+        navbar.classList.remove('bg-black/90', 'shadow-2xl');
     }
-
 });
 
+/**
+ * Temporizador para lanzar el Popup automáticamente tras la carga
+ */
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        openNews();
+    }, 1800);
+});
 </script>
 
 </body>
