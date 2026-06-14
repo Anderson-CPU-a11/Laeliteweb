@@ -1347,164 +1347,153 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 </style>
 <!-- RANKING -->
-<section id="ranking" class="bg-[#111111] py-24 scroll-reveal">
+<section id="ranking" class="bg-[#111111] py-16 md:py-24 relative overflow-hidden">
 
-    <div class="max-w-screen-2xl mx-auto px-8">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <!-- TITULO -->
-        <div class="text-center mb-20">
-
-            <span class="uppercase text-[#c8102e] text-sm tracking-[4px]">
+        <!-- TITULO DE LA SECCIÓN -->
+        <div class="text-center mb-12 md:mb-20 scroll-reveal">
+            <span class="uppercase text-[#c8102e] text-xs md:text-sm font-bold tracking-[4px]">
                 Estadísticas oficiales
             </span>
-
-            <h2 class="section-title text-5xl font-bold logo-font mx-auto mt-4">
+            <h2 class="section-title text-3xl sm:text-4xl md:text-5xl font-bold logo-font mx-auto mt-4 text-white">
                 Ranking TrucksBook
             </h2>
-
-            <p class="text-gray-400 mt-4 max-w-2xl mx-auto text-lg leading-relaxed">
-                Consulta las estadísticas oficiales, kilómetros recorridos y actividad
-                de La Elite dentro de TrucksBook.
+            <p class="text-gray-400 mt-4 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
+                Consulta las estadísticas oficiales, kilómetros recorridos y actividad de La Elite dentro de TrucksBook.
             </p>
-
         </div>
 
-        <!-- CARD -->
-        <div class="bg-gradient-to-br from-[#181818] to-[#0d0d0d]
-                    border border-[#f5c451]/20
-                    rounded-[32px]
-                    p-10 md:p-14
-                    text-center
-                    max-w-5xl
-                    mx-auto
-                    shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
+        <!-- CONTENEDOR PRINCIPAL DE RANKING -->
+        <div class="bg-gradient-to-br from-[#181818] to-[#0d0d0d] border border-[#f5c451]/20 rounded-3xl md:rounded-[32px] p-6 sm:p-10 md:p-14 text-center max-w-5xl mx-auto shadow-[0_20px_60px_rgba(0,0,0,0.45)] scroll-reveal">
 
-            <!-- ICONO -->
-            <div class="text-7xl text-[#f5c451] mb-8">
-
+            <!-- ICONO PRINCIPAL -->
+            <div class="text-6xl md:text-7xl text-[#f5c451] mb-6 md:mb-8">
                 <i class="fas fa-trophy"></i>
-
             </div>
 
-            <!-- TITULO -->
-            <h3 class="text-4xl md:text-5xl font-bold mb-5 text-white">
+            <!-- TITULO INTERNO -->
+            <h3 class="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 md:mb-5 text-white logo-font">
                 LA ELITE en TrucksBook
             </h3>
 
-            <!-- TEXTO -->
-            <p class="text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto">
-                Explora el ranking oficial de conductores, estadísticas,
-                kilómetros recorridos, entregas y actividad completa
-                desde la empresa oficial de La Elite.
+            <!-- DESCRIPCIÓN INTERNA -->
+            <p class="text-gray-400 text-sm md:text-lg leading-relaxed max-w-3xl mx-auto">
+                Explora el ranking oficial de conductores, estadísticas, kilómetros recorridos, entregas y actividad completa desde la empresa oficial de La Elite.
             </p>
 
-            <!-- STATS -->
-            <div class="grid md:grid-cols-3 gap-6 mt-14">
+            <!-- REJILLA DE ESTADÍSTICAS (Móvil: 1 col | Tablet/PC: 3 cols) -->
+            <div class="grid md:grid-cols-3 gap-4 md:gap-6 mt-10 md:mt-14">
 
-                <div class="bg-black/40 border border-[#f5c451]/10 rounded-3xl p-8">
-
-                    <div class="text-5xl text-[#f5c451] mb-5">
+                <!-- ITEM STATS 1 -->
+                <div class="bg-black/40 border border-[#f5c451]/10 rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col items-center justify-center transition-all duration-300 hover:border-[#f5c451]/30">
+                    <div class="text-4xl md:text-5xl text-[#f5c451] mb-4">
                         <i class="fas fa-road"></i>
                     </div>
-
-                    <h4 class="text-2xl font-bold text-white">
+                    <h4 class="text-xl md:text-2xl font-bold text-white">
                         Kilómetros
                     </h4>
-
-                    <p class="text-gray-400 mt-3 text-sm leading-relaxed">
+                    <p class="text-gray-400 mt-2 md:mt-3 text-xs md:text-sm leading-relaxed">
                         Consulta la distancia total recorrida por la empresa y sus conductores.
                     </p>
-
                 </div>
 
-                <div class="bg-black/40 border border-[#f5c451]/10 rounded-3xl p-8">
-
-                    <div class="text-5xl text-[#f5c451] mb-5">
+                <!-- ITEM STATS 2 -->
+                <div class="bg-black/40 border border-[#f5c451]/10 rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col items-center justify-center transition-all duration-300 hover:border-[#f5c451]/30">
+                    <div class="text-4xl md:text-5xl text-[#f5c451] mb-4">
                         <i class="fas fa-ranking-star"></i>
                     </div>
-
-                    <h4 class="text-2xl font-bold text-white">
+                    <h4 class="text-xl md:text-2xl font-bold text-white">
                         Ranking
                     </h4>
-
-                    <p class="text-gray-400 mt-3 text-sm leading-relaxed">
+                    <p class="text-gray-400 mt-2 md:mt-3 text-xs md:text-sm leading-relaxed">
                         Mira la posición oficial de La Elite frente a otras empresas.
                     </p>
-
                 </div>
 
-                <div class="bg-black/40 border border-[#f5c451]/10 rounded-3xl p-8">
-
-                    <div class="text-5xl text-[#f5c451] mb-5">
+                <!-- ITEM STATS 3 -->
+                <div class="bg-black/40 border border-[#f5c451]/10 rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col items-center justify-center transition-all duration-300 hover:border-[#f5c451]/30">
+                    <div class="text-4xl md:text-5xl text-[#f5c451] mb-4">
                         <i class="fas fa-truck"></i>
                     </div>
-
-                    <h4 class="text-2xl font-bold text-white">
+                    <h4 class="text-xl md:text-2xl font-bold text-white">
                         Conductores
                     </h4>
-
-                    <p class="text-gray-400 mt-3 text-sm leading-relaxed">
+                    <p class="text-gray-400 mt-2 md:mt-3 text-xs md:text-sm leading-relaxed">
                         Revisa la actividad y progreso de los miembros de la empresa.
                     </p>
-
                 </div>
 
             </div>
 
-            <!-- BOTONES -->
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mt-14">
+            <!-- CONTENEDOR DE BOTONES (Columna en móviles, Fila en PC) -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 mt-10 md:mt-14">
 
                 <a href="https://trucksbook.eu/company/224432"
                    target="_blank"
                    rel="noopener noreferrer"
-                   class="bg-[#f5c451]
-                          hover:bg-[#ffd56a]
-                          text-black
-                          font-bold
-                          px-9 py-5
-                          rounded-2xl
-                          text-lg
-                          flex items-center gap-3
-                          transition-all duration-300 hover:scale-105 shadow-[0_15px_35px_rgba(245,196,81,0.20)]">
-
-                    <i class="fas fa-building"></i>
-
-                    <span>
-                        Ver Empresa
-                    </span>
-
+                   class="ranking-btn-primary w-full sm:w-auto">
+                    <i class="fas fa-building mr-2"></i> Ver Empresa
                 </a>
 
                 <a href="https://trucksbook.eu/company/224432"
                    target="_blank"
                    rel="noopener noreferrer"
-                   class="border border-[#f5c451]/30
-                          hover:border-[#f5c451]
-                          hover:bg-[#f5c451]
-                          hover:text-black
-                          text-white
-                          font-bold
-                          px-9 py-5
-                          rounded-2xl
-                          text-lg
-                          flex items-center gap-3
-                          transition-all duration-300 hover:scale-105">
-
-                    <i class="fas fa-ranking-star"></i>
-
-                    <span>
-                        Ver Ranking
-                    </span>
-
+                   class="ranking-btn-secondary w-full sm:w-auto">
+                    <i class="fas fa-ranking-star mr-2"></i> Ver Ranking
                 </a>
 
             </div>
 
         </div>
-
     </div>
-
 </section>
+
+<!-- ESTILOS EXCLUSIVOS -->
+<style>
+    .ranking-btn-primary {
+        height: 56px;
+        padding: 0 32px;
+        border-radius: 16px;
+        background: #f5c451;
+        color: black;
+        font-weight: 800;
+        font-size: 15px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 15px 35px rgba(245, 196, 81, 0.15);
+    }
+
+    .ranking-btn-primary:hover {
+        transform: translateY(-3px);
+        background: #ffd56a;
+        box-shadow: 0 15px 35px rgba(245, 196, 81, 0.30);
+    }
+
+    .ranking-btn-secondary {
+        height: 56px;
+        padding: 0 32px;
+        border-radius: 16px;
+        border: 1px solid rgba(245, 196, 81, 0.3);
+        background: transparent;
+        color: white;
+        font-weight: 700;
+        font-size: 15px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .ranking-btn-secondary:hover {
+        transform: translateY(-3px);
+        background: #f5c451;
+        color: black;
+        border-color: #f5c451;
+    }
+</style>
 <!-- ANUNCIOS -->
 <section id="anuncios" class="bg-[#111111] py-24 scroll-reveal">
 
