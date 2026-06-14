@@ -333,504 +333,296 @@
 
 <body>
 
-<!-- NAVBAR -->
-<nav id="navbar"
-     class="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-xl border-b border-[#f5c451]/10 transition-all duration-300">
+<nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-black/75 backdrop-blur-xl border-b border-[#f5c451]/10 transition-all duration-300">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-[75px] sm:h-[90px]">
 
-    <div class="max-w-screen-2xl mx-auto px-6 lg:px-8">
-
-        <div class="flex items-center justify-between h-[90px]">
-
-            <!-- LOGO -->
-            <a href="#inicio"
-               class="flex items-center gap-4 group">
-
-                <img src="logo-elite.png"
-                     alt="La Elite"
-                     class="h-14 transition duration-300 group-hover:scale-105">
-
+            <a href="#inicio" class="flex items-center gap-3 sm:gap-4 group">
+                <img src="logo-elite.png" alt="La Elite" class="h-12 sm:h-14 w-auto transition duration-300 group-hover:scale-105">
                 <div class="hidden sm:block">
-
-                    <h1 class="text-2xl font-bold logo-font text-[#f5c451] leading-none neon-gold">
+                    <h1 class="text-xl sm:text-2xl font-bold logo-font text-[#f5c451] leading-none neon-gold tracking-wide">
                         LA ELITE
                     </h1>
-
-                    <p class="text-[11px] uppercase tracking-[3px] text-gray-400 mt-1">
+                    <p class="text-[10px] uppercase tracking-[3px] text-gray-400 mt-1">
                         ATS • ETS2
                     </p>
-
                 </div>
-
             </a>
 
-            <!-- MENÚ DESKTOP -->
-            <div class="hidden lg:flex items-center gap-8 text-[13px] font-semibold uppercase tracking-[2px]">
-
-                <a href="#inicio" class="nav-link active-link">
-                    Inicio
-                </a>
-
-                <a href="#requisitos" class="nav-link">
-                    Requisitos
-                </a>
-
-                <a href="#empresa" class="nav-link">
-                    Empresa
-                </a>
-
-                <a href="#anuncios" class="nav-link">
-                    Anuncios
-                </a>
-
-                <a href="#eventos" class="nav-link">
-                    Eventos
-                </a>
-
-                <a href="#videos" class="nav-link">
-                    Videos
-                </a>
-
-                <a href="#comunidad" class="nav-link">
-                    Comunidad
-                </a>
-
-                <a href="#contacto" class="nav-link">
-                    Contacto
-                </a>
-
+            <div class="hidden lg:flex items-center gap-6 xl:gap-8 text-[13px] font-semibold uppercase tracking-[2px]">
+                <a href="#inicio" class="nav-link active-link">Inicio</a>
+                <a href="#requisitos" class="nav-link">Requisitos</a>
+                <a href="#empresa" class="nav-link">Empresa</a>
+                <a href="#anuncios" class="nav-link">Anuncios</a>
+                <a href="#eventos" class="nav-link">Eventos</a>
+                <a href="#videos" class="nav-link">Videos</a>
+                <a href="#comunidad" class="nav-link">Comunidad</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
             </div>
 
-            <!-- DERECHA -->
             <div class="flex items-center gap-4">
-
-                <!-- DISCORD -->
                 <a href="https://discord.gg/pRfNcqXKAC"
                    target="_blank"
                    rel="noopener noreferrer"
-                   class="discord-btn hidden md:flex">
-
-                    <img src="discord-negro.png"
-                         alt="Discord"
-                         class="w-5 h-5">
-
-                    <span>
-                        ÚNETE AL DISCORD
-                    </span>
-
+                   class="hidden md:flex items-center gap-2 bg-[#f5c451] text-black font-bold text-xs tracking-wider px-5 py-3 rounded-xl hover:bg-[#ffd56a] hover:shadow-[0_0_20px_rgba(245,196,81,0.4)] transition-all duration-300">
+                    <img src="discord-negro.png" alt="Discord" class="w-4 h-4 object-contain">
+                    <span>ÚNETE AL DISCORD</span>
                 </a>
 
-                <!-- MENÚ MÓVIL -->
                 <button onclick="toggleMobileMenu()"
                         aria-label="Abrir menú"
-                        class="mobile-btn lg:hidden">
-
-                    <i class="fas fa-bars"></i>
-
+                        class="lg:hidden text-gray-400 hover:text-[#f5c451] text-xl p-2 focus:outline-none transition-colors duration-300">
+                    <i id="menu-icon" class="fas fa-bars"></i>
                 </button>
-
             </div>
-
         </div>
-
     </div>
 
+    <div id="mobile-menu" class="hidden lg:hidden bg-black/95 backdrop-blur-2xl border-b border-[#f5c451]/10 w-full transition-all duration-300">
+        <div class="px-6 py-6 flex flex-col gap-4 text-sm font-medium uppercase tracking-[2px] bg-gradient-to-b from-transparent to-[#0a0a0a]/50">
+            <a href="#inicio" onclick="toggleMobileMenu()" class="text-[#f5c451] py-2 border-b border-white/5">Inicio</a>
+            <a href="#requisitos" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2 border-b border-white/5">Requisitos</a>
+            <a href="#empresa" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2 border-b border-white/5">Empresa</a>
+            <a href="#anuncios" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2 border-b border-white/5">Anuncios</a>
+            <a href="#eventos" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2 border-b border-white/5">Eventos</a>
+            <a href="#videos" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2 border-b border-white/5">Videos</a>
+            <a href="#comunidad" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2 border-b border-white/5">Comunidad</a>
+            <a href="#contacto" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2">Contacto</a>
+            
+            <a href="https://discord.gg/pRfNcqXKAC" target="_blank" rel="noopener noreferrer" 
+               class="md:hidden flex items-center justify-center gap-2 bg-[#f5c451] text-black font-bold text-xs py-3 rounded-xl mt-2">
+                <img src="discord-negro.png" alt="Discord" class="w-4 h-4">
+                <span>DISCORD</span>
+            </a>
+        </div>
+    </div>
 </nav>
-            <!-- MENÚ DESKTOP -->
-<div class="hidden lg:flex items-center gap-8 text-[13px] font-semibold uppercase tracking-[2px]">
 
-    <a href="#inicio" class="nav-link active-link">
-        Inicio
-    </a>
+<script>
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        const icon = document.getElementById('menu-icon');
+        
+        if (menu.classList.contains('hidden')) {
+            menu.classList.remove('hidden');
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times'); // Cambia el icono a una 'X' al abrir
+        } else {
+            menu.classList.add('hidden');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars'); // Regresa al icono de barras
+        }
+    }
 
-    <a href="#requisitos" class="nav-link">
-        Requisitos
-    </a>
-
-    <a href="#empresa" class="nav-link">
-        Empresa
-    </a>
-
-    <a href="#anuncios" class="nav-link">
-        Anuncios
-    </a>
-
-    <a href="#eventos" class="nav-link">
-        Eventos
-    </a>
-
-    <a href="#videos" class="nav-link">
-        Videos
-    </a>
-
-    <a href="#comunidad" class="nav-link">
-        Comunidad
-    </a>
-
-    <a href="#contacto" class="nav-link">
-        Contacto
-    </a>
-
+    // Efecto de encogimiento del navbar al hacer scroll (Opcional, se ve genial)
+    window.addEventListener('scroll', () => {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('bg-black/90', 'shadow-xl');
+        } else {
+            navbar.classList.remove('bg-black/90', 'shadow-xl');
+        }
+    });
+</script>
+<div class="hidden lg:flex items-center gap-6 xl:gap-8 text-[13px] font-semibold uppercase tracking-[2px]">
+    <a href="#inicio" class="nav-link active-link">Inicio</a>
+    <a href="#requisitos" class="nav-link">Requisitos</a>
+    <a href="#empresa" class="nav-link">Empresa</a>
+    <a href="#ranking" class="nav-link">Ranking</a>
+    <a href="#anuncios" class="nav-link">Anuncios</a>
+    <a href="#eventos" class="nav-link">Eventos</a>
+    <a href="#videos" class="nav-link">Videos</a>
+    <a href="#comunidad" class="nav-link">Comunidad</a>
+    <a href="#contacto" class="nav-link">Contacto</a>
 </div>
 
-<!-- DERECHA -->
 <div class="flex items-center gap-4">
 
-    <!-- BOTÓN DISCORD -->
     <a href="https://discord.gg/CSAJCSah"
        target="_blank"
        rel="noopener noreferrer"
        class="discord-btn hidden md:flex">
-
-        <img src="discord-negro.png"
-             alt="Discord"
-             class="w-5 h-5">
-
-        <span>
-            ÚNETE AL DISCORD
-        </span>
-
+        <img src="discord-negro.png" alt="Discord" class="discord-icon w-5 h-5 object-contain">
+        <span>ÚNETE AL DISCORD</span>
     </a>
 
-    <!-- BOTÓN MOBILE -->
     <button onclick="toggleMobileMenu()"
             aria-label="Abrir menú"
             class="mobile-btn lg:hidden">
-
         <i class="fas fa-bars"></i>
-
     </button>
 
 </div>
-<!-- MOBILE MENU -->
-<div id="mobile-menu"
-     class="hidden lg:hidden bg-[#0b0b0b]/95 backdrop-blur-xl border-t border-[#f5c451]/10">
 
-    <div class="px-8 py-8 flex flex-col gap-4">
+<div id="mobile-menu" class="hidden lg:hidden bg-[#0b0b0b]/95 backdrop-blur-xl border-t border-[#f5c451]/10 max-h-[calc(100vh-80px)] overflow-y-auto w-full transition-all duration-300">
+    <div class="px-6 sm:px-8 py-8 flex flex-col gap-3.5">
 
-        <a href="#inicio"
-           onclick="toggleMobileMenu()"
-           class="mobile-link">
-            Inicio
-        </a>
+        <a href="#inicio" onclick="toggleMobileMenu()" class="mobile-link">Inicio</a>
+        <a href="#requisitos" onclick="toggleMobileMenu()" class="mobile-link">Requisitos</a>
+        <a href="#empresa" onclick="toggleMobileMenu()" class="mobile-link">Empresa</a>
+        <a href="#ranking" onclick="toggleMobileMenu()" class="mobile-link">Ranking</a>
+        <a href="#anuncios" onclick="toggleMobileMenu()" class="mobile-link">Anuncios</a>
+        <a href="#eventos" onclick="toggleMobileMenu()" class="mobile-link">Eventos</a>
+        <a href="#videos" onclick="toggleMobileMenu()" class="mobile-link">Videos</a>
+        <a href="#comunidad" onclick="toggleMobileMenu()" class="mobile-link">Comunidad</a>
+        <a href="#contacto" onclick="toggleMobileMenu()" class="mobile-link">Contacto</a>
 
-        <a href="#requisitos"
-           onclick="toggleMobileMenu()"
-           class="mobile-link">
-            Requisitos
-        </a>
-
-        <a href="#empresa"
-           onclick="toggleMobileMenu()"
-           class="mobile-link">
-            Empresa
-        </a>
-
-        <a href="#ranking"
-           onclick="toggleMobileMenu()"
-           class="mobile-link">
-            Ranking
-        </a>
-
-        <a href="#anuncios"
-           onclick="toggleMobileMenu()"
-           class="mobile-link">
-            Anuncios
-        </a>
-
-        <a href="#eventos"
-           onclick="toggleMobileMenu()"
-           class="mobile-link">
-            Eventos
-        </a>
-
-        <a href="#videos"
-           onclick="toggleMobileMenu()"
-           class="mobile-link">
-            Videos
-        </a>
-
-        <a href="#comunidad"
-           onclick="toggleMobileMenu()"
-           class="mobile-link">
-            Comunidad
-        </a>
-
-        <a href="#contacto"
-           onclick="toggleMobileMenu()"
-           class="mobile-link">
-            Contacto
-        </a>
-
-        <!-- DISCORD -->
         <a href="https://discord.gg/CSAJCSah"
            target="_blank"
            rel="noopener noreferrer"
            class="discord-btn-mobile">
-
-            <img src="discord-negro.png"
-                 alt="Discord"
-                 class="w-5 h-5">
-
-            <span>
-                Discord Oficial
-            </span>
-
+            <img src="discord-negro.png" alt="Discord" class="discord-icon-mobile w-5 h-5 object-contain">
+            <span>Discord Oficial</span>
         </a>
 
     </div>
-
 </div>
 
-<!-- ESTILOS NAVBAR -->
 <style>
-
     /* =========================
-       NAV LINKS
+       NAV LINKS (DESKTOP)
     ========================= */
-
-    .nav-link{
-        color:#d4d4d4;
-        position:relative;
-        transition:all .3s ease;
+    .nav-link {
+        color: #d4d4d4;
+        position: relative;
+        padding-bottom: 4px;
     }
 
-    .nav-link:hover{
-        color:#f5c451;
-    }
-
-    .nav-link::after{
-
-        content:'';
-
-        position:absolute;
-
-        left:0;
-        bottom:-8px;
-
-        width:0;
-
-        height:2px;
-
-        background:#f5c451;
-
-        box-shadow:
-        0 0 12px rgba(245,196,81,.6);
-
-        transition:width .3s ease;
-
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0;
+        height: 2px;
+        background: #f5c451;
+        box-shadow: 0 0 12px rgba(245, 196, 81, 0.6);
+        transition: width .3s ease;
     }
 
     .nav-link:hover::after,
-    .active-link::after{
-
-        width:100%;
-
+    .active-link::after {
+        width: 100%;
     }
 
-    .active-link{
-
-        color:#f5c451;
-
+    .nav-link:hover,
+    .active-link {
+        color: #f5c451;
     }
 
     /* =========================
-       BOTON DISCORD
+       BOTON DISCORD DESKTOP
     ========================= */
-
-    .discord-btn{
-
-        height:52px;
-
-        padding:0 22px;
-
-        border-radius:18px;
-
-        background:#5865F2;
-
-        color:#fff;
-
-        font-size:13px;
-        font-weight:700;
-
-        display:flex;
-        align-items:center;
-        gap:10px;
-
-        transition:.35s ease;
-
-        box-shadow:
-        0 10px 30px rgba(88,101,242,.2);
-
+    .discord-btn {
+        height: 48px;
+        padding: 0 20px;
+        border-radius: 14px;
+        background: #5865F2;
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        box-shadow: 0 8px 24px rgba(88, 101, 242, 0.2);
     }
 
-    .discord-btn:hover{
+    /* Forzar que el logo negro se vuelva blanco en el fondo azul */
+    .discord-icon {
+        filter: brightness(0) invert(1);
+        transition: filter .35s ease;
+    }
 
-        transform:translateY(-3px);
+    .discord-btn:hover {
+        transform: translateY(-2px);
+        background: #f5c451;
+        color: #000000;
+        box-shadow: 0 12px 25px rgba(245, 196, 81, 0.3);
+    }
 
-        background:#f5c451;
-
-        color:#000;
-
-        box-shadow:
-        0 15px 35px rgba(245,196,81,.25);
-
+    /* El logo vuelve a ser negro al hacer hover */
+    .discord-btn:hover .discord-icon {
+        filter: none;
     }
 
     /* =========================
-       BOTON MOBILE
+       BOTON HAMBURGUESA MOBILE
     ========================= */
-
-    .mobile-btn{
-
-        width:52px;
-        height:52px;
-
-        border-radius:16px;
-
-        background:#111111;
-
-        border:1px solid rgba(245,196,81,.2);
-
-        color:#f5c451;
-
-        font-size:20px;
-
-        transition:.3s ease;
-
+    .mobile-btn {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        background: #111111;
+        border: 1px solid rgba(245, 196, 81, 0.15);
+        color: #f5c451;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    .mobile-btn:hover{
-
-        background:#f5c451;
-
-        color:#000;
-
-        transform:scale(1.05);
-
+    .mobile-btn:hover {
+        background: #f5c451;
+        color: #000000;
+        border-color: #f5c451;
     }
 
     /* =========================
-       LINKS MOBILE
+       LINKS INTERNOS MÓVIL
     ========================= */
-
-    .mobile-link{
-
-        height:58px;
-
-        display:flex;
-        align-items:center;
-        justify-content:center;
-
-        border-radius:18px;
-
-        background:#111111;
-
-        border:1px solid rgba(245,196,81,.08);
-
-        color:#fff;
-
-        font-size:15px;
-        font-weight:600;
-
-        text-transform:uppercase;
-
-        letter-spacing:2px;
-
-        transition:.3s ease;
-
+    .mobile-link {
+        height: 52px;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        border-radius: 14px;
+        background: #141414;
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        color: #e5e5e5;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
     }
 
-    .mobile-link:hover{
-
-        background:#f5c451;
-
-        color:#000;
-
-        transform:translateY(-2px);
-
+    .mobile-link:hover {
+        background: #f5c451;
+        color: #000000;
+        border-color: #f5c451;
+        padding-left: 26px; /* Efecto sutil de desplazamiento hacia la derecha */
     }
 
     /* =========================
-       DISCORD MOBILE
+       BOTON DISCORD MÓVIL
     ========================= */
-
-    .discord-btn-mobile{
-
-        margin-top:12px;
-
-        height:60px;
-
-        border-radius:20px;
-
-        background:#5865F2;
-
-        color:#fff;
-
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        gap:12px;
-
-        font-size:15px;
-        font-weight:700;
-
-        transition:.3s ease;
-
-        box-shadow:
-        0 12px 30px rgba(88,101,242,.2);
-
+    .discord-btn-mobile {
+        margin-top: 8px;
+        height: 54px;
+        border-radius: 16px;
+        background: #5865F2;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-size: 14px;
+        font-weight: 700;
+        box-shadow: 0 10px 25px rgba(88, 101, 242, 0.15);
     }
 
-    .discord-btn-mobile:hover{
-
-        background:#f5c451;
-
-        color:#000;
-
-        transform:translateY(-3px);
-
+    .discord-icon-mobile {
+        filter: brightness(0) invert(1);
     }
 
-    /* =========================
-       SCROLL REVEAL
-    ========================= */
-
-    .scroll-reveal{
-
-        opacity:0;
-
-        transform:translateY(50px);
-
-        transition:
-        opacity .8s ease,
-        transform .8s ease;
-
-        will-change:
-        opacity,
-        transform;
-
+    .discord-btn-mobile:hover {
+        background: #f5c451;
+        color: #000000;
     }
 
-    .scroll-reveal.show{
-
-        opacity:1;
-
-        transform:translateY(0);
-
+    .discord-btn-mobile:hover .discord-icon-mobile {
+        filter: none;
     }
-
-    /* =========================
-       RESPONSIVE
-    ========================= */
-
-    @media(max-width:768px){
-
-        .nav-link::after{
-            display:none;
-        }
-
-    }
-
 </style>
 <!-- HERO - INICIO -->
 <section id="inicio"
