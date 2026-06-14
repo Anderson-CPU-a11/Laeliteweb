@@ -1886,14 +1886,14 @@ document.addEventListener('DOMContentLoaded', () => {
     </style>
 </section>
 <!-- COMUNIDAD -->
-<section id="comunidad" class="max-w-screen-2xl mx-auto px-6 sm:px-8 py-24">
+<section id="comunidad" class="max-w-screen-2xl mx-auto px-4 sm:px-8 py-16 md:py-24">
 
     <!-- TITULO -->
-    <div class="text-center mb-20">
+    <div class="text-center mb-12 md:mb-20 scroll-reveal">
         <span class="uppercase text-[#c8102e] text-xs font-bold tracking-[4px] block mb-3">
             Nuestro equipo
         </span>
-        <h2 class="text-4xl sm:text-5xl font-bold logo-font mt-2 neon-gold tracking-wide">
+        <h2 class="text-3xl sm:text-5xl font-bold logo-font mt-2 neon-gold tracking-wide text-white">
             Integrantes de La Élite
         </h2>
         <p class="text-gray-400 mt-4 text-base sm:text-lg max-w-xl mx-auto">
@@ -1901,17 +1901,17 @@ document.addEventListener('DOMContentLoaded', () => {
         </p>
     </div>
 
-    <!-- GRID -->
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 md:gap-8 items-start">
+    <!-- GRID RESPONSIVO (2 columnas en móviles, escala hasta 6 en pantallas grandes) -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-6 items-start">
 
         <!-- OWNER -->
-        <div class="member-card owner-card scroll-reveal col-span-2 sm:col-span-1">
+        <div class="member-card owner-card scroll-reveal">
             <div class="member-image">
                 <img src="arkamax.png" alt="Arkamax" loading="lazy">
                 <span class="member-badge owner-badge">OWNER</span>
             </div>
             <h4>Arkamax</h4>
-            <p>Owner La Élite</p>
+            <p class="role-text text-[#f5c451]">Owner La Élite</p>
         </div>
 
         <!-- ADMIN - ANDERSON -->
@@ -1920,8 +1920,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <img src="logo-elite.png" alt="Anderson Montoya" loading="lazy">
                 <span class="member-badge admin-badge">ADMIN</span>
             </div>
-            <h4>Anderson Montoya</h4>
-            <p>Admin La Élite</p>
+            <h4>Anderson M.</h4>
+            <p class="role-text text-red-500">Admin La Élite</p>
         </div>
 
         <!-- ADMIN - KOFLA -->
@@ -1931,7 +1931,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="member-badge admin-badge">ADMIN</span>
             </div>
             <h4>Kofla</h4>
-            <p>Admin La Élite</p>
+            <p class="role-text text-red-500">Admin La Élite</p>
         </div>
 
         <!-- MIEMBROS ELITE -->
@@ -1941,7 +1941,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Caballero</h4>
-            <p class="text-gray-500 text-xs uppercase tracking-wider mt-1">Conductor</p>
+            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
         <div class="member-card scroll-reveal">
@@ -1950,7 +1950,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Alex</h4>
-            <p class="text-gray-500 text-xs uppercase tracking-wider mt-1">Conductor</p>
+            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
         <div class="member-card scroll-reveal">
@@ -1959,7 +1959,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Emmanuel Ciro</h4>
-            <p class="text-gray-500 text-xs uppercase tracking-wider mt-1">Conductor</p>
+            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
         <div class="member-card scroll-reveal">
@@ -1968,7 +1968,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Fran</h4>
-            <p class="text-gray-500 text-xs uppercase tracking-wider mt-1">Conductor</p>
+            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
         <div class="member-card scroll-reveal">
@@ -1977,7 +1977,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Jose Gómez</h4>
-            <p class="text-gray-500 text-xs uppercase tracking-wider mt-1">Conductor</p>
+            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
         <div class="member-card scroll-reveal">
@@ -1986,7 +1986,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Malcri</h4>
-            <p class="text-gray-500 text-xs uppercase tracking-wider mt-1">Conductor</p>
+            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
         <div class="member-card scroll-reveal">
@@ -1995,7 +1995,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Mecato</h4>
-            <p class="text-gray-500 text-xs uppercase tracking-wider mt-1">Conductor</p>
+            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
         <div class="member-card scroll-reveal">
@@ -2004,7 +2004,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Nico</h4>
-            <p class="text-gray-500 text-xs uppercase tracking-wider mt-1">Conductor</p>
+            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
         <div class="member-card scroll-reveal">
@@ -2013,7 +2013,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Maicol Sierra</h4>
-            <p class="text-gray-500 text-xs uppercase tracking-wider mt-1">Conductor</p>
+            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
         <div class="member-card scroll-reveal">
@@ -2022,7 +2022,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Jose Trucks</h4>
-            <p class="text-gray-500 text-xs uppercase tracking-wider mt-1">Conductor</p>
+            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
         <div class="member-card scroll-reveal">
@@ -2031,7 +2031,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Compa</h4>
-            <p class="text-gray-500 text-xs uppercase tracking-wider mt-1">Conductor</p>
+            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
         <div class="member-card scroll-reveal">
@@ -2040,7 +2040,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Ñaño</h4>
-            <p class="text-gray-500 text-xs uppercase tracking-wider mt-1">Conductor</p>
+            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
         <div class="member-card scroll-reveal">
@@ -2049,7 +2049,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Tavo</h4>
-            <p class="text-gray-500 text-xs uppercase tracking-wider mt-1">Conductor</p>
+            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
         <div class="member-card scroll-reveal">
@@ -2058,7 +2058,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Bam Ban</h4>
-            <p class="text-gray-500 text-xs uppercase tracking-wider mt-1">Conductor</p>
+            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
         <div class="member-card scroll-reveal">
@@ -2067,7 +2067,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Benya</h4>
-            <p class="text-gray-500 text-xs uppercase tracking-wider mt-1">Conductor</p>
+            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
         <div class="member-card scroll-reveal">
@@ -2076,7 +2076,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Andres Soriano</h4>
-            <p class="text-gray-500 text-xs uppercase tracking-wider mt-1">Conductor</p>
+            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
         <div class="member-card scroll-reveal">
@@ -2085,7 +2085,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Fabian</h4>
-            <p class="text-gray-500 text-xs uppercase tracking-wider mt-1">Conductor</p>
+            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
         <div class="member-card scroll-reveal">
@@ -2094,7 +2094,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Jose97n</h4>
-            <p class="text-gray-500 text-xs uppercase tracking-wider mt-1">Conductor</p>
+            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
         <div class="member-card scroll-reveal">
@@ -2103,7 +2103,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>JekkoDaza</h4>
-            <p class="text-gray-500 text-xs uppercase tracking-wider mt-1">Conductor</p>
+            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
         <div class="member-card scroll-reveal">
@@ -2112,18 +2112,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Andres</h4>
-            <p class="text-gray-500 text-xs uppercase tracking-wider mt-1">Conductor</p>
+            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
     </div>
 </section>
 
+<!-- ESTILOS EXCLUSIVOS -->
 <style>
 .member-card {
     background: linear-gradient(145deg, #161616, #0f0f0f);
     border: 1px solid rgba(245, 196, 81, 0.06);
     border-radius: 20px;
-    padding: 24px 16px;
+    padding: 24px 12px;
     text-align: center;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     position: relative;
@@ -2150,14 +2151,14 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 .member-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(245, 196, 81, 0.3);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(245, 196, 81, 0.08);
+    transform: translateY(-6px);
+    border-color: rgba(245, 196, 81, 0.25);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(245, 196, 81, 0.06);
 }
 
 .member-image {
-    width: 110px;
-    height: 110px;
+    width: 100px;
+    height: 100px;
     margin: 0 auto;
     position: relative;
 }
@@ -2166,8 +2167,8 @@ document.addEventListener('DOMContentLoaded', () => {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 50%; /* Se cambió a círculo completo para mayor elegancia */
-    border: 3px solid rgba(245, 196, 81, 0.25);
+    border-radius: 50%;
+    border: 3px solid rgba(245, 196, 81, 0.15);
     transition: transform 0.4s ease;
 }
 
@@ -2177,17 +2178,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 .owner-card .member-image img {
     border-color: #f5c451;
-    box-shadow: 0 0 20px rgba(245, 196, 81, 0.25);
+    box-shadow: 0 0 15px rgba(245, 196, 81, 0.2);
 }
 
 .admin-card .member-image img {
     border-color: #c8102e;
-    box-shadow: 0 0 20px rgba(200, 16, 46, 0.2);
+    box-shadow: 0 0 15px rgba(200, 16, 46, 0.15);
 }
 
 .member-badge {
     position: absolute;
-    bottom: -2px; /* Mejor ubicación en la parte inferior de la foto */
+    bottom: -2px;
     left: 50%;
     transform: translateX(-50%);
     padding: 3px 10px;
@@ -2202,12 +2203,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 .owner-badge { background: #f5c451; color: #000; }
 .admin-badge { background: #c8102e; color: #fff; }
-.elite-badge { background: #333; color: #fff; border: 1px solid rgba(245,196,81,0.4); }
+.elite-badge { background: #222; color: #ccc; border: 1px solid rgba(245,196,81,0.25); }
 
 .member-card h4 {
     color: white;
-    margin-top: 20px;
-    font-size: 16px;
+    margin-top: 18px;
+    font-size: 15px;
     font-weight: 700;
     line-height: 1.3;
     overflow: hidden;
@@ -2215,24 +2216,29 @@ document.addEventListener('DOMContentLoaded', () => {
     white-space: nowrap;
 }
 
-.member-card p {
-    color: #f5c451;
+.role-text {
     margin-top: 4px;
-    font-size: 13px;
+    font-size: 12px;
+    text-transform: uppercase;
+    tracking-wider: 0.05em;
+    font-weight: 500;
 }
 
 @media(max-width: 640px) {
     .member-image {
-        width: 90px;
-        height: 90px;
+        width: 85px;
+        height: 85px;
     }
     .member-card {
-        padding: 16px 10px;
+        padding: 16px 8px;
         border-radius: 16px;
     }
     .member-card h4 {
-        font-size: 14px;
-        margin-top: 14px;
+        font-size: 13px;
+        margin-top: 12px;
+    }
+    .role-text {
+        font-size: 11px;
     }
     .member-badge {
         font-size: 8px;
