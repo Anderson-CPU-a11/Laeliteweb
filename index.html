@@ -1883,8 +1883,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <!-- COMUNIDAD -->
 <section id="comunidad" class="max-w-screen-2xl mx-auto px-4 sm:px-8 py-16 md:py-24">
 
-    <!-- TITULO -->
-    <div class="text-center mb-12 md:mb-20 scroll-reveal">
+    <div class="text-center mb-12 md:mb-16 scroll-reveal">
         <span class="uppercase text-[#c8102e] text-xs font-bold tracking-[4px] block mb-3">
             Nuestro equipo
         </span>
@@ -1892,268 +1891,395 @@ document.addEventListener('DOMContentLoaded', () => {
             Integrantes de La Élite
         </h2>
         <p class="text-gray-400 mt-4 text-base sm:text-lg max-w-xl mx-auto">
-            Conductores, administradores y leyendas de la carretera
+            Selecciona un miembro para ver su perfil oficial y redes sociales.
         </p>
     </div>
 
-    <!-- GRID RESPONSIVO (2 columnas en móviles, escala hasta 6 en pantallas grandes) -->
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-6 items-start">
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-4 items-start mb-16">
 
-        <!-- OWNER -->
-        <div class="member-card owner-card scroll-reveal">
+        <div class="member-card owner-card active" onclick="switchProfile(this)"
+             data-name="Arkamax" data-role="Owner La Élite" data-badge="OWNER" data-badge-style="owner-badge" data-img="arkamax.png"
+             data-bio="Fundador y líder general de la comunidad LA ÉLITE. Encargado de coordinar las rutas oficiales, mantener el orden en convoy de simulación y traer el mejor contenido pesado en ruta a las plataformas digitales."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
                 <img src="arkamax.png" alt="Arkamax" loading="lazy">
                 <span class="member-badge owner-badge">OWNER</span>
             </div>
             <h4>Arkamax</h4>
-            <p class="role-text text-[#f5c451]">Owner La Élite</p>
         </div>
 
-        <!-- ADMIN - ANDERSON -->
-        <div class="member-card admin-card scroll-reveal">
+        <div class="member-card admin-card" onclick="switchProfile(this)"
+             data-name="Anderson M." data-role="Admin La Élite" data-badge="ADMIN" data-badge-style="admin-badge" data-img="logo-elite.png"
+             data-bio="Administrador y desarrollador técnico de la plataforma. Encargado del ecosistema digital, optimización web, automatizaciones de Discord y control logístico interno en cada rodada."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
                 <img src="logo-elite.png" alt="Anderson Montoya" loading="lazy">
                 <span class="member-badge admin-badge">ADMIN</span>
             </div>
             <h4>Anderson M.</h4>
-            <p class="role-text text-red-500">Admin La Élite</p>
         </div>
 
-        <!-- ADMIN - KOFLA -->
-        <div class="member-card admin-card scroll-reveal">
+        <div class="member-card admin-card" onclick="switchProfile(this)"
+             data-name="Kofla" data-role="Admin La Élite" data-badge="ADMIN" data-badge-style="admin-badge" data-img="kofla.png"
+             data-bio="Administrador central de La Élite. Encargado de la moderación comunitaria estricta, la verificación de reglamentos en carretera y la inducción de nuevos conductores aspirantes."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
                 <img src="kofla.png" alt="Kofla" loading="lazy">
                 <span class="member-badge admin-badge">ADMIN</span>
             </div>
             <h4>Kofla</h4>
-            <p class="role-text text-red-500">Admin La Élite</p>
         </div>
 
-        <!-- MIEMBROS ELITE -->
-        <div class="member-card scroll-reveal">
+        <div class="member-card" onclick="switchProfile(this)"
+             data-name="Caballero" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="caballero.png"
+             data-bio="Conductor experimentado de la comunidad. Destacado por su impecable nivel de manejo y disciplina manteniendo la línea de convoy en rutas pesadas de alta montaña dentro de MapKalo."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
                 <img src="caballero.png" alt="Caballero" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Caballero</h4>
-            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
-        <div class="member-card scroll-reveal">
+        <div class="member-card" onclick="switchProfile(this)"
+             data-name="Alex" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="alex.png"
+             data-bio="Integrante activo de las rutas oficiales de convoy de 128 jugadores. Siempre aportando orden, constancia y excelente presentación de camiones americanos en el asfalto."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
                 <img src="alex.png" alt="Alex" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Alex</h4>
-            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
-        <div class="member-card scroll-reveal">
+        <div class="member-card" onclick="switchProfile(this)"
+             data-name="Emmanuel Ciro" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="ciro.png"
+             data-bio="Conductor oficial de LA ÉLITE. Apasionado por los tractocamiones configurados al estilo full colombiano, superando los terrenos más inclinados y exigentes del mapa."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
                 <img src="ciro.png" alt="Emmanuel Ciro" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Emmanuel Ciro</h4>
-            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
-        <div class="member-card scroll-reveal">
+        <div class="member-card" onclick="switchProfile(this)"
+             data-name="Fran" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="fran1.png"
+             data-bio="Conductor de la división de carga pesada. Aporta siempre la mejor energía radial al grupo y un despliegue de conducción seguro en los escenarios viales más complejos."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
                 <img src="fran1.png" alt="Fran" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Fran</h4>
-            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
-        <div class="member-card scroll-reveal">
+        <div class="member-card" onclick="switchProfile(this)"
+             data-name="Jose Gómez" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="logo-elite.png"
+             data-bio="Piloto comprometido de nuestra división de transporte virtual. Ascendido al grupo exclusivo Élite gracias a sus méritos de puntualidad y excelente conducta en ruta."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
                 <img src="logo-elite.png" alt="Jose Gómez" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Jose Gómez</h4>
-            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
-        <div class="member-card scroll-reveal">
+        <div class="member-card" onclick="switchProfile(this)"
+             data-name="Malcri" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="logo-elite.png"
+             data-bio="Conductor destacado por su asistencia perfecta a las rodadas grupales nocturnas y su gran maniobrabilidad utilizando configuraciones avanzadas de mods."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
                 <img src="logo-elite.png" alt="Malcri" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Malcri</h4>
-            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
-        <div class="member-card scroll-reveal">
+        <div class="member-card" onclick="switchProfile(this)"
+             data-name="Mecato" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="mecato.png"
+             data-bio="Conductor de total confianza en la comunidad. Caracterizado por su estilo único para personalizar remolques y su constante espíritu de compañerismo en carretera."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
                 <img src="mecato.png" alt="Mecato" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Mecato</h4>
-            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
-        <div class="member-card scroll-reveal">
+        <div class="member-card" onclick="switchProfile(this)"
+             data-name="Nico" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="nico.png"
+             data-bio="Integrante clave del grupo principal. Experto en dominar los frenos de motor y los trazados más angostos de los nuevos municipios añadidos en el mapa de Colombia."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
                 <img src="nico.png" alt="Nico" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Nico</h4>
-            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
-        <div class="member-card scroll-reveal">
+        <div class="member-card" onclick="switchProfile(this)"
+             data-name="Maicol Sierra" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="sierra.png"
+             data-bio="Miembro leal de la empresa. Un conductor dedicado que asume con gran responsabilidad el transporte de mercancías especiales de punto a punto en el simulador."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
                 <img src="sierra.png" alt="Maicol Sierra" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Maicol Sierra</h4>
-            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
-        <div class="member-card scroll-reveal">
+        <div class="member-card" onclick="switchProfile(this)"
+             data-name="Jose Trucks" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="josetruck.png"
+             data-bio="Apasionado del sim-racing y el transporte por carretera. Cumplidor estricto de las directrices de convoyes masivos y parte del corazón vial de La Élite."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
                 <img src="josetruck.png" alt="Jose Trucks" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Jose Trucks</h4>
-            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
-        <div class="member-card scroll-reveal">
+        <div class="member-card" onclick="switchProfile(this)"
+             data-name="Compa" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="compa.png"
+             data-bio="Conductor oficial de la empresa. Su constancia dentro de los servidores dedicados y caravanas compartidas le ha valido una posición firme en el grupo."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
                 <img src="compa.png" alt="Compa" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Compa</h4>
-            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
-        <div class="member-card scroll-reveal">
+        <div class="member-card" onclick="switchProfile(this)"
+             data-name="Ñaño" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="ñaño.png"
+             data-bio="Conductor representativo de la comunidad. Siempre aportando la mejor actitud, rutas fluidas y un estilo de conducción enfocado al máximo realismo posible."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
                 <img src="ñaño.png" alt="Ñaño" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Ñaño</h4>
-            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
-        <div class="member-card scroll-reveal">
+        <div class="member-card" onclick="switchProfile(this)"
+             data-name="Tavo" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="tavo.jpg"
+             data-bio="Conductor comprometido con el crecimiento del grupo. Esencial en la coordinación de escolta y retaguardia durante los eventos masivos de la comunidad."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
                 <img src="tavo.jpg" alt="Tavo" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Tavo</h4>
-            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
-        <div class="member-card scroll-reveal">
+        <div class="member-card" onclick="switchProfile(this)"
+             data-name="Bam Ban" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="ban.jpg"
+             data-bio="Piloto oficial de tractomulas de La Élite. Destacado por su gran resistencia viales en trayectos de larga distancia y soporte con configuraciones de periféricos."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
                 <img src="ban.jpg" alt="Bam Ban" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Bam Ban</h4>
-            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
-        <div class="member-card scroll-reveal">
+        <div class="member-card" onclick="switchProfile(this)"
+             data-name="Benya" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="Benya.jpg"
+             data-bio="Conductor activo en la comunidad. Respetado por sus compañeros gracias a su prudencia viales y excelente acoplamiento a las reglas del convoy oficial."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
                 <img src="Benya.jpg" alt="Benya" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Benya</h4>
-            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
-        <div class="member-card scroll-reveal">
+        <div class="member-card" onclick="switchProfile(this)"
+             data-name="Andres Soriano" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="sori.png"
+             data-bio="Conductor dotado de gran técnica para maniobrar en tramos estrechos o trochas colombianas peligrosas. Colaborador constante en el canal de voz."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
                 <img src="sori.png" alt="Andres Soriano" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Andres Soriano</h4>
-            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
-        <div class="member-card scroll-reveal">
+        <div class="member-card" onclick="switchProfile(this)"
+             data-name="Fabian" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="fabian.jpg"
+             data-bio="Apasionado de la mulas y motores custom. Conductor dedicado que equilibra la velocidad controlada y la ayuda técnica a compañeros en problemas."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
                 <img src="fabian.jpg" alt="Fabian" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Fabian</h4>
-            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
-        <div class="member-card scroll-reveal">
+        <div class="member-card" onclick="switchProfile(this)"
+             data-name="Jose97n" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="97.jpg"
+             data-bio="Conductor de comportamiento vial excelente. Siempre presente en las rodadas semanales compartiendo su pasión por la simulación de camiones pesados."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
                 <img src="97.jpg" alt="Jose97n" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Jose97n</h4>
-            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
-        <div class="member-card scroll-reveal">
+        <div class="member-card" onclick="switchProfile(this)"
+             data-name="JekkoDaza" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="daza.jpg"
+             data-bio="Miembro oficial de la familia Élite. Especializado en capturas de alta fidelidad visual en ruta y el despliegue ordenado de camiones en paradores."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
                 <img src="daza.jpg" alt="Daza" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>JekkoDaza</h4>
-            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
-        <div class="member-card scroll-reveal">
+        <div class="member-card" onclick="switchProfile(this)"
+             data-name="Andres" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="andres.jpg"
+             data-bio="Conductor oficial de la división. Demuestra un gran sentido de lealtad, disciplina grupal y puntualidad estricta en los puntos de salida de carga."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
                 <img src="andres.jpg" alt="Andres" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Andres</h4>
-            <p class="role-text text-gray-400">Conductor</p>
         </div>
 
     </div>
+
+    <div class="profile-display-box scroll-reveal">
+        <div class="profile-display-grid">
+            
+            <div class="profile-large-image-zone">
+                <div class="image-frame">
+                    <img src="arkamax.png" id="bigProfileImg" alt="Perfil Detallado">
+                    <span id="bigProfileBadge" class="member-badge owner-badge">OWNER</span>
+                </div>
+            </div>
+            
+            <div class="profile-large-info-zone">
+                <div>
+                    <h3 id="bigProfileName" class="logo-font">Arkamax</h3>
+                    <p id="bigProfileRole" class="display-role-text">Owner La Élite</p>
+                    
+                    <div class="display-separator"></div>
+                    
+                    <p id="bigProfileBio" class="display-bio-text">
+                        Fundador y líder general de la comunidad LA ÉLITE. Encargado de coordinar las rutas oficiales, mantener el orden en convoy de simulación y traer el mejor contenido pesado en ruta a las plataformas digitales.
+                    </p>
+                </div>
+                
+                <div class="display-socials-box" id="bigProfileSocialsBox">
+                    <p class="socials-box-title">Redes Oficiales</p>
+                    <div class="socials-buttons-layout">
+                        <a href="#" id="bigLinkYoutube" target="_blank" rel="noopener noreferrer" class="social-btn yt-btn">
+                            <i class="fab fa-youtube"></i> YouTube
+                        </a>
+                        <a href="#" id="bigLinkTiktok" target="_blank" rel="noopener noreferrer" class="social-btn tk-btn">
+                            <i class="fab fa-tiktok"></i> TikTok
+                        </a>
+                        <a href="#" id="bigLinkInstagram" target="_blank" rel="noopener noreferrer" class="social-btn ig-btn">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 </section>
 
-<!-- ESTILOS EXCLUSIVOS -->
+<script>
+function switchProfile(element) {
+    // 1. Quitar la clase activa de la tarjeta anterior y ponérsela a la clickeada
+    document.querySelectorAll('.member-card').forEach(card => card.classList.remove('active'));
+    element.classList.add('active');
+
+    // 2. Extraer los datos de la tarjeta seleccionada
+    const name = element.getAttribute('data-name');
+    const role = element.getAttribute('data-role');
+    const badgeText = element.getAttribute('data-badge');
+    const badgeStyle = element.getAttribute('data-badge-style');
+    const imgStyle = element.getAttribute('data-img');
+    const bio = element.getAttribute('data-bio');
+    
+    const youtube = element.getAttribute('data-youtube');
+    const tiktok = element.getAttribute('data-tiktok');
+    const instagram = element.getAttribute('data-instagram');
+
+    // 3. Reemplazar los datos en el Perfil Grande con efecto visual suave
+    const displayBox = document.querySelector('.profile-display-box');
+    displayBox.style.opacity = '0.4';
+    
+    setTimeout(() => {
+        document.getElementById('bigProfileName').textContent = name;
+        document.getElementById('bigProfileRole').textContent = role;
+        document.getElementById('bigProfileBio').textContent = bio;
+        
+        const bigImg = document.getElementById('bigProfileImg');
+        bigImg.src = imgStyle;
+        bigImg.alt = name;
+
+        const bigBadge = document.getElementById('bigProfileBadge');
+        bigBadge.className = 'member-badge ' + badgeStyle;
+        bigBadge.textContent = badgeText;
+
+        // Validar e insertar Enlaces de Redes
+        let hasSocials = false;
+        
+        const ytBtn = document.getElementById('bigLinkYoutube');
+        if(youtube && youtube !== '#') { ytBtn.href = youtube; ytBtn.style.display = 'flex'; hasSocials = true; } else { ytBtn.style.display = 'none'; }
+        
+        const tkBtn = document.getElementById('bigLinkTiktok');
+        if(tiktok && tiktok !== '#') { tkBtn.href = tiktok; tkBtn.style.display = 'flex'; hasSocials = true; } else { tkBtn.style.display = 'none'; }
+        
+        const igBtn = document.getElementById('bigLinkInstagram');
+        if(instagram && instagram !== '#') { igBtn.href = instagram; igBtn.style.display = 'flex'; hasSocials = true; } else { igBtn.style.display = 'none'; }
+
+        // Ocultar título de redes si nadie tiene ninguna cargada
+        document.getElementById('bigProfileSocialsBox').style.display = hasSocials ? 'block' : 'none';
+        
+        displayBox.style.opacity = '1';
+    }, 150);
+}
+</script>
+
 <style>
+/* MINI TARJETAS (Hacen de menú interactivo) */
 .member-card {
-    background: linear-gradient(145deg, #161616, #0f0f0f);
-    border: 1px solid rgba(245, 196, 81, 0.06);
-    border-radius: 20px;
-    padding: 24px 12px;
+    background: linear-gradient(145deg, #141414, #0d0d0d);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 16px 8px;
     text-align: center;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.3s ease;
     position: relative;
-    overflow: hidden;
-    backdrop-filter: blur(10px);
-}
-
-.member-card::before {
-    content: '';
-    position: absolute;
-    top: -100%;
-    left: -100%;
-    width: 220%;
-    height: 220%;
-    background: linear-gradient(120deg, transparent, rgba(245, 196, 81, 0.04), transparent);
-    transform: rotate(25deg);
-    transition: 0.8s;
-    pointer-events: none;
-}
-
-.member-card:hover::before {
-    top: 0;
-    left: 0;
+    cursor: pointer;
 }
 
 .member-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(245, 196, 81, 0.25);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(245, 196, 81, 0.06);
+    transform: translateY(-4px);
+    border-color: rgba(245, 196, 81, 0.2);
+    background: #161616;
 }
 
+/* Tarjeta Seleccionada Activada */
+.member-card.active {
+    background: linear-gradient(145deg, #1a1a1a, #121212);
+    border-color: #f5c451;
+    box-shadow: 0 0 15px rgba(245, 196, 81, 0.12);
+}
+.member-card.admin-card.active { border-color: #c8102e; box-shadow: 0 0 15px rgba(200, 16, 46, 0.12); }
+
 .member-image {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     margin: 0 auto;
     position: relative;
 }
@@ -2163,82 +2289,180 @@ document.addEventListener('DOMContentLoaded', () => {
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
-    border: 3px solid rgba(245, 196, 81, 0.15);
-    transition: transform 0.4s ease;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: border-color 0.3s;
 }
 
-.member-card:hover .member-image img {
-    transform: scale(1.05);
-}
-
-.owner-card .member-image img {
-    border-color: #f5c451;
-    box-shadow: 0 0 15px rgba(245, 196, 81, 0.2);
-}
-
-.admin-card .member-image img {
-    border-color: #c8102e;
-    box-shadow: 0 0 15px rgba(200, 16, 46, 0.15);
-}
+.member-card.active .member-image img { border-color: #f5c451; }
+.member-card.admin-card.active .member-image img { border-color: #c8102e; }
 
 .member-badge {
     position: absolute;
-    bottom: -2px;
+    bottom: -4px;
     left: 50%;
     transform: translateX(-50%);
-    padding: 3px 10px;
+    padding: 2px 8px;
     border-radius: 20px;
-    font-size: 9px;
+    font-size: 8px;
     font-weight: 800;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     white-space: nowrap;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.5);
 }
 
 .owner-badge { background: #f5c451; color: #000; }
 .admin-badge { background: #c8102e; color: #fff; }
-.elite-badge { background: #222; color: #ccc; border: 1px solid rgba(245,196,81,0.25); }
+.elite-badge { background: #222; color: #ccc; border: 1px solid rgba(245,196,81,0.2); }
 
 .member-card h4 {
     color: white;
-    margin-top: 18px;
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 1.3;
+    margin-top: 14px;
+    font-size: 13px;
+    font-weight: 600;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-.role-text {
-    margin-top: 4px;
-    font-size: 12px;
-    text-transform: uppercase;
-    tracking-wider: 0.05em;
-    font-weight: 500;
+/* =========================================
+   ESTILOS DE LA VISTA DE PERFIL GRANDE
+========================================= -->
+.profile-display-box {
+    background: linear-gradient(160deg, #161616 0%, #0f0f0f 100%);
+    border: 1px solid rgba(245, 196, 81, 0.15);
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    transition: opacity 0.2s ease;
 }
 
+.profile-display-grid {
+    display: grid;
+    grid-template-columns: 1r;
+    gap: 30px;
+}
+
+@media (min-width: 768px) {
+    .profile-display-grid {
+        grid-template-columns: 220px 1fr;
+        align-items: center;
+    }
+}
+
+.profile-large-image-zone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-frame {
+    position: relative;
+    width: 170px;
+    height: 170px;
+}
+
+.image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgba(245, 196, 81, 0.25);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.profile-large-info-zone {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.profile-large-info-zone h3 {
+    color: white;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.display-role-text {
+    font-size: 13px;
+    color: #f5c451;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 2px;
+}
+
+.display-separator {
+    margin: 15px 0;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(245, 196, 81, 0.25), transparent);
+}
+
+.display-bio-text {
+    color: #cccccc;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 800px;
+}
+
+/* CAJA DE REDES SOCIALES EN PERFIL */
+.display-socials-box {
+    margin-top: 24px;
+}
+
+.socials-box-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #555;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.socials-buttons-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 20px;
+    height: 40px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.social-btn:hover {
+    transform: translateY(-2px);
+}
+
+.yt-btn { background: #c8102e; }
+.yt-btn:hover { background: #e01638; }
+
+.tk-btn { background: #000; border: 1px solid #262626; }
+.tk-btn:hover { background: #141414; }
+
+.ig-btn { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #bc1888); }
+.ig-btn:hover { opacity: 0.9; }
+
 @media(max-width: 640px) {
-    .member-image {
-        width: 85px;
-        height: 85px;
-    }
-    .member-card {
-        padding: 16px 8px;
-        border-radius: 16px;
-    }
-    .member-card h4 {
-        font-size: 13px;
-        margin-top: 12px;
-    }
-    .role-text {
-        font-size: 11px;
-    }
-    .member-badge {
-        font-size: 8px;
-        padding: 2px 8px;
-    }
+    .profile-display-box { padding: 20px; }
+    .profile-large-info-zone h3 { text-align: center; margin-top: 10px; font-size: 24px; }
+    .display-role-text { text-align: center; }
+    .display-bio-text { text-align: center; font-size: 13.5px; }
+    .socials-buttons-layout { justify-content: center; }
+    .socials-box-title { text-align: center; }
+    .display-separator { background: linear-gradient(90deg, transparent, rgba(245, 196, 81, 0.25), transparent); }
 }
 </style>
 <!-- CONTACTO / REDES -->
