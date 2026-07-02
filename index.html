@@ -2,27 +2,42 @@
 <html lang="es" class="scroll-smooth">
 
 <head>
+    <!-- META ETIQUETAS ESENCIALES -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARKAMAX | LA ÉLITE Comunidad ATS-ETS2</title>
+
+    <!-- SEO & METADATOS -->
     <meta name="author" content="Arkamax">
     <meta name="description" content="La Élite - Comunidad exclusiva de American Truck Simulator y Euro Truck Simulator 2. Convoyes, rutas legendarias y eventos premium.">
     <meta name="keywords" content="ATS, ETS2, American Truck Simulator, Euro Truck Simulator 2, convoyes ATS, comunidad ATS, La Elite, Mapkalo, arkamax24">
     <meta name="theme-color" content="#000000">
+
+    <!-- OPEN GRAPH / SOCIAL MEDIA -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="LA ÉLITE | Comunidad ATS • ETS2">
     <meta property="og:description" content="Convoyes, eventos, rutas legendarias y la mejor comunidad ATS-ETS2 de Colombia.">
     <meta property="og:image" content="logo-elite.png">
+
+    <!-- TWITTER CARDS -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="LA ÉLITE | Comunidad ATS • ETS2">
     <meta name="twitter:description" content="Convoyes, eventos, rutas legendarias y la mejor comunidad ATS-ETS2 de Colombia.">
     <meta name="twitter:image" content="logo-elite.png">
+
+    <!-- FAVICON -->
     <link rel="icon" type="image/png" href="logo-elite.png">
+
+    <!-- RENDIMIENTO Y FUENTES (GOOGLE FONTS) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+
+    <!-- SCRIPT DE TAILWIND Y HOJAS DE ESTILOS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- CONFIGURACIÓN DE TAILWIND -->
     <script>
         tailwind.config = {
             theme: {
@@ -35,10 +50,11 @@
             }
         }
     </script>
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <!-- ESTILOS PERSONALIZADOS -->
     <style>
+        /* =========================
+           VARIABLES GLOBALES
+        ========================= */
         :root {
             --gold: #f5c451;
             --gold-light: #ffd56a;
@@ -48,14 +64,21 @@
             --dark: #0a0a0a;
             --dark-light: #111111;
         }
+
+        /* =========================
+           RESET SEGURO (MÓVIL Y PC)
+        ========================= */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
+        /* Transiciones suaves sólo en propiedades clave para evitar lag al hacer scroll */
         a, button, input, .card-hover, .nav-link, .gallery-img, .event-card {
             transition: color .25s ease, background-color .25s ease, border-color .25s ease, transform .25s ease, opacity .25s ease, box-shadow .25s ease;
         }
+
         body {
             background: linear-gradient(to bottom, #000000, #050505);
             color: white;
@@ -63,21 +86,31 @@
             font-family: 'Inter', sans-serif;
             -webkit-font-smoothing: antialiased;
         }
+
         img {
             user-select: none;
             -webkit-user-drag: none;
             max-width: 100%;
             height: auto;
         }
+
         button {
             cursor: pointer;
             background: none;
             border: none;
             outline: none;
         }
+
+        /* =========================
+           TIPOGRAFÍAS Y ELEMENTOS
+        ========================= */
         .logo-font {
             font-family: 'Playfair Display', serif;
         }
+
+        /* =========================
+           HERO SECTION CON ANIMACIÓN
+        ========================= */
         .hero-bg {
             background: linear-gradient(rgba(0,0,0,.76), rgba(0,0,0,.88)), url('ruta_aguardientera.png');
             background-size: cover;
@@ -85,25 +118,39 @@
             animation: roadAnimation 80s linear infinite;
             will-change: background-position;
         }
+
         @keyframes roadAnimation {
             0% { background-position: 0% 50%; }
             100% { background-position: 100% 50%; }
         }
+
+        /* Reducción de velocidad en móviles para ahorrar batería y mejorar rendimiento */
         @media (max-width: 768px) {
             .hero-bg {
                 animation: roadAnimation 120s linear infinite;
             }
         }
+
+        /* =========================
+           EFECTOS NEÓN
+        ========================= */
         .neon-gold {
             text-shadow: 0 0 8px rgba(245,196,81,.6), 0 0 18px rgba(245,196,81,.4), 0 0 35px rgba(245,196,81,.2);
         }
+
         .neon-purple {
             text-shadow: 0 0 8px rgba(91,10,122,.6), 0 0 18px rgba(91,10,122,.35);
         }
+
+        /* =========================
+           COMPONENTES INTERACTIVOS
+        ========================= */
         .card-hover:hover {
             transform: translateY(-8px) scale(1.02);
             box-shadow: 0 20px 45px rgba(0,0,0,.4), 0 0 25px rgba(245,196,81,.12);
         }
+
+        /* Menú de Navegación */
         .nav-link {
             position: relative;
             color: white;
@@ -114,10 +161,12 @@
             opacity: .92;
             padding-bottom: 6px;
         }
+
         .nav-link:hover {
             color: var(--gold);
             opacity: 1;
         }
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -130,17 +179,22 @@
             box-shadow: 0 0 12px var(--gold);
             transition: width .3s ease;
         }
+
         .nav-link:hover::after,
         .active-link::after {
             width: 100%;
         }
+
         .active-link {
             color: var(--gold);
         }
+
+        /* Títulos de Sección */
         .section-title {
             position: relative;
             display: inline-block;
         }
+
         .section-title::after {
             content: '';
             position: absolute;
@@ -152,21 +206,30 @@
             left: 50%;
             transform: translateX(-50%);
         }
+
+        /* Galería de Imágenes */
         .gallery-img:hover {
             transform: scale(1.05);
             filter: brightness(1.1) contrast(1.05);
         }
+
+        /* Tarjetas de Eventos */
         .event-card {
             background: linear-gradient(145deg, #181818, #101010);
             border-radius: 24px;
             overflow: hidden;
             border: 1px solid rgba(245,196,81,.08);
         }
+
         .event-card:hover {
             transform: translateY(-6px);
             border-color: rgba(245,196,81,.25);
             box-shadow: 0 20px 40px rgba(0,0,0,.35);
         }
+
+        /* =========================
+           POPUP / MODAL DE NOTICIAS
+        ========================= */
         .news-overlay {
             position: fixed;
             inset: 0;
@@ -180,10 +243,12 @@
             pointer-events: none;
             transition: opacity .35s ease;
         }
+
         .news-overlay.show {
             opacity: 1;
             pointer-events: auto;
         }
+
         .news-box {
             width: 90%;
             max-width: 440px;
@@ -195,6 +260,7 @@
             box-shadow: 0 25px 60px rgba(0,0,0,0.6), 0 0 30px rgba(245,196,81,0.05);
             animation: popupShow .4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
+
         @keyframes popupShow {
             from {
                 opacity: 0;
@@ -205,29 +271,45 @@
                 transform: scale(1) translateY(0);
             }
         }
+
+        /* =========================
+           SCROLL REVEAL EFECTO
+        ========================= */
         .scroll-reveal {
             opacity: 0;
             transform: translateY(40px);
             transition: opacity .8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform .8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             will-change: opacity, transform;
         }
+
         .scroll-reveal.show {
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* =========================
+           SCROLLBAR PERSONALIZADO
+        ========================= */
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
             background: #0d0d0d;
         }
+
         ::-webkit-scrollbar-thumb {
             background: linear-gradient(to bottom, var(--gold), var(--gold-light));
             border-radius: 999px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: var(--gold-light);
         }
+
+        /* =========================
+           MEDIA QUERIES (RESPONSIVE)
+        ========================= */
         @media(max-width: 768px) {
             .section-title {
                 font-size: 34px !important;
@@ -236,263 +318,18 @@
                 border-radius: 20px;
             }
         }
+
         @media(max-width: 640px) {
             .section-title {
                 font-size: 28px !important;
             }
             ::-webkit-scrollbar {
-                width: 4px;
-            }
-        }
-        /* =========================
-           CHAT GLOBAL LA ELITE
-        ========================= */
-        .chat-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #0d0d0d;
-            border: 1px solid rgba(245,196,81,0.15);
-            border-radius: 24px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            height: 520px;
-        }
-        .chat-header {
-            background: linear-gradient(135deg, #181818, #111);
-            border-bottom: 1px solid rgba(245,196,81,0.15);
-            padding: 16px 20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex-shrink: 0;
-        }
-        .chat-header-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 12px;
-            background: rgba(245,196,81,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #f5c451;
-            font-size: 18px;
-        }
-        .chat-header h3 {
-            font-size: 16px;
-            font-weight: 700;
-            color: white;
-        }
-        .chat-header p {
-            font-size: 11px;
-            color: #888;
-            letter-spacing: 0.5px;
-        }
-        .chat-online {
-            margin-left: auto;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 12px;
-            color: #4ade80;
-        }
-        .chat-online-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: #4ade80;
-            animation: pulse-dot 2s infinite;
-        }
-        @keyframes pulse-dot {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
-        }
-        .chat-nick-setup {
-            padding: 16px 20px;
-            border-bottom: 1px solid rgba(245,196,81,0.08);
-            background: #0a0a0a;
-            flex-shrink: 0;
-        }
-        .chat-nick-setup label {
-            font-size: 12px;
-            color: #aaa;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
-        .chat-nick-row {
-            display: flex;
-            gap: 10px;
-            margin-top: 8px;
-        }
-        .chat-nick-row input {
-            flex: 1;
-            height: 42px;
-            border-radius: 10px;
-            border: 1px solid rgba(245,196,81,0.2);
-            background: #1a1a1a;
-            color: white;
-            padding: 0 14px;
-            font-size: 14px;
-            outline: none;
-        }
-        .chat-nick-row input:focus {
-            border-color: #f5c451;
-        }
-        .chat-nick-row button {
-            height: 42px;
-            padding: 0 20px;
-            border-radius: 10px;
-            background: #f5c451;
-            color: black;
-            font-weight: 700;
-            font-size: 13px;
-            white-space: nowrap;
-        }
-        .chat-nick-row button:hover {
-            background: #ffd56a;
-        }
-        .chat-nick-setup .saved-nick {
-            font-size: 13px;
-            color: #4ade80;
-            margin-top: 6px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .chat-nick-setup .saved-nick button {
-            font-size: 11px;
-            color: #f87171;
-            text-decoration: underline;
-            background: none;
-            padding: 0;
-            height: auto;
-        }
-        .chat-messages {
-            flex: 1;
-            overflow-y: auto;
-            padding: 16px 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            background: #080808;
-        }
-        .chat-message {
-            display: flex;
-            gap: 10px;
-            align-items: flex-start;
-        }
-        .chat-message .avatar {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #f5c451, #36024e);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 13px;
-            font-weight: 700;
-            color: black;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-        .chat-message .msg-content {
-            flex: 1;
-            min-width: 0;
-        }
-        .chat-message .msg-author {
-            font-size: 12px;
-            font-weight: 700;
-            color: #f5c451;
-        }
-        .chat-message .msg-time {
-            font-size: 10px;
-            color: #555;
-            margin-left: 8px;
-        }
-        .chat-message .msg-text {
-            font-size: 14px;
-            color: #ddd;
-            line-height: 1.4;
-            margin-top: 2px;
-            word-break: break-word;
-        }
-        .chat-message.own .avatar {
-            background: linear-gradient(135deg, #f5c451, #c8102e);
-        }
-        .chat-message.own .msg-author {
-            color: #ffd56a;
-        }
-        .chat-empty {
-            text-align: center;
-            color: #555;
-            font-size: 14px;
-            padding: 40px 20px;
-        }
-        .chat-empty i {
-            font-size: 36px;
-            color: #333;
-            display: block;
-            margin-bottom: 12px;
-        }
-        .chat-input-area {
-            padding: 12px 16px;
-            border-top: 1px solid rgba(245,196,81,0.08);
-            background: #0d0d0d;
-            display: flex;
-            gap: 10px;
-            flex-shrink: 0;
-        }
-        .chat-input-area input {
-            flex: 1;
-            height: 44px;
-            border-radius: 12px;
-            border: 1px solid rgba(245,196,81,0.2);
-            background: #1a1a1a;
-            color: white;
-            padding: 0 16px;
-            font-size: 14px;
-            outline: none;
-        }
-        .chat-input-area input:focus {
-            border-color: #f5c451;
-        }
-        .chat-input-area input::placeholder {
-            color: #555;
-        }
-        .chat-input-area button {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            background: #f5c451;
-            color: black;
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-        .chat-input-area button:hover {
-            background: #ffd56a;
-        }
-        .chat-input-area button:disabled {
-            opacity: 0.4;
-            cursor: not-allowed;
-        }
-        @media(max-width: 640px) {
-            .chat-container {
-                height: 460px;
-                border-radius: 18px;
-            }
-            .chat-messages {
-                padding: 12px 14px;
-            }
-            .chat-input-area {
-                padding: 10px 12px;
+                width: 4px; /* Scrollbar más discreto para pantallas pequeñas */
             }
         }
     </style>
 </head>
+
 <body>
 
 <nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-black/75 backdrop-blur-xl border-b border-[#f5c451]/10 transition-all duration-300">
@@ -519,7 +356,6 @@
                 <a href="#eventos" class="nav-link">Eventos</a>
                 <a href="#videos" class="nav-link">Videos</a>
                 <a href="#comunidad" class="nav-link">Comunidad</a>
-                <a href="#chat" class="nav-link">Chat</a>
                 <a href="#contacto" class="nav-link">Contacto</a>
             </div>
 
@@ -550,10 +386,9 @@
             <a href="#eventos" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2 border-b border-white/5">Eventos</a>
             <a href="#videos" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2 border-b border-white/5">Videos</a>
             <a href="#comunidad" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2 border-b border-white/5">Comunidad</a>
-            <a href="#chat" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2 border-b border-white/5">Chat</a>
             <a href="#contacto" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2">Contacto</a>
-
-            <a href="https://discord.gg/pRfNcqXKAC" target="_blank" rel="noopener noreferrer"
+            
+            <a href="https://discord.gg/pRfNcqXKAC" target="_blank" rel="noopener noreferrer" 
                class="md:hidden flex items-center justify-center gap-2 bg-[#f5c451] text-black font-bold text-xs py-3 rounded-xl mt-2">
                 <img src="discord-negro.png" alt="Discord" class="w-4 h-4">
                 <span>DISCORD</span>
@@ -566,18 +401,19 @@
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
         const icon = document.getElementById('menu-icon');
-
+        
         if (menu.classList.contains('hidden')) {
             menu.classList.remove('hidden');
             icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
+            icon.classList.add('fa-times'); // Cambia el icono a una 'X' al abrir
         } else {
             menu.classList.add('hidden');
             icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
+            icon.classList.add('fa-bars'); // Regresa al icono de barras
         }
     }
 
+    // Efecto de encogimiento del navbar al hacer scroll (Opcional, se ve genial)
     window.addEventListener('scroll', () => {
         const navbar = document.getElementById('navbar');
         if (window.scrollY > 50) {
@@ -587,7 +423,6 @@
         }
     });
 </script>
-
 <div class="hidden lg:flex items-center gap-6 xl:gap-8 text-[13px] font-semibold uppercase tracking-[2px]">
     <a href="#inicio" class="nav-link active-link">Inicio</a>
     <a href="#requisitos" class="nav-link">Requisitos</a>
@@ -597,7 +432,6 @@
     <a href="#eventos" class="nav-link">Eventos</a>
     <a href="#videos" class="nav-link">Videos</a>
     <a href="#comunidad" class="nav-link">Comunidad</a>
-    <a href="#chat" class="nav-link">Chat</a>
     <a href="#contacto" class="nav-link">Contacto</a>
 </div>
 
@@ -630,7 +464,6 @@
         <a href="#eventos" onclick="toggleMobileMenu()" class="mobile-link">Eventos</a>
         <a href="#videos" onclick="toggleMobileMenu()" class="mobile-link">Videos</a>
         <a href="#comunidad" onclick="toggleMobileMenu()" class="mobile-link">Comunidad</a>
-        <a href="#chat" onclick="toggleMobileMenu()" class="mobile-link">Chat</a>
         <a href="#contacto" onclick="toggleMobileMenu()" class="mobile-link">Contacto</a>
 
         <a href="https://discord.gg/CSAJCSah"
@@ -645,6 +478,9 @@
 </div>
 
 <style>
+    /* =========================
+       NAV LINKS (DESKTOP)
+    ========================= */
     .nav-link {
         color: #d4d4d4;
         position: relative;
@@ -673,6 +509,9 @@
         color: #f5c451;
     }
 
+    /* =========================
+       BOTON DISCORD DESKTOP
+    ========================= */
     .discord-btn {
         height: 48px;
         padding: 0 20px;
@@ -688,6 +527,7 @@
         box-shadow: 0 8px 24px rgba(88, 101, 242, 0.2);
     }
 
+    /* Forzar que el logo negro se vuelva blanco en el fondo azul */
     .discord-icon {
         filter: brightness(0) invert(1);
         transition: filter .35s ease;
@@ -700,10 +540,14 @@
         box-shadow: 0 12px 25px rgba(245, 196, 81, 0.3);
     }
 
+    /* El logo vuelve a ser negro al hacer hover */
     .discord-btn:hover .discord-icon {
         filter: none;
     }
 
+    /* =========================
+       BOTON HAMBURGUESA MOBILE
+    ========================= */
     .mobile-btn {
         width: 48px;
         height: 48px;
@@ -723,6 +567,9 @@
         border-color: #f5c451;
     }
 
+    /* =========================
+       LINKS INTERNOS MÓVIL
+    ========================= */
     .mobile-link {
         height: 52px;
         display: flex;
@@ -742,9 +589,12 @@
         background: #f5c451;
         color: #000000;
         border-color: #f5c451;
-        padding-left: 26px;
+        padding-left: 26px; /* Efecto sutil de desplazamiento hacia la derecha */
     }
 
+    /* =========================
+       BOTON DISCORD MÓVIL
+    ========================= */
     .discord-btn-mobile {
         margin-top: 8px;
         height: 54px;
@@ -773,13 +623,14 @@
         filter: none;
     }
 </style>
-
 <!-- HERO - INICIO -->
 <section id="inicio"
          class="hero-bg min-h-screen flex items-center relative overflow-hidden">
 
+    <!-- OVERLAY -->
     <div class="absolute inset-0 bg-black/60 backdrop-blur-[2px]"></div>
 
+    <!-- EFECTOS -->
     <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
 
         <div class="absolute top-20 left-20 w-72 h-72 bg-[#f5c451]/10 blur-[120px] rounded-full animate-pulse"></div>
@@ -788,12 +639,15 @@
 
     </div>
 
+    <!-- CONTENIDO -->
     <div class="relative z-10 max-w-screen-2xl mx-auto px-8 w-full">
 
         <div class="grid md:grid-cols-2 gap-20 items-center min-h-screen py-24">
 
+            <!-- IZQUIERDA -->
             <div class="space-y-10">
 
+                <!-- LOGO -->
                 <div class="flex justify-center md:justify-start scroll-reveal">
 
                     <img src="logo-elite.png"
@@ -802,6 +656,7 @@
 
                 </div>
 
+                <!-- TITULOS -->
                 <div class="text-center md:text-left scroll-reveal">
 
                     <h1 class="text-6xl md:text-[110px] font-serif logo-font tracking-[-5px] leading-none text-white">
@@ -819,13 +674,14 @@
                     <div class="mt-10 max-w-xl mx-auto md:mx-0">
 
                         <p class="text-2xl italic font-light leading-relaxed text-gray-200">
-                            &ldquo;Donde las mejores rutas se convierten en leyenda&rdquo;
+                            “Donde las mejores rutas se convierten en leyenda”
                         </p>
 
                     </div>
 
                 </div>
 
+                <!-- BOTONES -->
                 <div class="flex flex-col sm:flex-row gap-5 justify-center md:justify-start scroll-reveal">
 
                     <button onclick="document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' })"
@@ -844,6 +700,7 @@
 
                 </div>
 
+                <!-- QUIENES SOMOS -->
                 <div class="max-w-2xl bg-black/60 backdrop-blur-xl border border-[#f5c451]/20 rounded-3xl p-8 shadow-2xl scroll-reveal">
 
                     <p class="text-[#f5c451] uppercase text-sm tracking-[3px] mb-4">
@@ -868,6 +725,7 @@
 
             </div>
 
+            <!-- DERECHA -->
             <div class="hidden md:flex justify-center items-center relative scroll-reveal">
 
                 <div class="absolute w-[500px] h-[500px] bg-[#f5c451]/10 blur-[120px] rounded-full"></div>
@@ -884,6 +742,7 @@
 
     </div>
 
+    <!-- INDICADOR -->
     <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-y-3 text-[#f5c451]/70 z-20">
 
         <div class="animate-bounce text-3xl">
@@ -898,6 +757,7 @@
 
 </section>
 
+<!-- ESTILOS HERO -->
 <style>
 
 .hero-btn-primary{
@@ -1005,6 +865,7 @@
 
 </style>
 
+<!-- SCRIPT ANIMACIONES -->
 <script>
 
 const scrollElements = document.querySelectorAll('.scroll-reveal');
@@ -1046,7 +907,8 @@ handleScrollAnimation();
 
 </script>
 
-   <style>
+   <!-- ESTILOS HERO -->
+<style>
 
 .hero-btn-primary{
 
@@ -1137,6 +999,10 @@ handleScrollAnimation();
 
 }
 
+/* =========================
+   ANIMACIONES SCROLL
+========================= */
+
 .scroll-reveal{
 
     opacity:0;
@@ -1157,6 +1023,10 @@ handleScrollAnimation();
 
 }
 
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media (max-width:768px){
 
     .hero-btn-primary,
@@ -1175,6 +1045,10 @@ handleScrollAnimation();
 }
 
 </style>
+
+<!-- ===================================
+     ANIMACIONES SCROLL LA ELITE
+=================================== -->
 
 <style>
 
@@ -1251,7 +1125,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 </script>
-
 <section id="requisitos" class="bg-[#0d0d0d] py-16 md:py-24 border-t border-[#f5c451]/10 relative overflow-hidden">
 
     <div class="absolute top-0 left-0 w-72 h-72 bg-[#f5c451]/5 blur-[120px] rounded-full pointer-events-none"></div>
@@ -1348,7 +1221,6 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
     </div>
 </section>
-
 <section id="empresa" class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative overflow-hidden">
 
     <div class="absolute top-0 right-0 w-[300px] md:w-[400px] h-[300px] md:h-[400px] bg-[#f5c451]/5 blur-[100px] md:blur-[140px] rounded-full pointer-events-none"></div>
@@ -1370,12 +1242,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <div class="max-w-4xl mx-auto scroll-reveal">
             <div class="group bg-[#111111] rounded-3xl overflow-hidden border border-[#f5c451]/10 shadow-2xl hover:border-[#f5c451]/30 transition-all duration-500 grid md:grid-cols-12">
-
+                
                 <div class="relative overflow-hidden md:col-span-5 h-[280px] sm:h-[350px] md:h-full min-h-[300px]">
-                    <img src="65.png"
-                         alt="Estadísticas La Elite"
+                    <img src="65.png" 
+                         alt="Estadísticas La Elite" 
                          class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-
+                    
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent md:hidden"></div>
 
                     <div class="absolute top-4 left-4 bg-black/80 backdrop-blur-md border border-[#f5c451]/20 rounded-xl px-4 py-2.5">
@@ -1392,7 +1264,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h3 class="text-3xl md:text-4xl font-bold text-white logo-font">
                         La Elite VTC
                     </h3>
-
+                    
                     <p class="text-gray-400 mt-4 text-sm md:text-base leading-relaxed">
                         Posicionados con orgullo entre las mejores empresas de TrucksBook a nivel internacional. Mantenemos una logística impecable, una comunidad activa y rutas organizadas diariamente.
                     </p>
@@ -1413,9 +1285,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         <a href="#ranking" class="empresa-btn-primary w-full text-center">
                             Ver Ranking Interno
                         </a>
-                        <a href="https://trucksbook.eu/"
-                           target="_blank"
-                           rel="noopener noreferrer"
+                        <a href="https://trucksbook.eu/" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
                            class="empresa-btn-secondary w-full text-center">
                             Ficha TrucksBook <i class="fas fa-external-link-alt text-[10px] ml-1.5 opacity-70"></i>
                         </a>
@@ -1473,12 +1345,12 @@ document.addEventListener('DOMContentLoaded', () => {
         border-color: #f5c451;
     }
 </style>
-
 <!-- RANKING -->
 <section id="ranking" class="bg-[#111111] py-16 md:py-24 relative overflow-hidden">
 
     <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
 
+        <!-- TITULO DE LA SECCIÓN -->
         <div class="text-center mb-12 md:mb-20 scroll-reveal">
             <span class="uppercase text-[#c8102e] text-xs md:text-sm font-bold tracking-[4px]">
                 Estadísticas oficiales
@@ -1491,22 +1363,28 @@ document.addEventListener('DOMContentLoaded', () => {
             </p>
         </div>
 
+        <!-- CONTENEDOR PRINCIPAL DE RANKING -->
         <div class="bg-gradient-to-br from-[#181818] to-[#0d0d0d] border border-[#f5c451]/20 rounded-3xl md:rounded-[32px] p-6 sm:p-10 md:p-14 text-center max-w-5xl mx-auto shadow-[0_20px_60px_rgba(0,0,0,0.45)] scroll-reveal">
 
+            <!-- ICONO PRINCIPAL -->
             <div class="text-6xl md:text-7xl text-[#f5c451] mb-6 md:mb-8">
                 <i class="fas fa-trophy"></i>
             </div>
 
+            <!-- TITULO INTERNO -->
             <h3 class="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 md:mb-5 text-white logo-font">
                 LA ELITE en TrucksBook
             </h3>
 
+            <!-- DESCRIPCIÓN INTERNA -->
             <p class="text-gray-400 text-sm md:text-lg leading-relaxed max-w-3xl mx-auto">
                 Explora el ranking oficial de conductores, estadísticas, kilómetros recorridos, entregas y actividad completa desde la empresa oficial de La Elite.
             </p>
 
+            <!-- REJILLA DE ESTADÍSTICAS (Móvil: 1 col | Tablet/PC: 3 cols) -->
             <div class="grid md:grid-cols-3 gap-4 md:gap-6 mt-10 md:mt-14">
 
+                <!-- ITEM STATS 1 -->
                 <div class="bg-black/40 border border-[#f5c451]/10 rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col items-center justify-center transition-all duration-300 hover:border-[#f5c451]/30">
                     <div class="text-4xl md:text-5xl text-[#f5c451] mb-4">
                         <i class="fas fa-road"></i>
@@ -1519,6 +1397,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </p>
                 </div>
 
+                <!-- ITEM STATS 2 -->
                 <div class="bg-black/40 border border-[#f5c451]/10 rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col items-center justify-center transition-all duration-300 hover:border-[#f5c451]/30">
                     <div class="text-4xl md:text-5xl text-[#f5c451] mb-4">
                         <i class="fas fa-ranking-star"></i>
@@ -1531,6 +1410,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </p>
                 </div>
 
+                <!-- ITEM STATS 3 -->
                 <div class="bg-black/40 border border-[#f5c451]/10 rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col items-center justify-center transition-all duration-300 hover:border-[#f5c451]/30">
                     <div class="text-4xl md:text-5xl text-[#f5c451] mb-4">
                         <i class="fas fa-truck"></i>
@@ -1545,198 +1425,316 @@ document.addEventListener('DOMContentLoaded', () => {
 
             </div>
 
+            <!-- CONTENEDOR DE BOTONES (Columna en móviles, Fila en PC) -->
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 mt-10 md:mt-14">
 
                 <a href="https://trucksbook.eu/company/224432"
                    target="_blank"
                    rel="noopener noreferrer"
-                   class="inline-flex items-center justify-center gap-3 h-14 px-8 rounded-2xl bg-[#f5c451] text-black font-extrabold text-sm tracking-wider hover:bg-[#ffd56a] hover:shadow-[0_12px_30px_rgba(245,196,81,0.2)] transition-all duration-300">
-                    <i class="fas fa-chart-simple text-lg"></i>
-                    VER ESTADÍSTICAS COMPLETAS
+                   class="ranking-btn-primary w-full sm:w-auto">
+                    <i class="fas fa-building mr-2"></i> Ver Empresa
                 </a>
 
                 <a href="https://trucksbook.eu/company/224432"
                    target="_blank"
                    rel="noopener noreferrer"
-                   class="inline-flex items-center justify-center gap-3 h-14 px-8 rounded-2xl border border-white/10 text-gray-300 font-bold text-sm hover:bg-white/5 hover:text-white transition-all duration-300">
-                    <i class="fas fa-external-link-alt"></i>
-                    TrucksBook
+                   class="ranking-btn-secondary w-full sm:w-auto">
+                    <i class="fas fa-ranking-star mr-2"></i> Ver Ranking
                 </a>
 
             </div>
 
         </div>
-
     </div>
 </section>
 
+<!-- ESTILOS EXCLUSIVOS -->
+<style>
+    .ranking-btn-primary {
+        height: 56px;
+        padding: 0 32px;
+        border-radius: 16px;
+        background: #f5c451;
+        color: black;
+        font-weight: 800;
+        font-size: 15px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 15px 35px rgba(245, 196, 81, 0.15);
+    }
+
+    .ranking-btn-primary:hover {
+        transform: translateY(-3px);
+        background: #ffd56a;
+        box-shadow: 0 15px 35px rgba(245, 196, 81, 0.30);
+    }
+
+    .ranking-btn-secondary {
+        height: 56px;
+        padding: 0 32px;
+        border-radius: 16px;
+        border: 1px solid rgba(245, 196, 81, 0.3);
+        background: transparent;
+        color: white;
+        font-weight: 700;
+        font-size: 15px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .ranking-btn-secondary:hover {
+        transform: translateY(-3px);
+        background: #f5c451;
+        color: black;
+        border-color: #f5c451;
+    }
+</style>
 <!-- ANUNCIOS -->
 <section id="anuncios" class="bg-[#111111] py-16 md:py-24 relative overflow-hidden">
+
+    <!-- EFECTOS DE LUCES EN EL FONDO -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#36024e]/5 blur-[130px] rounded-full pointer-events-none"></div>
+
     <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
 
+        <!-- TITULO DE LA SECCIÓN -->
         <div class="text-center mb-12 md:mb-20 scroll-reveal">
             <span class="uppercase text-[#c8102e] text-xs md:text-sm font-bold tracking-[4px]">
-                Mantente informado
+                Últimas novedades
             </span>
-            <h2 class="section-title text-3xl sm:text-4xl md:text-5xl font-bold logo-font mx-auto mt-4 text-white">
+            <h2 class="section-title text-3xl sm:text-4xl md:text-5xl font-bold logo-font mt-4 text-white">
                 Anuncios Oficiales
             </h2>
-            <p class="text-gray-400 mt-4 max-w-2xl mx-auto text-base md:text-lg">
-                Entérate de todas las novedades, convocatorias y eventos importantes de La Elite.
+            <p class="text-gray-400 mt-4 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
+                Mantente informado sobre eventos, novedades, mantenimiento y actividades oficiales de La Elite.
             </p>
         </div>
 
-        <div class="max-w-4xl mx-auto space-y-5">
+        <!-- GRID DE ANUNCIOS (3 Columnas en PC, 1 en Móvil) -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
 
-            <div class="bg-[#181818] border border-[#f5c451]/8 rounded-2xl md:rounded-[28px] p-5 md:p-8 flex items-start gap-4 hover:border-[#f5c451]/20 transition-all duration-300 scroll-reveal shadow-lg">
-                <div class="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-[#f5c451]/15 flex items-center justify-center text-2xl text-[#f5c451] shrink-0">
-                    <i class="fas fa-bullhorn"></i>
-                </div>
-                <div>
-                    <h4 class="text-white text-lg md:text-xl font-bold">¡Estamos en el Ranking Nacional!</h4>
-                    <p class="text-gray-400 mt-2 text-sm md:text-base leading-relaxed">
-                        La Elite VTC ha logrado posicionarse en el Top 5 nacional. Gracias a todos los conductores por su dedicación y compromiso.
-                    </p>
-                    <span class="text-[#f5c451] text-xs tracking-wide mt-2 inline-block">Hace 2 días</span>
+            <!-- ANUNCIO 1: CONVOY OFICIAL -->
+            <div class="group bg-[#181818] rounded-2xl md:rounded-3xl border border-[#f5c451]/10 overflow-hidden shadow-2xl hover:border-[#f5c451]/30 transition-all duration-300 hover:-translate-y-2 flex flex-col h-full scroll-reveal">
+                <div class="p-6 md:p-8 flex flex-col h-full justify-between flex-1">
+                    
+                    <div>
+                        <!-- CABECERA: CATEGORÍA Y FECHA -->
+                        <div class="flex justify-between items-start gap-4">
+                            <span class="inline-flex items-center px-3 py-1.5 bg-[#c8102e] text-white text-[10px] font-bold rounded-full tracking-[1px] uppercase shadow-lg">
+                                Evento
+                            </span>
+                            <div class="bg-black border border-[#f5c451]/10 rounded-xl px-3 py-1.5 text-center min-w-[85px]">
+                                <p class="text-[#f5c451] text-[9px] uppercase tracking-[1px] font-bold">Fecha</p>
+                                <p class="text-white text-xs font-semibold mt-0.5">Próximamente</p>
+                            </div>
+                        </div>
+
+                        <!-- CUERPO DEL ANUNCIO -->
+                        <h3 class="text-xl md:text-2xl font-bold mt-5 md:mt-6 text-white leading-snug logo-font">
+                            Gran Convoy de Fin de Semana
+                        </h3>
+                        <p class="text-[#f5c451] mt-2 text-[11px] uppercase tracking-[1.5px] font-medium">
+                            Discord Oficial
+                        </p>
+                        <p class="text-gray-400 mt-4 leading-relaxed text-sm md:text-[15px]">
+                            Prepara tu camión para nuestra ruta oficial programada en American Truck Simulator. Alistaremos motores en la hora habitual compartida en los canales de logística.
+                        </p>
+                    </div>
+
+                    <!-- FOOTER DE LA CARD: TAGS Y BOTÓN -->
+                    <div>
+                        <div class="flex flex-wrap gap-2 mt-6">
+                            <span class="px-3 py-1 text-[11px] rounded-lg bg-black border border-[#f5c451]/10 text-gray-400">🚛 ATS / ETS2</span>
+                            <span class="px-3 py-1 text-[11px] rounded-lg bg-black border border-[#5865F2]/20 text-gray-400">🎙️ Voz</span>
+                        </div>
+                        <div class="mt-6 md:mt-8">
+                            <a href="https://discord.gg/CSAJCSah" target="_blank" rel="noopener noreferrer" class="announcement-btn">
+                                📢 Ver Detalle en Discord
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
-            <div class="bg-[#181818] border border-[#f5c451]/8 rounded-2xl md:rounded-[28px] p-5 md:p-8 flex items-start gap-4 hover:border-[#f5c451]/20 transition-all duration-300 scroll-reveal shadow-lg">
-                <div class="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-[#f5c451]/15 flex items-center justify-center text-2xl text-[#f5c451] shrink-0">
-                    <i class="fas fa-route"></i>
-                </div>
-                <div>
-                    <h4 class="text-white text-lg md:text-xl font-bold">Convoy Oficial del Fin de Semana</h4>
-                    <p class="text-gray-400 mt-2 text-sm md:text-base leading-relaxed">
-                        Este sábado tendremos nuestro convoy oficial. Prepárate para una ruta épica por las carreteras de Mapkalo. ¡No faltes!
-                    </p>
-                    <span class="text-[#f5c451] text-xs tracking-wide mt-2 inline-block">Hace 5 días</span>
-                </div>
-            </div>
+            <!-- ANUNCIO 2: MANTENIMIENTO WEB / COMUNIDAD -->
+            <div class="group bg-[#181818] rounded-2xl md:rounded-3xl border border-[#f5c451]/10 overflow-hidden shadow-2xl hover:border-[#f5c451]/30 transition-all duration-300 hover:-translate-y-2 flex flex-col h-full scroll-reveal">
+                <div class="p-6 md:p-8 flex flex-col h-full justify-between flex-1">
+                    
+                    <div>
+                        <div class="flex justify-between items-start gap-4">
+                            <span class="inline-flex items-center px-3 py-1.5 bg-[#36024e] text-white text-[10px] font-bold rounded-full tracking-[1px] uppercase shadow-lg">
+                                Soporte
+                            </span>
+                            <div class="bg-black border border-[#f5c451]/10 rounded-xl px-3 py-1.5 text-center min-w-[85px]">
+                                <p class="text-[#f5c451] text-[9px] uppercase tracking-[1px] font-bold">Estado</p>
+                                <p class="text-green-400 text-xs font-bold mt-0.5">Completado</p>
+                            </div>
+                        </div>
 
-            <div class="bg-[#181818] border border-[#f5c451]/8 rounded-2xl md:rounded-[28px] p-5 md:p-8 flex items-start gap-4 hover:border-[#f5c451]/20 transition-all duration-300 scroll-reveal shadow-lg">
-                <div class="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-[#f5c451]/15 flex items-center justify-center text-2xl text-[#f5c451] shrink-0">
-                    <i class="fas fa-tag"></i>
-                </div>
-                <div>
-                    <h4 class="text-white text-lg md:text-xl font-bold">Nuevo Sistema de Rangos</h4>
-                    <p class="text-gray-400 mt-2 text-sm md:text-base leading-relaxed">
-                        Implementamos un nuevo sistema de rangos para reconocer a los conductores más activos y comprometidos.
-                    </p>
-                    <span class="text-[#f5c451] text-xs tracking-wide mt-2 inline-block">Hace 1 semana</span>
+                        <h3 class="text-xl md:text-2xl font-bold mt-5 md:mt-6 text-white leading-snug logo-font">
+                            Mantenimiento de Plataformas
+                        </h3>
+                        <p class="text-[#f5c451] mt-2 text-[11px] uppercase tracking-[1.5px] font-medium">
+                            Infraestructura Web
+                        </p>
+                        <p class="text-gray-400 mt-4 leading-relaxed text-sm md:text-[15px]">
+                            Se han actualizado los módulos internos y las tarjetas informativas de arkamax24.com para optimizar el rendimiento y la velocidad de carga de la comunidad "La Élite".
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="flex flex-wrap gap-2 mt-6">
+                            <span class="px-3 py-1 text-[11px] rounded-lg bg-black border border-[#00AEEF]/20 text-gray-400">🌐 Sitio Web</span>
+                            <span class="px-3 py-1 text-[11px] rounded-lg bg-black border border-[#f5c451]/10 text-gray-400">⚙️ Ajustes</span>
+                        </div>
+                        <div class="mt-6 md:mt-8">
+                            <a href="https://discord.gg/CSAJCSah" target="_blank" rel="noopener noreferrer" class="announcement-btn">
+                                🔧 Reportar un Error
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
         </div>
-
     </div>
 </section>
 
+<!-- ESTILOS EXCLUSIVOS -->
+<style>
+    .announcement-btn {
+        width: 100%;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f5c451;
+        color: black;
+        font-size: 14px;
+        font-weight: 800;
+        border-radius: 14px;
+        text-decoration: none;
+        transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 8px 20px rgba(245, 196, 81, 0.1);
+    }
+
+    .announcement-btn:hover {
+        transform: translateY(-3px);
+        background: #ffd56a;
+        box-shadow: 0 12px 25px rgba(245, 196, 81, 0.25);
+    }
+</style>
 <!-- EVENTOS -->
 <section id="eventos" class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative overflow-hidden">
 
-    <div class="absolute top-0 left-0 w-80 h-80 bg-[#f5c451]/5 blur-[130px] rounded-full pointer-events-none"></div>
-    <div class="absolute bottom-0 right-0 w-[350px] h-[350px] bg-[#c8102e]/5 blur-[130px] rounded-full pointer-events-none"></div>
+    <!-- TITULO DE LA SECCIÓN -->
+    <div class="text-center mb-12 md:mb-20 scroll-reveal">
+        <span class="uppercase text-[#c8102e] text-xs md:text-sm font-bold tracking-[4px]">
+            Próximos convoyes
+        </span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold logo-font mt-4 text-white">
+            Eventos de La Elite
+        </h2>
+        <p class="text-gray-400 mt-4 text-base md:text-lg max-w-2xl mx-auto">
+            En estos eventos todos pueden participar.
+        </p>
+    </div>
 
-    <div class="relative z-10">
+    <!-- GRID DE EVENTOS -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
 
-        <div class="text-center mb-12 md:mb-20 scroll-reveal">
-            <span class="uppercase text-[#c8102e] text-xs md:text-sm font-bold tracking-[4px]">
-                No te lo pierdas
-            </span>
-            <h2 class="section-title text-3xl sm:text-4xl md:text-5xl font-bold logo-font mx-auto mt-4 text-white">
-                Eventos & Convoyes
-            </h2>
-            <p class="text-gray-400 mt-4 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
-                Participa en nuestros convoyes semanales, eventos especiales y rutas organizadas dentro de Mapkalo.
-            </p>
-        </div>
+        <!-- TARJETA DE EVENTO -->
+        <div class="group bg-[#111111] rounded-3xl overflow-hidden border border-[#f5c451]/10 shadow-2xl hover:border-[#f5c451]/30 transition-all duration-300 card-hover scroll-reveal flex flex-col justify-between">
+            
+            <div>
+                <!-- CABECERA: IMAGEN Y BADGE DE FECHA -->
+                <div class="relative overflow-hidden h-[220px] md:h-[260px]">
+                    <img src="logo-elite.png"
+                         alt="Evento La Elite"
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-stretch">
-
-            <div class="event-card scroll-reveal h-full flex flex-col">
-                <div class="relative h-44 md:h-52 overflow-hidden">
-                    <img src="ruta_aguardientera.png" alt="Convoy Nocturno" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                    <div class="absolute bottom-4 left-4 flex items-center gap-2 text-sm text-[#f5c451] font-bold">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>Próximo Sábado</span>
+                    <!-- CAJA DE FECHA RESPONSIVA -->
+                    <div class="absolute top-4 left-4 bg-black/80 backdrop-blur-md border border-[#f5c451]/20 rounded-xl px-4 py-2.5 min-w-[100px] text-center">
+                        <p class="text-[#f5c451] text-lg md:text-2xl font-bold leading-tight">
+                            xxxx
+                        </p>
+                        <p class="text-white text-[10px] mt-0.5 uppercase tracking-[1px] font-medium">
+                            xxxx
+                        </p>
                     </div>
                 </div>
-                <div class="p-5 md:p-7 flex flex-col flex-1">
-                    <h4 class="text-[#f5c451] text-sm md:text-base font-bold tracking-wider uppercase">
-                        Convoy Central
-                    </h4>
-                    <h3 class="text-white text-xl md:text-2xl font-bold mt-1 leading-snug">
-                        Ruta de la Cordillera
-                    </h3>
-                    <p class="text-gray-400 mt-3 text-sm md:text-base leading-relaxed flex-1">
-                        Recorrido oficial por los municipios más desafiantes de Mapkalo. Trae tu mejor camión y prepárate para una experiencia inolvidable.
-                    </p>
-                    <div class="flex items-center gap-5 mt-5 text-xs text-gray-500 border-t border-white/5 pt-5">
-                        <span class="flex items-center gap-2"><i class="fas fa-users text-[#f5c451]"></i> 32/64</span>
-                        <span class="flex items-center gap-2"><i class="fas fa-clock text-[#f5c451]"></i> 8:00 PM</span>
-                    </div>
-                </div>
-            </div>
 
-            <div class="event-card scroll-reveal h-full flex flex-col">
-                <div class="relative h-44 md:h-52 overflow-hidden">
-                    <img src="ruta_aguardientera.png" alt="Evento Especial" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                    <div class="absolute bottom-4 left-4 flex items-center gap-2 text-sm text-[#f5c451] font-bold">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>Este Viernes</span>
+                <!-- CONTENIDO DEL EVENTO -->
+                <div class="p-6 md:p-8 flex flex-col gap-4">
+                    <!-- ETIQUETAS -->
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-xs font-semibold rounded-lg bg-black border border-[#5865F2]/40 text-gray-300">
+                            🎙️ Por Discord
+                        </span>
+                        <span class="px-3 py-1 text-xs font-semibold rounded-lg bg-black border border-[#f5c451]/20 text-gray-300">
+                            🌍 Público
+                        </span>
                     </div>
-                </div>
-                <div class="p-5 md:p-7 flex flex-col flex-1">
-                    <h4 class="text-[#f5c451] text-sm md:text-base font-bold tracking-wider uppercase">
-                        Evento Premium
-                    </h4>
-                    <h3 class="text-white text-xl md:text-2xl font-bold mt-1 leading-snug">
-                        Transporte Pesado
-                    </h3>
-                    <p class="text-gray-400 mt-3 text-sm md:text-base leading-relaxed flex-1">
-                        Carga sobredimensionada, rutas extremas y escolta policial. Solo para conductores con experiencia en cargas especiales.
-                    </p>
-                    <div class="flex items-center gap-5 mt-5 text-xs text-gray-500 border-t border-white/5 pt-5">
-                        <span class="flex items-center gap-2"><i class="fas fa-users text-[#f5c451]"></i> 18/48</span>
-                        <span class="flex items-center gap-2"><i class="fas fa-clock text-[#f5c451]"></i> 9:00 PM</span>
+
+                    <!-- DETALLES -->
+                    <div class="mt-2">
+                        <h3 class="text-xl md:text-2xl font-bold text-white leading-snug logo-font">
+                            xxxx
+                        </h3>
+                        <p class="text-gray-400 mt-3 text-sm md:text-base leading-relaxed">
+                            xxxx
+                        </p>
                     </div>
                 </div>
             </div>
 
-            <div class="event-card scroll-reveal h-full flex flex-col sm:col-span-2 lg:col-span-1">
-                <div class="relative h-44 md:h-52 overflow-hidden">
-                    <img src="ruta_aguardientera.png" alt="Entrenamiento" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                    <div class="absolute bottom-4 left-4 flex items-center gap-2 text-sm text-[#f5c451] font-bold">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>Próximo Domingo</span>
-                    </div>
-                </div>
-                <div class="p-5 md:p-7 flex flex-col flex-1">
-                    <h4 class="text-[#f5c451] text-sm md:text-base font-bold tracking-wider uppercase">
-                        Capacitación
-                    </h4>
-                    <h3 class="text-white text-xl md:text-2xl font-bold mt-1 leading-snug">
-                        Escuela de Conductores
-                    </h3>
-                    <p class="text-gray-400 mt-3 text-sm md:text-base leading-relaxed flex-1">
-                        Entrenamiento básico y avanzado para nuevos conductores. Aprende las reglas de convoy, formación y comunicación.
-                    </p>
-                    <div class="flex items-center gap-5 mt-5 text-xs text-gray-500 border-t border-white/5 pt-5">
-                        <span class="flex items-center gap-2"><i class="fas fa-users text-[#f5c451]"></i> 12/40</span>
-                        <span class="flex items-center gap-2"><i class="fas fa-clock text-[#f5c451]"></i> 10:00 AM</span>
-                    </div>
-                </div>
+            <!-- BOTÓN DE ACCIÓN INFERIOR -->
+            <div class="px-6 pb-6 md:px-8 md:pb-8">
+                <a href="https://discord.gg/CSAJCSah"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="event-btn">
+                    🚛 Participar en el evento
+                </a>
             </div>
 
         </div>
 
     </div>
-</section>
 
+    <!-- ESTILOS EXCLUSIVOS -->
+    <style>
+        .event-btn {
+            width: 100%;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f5c451;
+            color: black;
+            font-size: 15px;
+            font-weight: 800;
+            border-radius: 14px;
+            text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 20px rgba(245, 196, 81, 0.1);
+        }
+
+        .event-btn:hover {
+            transform: translateY(-3px);
+            background: #ffd56a;
+            box-shadow: 0 12px 25px rgba(245, 196, 81, 0.25);
+        }
+    </style>
+</section>
 <!-- VIDEOS -->
 <section id="videos" class="bg-[#111111] py-16 md:py-24 relative overflow-hidden">
 
@@ -1744,61 +1742,173 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <div class="text-center mb-12 md:mb-20 scroll-reveal">
             <span class="uppercase text-[#c8102e] text-xs md:text-sm font-bold tracking-[4px]">
-                Contenedor audiovisual
+                Guías Prácticas
             </span>
-            <h2 class="section-title text-3xl sm:text-4xl md:text-5xl font-bold logo-font mx-auto mt-4 text-white">
-                Videos Destacados
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold logo-font mt-4 neon-gold text-white">
+                    Tutoriales Arkamax
             </h2>
-            <p class="text-gray-400 mt-4 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
-                Los mejores momentos de nuestros convoyes, rutas épicas y eventos especiales capturados en video.
+            <p class="text-gray-400 mt-4 text-base md:text-lg">
+                Aprende a instalar, optimizar y disfrutar al máximo de ATS.
             </p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
 
-            <div class="relative rounded-3xl overflow-hidden border border-[#f5c451]/10 group aspect-video scroll-reveal bg-black shadow-2xl">
-                <div class="w-full h-full bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] flex flex-col items-center justify-center p-6 text-center">
-                    <div class="w-16 h-16 rounded-full bg-[#f5c451]/10 flex items-center justify-center mb-4">
-                        <i class="fas fa-play text-2xl text-[#f5c451] ml-1"></i>
+            <div class="group bg-[#181818] rounded-3xl overflow-hidden shadow-2xl border border-white/5 hover:border-[#f5c451]/30 transition-all duration-500 card-hover flex flex-col justify-between h-full scroll-reveal">
+                
+                <div class="p-6 md:p-8 flex-1 flex flex-col justify-between min-h-[220px]">
+                    <div>
+                        <div class="flex items-center gap-4 mb-5">
+                            <div class="w-12 h-12 rounded-2xl bg-[#f5c451]/10 border border-[#f5c451]/20 flex items-center justify-center text-[#f5c451] text-xl group-hover:scale-105 transition duration-300">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <p class="text-[#f5c451] text-xs uppercase tracking-[2px] font-medium">
+                                Arkamax
+                            </p>
+                        </div>
+                        
+                        <h4 class="text-lg md:text-xl font-bold leading-snug text-white line-clamp-3">
+                            🎁DESCARGA PAQUETE ESPECIAL ACTUALIZACIÓN 1.60.1.0 | ATS-ETS🔥
+                        </h4>
                     </div>
-                    <h4 class="text-white font-bold text-lg">Convoy Oficial La Elite</h4>
-                    <p class="text-gray-400 text-sm mt-2">Próximamente</p>
                 </div>
+
+                <div class="px-6 pb-6 md:px-8 md:pb-8">
+                    <a href="https://youtu.be/NDmr5gTWaEU?si=aodRyisw1ftGJztz"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="btn-video">
+                        ▶ Ver tutorial
+                    </a>
+                </div>
+
             </div>
 
-            <div class="relative rounded-3xl overflow-hidden border border-[#f5c451]/10 group aspect-video scroll-reveal bg-black shadow-2xl">
-                <div class="w-full h-full bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] flex flex-col items-center justify-center p-6 text-center">
-                    <div class="w-16 h-16 rounded-full bg-[#f5c451]/10 flex items-center justify-center mb-4">
-                        <i class="fas fa-play text-2xl text-[#f5c451] ml-1"></i>
+            <div class="group bg-[#181818] rounded-3xl overflow-hidden shadow-2xl border border-white/5 hover:border-[#f5c451]/30 transition-all duration-500 card-hover flex flex-col justify-between h-full scroll-reveal">
+                
+                <div class="p-6 md:p-8 flex-1 flex flex-col justify-between min-h-[220px]">
+                    <div>
+                        <div class="flex items-center gap-4 mb-5">
+                            <div class="w-12 h-12 rounded-2xl bg-[#f5c451]/10 border border-[#f5c451]/20 flex items-center justify-center text-[#f5c451] text-xl group-hover:scale-105 transition duration-300">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <p class="text-[#f5c451] text-xs uppercase tracking-[2px] font-medium">
+                                Arkamax
+                            </p>
+                        </div>
+                        
+                        <h4 class="text-lg md:text-xl font-bold leading-snug text-white line-clamp-3">
+                            ✅ INSTALA ATS + MAPKALO COLOMBIA GRATIS 🇨🇴 + DLC + MODS | GUÍA COMPLETA 2026
+                        </h4>
                     </div>
-                    <h4 class="text-white font-bold text-lg">Ruta Mapkalo Nocturna</h4>
-                    <p class="text-gray-400 text-sm mt-2">Próximamente</p>
                 </div>
+
+                <div class="px-6 pb-6 md:px-8 md:pb-8">
+                    <a href="https://youtu.be/jIlJF8GAM-4?si=6LxEGup8eSYEURDT"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="btn-video">
+                        ▶ Ver tutorial
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="group bg-[#181818] rounded-3xl overflow-hidden shadow-2xl border border-white/5 hover:border-[#f5c451]/30 transition-all duration-500 card-hover flex flex-col justify-between h-full scroll-reveal">
+                
+                <div class="p-6 md:p-8 flex-1 flex flex-col justify-between min-h-[220px]">
+                    <div>
+                        <div class="flex items-center gap-4 mb-5">
+                            <div class="w-12 h-12 rounded-2xl bg-[#f5c451]/10 border border-[#f5c451]/20 flex items-center justify-center text-[#f5c451] text-xl group-hover:scale-105 transition duration-300">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <p class="text-[#f5c451] text-xs uppercase tracking-[2px] font-medium">
+                                Arkamax
+                            </p>
+                        </div>
+                        
+                        <h4 class="text-lg md:text-xl font-bold leading-snug text-white line-clamp-3">
+                            🚛 ATS 2026 | Cómo Entrar a Convoys de 128 Jugadores y Evitar Crasheos con Mods
+                        </h4>
+                    </div>
+                </div>
+
+                <div class="px-6 pb-6 md:px-8 md:pb-8">
+                    <a href="https://youtu.be/wVJLGPw8D24?si=Kp-gmWd0U1lE3-D9"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="btn-video">
+                        ▶ Ver tutorial
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="group bg-[#181818] rounded-3xl overflow-hidden shadow-2xl border border-white/5 hover:border-[#f5c451]/30 transition-all duration-500 card-hover flex flex-col justify-between h-full scroll-reveal">
+                
+                <div class="p-6 md:p-8 flex-1 flex flex-col justify-between min-h-[220px]">
+                    <div>
+                        <div class="flex items-center gap-4 mb-5">
+                            <div class="w-12 h-12 rounded-2xl bg-[#f5c451]/10 border border-[#f5c451]/20 flex items-center justify-center text-[#f5c451] text-xl group-hover:scale-105 transition duration-300">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <p class="text-[#f5c451] text-xs uppercase tracking-[2px] font-medium">
+                                Arkamax
+                            </p>
+                        </div>
+                        
+                        <h4 class="text-lg md:text-xl font-bold leading-snug text-white line-clamp-3">
+                            😱 LLEGÓ la NUEVA ACTUALIZACIÓN de MAPKALO 1.59.1.0 🇨🇴 + PAQUETE ESPECIAL + NUEVO MUNICIPIO
+                        </h4>
+                    </div>
+                </div>
+
+                <div class="px-6 pb-6 md:px-8 md:pb-8">
+                    <a href="https://youtu.be/hvaN40u_5yw?si=6VSEEey_n1nhtYlB"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="btn-video">
+                        ▶ Ver tutorial
+                    </a>
+                </div>
+
             </div>
 
         </div>
-
-        <div class="text-center mt-10 md:mt-14 scroll-reveal">
-            <a href="https://www.youtube.com/@ARKAMAX24"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="inline-flex items-center gap-3 h-14 px-8 rounded-2xl bg-[#c8102e] text-white font-bold text-sm tracking-wider hover:bg-[#e01638] hover:shadow-[0_12px_30px_rgba(200,16,46,0.25)] transition-all duration-300">
-                <i class="fab fa-youtube text-xl"></i>
-                VER MÁS EN YOUTUBE
-            </a>
-        </div>
-
-        <style>
-            .line-clamp-3 {
-                display: -webkit-box;
-                -webkit-line-clamp: 3;
-                -webkit-box-orient: vertical;
-                overflow: hidden;
-            }
-        </style>
     </div>
-</section>
 
+    <style>
+        .btn-video {
+            width: 100%;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f5c451;
+            color: black;
+            font-size: 15px;
+            font-weight: 800;
+            border-radius: 14px;
+            text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 20px rgba(245, 196, 81, 0.1);
+        }
+
+        .btn-video:hover {
+            transform: translateY(-3px) scale(1.01);
+            background: #ffd56a;
+            box-shadow: 0 12px 25px rgba(245, 196, 81, 0.25);
+        }
+        
+        /* Ajuste de desbordamiento de líneas */
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+        }
+    </style>
+</section>
 <!-- COMUNIDAD -->
 <section id="comunidad" class="max-w-screen-2xl mx-auto px-4 sm:px-8 py-16 md:py-24">
 
@@ -1817,7 +1927,11 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-6 items-start">
 
         <div class="member-card owner-card scroll-reveal" onclick="abrirPerfil(this)"
-             data-name="Arkamax" data-role="Owner La Élite" data-badge="OWNER" data-badge-style="owner-badge" data-img="arkamax.png"
+             data-name="Arkamax" 
+             data-role="Owner La Élite" 
+             data-badge="OWNER"
+             data-badge-style="owner-badge"
+             data-img="arkamax.png"
              data-bio="Fundador y líder general de la comunidad LA ÉLITE. Encargado de coordinar las rutas oficiales, mantener el orden en convoy de simulación y traer el mejor contenido pesado en ruta a las plataformas digitales."
              data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
@@ -1829,7 +1943,11 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
 
         <div class="member-card admin-card scroll-reveal" onclick="abrirPerfil(this)"
-             data-name="Anderson M." data-role="Admin La Élite" data-badge="ADMIN" data-badge-style="admin-badge" data-img="logo-elite.png"
+             data-name="Anderson M." 
+             data-role="Admin La Élite" 
+             data-badge="ADMIN"
+             data-badge-style="admin-badge"
+             data-img="logo-elite.png"
              data-bio="Administrador y desarrollador técnico de la plataforma."
              data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
@@ -1841,7 +1959,11 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
 
         <div class="member-card admin-card scroll-reveal" onclick="abrirPerfil(this)"
-             data-name="Kofla" data-role="Admin La Élite" data-badge="ADMIN" data-badge-style="admin-badge" data-img="kofla.png"
+             data-name="Kofla" 
+             data-role="Admin La Élite" 
+             data-badge="ADMIN"
+             data-badge-style="admin-badge"
+             data-img="kofla.png"
              data-bio="Administrador de La Élite. Encargado de la moderación."
              data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
@@ -1852,343 +1974,1573 @@ document.addEventListener('DOMContentLoaded', () => {
             <p class="role-text text-red-500">Admin La Élite</p>
         </div>
 
-        <!-- ... (miembros restantes) ... -->
+        <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
+             data-name="Caballero" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="caballero.png"
+             data-bio="Conductor experimentado de la comunidad. Destacado por su impecable nivel de manejo y disciplina manteniendo la línea de convoy en rutas pesadas de alta montaña dentro de MapKalo."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
+            <div class="member-image">
+                <img src="caballero.png" alt="Caballero" loading="lazy">
+                <span class="member-badge elite-badge">Elite</span>
+            </div>
+            <h4>Caballero</h4>
+            <p class="role-text text-gray-400">Conductor</p>
+        </div>
+
+        <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
+             data-name="Alex" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="alex.png"
+             data-bio="Integrante activo de las rutas oficiales de convoy de 128 jugadores. Siempre aportando orden, constancia y excelente presentación de camiones americanos en el asfalto."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
+            <div class="member-image">
+                <img src="alex.png" alt="Alex" loading="lazy">
+                <span class="member-badge elite-badge">Elite</span>
+            </div>
+            <h4>Alex</h4>
+            <p class="role-text text-gray-400">Conductor</p>
+        </div>
+
+        <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
+             data-name="Emmanuel Ciro" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="ciro.png"
+             data-bio="Conductor oficial de LA ÉLITE. Apasionado por los tractocamiones configurados al estilo full colombiano, superando los terrenos más inclinados y exigentes del mapa."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
+            <div class="member-image">
+                <img src="ciro.png" alt="Emmanuel Ciro" loading="lazy">
+                <span class="member-badge elite-badge">Elite</span>
+            </div>
+            <h4>Emmanuel Ciro</h4>
+            <p class="role-text text-gray-400">Conductor</p>
+        </div>
+
+        <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
+             data-name="Fran" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="fran1.png"
+             data-bio="Conductor de la división de carga pesada. Aporta siempre la mejor energía radial al grupo y un despliegue de conducción seguro en los escenarios viales más complejos."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
+            <div class="member-image">
+                <img src="fran1.png" alt="Fran" loading="lazy">
+                <span class="member-badge elite-badge">Elite</span>
+            </div>
+            <h4>Fran</h4>
+            <p class="role-text text-gray-400">Conductor</p>
+        </div>
+
+        <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
+             data-name="Jose Gómez" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="logo-elite.png"
+             data-bio="Piloto comprometido de nuestra división de transporte virtual. Ascendido al grupo exclusivo Élite gracias a sus méritos de puntualidad y excelente conducta en ruta."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
+            <div class="member-image">
+                <img src="logo-elite.png" alt="Jose Gómez" loading="lazy">
+                <span class="member-badge elite-badge">Elite</span>
+            </div>
+            <h4>Jose Gómez</h4>
+            <p class="role-text text-gray-400">Conductor</p>
+        </div>
+
+        <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
+             data-name="Malcri" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="logo-elite.png"
+             data-bio="Conductor destacado por su asistencia perfecta a las rodadas grupales nocturnas y su gran maniobrabilidad utilizando configuraciones avanzadas de mods."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
+            <div class="member-image">
+                <img src="logo-elite.png" alt="Malcri" loading="lazy">
+                <span class="member-badge elite-badge">Elite</span>
+            </div>
+            <h4>Malcri</h4>
+            <p class="role-text text-gray-400">Conductor</p>
+        </div>
+
+        <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
+             data-name="Mecato" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="mecato.png"
+             data-bio="Conductor de total confianza en la comunidad. Caracterizado por su estilo único para personalizar remolques y su constante espíritu de compañerismo en carretera."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
+            <div class="member-image">
+                <img src="mecato.png" alt="Mecato" loading="lazy">
+                <span class="member-badge elite-badge">Elite</span>
+            </div>
+            <h4>Mecato</h4>
+            <p class="role-text text-gray-400">Conductor</p>
+        </div>
+
+        <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
+             data-name="Nico" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="nico.png"
+             data-bio="Integrante clave del grupo principal. Experto en dominar los frenos de motor y los trazados más angostos de los nuevos municipios añadidos en el mapa de Colombia."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
+            <div class="member-image">
+                <img src="nico.png" alt="Nico" loading="lazy">
+                <span class="member-badge elite-badge">Elite</span>
+            </div>
+            <h4>Nico</h4>
+            <p class="role-text text-gray-400">Conductor</p>
+        </div>
+
+        <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
+             data-name="Maicol Sierra" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="sierra.png"
+             data-bio="Miembro leal de la empresa. Un conductor dedicado que asume con gran responsabilidad el transporte de mercancías especiales de punto a punto en el simulador."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
+            <div class="member-image">
+                <img src="sierra.png" alt="Maicol Sierra" loading="lazy">
+                <span class="member-badge elite-badge">Elite</span>
+            </div>
+            <h4>Maicol Sierra</h4>
+            <p class="role-text text-gray-400">Conductor</p>
+        </div>
+
+        <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
+             data-name="Jose Trucks" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="josetruck.png"
+             data-bio="Apasionado del sim-racing y el transporte por carretera. Cumplidor estricto de las directrices de convoyes masivos y parte del corazón vial de La Élite."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
+            <div class="member-image">
+                <img src="josetruck.png" alt="Jose Trucks" loading="lazy">
+                <span class="member-badge elite-badge">Elite</span>
+            </div>
+            <h4>Jose Trucks</h4>
+            <p class="role-text text-gray-400">Conductor</p>
+        </div>
+
+        <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
+             data-name="Compa" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="compa.png"
+             data-bio="Conductor oficial de la empresa. Su constancia dentro de los servidores dedicados y caravanas compartidas le ha valido una posición firme en el grupo."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
+            <div class="member-image">
+                <img src="compa.png" alt="Compa" loading="lazy">
+                <span class="member-badge elite-badge">Elite</span>
+            </div>
+            <h4>Compa</h4>
+            <p class="role-text text-gray-400">Conductor</p>
+        </div>
+
+        <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
+             data-name="Ñaño" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="ñaño.png"
+             data-bio="Conductor representativo de la comunidad. Siempre aportando la mejor actitud, rutas fluidas y un estilo de conducción enfocado al máximo realismo posible."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
+            <div class="member-image">
+                <img src="ñaño.png" alt="Ñaño" loading="lazy">
+                <span class="member-badge elite-badge">Elite</span>
+            </div>
+            <h4>Ñaño</h4>
+            <p class="role-text text-gray-400">Conductor</p>
+        </div>
+
+        <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
+             data-name="Tavo" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="tavo.jpg"
+             data-bio="Conductor comprometido con el crecimiento del grupo. Esencial en la coordinación de escolta y retaguardia durante los eventos masivos de la comunidad."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
+            <div class="member-image">
+                <img src="tavo.jpg" alt="Tavo" loading="lazy">
+                <span class="member-badge elite-badge">Elite</span>
+            </div>
+            <h4>Tavo</h4>
+            <p class="role-text text-gray-400">Conductor</p>
+        </div>
+
+        <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
+             data-name="Benya" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="Benya.jpg"
+             data-bio="Conductor activo en la comunidad. Respetado por sus compañeros gracias a su prudencia viales y excelente acoplamiento a las reglas del convoy oficial."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
+            <div class="member-image">
+                <img src="Benya.jpg" alt="Benya" loading="lazy">
+                <span class="member-badge elite-badge">Elite</span>
+            </div>
+            <h4>Benya</h4>
+            <p class="role-text text-gray-400">Conductor</p>
+        </div>
+
+        <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
+             data-name="Andres Soriano" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="sori.png"
+             data-bio="Conductor dotado de gran técnica para maniobrar en tramos estrechos o trochas colombianas peligrosas. Colaborador constante en el canal de voz."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
+            <div class="member-image">
+                <img src="sori.png" alt="Andres Soriano" loading="lazy">
+                <span class="member-badge elite-badge">Elite</span>
+            </div>
+            <h4>Andres Soriano</h4>
+            <p class="role-text text-gray-400">Conductor</p>
+        </div>
+
+        <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
+             data-name="Fabian" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="fabian.jpg"
+             data-bio="Apasionado de la mulas y motores custom. Conductor dedicado que equilibra la velocidad controlada y la ayuda técnica a compañeros en problemas."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
+            <div class="member-image">
+                <img src="fabian.jpg" alt="Fabian" loading="lazy">
+                <span class="member-badge elite-badge">Elite</span>
+            </div>
+            <h4>Fabian</h4>
+            <p class="role-text text-gray-400">Conductor</p>
+        </div>
+
+        <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
+             data-name="Jose97n" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="97.jpg"
+             data-bio="Conductor de comportamiento vial excelente. Siempre presente en las rodadas semanales compartiendo su pasión por la simulación de camiones pesados."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
+            <div class="member-image">
+                <img src="97.jpg" alt="Jose97n" loading="lazy">
+                <span class="member-badge elite-badge">Elite</span>
+            </div>
+            <h4>Jose97n</h4>
+            <p class="role-text text-gray-400">Conductor</p>
+        </div>
+
+        <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
+             data-name="JekkoDaza" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="daza.jpg"
+             data-bio="Miembro oficial de la familia Élite. Especializado en capturas de alta fidelidad visual en ruta y el despliegue ordenado de camiones en paradores."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
+            <div class="member-image">
+                <img src="daza.jpg" alt="Daza" loading="lazy">
+                <span class="member-badge elite-badge">Elite</span>
+            </div>
+            <h4>JekkoDaza</h4>
+            <p class="role-text text-gray-400">Conductor</p>
+        </div>
+
+        <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
+             data-name="Andres" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="andres.jpg"
+             data-bio="Conductor oficial de la división. Demuestra un gran sentido de lealtad, disciplina grupal y puntualidad estricta en los puntos de salida de carga."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
+            <div class="member-image">
+                <img src="andres.jpg" alt="Andres" loading="lazy">
+                <span class="member-badge elite-badge">Elite</span>
+            </div>
+            <h4>Andres</h4>
+            <p class="role-text text-gray-400">Conductor</p>
+        </div>
 
     </div>
 </section>
 
-<!-- Modal de perfil -->
 <div class="ventana-perfil-overlay" id="perfilModal" onclick="cerrarPerfilAlClicarFuera(event)">
-    <!-- contenido del modal -->
+    <div class="ventana-perfil-contenedor">
+        
+        <button class="boton-cerrar-perfil" onclick="cerrarPerfil()">✕</button>
+        
+        <div class="ventana-perfil-scrollable">
+            
+            <div class="perfil-imagen-centro">
+                <div class="marco-imagen-grande">
+                    <img src="" id="pModalImg" alt="Foto de Perfil">
+                    <span id="pModalBadge" class="member-badge"></span>
+                </div>
+            </div>
+            
+            <div class="perfil-datos-centro">
+                <h3 id="pModalName" class="logo-font"></h3>
+                <p id="pModalRole" class="p-role-text"></p>
+            </div>
+            
+            <div class="perfil-linea-division"></div>
+            
+            <div class="perfil-presentacion-cuerpo">
+                <p id="pModalBio"></p>
+            </div>
+            
+            <div class="perfil-redes-contenedor" id="pModalRedesBox">
+                <p class="titulo-redes-seccion">Redes Sociales Oficiales</p>
+                <div class="redes-botones-lista">
+                    <a href="#" id="pLinkYoutube" target="_blank" rel="noopener noreferrer" class="red-btn color-yt">
+                        <i class="fab fa-youtube"></i> YouTube
+                    </a>
+                    <a href="#" id="pLinkTiktok" target="_blank" rel="noopener noreferrer" class="red-btn color-tk">
+                        <i class="fab fa-tiktok"></i> TikTok
+                    </a>
+                    <a href="#" id="pLinkInstagram" target="_blank" rel="noopener noreferrer" class="red-btn color-ig">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>
 
-<!-- =========================
-     CHAT GLOBAL LA ELITE
-========================= -->
-<section id="chat" class="bg-[#0a0a0a] py-16 md:py-24 border-t border-[#f5c451]/10 relative overflow-hidden">
+<script>
+function abrirPerfil(element) {
+    // 1. Extraer todos los datos dinámicos guardados en la tarjeta
+    const name = element.getAttribute('data-name');
+    const role = element.getAttribute('data-role');
+    const badgeText = element.getAttribute('data-badge');
+    const badgeStyle = element.getAttribute('data-badge-style');
+    const imgStyle = element.getAttribute('data-img');
+    const bio = element.getAttribute('data-bio');
+    
+    const youtube = element.getAttribute('data-youtube');
+    const tiktok = element.getAttribute('data-tiktok');
+    const instagram = element.getAttribute('data-instagram');
 
-    <div class="absolute top-0 right-0 w-72 h-72 bg-[#f5c451]/5 blur-[100px] rounded-full pointer-events-none"></div>
-    <div class="absolute bottom-0 left-0 w-96 h-96 bg-[#36024e]/8 blur-[120px] rounded-full pointer-events-none"></div>
+    // 2. Colocar los textos e imágenes dentro de la ventana flotante
+    document.getElementById('pModalName').textContent = name;
+    document.getElementById('pModalRole').textContent = role;
+    document.getElementById('pModalBio').textContent = bio;
+    
+    const pImg = document.getElementById('pModalImg');
+    pImg.src = imgStyle;
+    pImg.alt = name;
 
-    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    // Configurar el tipo de rango (badge) de forma dinámica
+    const pBadge = document.getElementById('pModalBadge');
+    pBadge.className = 'member-badge ' + badgeStyle;
+    pBadge.textContent = badgeText;
 
-        <div class="text-center mb-10 md:mb-14 scroll-reveal">
+    // 3. Evaluar y mostrar enlaces a Redes Sociales del integrante
+    let tieneRedes = false;
+    
+    const bYt = document.getElementById('pLinkYoutube');
+    if(youtube && youtube !== '#') { bYt.href = youtube; bYt.style.display = 'flex'; tieneRedes = true; } else { bYt.style.display = 'none'; }
+    
+    const bTk = document.getElementById('pLinkTiktok');
+    if(tiktok && tiktok !== '#') { bTk.href = tiktok; bTk.style.display = 'flex'; tieneRedes = true; } else { bTk.style.display = 'none'; }
+    
+    const bIg = document.getElementById('pLinkInstagram');
+    if(instagram && instagram !== '#') { bIg.href = instagram; bIg.style.display = 'flex'; tieneRedes = true; } else { bIg.style.display = 'none'; }
+
+    // Si nadie tiene ninguna red, ocultamos la cabecera de las redes
+    document.getElementById('pModalRedesBox').style.display = tieneRedes ? 'block' : 'none';
+
+    // 4. Activar visualmente la ventana flotante y congelar el scroll de fondo de la web
+    document.getElementById('perfilModal').classList.add('ventana-activa');
+    document.body.style.overflow = 'hidden';
+}
+
+function cerrarPerfil() {
+    // Desactivar ventana flotante y regresar el scroll natural a la web
+    document.getElementById('perfilModal').classList.remove('ventana-activa');
+    document.body.style.overflow = '';
+}
+
+function cerrarPerfilAlClicarFuera(event) {
+    // Si el usuario toca el fondo oscuro exterior, se cierra de inmediato
+    if(event.target.id === 'perfilModal') {
+        cerrarPerfil();
+    }
+}
+</script>
+
+<style>
+/* --- ESTILOS DE LAS TARJETAS (MENÚ DE LA COMUNIDAD) --- */
+.member-card {
+    background: linear-gradient(145deg, #161616, #0f0f0f);
+    border: 1px solid rgba(245, 196, 81, 0.06);
+    border-radius: 20px;
+    padding: 24px 12px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    cursor: pointer; /* Transforma la tarjeta en botón cliqueable */
+}
+
+.member-card::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 220%;
+    height: 220%;
+    background: linear-gradient(120deg, transparent, rgba(245, 196, 81, 0.04), transparent);
+    transform: rotate(25deg);
+    transition: 0.8s;
+    pointer-events: none;
+}
+
+.member-card:hover::before { top: 0; left: 0; }
+
+.member-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(245, 196, 81, 0.25);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(245, 196, 81, 0.06);
+}
+
+.member-image {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid rgba(245, 196, 81, 0.15);
+    transition: transform 0.4s ease;
+}
+
+.member-card:hover .member-image img { transform: scale(1.05); }
+.owner-card .member-image img { border-color: #f5c451; box-shadow: 0 0 15px rgba(245, 196, 81, 0.2); }
+.admin-card .member-image img { border-color: #c8102e; box-shadow: 0 0 15px rgba(200, 16, 46, 0.15); }
+
+.member-badge {
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    white-space: nowrap;
+    z-index: 5;
+}
+
+.owner-badge { background: #f5c451; color: #000; }
+.admin-badge { background: #c8102e; color: #fff; }
+.elite-badge { background: #222; color: #ccc; border: 1px solid rgba(245,196,81,0.25); }
+
+.member-card h4 {
+    color: white;
+    margin-top: 18px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.role-text {
+    margin-top: 4px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* --- ESTILOS DE LA VENTANA FLOTANTE CENTRAL --- */
+.ventana-perfil-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+/* Estado Activo */
+.ventana-perfil-overlay.ventana-activa {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.ventana-perfil-contenedor {
+    width: 92%;
+    max-width: 480px;
+    max-height: 85vh; /* Evita salir de pantallas pequeñas */
+    background: #121212;
+    border: 1px solid rgba(245, 196, 81, 0.2);
+    border-radius: 32px;
+    position: relative;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.8);
+    transform: scale(0.92) translateY(20px);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.ventana-perfil-overlay.ventana-activa .ventana-perfil-contenedor {
+    transform: scale(1) translateY(0);
+}
+
+/* Botón X de Cierre */
+.boton-cerrar-perfil {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: #1a1a1a;
+    color: #888;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 50;
+}
+
+.boton-cerrar-perfil:hover {
+    background: #c8102e;
+    color: white;
+    transform: rotate(90deg);
+}
+
+/* Zona interna con barra de desplazamiento (Subir y Bajar) */
+.ventana-perfil-scrollable {
+    padding: 40px 28px 32px;
+    overflow-y: auto; /* Permite scroll interno si la bio es larga */
+    width: 100%;
+}
+
+/* Personalización de la barra de scroll interno */
+.ventana-perfil-scrollable::-webkit-scrollbar {
+    width: 6px;
+}
+.ventana-perfil-scrollable::-webkit-scrollbar-thumb {
+    background: rgba(245, 196, 81, 0.2);
+    border-radius: 10px;
+}
+
+.perfil-imagen-centro {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 22px;
+}
+
+.marco-imagen-grande {
+    position: relative;
+    width: 130px;
+    height: 130px;
+}
+
+.marco-imagen-grande img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgba(245, 196, 81, 0.25);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.perfil-datos-centro {
+    text-align: center;
+}
+
+.perfil-datos-centro h3 {
+    color: white;
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.p-role-text {
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #f5c451;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+
+.perfil-linea-division {
+    margin: 20px 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(245, 196, 81, 0.2), transparent);
+}
+
+.perfil-presentacion-cuerpo {
+    color: #b3b3b3;
+    font-size: 14.5px;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 28px;
+    padding: 0 6px;
+}
+
+/* PANEL DE ENLACES SOCIALES */
+.perfil-redes-contenedor {
+    background: rgba(0,0,0,0.25);
+    padding: 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.02);
+}
+
+.titulo-redes-seccion {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #555;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.redes-botones-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.red-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 46px;
+    border-radius: 12px;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.red-btn:hover {
+    transform: translateY(-2px);
+}
+
+.color-yt { background: #c8102e; }
+.color-yt:hover { background: #e01638; box-shadow: 0 6px 15px rgba(200, 16, 46, 0.25); }
+
+.color-tk { background: #000000; border: 1px solid #262626; }
+.color-tk:hover { background: #141414; border-color: #444; }
+
+.color-ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #bc1888); }
+.color-ig:hover { opacity: 0.95; box-shadow: 0 6px 15px rgba(220, 39, 67, 0.2); }
+
+/* Ajustes Responsive en Móviles */
+@media(max-width: 640px) {
+    .member-image { width: 85px; height: 85px; }
+    .member-card { padding: 16px 8px; border-radius: 16px; }
+    .member-card h4 { font-size: 13px; margin-top: 12px; }
+    .role-text { font-size: 11px; }
+    .member-badge { font-size: 8px; padding: 2px 8px; }
+    
+    .ventana-perfil-scrollable { padding: 35px 18px 24px; }
+    .perfil-datos-centro h3 { font-size: 22px; }
+}
+</style>
+<!-- CONTACTO / REDES -->
+<section id="contacto" class="bg-black py-16 md:py-24 border-t border-[#f5c451]/10 relative overflow-hidden">
+
+    <!-- EFECTOS DE FONDO BLUR -->
+    <div class="absolute top-0 left-0 w-72 md:w-96 h-72 md:h-96 bg-[#f5c451]/5 md:bg-[#f5c451]/10 blur-[100px] md:blur-[140px] rounded-full pointer-events-none"></div>
+    <div class="absolute bottom-0 right-0 w-80 md:w-[420px] h-80 md:h-[420px] bg-[#36024e]/10 md:bg-[#36024e]/20 blur-[120px] md:blur-[160px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-8 relative z-10">
+
+        <!-- TITULO -->
+        <div class="text-center mb-12 md:mb-20">
             <span class="uppercase text-[#c8102e] text-xs md:text-sm font-bold tracking-[4px]">
-                Conversación en vivo
+                Redes Oficiales
             </span>
-            <h2 class="section-title text-3xl sm:text-4xl md:text-5xl font-bold logo-font mt-4 text-white">
-                Chat Global
+            <h2 class="text-3xl sm:text-5xl md:text-6xl font-bold logo-font mt-4 neon-gold tracking-wide text-white">
+                Contacto & Comunidad
             </h2>
-            <p class="text-gray-400 mt-4 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
-                Conéctate con toda la comunidad en tiempo real. Comparte rutas, coordina convoyes y haz amigos.
+            <p class="text-gray-400 mt-4 md:mt-6 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
+                Forma parte de una de las comunidades más grandes y activas de ATS y ETS2 en Colombia. Vive convoyes legendarios, eventos exclusivos y rutas inolvidables.
             </p>
         </div>
 
-        <div class="chat-container scroll-reveal" id="chatContainer">
+        <!-- GRID PRINCIPAL -->
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
 
-            <div class="chat-header">
-                <div class="chat-header-icon">
-                    <i class="fas fa-comments"></i>
-                </div>
-                <div>
-                    <h3>Chat Global La Elite</h3>
-                    <p>Todos los conductores conectados</p>
-                </div>
-                <div class="chat-online">
-                    <span class="chat-online-dot"></span>
-                    <span id="chatUserCount">0</span> en línea
+            <!-- COLUMNA IZQUIERDA (INFO & STATS) -->
+            <div class="lg:col-span-5">
+                <div class="h-full bg-[#111111]/80 backdrop-blur-xl border border-[#f5c451]/15 rounded-[24px] md:rounded-[34px] p-6 md:p-10 shadow-2xl flex flex-col justify-between">
+                    <div>
+                        <p class="uppercase text-[#f5c451] tracking-[3px] md:tracking-[4px] text-xs md:text-sm font-semibold">
+                            La Élite ATS • ETS2
+                        </p>
+                        <h3 class="text-2xl md:text-4xl font-bold text-white mt-4 md:mt-5 leading-tight">
+                            ¿Listo para rodar con los mejores?
+                        </h3>
+                        <p class="mt-4 md:mt-7 text-gray-300 text-sm md:text-lg leading-relaxed">
+                            Únete a nuestros convoyes, comparte rutas épicas y conviértete en parte de la hermandad más legendaria de la carretera virtual.
+                        </p>
+                    </div>
+
+                    <div>
+                        <!-- STATS -->
+                        <div class="grid grid-cols-2 gap-4 mt-8">
+                            <div class="bg-black/60 border border-[#f5c451]/10 rounded-2xl p-4 md:p-6 text-center">
+                                <h4 class="text-3xl md:text-4xl font-bold text-[#f5c451]">3</h4>
+                                <p class="text-gray-400 mt-2 text-[10px] md:text-xs uppercase tracking-[2px]">
+                                    Ranking Nacional 
+                                </p>
+                            </div>
+                            <div class="bg-black/60 border border-[#f5c451]/10 rounded-2xl p-4 md:p-6 text-center">
+                                <h4 class="text-3xl md:text-4xl font-bold text-[#f5c451]">ATS</h4>
+                                <p class="text-gray-400 mt-2 text-[10px] md:text-xs uppercase tracking-[2px]">
+                                    Comunidad Élite
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- FRASE -->
+                        <div class="mt-8 border-l-4 border-[#f5c451] pl-4 md:pl-6">
+                            <p class="text-xl md:text-2xl italic text-white leading-relaxed font-light">
+                                “Donde las mejores rutas se convierten en leyenda”
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="chat-nick-setup" id="chatNickBox">
-                <label>Tu nombre de conductor</label>
-                <div class="chat-nick-row">
-                    <input type="text" id="chatNickInput" placeholder="Ej: Arkamax" maxlength="20">
-                    <button onclick="setChatNick()">Guardar</button>
-                </div>
-                <div class="saved-nick" id="chatSavedNick" style="display:none;">
-                    <span>✓ Chateando como: <strong id="chatCurrentNick"></strong></span>
-                    <button onclick="showNickInput()">Cambiar</button>
-                </div>
-            </div>
+            <!-- COLUMNA DERECHA (TARJETAS DE REDES) -->
+            <div class="lg:col-span-7">
+                <div class="grid sm:grid-cols-2 gap-4 md:gap-6">
 
-            <div class="chat-messages" id="chatMessages">
-                <div class="chat-empty">
-                    <i class="fas fa-comment-dots"></i>
-                    <p>Cargando mensajes...</p>
-                </div>
-            </div>
+                    <!-- DISCORD -->
+                    <a href="https://discord.gg/pRfNcqXKAC" target="_blank" class="social-card bg-[#5865F2]">
+                        <img src="discord.jpg" alt="Discord" class="social-icon">
+                        <div>
+                            <h4 class="social-title">Discord Oficial</h4>
+                            <p class="social-text">Convoyes, eventos y comunidad activa.</p>
+                        </div>
+                    </a>
 
-            <div class="chat-input-area">
-                <input type="text" id="chatInput" placeholder="Escribe un mensaje..." maxlength="500" disabled>
-                <button id="chatSendBtn" disabled onclick="sendChatMessage()">
-                    <i class="fas fa-paper-plane"></i>
-                </button>
+                    <!-- TIKTOK -->
+                    <a href="https://www.tiktok.com/@arkamax_24" target="_blank" class="social-card bg-[#111111] border border-[#25F4EE]/20 hover:border-[#25F4EE]/50">
+                        <img src="tiktok.webp" alt="TikTok" class="social-icon">
+                        <div>
+                            <h4 class="social-title text-white">TikTok</h4>
+                            <p class="social-text text-gray-400">Clips, rutas y momentos legendarios.</p>
+                        </div>
+                    </a>
+
+                    <!-- YOUTUBE -->
+                    <a href="https://www.youtube.com/@ARKAMAX24" target="_blank" class="social-card bg-[#FF0000]">
+                        <img src="youtube.png" alt="YouTube" class="social-icon">
+                        <div>
+                            <h4 class="social-title">YouTube</h4>
+                            <p class="social-text">Videos oficiales y contenido ATS.</p>
+                        </div>
+                    </a>
+
+                    <!-- FACEBOOK -->
+                    <a href="https://www.facebook.com/ARKAMAXOFICIAL" target="_blank" class="social-card bg-[#1877F2]">
+                        <img src="f.png" alt="Facebook" class="social-icon">
+                        <div>
+                            <h4 class="social-title">Facebook</h4>
+                            <p class="social-text">Noticias, publicaciones y comunidad.</p>
+                        </div>
+                    </a>
+
+                    <!-- WHATSAPP -->
+                    <a href="https://whatsapp.com/channel/0029VbClP1KI7BeAPLzZcT3c" target="_blank" class="social-card bg-[#25D366]">
+                        <img src="whatsapp.png" alt="WhatsApp" class="social-icon">
+                        <div>
+                            <h4 class="social-title text-white">WhatsApp</h4>
+                            <p class="social-text text-white/90">Canal oficial y anuncios rápidos.</p>
+                        </div>
+                    </a>
+
+                    <!-- TRUCKSBOOK -->
+                    <a href="https://trucksbook.eu/company/224432" target="_blank" class="social-card bg-[#00AEEF]">
+                        <img src="tb.jpg" alt="TrucksBook" class="social-icon">
+                        <div>
+                            <h4 class="social-title">TrucksBook</h4>
+                            <p class="social-text">Estadísticas oficiales y ranking.</p>
+                        </div>
+                    </a>
+
+                </div>
             </div>
 
         </div>
-
     </div>
 </section>
 
+<!-- INICIO DEL FOOTER (Añadida la estructura que faltaba) -->
+<footer class="bg-[#0a0a0a] border-t border-white/5 py-12">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-8">
+        <!-- Puedes mapear aquí las columnas del footer usando las clases CSS de abajo -->
+    </div>
+</footer>
+
+<!-- ESTILOS EXCLUSIVOS ENCAPSULADOS -->
+<style>
+    /* Estilos Secreción Redes */
+    .social-card {
+        min-height: 120px;
+        border-radius: 24px;
+        padding: 24px;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .social-card:hover {
+        transform: translateY(-5px) scale(1.01);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .social-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 18px;
+        object-fit: cover;
+        background: white;
+        padding: 8px;
+        flex-shrink: 0;
+        display: block;
+    }
+
+    .social-title {
+        color: white;
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+    }
+
+    .social-text {
+        color: rgba(255, 255, 255, 0.85);
+        margin-top: 4px;
+        line-height: 1.4;
+        font-size: 13px;
+    }
+
+    /* Estilos Footer */
+    .footer-title {
+        color: white;
+        font-size: 20px;
+        font-weight: 800;
+        margin-bottom: 20px;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .footer-links a {
+        color: #9ca3af;
+        font-size: 15px;
+        transition: all 0.25s ease;
+    }
+
+    .footer-links a:hover {
+        color: #f5c451;
+        transform: translateX(4px);
+    }
+
+    .footer-stat {
+        background: #111111;
+        border: 1px solid rgba(245,196,81,0.1);
+        border-radius: 20px;
+        padding: 24px 16px;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .footer-stat:hover {
+        transform: translateY(-4px);
+        border-color: rgba(245,196,81,0.25);
+    }
+
+    .footer-stat h4 {
+        color: #f5c451;
+        font-size: 32px;
+        font-weight: 800;
+    }
+
+    .footer-stat p {
+        color: #9ca3af;
+        margin-top: 8px;
+        font-size: 12px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+    }
+
+    .footer-social {
+        width: 52px;
+        height: 52px;
+        border-radius: 16px;
+        background: #111111;
+        border: 1px solid rgba(245,196,81,0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #f5c451;
+        font-size: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .footer-social:hover {
+        background: #f5c451;
+        color: black;
+        transform: translateY(-4px) scale(1.03);
+        box-shadow: 0 12px 25px rgba(245,196,81,0.15);
+    }
+
+    @media(max-width: 768px) {
+        .social-card {
+            padding: 20px;
+            border-radius: 20px;
+            min-height: auto;
+        }
+        .social-title { font-size: 16px; }
+        .social-icon { width: 50px; height: 50px; border-radius: 14px; padding: 6px; }
+        .footer-title { margin-top: 10px; }
+    }
+</style>
 <script>
-// =========================
-// CHAT GLOBAL CON FIREBASE
-// =========================
-// ⚠️ REEMPLAZA estos valores con los de tu proyecto Firebase.
-
-const firebaseConfig = {
-    apiKey: "TU_API_KEY",
-    authDomain: "TU_PROYECTO.firebaseapp.com",
-    databaseURL: "https://TU_PROYECTO-default-rtdb.firebaseio.com",
-    projectId: "TU_PROYECTO",
-    storageBucket: "TU_PROYECTO.appspot.com",
-    messagingSenderId: "TU_SENDER_ID",
-    appId: "TU_APP_ID"
-};
-
-let chatDb = null;
-let chatUserNick = '';
-const MAX_MESSAGES = 100;
-let chatPresenceRef = null;
-let chatPresenceInterval = null;
-
-function initChatFirebase() {
-    // ✅ Nickname se carga SIEMPRE, incluso si Firebase falla
-    const saved = localStorage.getItem('laelite_chat_nick');
-    if (saved && saved.trim()) {
-        chatUserNick = saved.trim();
-        document.getElementById('chatNickInput').value = chatUserNick;
-        showSavedNick();
-        enableChatInput();
-    }
-
-    try {
-        if (!firebase.apps.length) {
-            firebase.initializeApp(firebaseConfig);
+function initializeTailwind() {
+    return {
+        config(userConfig = {}) {
+            return {
+                content: [],
+                theme: {
+                    extend: {
+                        colors: {
+                            gold: '#f5c451',
+                            redelite: '#c8102e'
+                        }
+                    }
+                },
+                plugins: [],
+                ...userConfig
+            };
         }
-        chatDb = firebase.database();
-
-        if (chatUserNick) startPresence();
-        loadChatMessages();
-    } catch (e) {
-        document.querySelector('#chatMessages .chat-empty').innerHTML = `
-            <i class="fas fa-plug"></i>
-            <p style="color:#f87171;">Chat deshabilitado. Configura Firebase.</p>
-            <p style="font-size:12px;color:#666;margin-top:8px;">Reemplaza los datos en firebaseConfig dentro del código.</p>
-        `;
-    }
+    };
 }
 
-function setChatNick() {
-    const input = document.getElementById('chatNickInput');
-    const nick = input.value.trim();
-    if (!nick || nick.length < 2) {
-        input.style.borderColor = '#f87171';
-        setTimeout(() => input.style.borderColor = '', 1500);
-        return;
-    }
-    chatUserNick = nick;
-    localStorage.setItem('laelite_chat_nick', nick);
-    showSavedNick();
-    enableChatInput();
-    startPresence();
+/* =========================================
+   CONTADOR ONLINE (Simulador de actividad)
+========================================= */
+function startOnlineCounter() {
+    let count = 187;
+    const counterEl = document.getElementById('online-counter');
+    
+    if (!counterEl) return;
+
+    setInterval(() => {
+        // Fluctuación natural de usuarios online (+- un rango de 7)
+        count += Math.floor(Math.random() * 7) - 2;
+
+        // Límites lógicos para mantener el realismo
+        if (count < 140) count = 140;
+        if (count > 260) count = 260;
+
+        counterEl.textContent = count;
+    }, 8000);
 }
 
-function showSavedNick() {
-    document.querySelector('#chatNickBox label').style.display = 'none';
-    document.querySelector('#chatNickBox .chat-nick-row').style.display = 'none';
-    const saved = document.getElementById('chatSavedNick');
-    saved.style.display = 'flex';
-    document.getElementById('chatCurrentNick').textContent = chatUserNick;
-}
-
-function showNickInput() {
-    document.querySelector('#chatNickBox label').style.display = '';
-    document.querySelector('#chatNickBox .chat-nick-row').style.display = 'flex';
-    document.getElementById('chatSavedNick').style.display = 'none';
-    document.getElementById('chatInput').disabled = true;
-    document.getElementById('chatSendBtn').disabled = true;
-}
-
-function enableChatInput() {
-    document.getElementById('chatInput').disabled = false;
-    document.getElementById('chatSendBtn').disabled = false;
-    document.getElementById('chatInput').placeholder = 'Escribe un mensaje...';
-}
-
-function startPresence() {
-    if (!chatDb || !chatUserNick) return;
-
-    const presenceId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 6);
-    chatPresenceRef = chatDb.ref('chat_presence/' + presenceId);
-
-    chatPresenceRef.set({
-        nick: chatUserNick,
-        online: true,
-        lastSeen: firebase.database.ServerValue.TIMESTAMP
-    });
-
-    if (chatPresenceInterval) clearInterval(chatPresenceInterval);
-    chatPresenceInterval = setInterval(() => {
-        if (chatPresenceRef) {
-            chatPresenceRef.update({ lastSeen: firebase.database.ServerValue.TIMESTAMP });
-        }
-    }, 30000);
-
-    window.addEventListener('beforeunload', () => {
-        if (chatPresenceRef) {
-            chatPresenceRef.update({ online: false });
-            setTimeout(() => chatPresenceRef.remove(), 500);
-        }
-        if (chatPresenceInterval) clearInterval(chatPresenceInterval);
-    });
-
-    chatDb.ref('chat_presence').once('value', (snap) => {
-        const now = Date.now();
-        const updates = {};
-        snap.forEach((child) => {
-            const val = child.val();
-            if (val && val.online && (now - val.lastSeen) > 120000) {
-                updates[child.key] = null;
-            }
-        });
-        if (Object.keys(updates).length) {
-            chatDb.ref('chat_presence').update(updates);
-        }
-    });
-
-    updateUserCount();
-}
-
-function updateUserCount() {
-    if (!chatDb) return;
-    chatDb.ref('chat_presence').on('value', (snap) => {
-        let count = 0;
-        snap.forEach((child) => {
-            if (child.val() && child.val().online) count++;
-        });
-        document.getElementById('chatUserCount').textContent = count;
-    });
-}
-
-function loadChatMessages() {
-    if (!chatDb) return;
-
-    const messagesRef = chatDb.ref('chat_messages');
-    messagesRef.limitToLast(MAX_MESSAGES).on('value', (snap) => {
-        const container = document.getElementById('chatMessages');
-        container.innerHTML = '';
-
-        const messages = [];
-        snap.forEach((child) => {
-            messages.push({ id: child.key, ...child.val() });
-        });
-
-        if (!messages.length) {
-            container.innerHTML = '<div class="chat-empty"><i class="fas fa-comment-dots"></i><p>No hay mensajes aún. ¡Sé el primero en escribir!</p></div>';
-            return;
-        }
-
-        messages.forEach((msg) => {
-            const div = document.createElement('div');
-            div.className = 'chat-message' + (msg.nick === chatUserNick ? ' own' : '');
-            const initial = msg.nick ? msg.nick.charAt(0).toUpperCase() : '?';
-            const time = msg.timestamp ? formatChatTime(msg.timestamp) : '';
-            div.innerHTML = '<div class="avatar">' + initial + '</div><div class="msg-content"><span class="msg-author">' + escapeHtml(msg.nick || 'Anónimo') + '</span><span class="msg-time">' + time + '</span><div class="msg-text">' + escapeHtml(msg.text || '') + '</div></div>';
-            container.appendChild(div);
-        });
-
-        container.scrollTop = container.scrollHeight;
-    });
-}
-
-// ✅ CORREGIDO: solo limpia el input si Firebase confirma el envío
-function sendChatMessage() {
-    const input = document.getElementById('chatInput');
-    const text = input.value.trim();
-    if (!text || !chatDb || !chatUserNick) return;
-
-    const sendBtn = document.getElementById('chatSendBtn');
-    sendBtn.disabled = true;
-    input.disabled = true;
-
-    chatDb.ref('chat_messages').push({
-        nick: chatUserNick,
-        text: text,
-        timestamp: firebase.database.ServerValue.TIMESTAMP
-    }).then(() => {
-        input.value = '';
-        input.focus();
-    }).catch((err) => {
-        console.error('Error al enviar mensaje:', err);
-        input.value = text;  // ← restaura el mensaje si falla
-    }).finally(() => {
-        sendBtn.disabled = false;
-        input.disabled = false;
-    });
-}
-
-function formatChatTime(timestamp) {
-    if (!timestamp) return '';
-    const d = new Date(timestamp);
-    const now = new Date();
-    const hrs = d.getHours().toString().padStart(2, '0');
-    const mins = d.getMinutes().toString().padStart(2, '0');
-    if (d.toDateString() === now.toDateString()) {
-        return hrs + ':' + mins;
-    }
-    return d.getDate() + '/' + (d.getMonth()+1) + ' ' + hrs + ':' + mins;
-}
-
-function escapeHtml(text) {
-    const d = document.createElement('div');
-    d.textContent = text;
-    return d.innerHTML;
-}
-
+// Inicialización automática al cargar el DOM
 document.addEventListener('DOMContentLoaded', () => {
-    initChatFirebase();
-
-    document.getElementById('chatInput').addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' && !e.shiftKey) {
-            e.preventDefault();
-            sendChatMessage();
-        }
-    });
-
-    document.getElementById('chatNickInput').addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-            setChatNick();
-        }
-    });
+    startOnlineCounter();
 });
 </script>
 
-<!-- CONTACTO / REDES -->
-<section id="contacto" class="bg-black py-16 md:py-24 border-t border-[#f5c451]/10 relative overflow-hidden">
-    <!-- ... contenido de contacto, footer, news popup ... -->
-</section>
-
-<style>
-    .social-card { /* ... */ }
-    /* ... otros estilos ... */
-</style>
-
 <footer class="bg-[#0a0a0a] border-t border-white/5 pt-12">
-    <!-- ... -->
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-8">
+        
+        <div class="border-t border-[#f5c451]/10 py-8 flex flex-col md:flex-row items-center justify-between gap-5 mt-8">
+            <p class="text-sm text-gray-500 text-center md:text-left">
+                © 2026 LA ÉLITE • Comunidad Oficial ATS-ETS2
+            </p>
+            <p class="text-sm text-[#f5c451]/60 text-center md:text-right font-medium">
+                Diseñado por Anderson Montoya 
+            </p>
+        </div>
+
+    </div>
 </footer>
 
-<!-- News Popup -->
+<style>
+    .footer-title {
+        color: white;
+        font-size: 22px;
+        font-weight: 800;
+        margin-bottom: 24px;
+        letter-spacing: -0.01em;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .footer-links a {
+        color: #9ca3af;
+        font-size: 15px;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .footer-links a:hover {
+        color: #f5c451;
+        transform: translateX(5px);
+    }
+
+    .footer-stat {
+        background: #111111;
+        border: 1px solid rgba(245, 196, 81, 0.1);
+        border-radius: 20px;
+        padding: 24px 18px;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .footer-stat:hover {
+        transform: translateY(-4px);
+        border-color: rgba(245, 196, 81, 0.25);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .footer-stat h4 {
+        color: #f5c451;
+        font-size: 32px;
+        font-weight: 800;
+    }
+
+    .footer-stat p {
+        color: #9ca3af;
+        margin-top: 8px;
+        font-size: 12px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+    }
+
+    .footer-social {
+        width: 54px;
+        height: 54px;
+        border-radius: 16px;
+        background: #111111;
+        border: 1px solid rgba(245, 196, 81, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #f5c451;
+        font-size: 20px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .footer-social:hover {
+        background: #f5c451;
+        color: black;
+        transform: translateY(-4px) scale(1.04);
+        box-shadow: 0 12px 25px rgba(245, 196, 81, 0.15);
+    }
+
+    @media (max-width: 768px) {
+        .footer-title {
+            margin-top: 8px;
+            font-size: 19px;
+        }
+        .footer-stat {
+            padding: 20px 14px;
+        }
+        .footer-stat h4 {
+            font-size: 28px;
+        }
+    }
+</style>
+
 <div class="news-overlay" id="newsOverlay">
-    <!-- ... -->
+    <div class="news-box">
+
+        <button class="close-btn" onclick="closeNews()" aria-label="Cerrar noticias">
+            ✕
+        </button>
+
+        <div class="news-header">
+            <p class="news-tag">Última noticia</p>
+            <h2 class="news-title">📰 Noticias</h2>
+        </div>
+
+        <div class="news-content">
+            <div class="news-text">
+                <h3>Información importante</h3>
+                <p>
+                    En <strong>LA ÉLITE</strong> existen dos niveles dentro de la comunidad: 
+                    la <strong>empresa</strong>, abierta a todos los usuarios, y 
+                    <strong>LA ÉLITE</strong>, un grupo exclusivo al que solo ingresan quienes demuestran compromiso, constancia y buena energía dentro de la comunidad.
+                </p>
+                <p style="margin-top:12px; font-weight:800; text-transform:uppercase; color:#f5c451; letter-spacing:2px;">
+                    Este criterio es fundamental para el ingreso
+                </p>
+            </div>
+        </div>
+
+    </div>
 </div>
 
-<button class="open-news" id="openBtn" onclick="openNews()" aria-label="Abrir noticias">📰 Noticias</button>
-
 <script>
-// ... funciones de noticias y online counter ...
+/**
+ * Inicialización de configuración base para Tailwind
+ */
+function initializeTailwind() {
+    return {
+        config(userConfig = {}) {
+            return {
+                content: [],
+                theme: {
+                    extend: {
+                        colors: {
+                            gold: '#f5c451',
+                            redelite: '#c8102e'
+                        }
+                    }
+                },
+                plugins: [],
+                ...userConfig
+            };
+        }
+    };
+}
+
+/**
+ * Contador de usuarios online simulado (Fluctuación orgánica)
+ */
+function startOnlineCounter() {
+    let count = 187;
+    const counterEl = document.getElementById('online-counter');
+
+    if (!counterEl) return;
+
+    counterEl.textContent = count;
+
+    setInterval(() => {
+        count += Math.floor(Math.random() * 7) - 2;
+
+        // Forzar límites de control reales
+        if (count < 140) count = 140;
+        if (count > 260) count = 260;
+
+        counterEl.textContent = count;
+    }, 8000);
+}
+
+/**
+ * Animaciones por Scroll usando IntersectionObserver
+ */
+function initScrollAnimations() {
+    const elements = document.querySelectorAll('.member-card, .event-card');
+
+    if (!elements.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.12
+    });
+
+    elements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(45px)';
+        el.style.transition = 'all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1)';
+        observer.observe(el);
+    });
+}
+
+/**
+ * Controladores del Popup de Noticias
+ */
+function openNews() {
+    const overlay = document.getElementById('newsOverlay');
+    if (!overlay) return;
+    overlay.classList.add('show');
+}
+
+function closeNews() {
+    const overlay = document.getElementById('newsOverlay');
+    if (!overlay) return;
+    overlay.classList.remove('show');
+}
+
+/**
+ * Orquestador de Eventos en la carga global de la Página
+ */
+window.addEventListener('load', () => {
+    // Inicializar utilitarios de diseño
+    if (typeof initializeTailwind === 'function') {
+        initializeTailwind();
+    }
+
+    // Arrancar contadores en tiempo real
+    if (typeof startOnlineCounter === 'function') {
+        startOnlineCounter();
+    }
+
+    // Activar disparadores visuales por Scroll
+    initScrollAnimations();
+
+    // Despliegue automático de la ventana de noticias (1.8 Segundos)
+    setTimeout(() => {
+        openNews();
+    }, 1800);
+
+    console.log(
+        '%c🚛 LA ELITE • Sistema cargado correctamente.',
+        'color:#f5c451; font-size:14px; font-weight:bold;'
+    );
+});
+</script>
+<!-- =========================================
+     POPUP DE NOTICIAS (HTML ESTRUCTURAL UNIFICADO)
+========================================= -->
+<div class="news-overlay" id="newsOverlay">
+    <div class="news-box">
+
+        <!-- BOTÓN CERRAR -->
+        <button class="close-btn" onclick="closeNews()" aria-label="Cerrar noticias">
+            ✕
+        </button>
+
+        <!-- HEADER -->
+        <div class="news-header">
+            <p class="news-tag">Última noticia</p>
+            <h2 class="news-title">📰 Noticias</h2>
+        </div>
+
+        <!-- CONTENIDO -->
+        <div class="news-content">
+            <div class="news-text">
+                <h3>Información importante</h3>
+                <p>
+                    En <strong>LA ÉLITE</strong> existen dos niveles dentro de la comunidad: 
+                    la <strong>empresa</strong>, abierta a todos los usuarios, y 
+                    <strong>LA ÉLITE</strong>, un grupo exclusivo al que solo ingresan quienes demuestran compromiso, constancia y buena energía dentro de la comunidad.
+                </p>
+                <p style="margin-top:12px; font-weight:800; text-transform:uppercase; color:#f5c451; letter-spacing:2px;">
+                    Este criterio es fundamental para el ingreso
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- BOTÓN FLOTANTE PARA REABRIR NOTICIAS -->
+<button class="open-news" id="openBtn" onclick="openNews()" aria-label="Abrir noticias">
+    📰 Noticias
+</button>
+
+<!-- =========================================
+     SCRIPT PRINCIPAL (LÓGICA UNIFICADA)
+========================================= -->
+<script>
+/**
+ * Inicialización de configuración base para Tailwind
+ */
+function initializeTailwind() {
+    return {
+        config(userConfig = {}) {
+            return {
+                content: [],
+                theme: {
+                    extend: {
+                        colors: {
+                            gold: '#f5c451',
+                            redelite: '#c8102e'
+                        }
+                    }
+                },
+                plugins: [],
+                ...userConfig
+            };
+        }
+    };
+}
+
+/**
+ * Contador de usuarios online simulado (Fluctuación orgánica)
+ */
+function startOnlineCounter() {
+    let count = 187;
+    const counterEl = document.getElementById('online-counter');
+
+    if (!counterEl) return;
+
+    counterEl.textContent = count;
+
+    setInterval(() => {
+        count += Math.floor(Math.random() * 7) - 2;
+
+        if (count < 140) count = 140;
+        if (count > 260) count = 260;
+
+        counterEl.textContent = count;
+    }, 8000);
+}
+
+/**
+ * Animaciones por Scroll usando IntersectionObserver
+ */
+function initScrollAnimations() {
+    const elements = document.querySelectorAll('.member-card, .event-card');
+
+    if (!elements.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.12
+    });
+
+    elements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(45px)';
+        el.style.transition = 'all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1)';
+        observer.observe(el);
+    });
+}
+
+/**
+ * Controladores del Popup de Noticias e interacción con el botón flotante
+ */
+function openNews() {
+    const overlay = document.getElementById('newsOverlay');
+    const openBtn = document.getElementById('openBtn');
+
+    if (!overlay) return;
+    overlay.classList.add('show');
+
+    if (openBtn) openBtn.classList.remove('show-btn');
+}
+
+function closeNews() {
+    const overlay = document.getElementById('newsOverlay');
+    const openBtn = document.getElementById('openBtn');
+
+    if (!overlay) return;
+    overlay.classList.remove('show');
+
+    if (openBtn) openBtn.classList.add('show-btn');
+}
+
+/**
+ * Orquestador de Eventos en la carga de la página
+ */
+window.addEventListener('load', () => {
+    if (typeof initializeTailwind === 'function') {
+        initializeTailwind();
+    }
+
+    startOnlineCounter();
+    initScrollAnimations();
+
+    // Despliegue automático inicial (1.8 Segundos)
+    setTimeout(() => {
+        openNews();
+    }, 1800);
+
+    console.log(
+        '%c🚛 LA ELITE • Sistema cargado correctamente sin duplicados.',
+        'color:#f5c451; font-size:14px; font-weight:bold;'
+    );
+});
+</script>
+
+<!-- =========================================
+     ESTILOS CSS OPTIMIZADOS
+========================================= -->
+<style>
+/* OVERLAY Y ENTORNO BLUR */
+.news-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+
+.news-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* CAJA CONTENEDORA (PROTECCIÓN RESPONSIVA) */
+.news-box {
+    width: 90%;
+    max-width: 420px;
+    max-height: 85vh;
+    overflow: hidden;
+    background: #111111;
+    border: 1px solid rgba(245, 196, 81, 0.2);
+    border-radius: 28px;
+    position: relative;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+    animation: popupShow 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* SCROLL INTERNO CONTROLADO */
+.news-content {
+    padding: 0 28px 30px;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+/* HEADER DEL POPUP */
+.news-header {
+    padding: 28px 28px 10px;
+    text-align: center;
+}
+
+.news-tag {
+    color: #f5c451;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.news-title {
+    color: white;
+    font-size: 32px;
+    font-weight: 800;
+}
+
+/* CONTENEDOR DE MEDIOS DISPONIBLE */
+.news-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 2px solid rgba(245, 196, 81, 0.15);
+}
+
+/* FORMATO DE TEXTO INTERNO */
+.news-text {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.news-text h3 {
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.news-text p {
+    color: #cfcfcf;
+    margin-top: 10px;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* BOTÓN DE CIERRE ESTILIZADO */
+.close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: #1f1f1f;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-btn:hover {
+    background: #c8102e;
+    transform: rotate(90deg);
+}
+
+/* BOTÓN FLOTANTE PARA REABRIR */
+.open-news {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #111111;
+    color: white;
+    border: 1px solid #f5c451;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.open-news:hover {
+    background: #f5c451;
+    color: black;
+    transform: translateY(-3px);
+}
+
+.open-news.show-btn {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* ANIMACIÓN ENTRADA POPUP */
+@keyframes popupShow {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+</style>
+<script>
+/**
+ * Controladores del Popup de Noticias
+ */
+function openNews() {
+    const overlay = document.getElementById('newsOverlay');
+    const openBtn = document.getElementById('openBtn');
+
+    if (!overlay) return;
+    overlay.classList.add('show');
+    
+    if (openBtn) openBtn.classList.remove('show-btn');
+}
+
+function closeNews() {
+    const overlay = document.getElementById('newsOverlay');
+    const openBtn = document.getElementById('openBtn');
+
+    if (!overlay) return;
+    overlay.classList.remove('show');
+
+    if (openBtn) openBtn.classList.add('show-btn');
+}
+
+/**
+ * Efecto Dinámico para la Barra de Navegación (Navbar) al hacer Scroll
+ */
+window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    if (!navbar) return;
+
+    if (window.scrollY > 50) {
+        navbar.classList.add('bg-black/90', 'shadow-2xl');
+    } else {
+        navbar.classList.remove('bg-black/90', 'shadow-2xl');
+    }
+});
+
+/**
+ * Temporizador para lanzar el Popup automáticamente tras la carga
+ */
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        openNews();
+    }, 1800);
+});
 </script>
 
 </body>
