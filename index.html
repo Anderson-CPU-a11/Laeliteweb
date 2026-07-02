@@ -2917,25 +2917,25 @@ function sendChatMessage() {
     const text = input.value.trim();
     if (!text || !chatDb || !chatUserNick) return;
 
+    const sendBtn = document.getElementById('chatSendBtn');
+    sendBtn.disabled = true;
+    input.disabled = true;
+
     chatDb.ref('chat_messages').push({
         nick: chatUserNick,
         text: text,
         timestamp: firebase.database.ServerValue.TIMESTAMP
+    }).then(() => {
+        input.value = '';
+        input.focus();
+    }).catch((err) => {
+        console.error('Error al enviar mensaje:', err);
+        input.value = text;  // ← restaura el mensaje si falla
+    }).finally(() => {
+        sendBtn.disabled = false;
+        input.disabled = false;
     });
-
-    input.value = '';
-    input.focus();
 }
-
-function formatChatTime(timestamp) {
-    if (!timestamp) return '';
-    const d = new Date(timestamp);
-    const now = new Date();
-    const hrs = d.getHours().toString().padStart(2, '0');
-    const mins = d.getMinutes().toString().padStart(2, '0');
-    if (d.toDateString() === now.toDateString()) {
-        return hrs + ':' + mins;
-    }
     return d.getDate() + '/' + (d.getMonth()+1) + ' ' + hrs + ':' + mins;
 }
 
