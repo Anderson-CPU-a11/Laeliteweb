@@ -329,77 +329,69 @@
         }
 
         /* ================================================
-           OPTIMIZACIONES MOVILES - NO MODIFICA ESCRITORIO
+           OPTIMIZACIONES MOVILES - SOLO PARA CELULARES
+           NO MODIFICA NADA EN ESCRITORIO
         ================================================ */
 
-        /* ---- NAVBAR movil ---- */
+        /* ---- NAVBAR mas compacto en movil ---- */
         @media (max-width: 767px) {
-            nav#navbar > div {
+            #navbar > div {
                 height: 60px !important;
             }
-            nav#navbar img[alt*="logo"],
-            nav#navbar img[alt*="Logo"],
-            nav#navbar .logo-font,
-            nav#navbar h1,
-            nav#navbar .flex.items-center.gap-3 img {
+            #navbar img {
                 max-height: 38px !important;
-            }
-            nav#navbar a[href="#inicio"] {
-                gap: 0.5rem !important;
             }
         }
 
-        /* ---- HERO movil ---- */
+        /* ---- HERO textos y botones movil ---- */
         @media (max-width: 639px) {
             #inicio h1,
-            #inicio .text-6xl,
-            #inicio .text-7xl,
-            #inicio .text-8xl,
-            #inicio [class*="text-"][class*="xl"] {
-                font-size: 46px !important;
+            #inicio .text-6xl {
+                font-size: 42px !important;
                 line-height: 1.05 !important;
             }
-            #inicio .text-5xl {
-                font-size: 38px !important;
+            #inicio .text-2xl {
+                font-size: 18px !important;
             }
-            #inicio p,
             #inicio .text-lg,
-            #inicio .text-xl {
-                font-size: 15px !important;
-                line-height: 1.5 !important;
+            #inicio .italic {
+                font-size: 14px !important;
                 padding-left: 0.5rem !important;
                 padding-right: 0.5rem !important;
             }
-            #inicio a[href*="discord"],
-            #inicio a[href*="Discord"] {
+            .hero-btn-primary,
+            .hero-btn-secondary {
                 width: 100% !important;
+                min-width: 100% !important;
                 height: 52px !important;
                 font-size: 15px !important;
-                display: flex !important;
-                align-items: center !important;
-                justify-content: center !important;
+            }
+            #inicio .bg-black\/60 {
+                padding: 1rem !important;
             }
         }
 
-        /* ---- SECCIONES generales movil ---- */
+        /* ---- SECCIONES padding movil ---- */
         @media (max-width: 639px) {
             section {
                 padding-top: 2.5rem !important;
                 padding-bottom: 2.5rem !important;
             }
+            .px-4 {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
         }
 
-        /* ---- REQUISITOS movil ---- */
+        /* ---- REQUISITOS 1 columna movil ---- */
         @media (max-width: 639px) {
             #requisitos .grid {
                 grid-template-columns: 1fr !important;
                 gap: 1rem !important;
             }
-            #requisitos [class*="grid"] > div,
-            #requisitos .bg-black\/80,
-            #requisitos .border {
+            #requisitos .event-card {
                 padding: 1rem !important;
-                border-radius: 12px !important;
+                border-radius: 16px !important;
             }
         }
 
@@ -409,11 +401,14 @@
                 grid-template-columns: 1fr !important;
                 gap: 1.25rem !important;
             }
-            #empresa img,
-            #empresa video {
+            #empresa img {
                 border-radius: 12px !important;
                 max-height: 200px !important;
-                object-fit: cover !important;
+            }
+            #empresa .empresa-btn-primary,
+            #empresa .empresa-btn-secondary {
+                height: 48px !important;
+                font-size: 13px !important;
             }
         }
 
@@ -423,9 +418,14 @@
                 grid-template-columns: 1fr !important;
                 gap: 1rem !important;
             }
-            #ranking .grid > div {
+            #ranking .bg-black\/40 {
                 padding: 1rem !important;
-                min-height: auto !important;
+            }
+            .ranking-btn-primary,
+            .ranking-btn-secondary {
+                height: 48px !important;
+                font-size: 14px !important;
+                padding: 0 20px !important;
             }
         }
 
@@ -435,9 +435,12 @@
                 grid-template-columns: 1fr !important;
                 gap: 1rem !important;
             }
-            #anuncios .grid > div {
+            #anuncios .p-6 {
                 padding: 1rem !important;
-                border-radius: 14px !important;
+            }
+            .announcement-btn {
+                height: 48px !important;
+                font-size: 13px !important;
             }
         }
 
@@ -447,9 +450,12 @@
                 grid-template-columns: 1fr !important;
                 gap: 1rem !important;
             }
-            #eventos .grid > div {
-                padding: 1rem !important;
-                border-radius: 14px !important;
+            #eventos .relative {
+                height: 180px !important;
+            }
+            .event-btn {
+                height: 48px !important;
+                font-size: 14px !important;
             }
         }
 
@@ -459,13 +465,9 @@
                 grid-template-columns: 1fr !important;
                 gap: 1rem !important;
             }
-            #videos .grid > div {
-                padding: 0.75rem !important;
-                border-radius: 14px !important;
-            }
-            #videos iframe {
-                height: 200px !important;
-                border-radius: 10px !important;
+            .btn-video {
+                height: 48px !important;
+                font-size: 14px !important;
             }
         }
 
@@ -475,108 +477,108 @@
                 grid-template-columns: repeat(2, 1fr) !important;
                 gap: 0.75rem !important;
             }
-            #comunidad .grid > div {
-                padding: 0.6rem !important;
-                border-radius: 12px !important;
-                flex-direction: column !important;
-                align-items: center !important;
-                text-align: center !important;
+            .member-card {
+                padding: 12px 8px !important;
+                border-radius: 16px !important;
             }
-            #comunidad .grid img,
-            #comunidad [class*="rounded-full"] {
-                width: 70px !important;
-                height: 70px !important;
+            .member-image {
+                width: 75px !important;
+                height: 75px !important;
             }
-            #comunidad h3,
-            #comunidad h4 {
-                font-size: 0.7rem !important;
+            .member-card h4 {
+                font-size: 12px !important;
+                margin-top: 10px !important;
             }
-            #comunidad p {
-                font-size: 0.6rem !important;
+            .role-text {
+                font-size: 10px !important;
+            }
+            .member-badge {
+                font-size: 7px !important;
+                padding: 2px 6px !important;
             }
         }
 
         /* ---- MODAL PERFIL movil ---- */
         @media (max-width: 639px) {
-            .ventana-perfil-contenedor,
-            [id="perfilModal"] > div {
+            .ventana-perfil-contenedor {
                 width: 94% !important;
                 max-height: 88vh !important;
-                padding: 1.25rem !important;
+                border-radius: 24px !important;
             }
-            .ventana-perfil-contenedor img,
-            .marco-imagen-grande img {
+            .ventana-perfil-scrollable {
+                padding: 30px 16px 20px !important;
+            }
+            .marco-imagen-grande {
                 width: 110px !important;
                 height: 110px !important;
+            }
+            .perfil-datos-centro h3 {
+                font-size: 20px !important;
+            }
+            .red-btn {
+                height: 42px !important;
+                font-size: 13px !important;
             }
         }
 
         /* ---- CONTACTO movil ---- */
         @media (max-width: 639px) {
-            #contacto .grid {
+            #contacto .lg\:grid-cols-12 {
                 grid-template-columns: 1fr !important;
-                gap: 1rem !important;
+                gap: 1.5rem !important;
             }
-            #contacto .grid > div {
-                padding: 1.25rem !important;
+            #contacto .bg-black\/60 {
+                padding: 1rem !important;
             }
             #contacto .grid-cols-2 {
-                grid-template-columns: 1fr !important;
                 gap: 0.75rem !important;
             }
-        }
-
-        /* ---- SOCIAL CARDS movil ---- */
-        @media (max-width: 639px) {
-            .social-card,
-            [class*="social-card"] {
-                padding: 0.85rem !important;
-                flex-direction: column !important;
-                text-align: center !important;
-                gap: 0.5rem !important;
+            .social-card {
+                padding: 14px !important;
+                border-radius: 18px !important;
+                min-height: auto !important;
             }
-            .social-card img,
-            [class*="social-card"] img {
+            .social-icon {
                 width: 44px !important;
                 height: 44px !important;
+                border-radius: 12px !important;
             }
-        }
-
-        /* ---- NEWS POPUP movil ---- */
-        @media (max-width: 639px) {
-            .news-box,
-            [id="newsOverlay"] > div {
-                width: 92% !important;
-                padding: 1.25rem !important;
-                border-radius: 16px !important;
+            .social-title {
+                font-size: 15px !important;
             }
-            .news-box h2,
-            .news-box h3 {
-                font-size: 1.1rem !important;
-            }
-            .news-box p {
-                font-size: 0.85rem !important;
-                line-height: 1.5 !important;
+            .social-text {
+                font-size: 12px !important;
             }
         }
 
         /* ---- FOOTER movil ---- */
         @media (max-width: 639px) {
-            footer {
-                padding-top: 2rem !important;
-                padding-bottom: 1.5rem !important;
-            }
             footer .flex {
                 flex-direction: column !important;
                 text-align: center !important;
                 gap: 0.75rem !important;
             }
+            footer {
+                padding-top: 2rem !important;
+            }
         }
 
-        /* ---- BOTONES generales movil ---- */
+        /* ---- NEWS POPUP movil ---- */
         @media (max-width: 639px) {
-            button, a[role="button"], .btn, [class*="btn"] {
-                min-height: 44px !important;
+            .news-box {
+                width: 92% !important;
+                border-radius: 20px !important;
+                max-height: 80vh !important;
+            }
+            .news-title {
+                font-size: 24px !important;
+            }
+            .news-text p {
+                font-size: 13px !important;
+                line-height: 1.5 !important;
+            }
+            .news-text h3 {
+                font-size: 18px !important;
             }
         }
 
@@ -587,11 +589,26 @@
             }
         }
 
-        /* ---- PADDING GLOBAL movil ---- */
+        /* ---- BOTONES generales touch-friendly ---- */
         @media (max-width: 639px) {
-            .px-4, .px-6, .px-8 {
-                padding-left: 1rem !important;
-                padding-right: 1rem !important;
+            .empresa-btn-primary,
+            .empresa-btn-secondary,
+            .ranking-btn-primary,
+            .ranking-btn-secondary,
+            .announcement-btn,
+            .event-btn,
+            .btn-video {
+                min-height: 44px !important;
+            }
+        }
+
+        /* ---- OPEN NEWS BOTON movil ---- */
+        @media (max-width: 639px) {
+            .open-news {
+                bottom: 16px !important;
+                right: 16px !important;
+                padding: 10px 16px !important;
+                font-size: 12px !important;
             }
         }
     </style>
@@ -2198,11 +2215,11 @@ document.addEventListener('DOMContentLoaded', () => {
              data-role="Owner La Élite" 
              data-badge="OWNER"
              data-badge-style="owner-badge"
-             data-img="arkamax.png"
+             data-img="ark.png"
              data-bio="Fundador y líder general de la comunidad LA ÉLITE. Encargado de coordinar las rutas oficiales, mantener el orden en convoy de simulación y traer el mejor contenido pesado en ruta a las plataformas digitales."
              data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
-                <img src="arkamax.png" alt="Arkamax" loading="lazy">
+                <img src="ark.png" alt="Arkamax" loading="lazy">
                 <span class="member-badge owner-badge">OWNER</span>
             </div>
             <h4>Arkamax</h4>
@@ -2242,11 +2259,11 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
 
         <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
-             data-name="Caballero" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="caballero.png"
+             data-name="Caballero" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="ca.jpeg"
              data-bio="Conductor experimentado de la comunidad. Destacado por su impecable nivel de manejo y disciplina manteniendo la línea de convoy en rutas pesadas de alta montaña dentro de MapKalo."
              data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
-                <img src="caballero.png" alt="Caballero" loading="lazy">
+                <img src="ca.jpeg" alt="Caballero" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Caballero</h4>
