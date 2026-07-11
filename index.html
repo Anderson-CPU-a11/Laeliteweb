@@ -327,6 +327,273 @@
                 width: 4px; /* Scrollbar más discreto para pantallas pequeñas */
             }
         }
+
+        /* ================================================
+           OPTIMIZACIONES MOVILES - NO MODIFICA ESCRITORIO
+        ================================================ */
+
+        /* ---- NAVBAR movil ---- */
+        @media (max-width: 767px) {
+            nav#navbar > div {
+                height: 60px !important;
+            }
+            nav#navbar img[alt*="logo"],
+            nav#navbar img[alt*="Logo"],
+            nav#navbar .logo-font,
+            nav#navbar h1,
+            nav#navbar .flex.items-center.gap-3 img {
+                max-height: 38px !important;
+            }
+            nav#navbar a[href="#inicio"] {
+                gap: 0.5rem !important;
+            }
+        }
+
+        /* ---- HERO movil ---- */
+        @media (max-width: 639px) {
+            #inicio h1,
+            #inicio .text-6xl,
+            #inicio .text-7xl,
+            #inicio .text-8xl,
+            #inicio [class*="text-"][class*="xl"] {
+                font-size: 46px !important;
+                line-height: 1.05 !important;
+            }
+            #inicio .text-5xl {
+                font-size: 38px !important;
+            }
+            #inicio p,
+            #inicio .text-lg,
+            #inicio .text-xl {
+                font-size: 15px !important;
+                line-height: 1.5 !important;
+                padding-left: 0.5rem !important;
+                padding-right: 0.5rem !important;
+            }
+            #inicio a[href*="discord"],
+            #inicio a[href*="Discord"] {
+                width: 100% !important;
+                height: 52px !important;
+                font-size: 15px !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+        }
+
+        /* ---- SECCIONES generales movil ---- */
+        @media (max-width: 639px) {
+            section {
+                padding-top: 2.5rem !important;
+                padding-bottom: 2.5rem !important;
+            }
+        }
+
+        /* ---- REQUISITOS movil ---- */
+        @media (max-width: 639px) {
+            #requisitos .grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+            #requisitos [class*="grid"] > div,
+            #requisitos .bg-black\/80,
+            #requisitos .border {
+                padding: 1rem !important;
+                border-radius: 12px !important;
+            }
+        }
+
+        /* ---- EMPRESA movil ---- */
+        @media (max-width: 639px) {
+            #empresa .grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.25rem !important;
+            }
+            #empresa img,
+            #empresa video {
+                border-radius: 12px !important;
+                max-height: 200px !important;
+                object-fit: cover !important;
+            }
+        }
+
+        /* ---- RANKING movil ---- */
+        @media (max-width: 639px) {
+            #ranking .grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+            #ranking .grid > div {
+                padding: 1rem !important;
+                min-height: auto !important;
+            }
+        }
+
+        /* ---- ANUNCIOS movil ---- */
+        @media (max-width: 639px) {
+            #anuncios .grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+            #anuncios .grid > div {
+                padding: 1rem !important;
+                border-radius: 14px !important;
+            }
+        }
+
+        /* ---- EVENTOS movil ---- */
+        @media (max-width: 639px) {
+            #eventos .grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+            #eventos .grid > div {
+                padding: 1rem !important;
+                border-radius: 14px !important;
+            }
+        }
+
+        /* ---- VIDEOS movil ---- */
+        @media (max-width: 639px) {
+            #videos .grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+            #videos .grid > div {
+                padding: 0.75rem !important;
+                border-radius: 14px !important;
+            }
+            #videos iframe {
+                height: 200px !important;
+                border-radius: 10px !important;
+            }
+        }
+
+        /* ---- COMUNIDAD movil ---- */
+        @media (max-width: 639px) {
+            #comunidad .grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 0.75rem !important;
+            }
+            #comunidad .grid > div {
+                padding: 0.6rem !important;
+                border-radius: 12px !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+            }
+            #comunidad .grid img,
+            #comunidad [class*="rounded-full"] {
+                width: 70px !important;
+                height: 70px !important;
+            }
+            #comunidad h3,
+            #comunidad h4 {
+                font-size: 0.7rem !important;
+            }
+            #comunidad p {
+                font-size: 0.6rem !important;
+            }
+        }
+
+        /* ---- MODAL PERFIL movil ---- */
+        @media (max-width: 639px) {
+            .ventana-perfil-contenedor,
+            [id="perfilModal"] > div {
+                width: 94% !important;
+                max-height: 88vh !important;
+                padding: 1.25rem !important;
+            }
+            .ventana-perfil-contenedor img,
+            .marco-imagen-grande img {
+                width: 110px !important;
+                height: 110px !important;
+            }
+        }
+
+        /* ---- CONTACTO movil ---- */
+        @media (max-width: 639px) {
+            #contacto .grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+            #contacto .grid > div {
+                padding: 1.25rem !important;
+            }
+            #contacto .grid-cols-2 {
+                grid-template-columns: 1fr !important;
+                gap: 0.75rem !important;
+            }
+        }
+
+        /* ---- SOCIAL CARDS movil ---- */
+        @media (max-width: 639px) {
+            .social-card,
+            [class*="social-card"] {
+                padding: 0.85rem !important;
+                flex-direction: column !important;
+                text-align: center !important;
+                gap: 0.5rem !important;
+            }
+            .social-card img,
+            [class*="social-card"] img {
+                width: 44px !important;
+                height: 44px !important;
+            }
+        }
+
+        /* ---- NEWS POPUP movil ---- */
+        @media (max-width: 639px) {
+            .news-box,
+            [id="newsOverlay"] > div {
+                width: 92% !important;
+                padding: 1.25rem !important;
+                border-radius: 16px !important;
+            }
+            .news-box h2,
+            .news-box h3 {
+                font-size: 1.1rem !important;
+            }
+            .news-box p {
+                font-size: 0.85rem !important;
+                line-height: 1.5 !important;
+            }
+        }
+
+        /* ---- FOOTER movil ---- */
+        @media (max-width: 639px) {
+            footer {
+                padding-top: 2rem !important;
+                padding-bottom: 1.5rem !important;
+            }
+            footer .flex {
+                flex-direction: column !important;
+                text-align: center !important;
+                gap: 0.75rem !important;
+            }
+        }
+
+        /* ---- BOTONES generales movil ---- */
+        @media (max-width: 639px) {
+            button, a[role="button"], .btn, [class*="btn"] {
+                min-height: 44px !important;
+            }
+        }
+
+        /* ---- SCROLLBAR movil ---- */
+        @media (max-width: 639px) {
+            ::-webkit-scrollbar {
+                width: 3px !important;
+            }
+        }
+
+        /* ---- PADDING GLOBAL movil ---- */
+        @media (max-width: 639px) {
+            .px-4, .px-6, .px-8 {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+        }
     </style>
 </head>
 
@@ -1931,11 +2198,11 @@ document.addEventListener('DOMContentLoaded', () => {
              data-role="Owner La Élite" 
              data-badge="OWNER"
              data-badge-style="owner-badge"
-             data-img="ark.png"
+             data-img="arkamax.png"
              data-bio="Fundador y líder general de la comunidad LA ÉLITE. Encargado de coordinar las rutas oficiales, mantener el orden en convoy de simulación y traer el mejor contenido pesado en ruta a las plataformas digitales."
-             data-youtube="https://www.youtube.com/@ARKAMAX24" data-tiktok="https://www.tiktok.com/search?q=arkamax&t=1783641297109" data-instagram="#">
+             data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
-                <img src="ark.png" alt="Arkamax" loading="lazy">
+                <img src="arkamax.png" alt="Arkamax" loading="lazy">
                 <span class="member-badge owner-badge">OWNER</span>
             </div>
             <h4>Arkamax</h4>
@@ -1949,7 +2216,7 @@ document.addEventListener('DOMContentLoaded', () => {
              data-badge-style="admin-badge"
              data-img="logo-elite.png"
              data-bio="Administrador y desarrollador técnico de la plataforma."
-             data-youtube="https://www.youtube.com/@andersonmontoyaa" data-tiktok="https://www.tiktok.com/@andersonontoya" data-instagram="https://www.instagram.com/andersonmontoya_elt/">
+             data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
                 <img src="logo-elite.png" alt="Anderson Montoya" loading="lazy">
                 <span class="member-badge admin-badge">ADMIN</span>
@@ -1975,26 +2242,14 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
 
         <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
-             data-name="Caballero" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="ca.jpeg"
+             data-name="Caballero" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="caballero.png"
              data-bio="Conductor experimentado de la comunidad. Destacado por su impecable nivel de manejo y disciplina manteniendo la línea de convoy en rutas pesadas de alta montaña dentro de MapKalo."
              data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
-                <img src="ca.jpeg" alt="Caballero" loading="lazy">
+                <img src="caballero.png" alt="Caballero" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Caballero</h4>
-            <p class="role-text text-gray-400">Conductor</p>
-        </div>
-        
-        <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
-             data-name="Andres Soriano" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="sori.png"
-             data-bio="Conductor dotado de gran técnica para maniobrar en tramos estrechos o trochas colombianas peligrosas. Colaborador constante en el canal de voz."
-             data-youtube="#" data-tiktok="https://www.tiktok.com/@androo._.786?_r=1&_t=ZS-97uBUAlbn31" data-instagram="https://www.instagram.com/sori__786?igsh=MW10aTNuNm1hbzhlag==">
-            <div class="member-image">
-                <img src="sori.png" alt="Andres Soriano" loading="lazy">
-                <span class="member-badge elite-badge">Elite</span>
-            </div>
-            <h4>Andres Soriano</h4>
             <p class="role-text text-gray-400">Conductor</p>
         </div>
 
@@ -2133,7 +2388,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
              data-name="Tavo" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="tavo.jpg"
              data-bio="Conductor comprometido con el crecimiento del grupo. Esencial en la coordinación de escolta y retaguardia durante los eventos masivos de la comunidad."
-             data-youtube="https://www.youtube.com/@TAVODJCREATOR" data-tiktok="www.tiktok.com/@tavocr89" data-instagram="https://www.instagram.com/tavomusicgutierrez/">
+             data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
                 <img src="tavo.jpg" alt="Tavo" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
@@ -2155,9 +2410,21 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
 
         <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
+             data-name="Andres Soriano" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="sori.png"
+             data-bio="Conductor dotado de gran técnica para maniobrar en tramos estrechos o trochas colombianas peligrosas. Colaborador constante en el canal de voz."
+             data-youtube="#" data-tiktok="#" data-instagram="#">
+            <div class="member-image">
+                <img src="sori.png" alt="Andres Soriano" loading="lazy">
+                <span class="member-badge elite-badge">Elite</span>
+            </div>
+            <h4>Andres Soriano</h4>
+            <p class="role-text text-gray-400">Conductor</p>
+        </div>
+
+        <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
              data-name="Fabian" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="fabian.jpg"
              data-bio="Apasionado de la mulas y motores custom. Conductor dedicado que equilibra la velocidad controlada y la ayuda técnica a compañeros en problemas."
-             data-youtube="#" data-tiktok="https://www.tiktok.com/@userleon.16?_r=1&_t=ZS-97uwXKkJr9B" data-instagram="https://www.instagram.com/fabian_leon.r19?igsh=MWxlbG9pbWF0aWtsYQ==">
+             data-youtube="#" data-tiktok="#" data-instagram="#">
             <div class="member-image">
                 <img src="fabian.jpg" alt="Fabian" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
@@ -2199,28 +2466,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Andres</h4>
-            <p class="role-text text-gray-400">Conductor</p>
-        </div>
-        <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
-             data-name="Pau" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="logo-elite.png"
-             data-bio="Conductor oficial de la división. Demuestra un gran sentido de lealtad, disciplina grupal y puntualidad estricta en los puntos de salida de carga."
-             data-youtube="#" data-tiktok="https://www.tiktok.com/@paualejavp" data-instagram="#">
-            <div class="member-image">
-                <img src="logo-elite.png" alt="Pau" loading="lazy">
-                <span class="member-badge elite-badge">Elite</span>
-            </div>
-            <h4>Pau</h4>
-            <p class="role-text text-gray-400">Conductor</p>
-        </div>
-        <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
-             data-name="Jhojan" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="logo-elite.png"
-             data-bio="Conductor oficial de la división. Demuestra un gran sentido de lealtad, disciplina grupal y puntualidad estricta en los puntos de salida de carga."
-             data-youtube="https://youtube.com/@jhojan_truck-m6i?si=Mk9dpXZ4Y4C_NhVA" data-tiktok=" https://www.tiktok.com/@jhojan_truck2?_r=1&_d=f4bmb0k18dgg50&sec_uid=MS4wLjABAAAA1fwWvOUMqMU-paS9-pKzAe99N3EouNt4GrSEYSXXg43OO7mat4JgZGPjtfHvR2Qq&share_author_id=7579036854680159249&sharer_language=es&source=h5_m&u_code=ej6e1g4b40lmjd&timestamp=1783644077&user_id=7479186830425539602&sec_user_id=MS4wLjABAAAAi4DQ4eOfDNenLtTiODVGcahQKw7wnLFOdR755v3F6rUlP-dyxAGvwuti4SZTVARF&item_author_type=2&utm_source=copy&utm_campaign=client_share&utm_medium=android&share_iid=7659619268312549127&share_link_id=7c054ba8-5c16-405b-85ab-d41f1c390cc2&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b9081%2Cb5836&social_share_type=5&share_enter_from=others_homepage&item_author_type=2&enable_checksum=1" data-instagram="https://www.instagram.com/jhxjxn_00?igsh=MWozN3lmb2ZydDA4bA==">
-            <div class="member-image">
-                <img src="logo-elite.png" alt="Jhojan" loading="lazy">
-                <span class="member-badge elite-badge">Elite</span>
-            </div>
-            <h4>Jhojan</h4>
             <p class="role-text text-gray-400">Conductor</p>
         </div>
 
