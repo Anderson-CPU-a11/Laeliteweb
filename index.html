@@ -545,6 +545,30 @@
             }
         }
     </style>
+
+<style id="alternating-section-backgrounds">
+    /* Fondos alternados desde Requisitos */
+    /* Fondos alternados estilo original: gris carbón / negro */
+    .alternating-light {
+        background-color: #151515 !important;
+        color: inherit;
+    }
+    .alternating-light h1,
+    .alternating-light h2,
+    .alternating-light h3,
+    .alternating-light h4,
+    .alternating-light h5,
+    .alternating-light h6,
+    .alternating-light p,
+    .alternating-light span,
+    .alternating-light li {
+        color: inherit;
+    }
+    .alternating-dark {
+        background-color: #0b0b0b !important;
+    }
+</style>
+
 </head>
 <body>
 <nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-black/75 backdrop-blur-xl border-b border-[#f5c451]/10 transition-all duration-300">
@@ -564,7 +588,7 @@
             <div class="hidden lg:flex items-center gap-6 xl:gap-8 text-[13px] font-semibold uppercase tracking-[2px]">
                 <a href="#inicio" class="nav-link active-link">Inicio</a>
                 <a href="#requisitos" class="nav-link">Requisitos</a>
-                <a href="#empresa" class="nav-link">Empresa</a>
+                <a href="#mods" class="nav-link">Mods</a>
                 <a href="#anuncios" class="nav-link">Anuncios</a>
                 <a href="#eventos" class="nav-link">Eventos</a>
                 <a href="#videos" class="nav-link">Videos</a>
@@ -591,7 +615,7 @@
         <div class="px-6 py-6 flex flex-col gap-4 text-sm font-medium uppercase tracking-[2px] bg-gradient-to-b from-transparent to-[#0a0a0a]/50">
             <a href="#inicio" onclick="toggleMobileMenu()" class="text-[#f5c451] py-2 border-b border-white/5">Inicio</a>
             <a href="#requisitos" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2 border-b border-white/5">Requisitos</a>
-            <a href="#empresa" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2 border-b border-white/5">Empresa</a>
+            <a href="#mods" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2 border-b border-white/5">Mods</a>
             <a href="#anuncios" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2 border-b border-white/5">Anuncios</a>
             <a href="#eventos" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2 border-b border-white/5">Eventos</a>
             <a href="#videos" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2 border-b border-white/5">Videos</a>
@@ -631,8 +655,7 @@
 <div class="hidden lg:flex items-center gap-6 xl:gap-8 text-[13px] font-semibold uppercase tracking-[2px]">
     <a href="#inicio" class="nav-link active-link">Inicio</a>
     <a href="#requisitos" class="nav-link">Requisitos</a>
-    <a href="#empresa" class="nav-link">Empresa</a>
-    <a href="#ranking" class="nav-link">Ranking</a>
+    <a href="#mods" class="nav-link">Mods</a>
     <a href="#anuncios" class="nav-link">Anuncios</a>
     <a href="#eventos" class="nav-link">Eventos</a>
     <a href="#videos" class="nav-link">Videos</a>
@@ -657,8 +680,7 @@
     <div class="px-6 sm:px-8 py-8 flex flex-col gap-3.5">
         <a href="#inicio" onclick="toggleMobileMenu()" class="mobile-link">Inicio</a>
         <a href="#requisitos" onclick="toggleMobileMenu()" class="mobile-link">Requisitos</a>
-        <a href="#empresa" onclick="toggleMobileMenu()" class="mobile-link">Empresa</a>
-        <a href="#ranking" onclick="toggleMobileMenu()" class="mobile-link">Ranking</a>
+        <a href="#mods" onclick="toggleMobileMenu()" class="mobile-link">Mods</a>
         <a href="#anuncios" onclick="toggleMobileMenu()" class="mobile-link">Anuncios</a>
         <a href="#eventos" onclick="toggleMobileMenu()" class="mobile-link">Eventos</a>
         <a href="#videos" onclick="toggleMobileMenu()" class="mobile-link">Videos</a>
@@ -1113,7 +1135,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 </script>
-<section id="requisitos" class="bg-[#0d0d0d] py-16 md:py-24 border-t border-[#f5c451]/10 relative overflow-hidden">
+<section id="requisitos" class="bg-[#0d0d0d] py-16 md:py-24 border-t border-[#f5c451]/10 relative overflow-hidden alternating-light">
     <div class="absolute top-0 left-0 w-72 h-72 bg-[#f5c451]/5 blur-[120px] rounded-full pointer-events-none"></div>
     <div class="absolute bottom-0 right-0 w-96 h-96 bg-[#36024e]/10 blur-[140px] rounded-full pointer-events-none"></div>
     <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -1198,88 +1220,43 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
     </div>
 </section>
-<!-- RANKING -->
-<section id="ranking" class="bg-[#111111] py-16 md:py-24 relative overflow-hidden">
-    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- TITULO DE LA SECCIÓN -->
+
+<!-- MODS LA ELITE -->
+<section id="mods" class="bg-[#111111] py-16 md:py-24 relative overflow-hidden alternating-dark">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-[#36024e]/10 blur-[140px] rounded-full pointer-events-none"></div>
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center mb-12 md:mb-20 scroll-reveal">
-            <span class="uppercase text-[#c8102e] text-xs md:text-sm font-bold tracking-[4px]">
-                Estadísticas oficiales
+            <span class="uppercase text-[#f5c451] text-xs md:text-sm font-bold tracking-[4px]">
+                Contenido exclusivo
             </span>
-            <h2 class="section-title text-3xl sm:text-4xl md:text-5xl font-bold logo-font mx-auto mt-4 text-white">
-                Ranking TrucksBook
+            <h2 class="section-title text-3xl sm:text-4xl md:text-5xl font-bold logo-font mt-4 text-white">
+                Mods La Elite
             </h2>
             <p class="text-gray-400 mt-4 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
-                Consulta las estadísticas oficiales, kilómetros recorridos y actividad de La Elite dentro de TrucksBook.
+                Descarga los mods oficiales de La Elite para tus rutas.
             </p>
         </div>
-        <!-- CONTENEDOR PRINCIPAL DE RANKING -->
-        <div class="bg-gradient-to-br from-[#181818] to-[#0d0d0d] border border-[#f5c451]/20 rounded-3xl md:rounded-[32px] p-6 sm:p-10 md:p-14 text-center max-w-5xl mx-auto shadow-[0_20px_60px_rgba(0,0,0,0.45)] scroll-reveal">
-            <!-- ICONO PRINCIPAL -->
-            <div class="text-6xl md:text-7xl text-[#f5c451] mb-6 md:mb-8">
-                <i class="fas fa-trophy"></i>
-            </div>
-            <!-- TITULO INTERNO -->
-            <h3 class="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 md:mb-5 text-white logo-font">
-                LA ELITE en TrucksBook
-            </h3>
-            <!-- DESCRIPCIÓN INTERNA -->
-            <p class="text-gray-400 text-sm md:text-lg leading-relaxed max-w-3xl mx-auto">
-                Explora el ranking oficial de conductores, estadísticas, kilómetros recorridos, entregas y actividad completa desde la empresa oficial de La Elite.
-            </p>
-            <!-- REJILLA DE ESTADÁSTICAS (Móvil: 1 col | Tablet/PC: 3 cols) -->
-            <div class="grid md:grid-cols-3 gap-4 md:gap-6 mt-10 md:mt-14">
-                <!-- ITEM STATS 1 -->
-                <div class="bg-black/40 border border-[#f5c451]/10 rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col items-center justify-center transition-all duration-300 hover:border-[#f5c451]/30">
-                    <div class="text-4xl md:text-5xl text-[#f5c451] mb-4">
-                        <i class="fas fa-road"></i>
-                    </div>
-                    <h4 class="text-xl md:text-2xl font-bold text-white">
-                        Kilómetros
-                    </h4>
-                    <p class="text-gray-400 mt-2 md:mt-3 text-xs md:text-sm leading-relaxed">
-                        Consulta la distancia total recorrida por la empresa y sus conductores.
-                    </p>
+
+        <!-- MOD 1: AQUÍ PUEDES CAMBIAR IMAGEN, NOMBRE, DESCRIPCIÓN Y LINK -->
+        <div class="max-w-md mx-auto scroll-reveal">
+            <div class="event-card bg-[#181818] rounded-3xl border border-[#f5c451]/10 overflow-hidden shadow-2xl card-hover">
+                <!-- IMAGEN DEL MOD -->
+                <div class="relative w-full h-64 bg-black overflow-hidden">
+                    <img src="IMAGEN-DEL-MOD.jpg" alt="Mod La Elite" class="w-full h-full object-cover">
                 </div>
-                <!-- ITEM STATS 2 -->
-                <div class="bg-black/40 border border-[#f5c451]/10 rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col items-center justify-center transition-all duration-300 hover:border-[#f5c451]/30">
-                    <div class="text-4xl md:text-5xl text-[#f5c451] mb-4">
-                        <i class="fas fa-ranking-star"></i>
-                    </div>
-                    <h4 class="text-xl md:text-2xl font-bold text-white">
-                        Ranking
-                    </h4>
-                    <p class="text-gray-400 mt-2 md:mt-3 text-xs md:text-sm leading-relaxed">
-                        Mira la posición oficial de La Elite frente a otras empresas.
+
+                <div class="p-6 md:p-8">
+                    <p class="text-[#f5c451] text-xs uppercase tracking-[2px] font-bold mb-2">Mod oficial</p>
+                    <h3 class="text-2xl font-bold text-white mb-4">Nombre del Mod</h3>
+                    <p class="text-gray-400 text-sm md:text-base leading-relaxed mb-6">
+                        Descripción del mod. Aquí puedes colocar la información, versión compatible y requisitos.
                     </p>
+
+                    <!-- LINK DE DESCARGA -->
+                    <a href="AQUI-VA-EL-LINK-DE-DESCARGA" target="_blank" rel="noopener noreferrer" class="ranking-btn-primary w-full">
+                        <i class="fas fa-download mr-2"></i> Descargar Mod
+                    </a>
                 </div>
-                <!-- ITEM STATS 3 -->
-                <div class="bg-black/40 border border-[#f5c451]/10 rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col items-center justify-center transition-all duration-300 hover:border-[#f5c451]/30">
-                    <div class="text-4xl md:text-5xl text-[#f5c451] mb-4">
-                        <i class="fas fa-truck"></i>
-                    </div>
-                    <h4 class="text-xl md:text-2xl font-bold text-white">
-                        Conductores
-                    </h4>
-                    <p class="text-gray-400 mt-2 md:mt-3 text-xs md:text-sm leading-relaxed">
-                        Revisa la actividad y progreso de los miembros de la empresa.
-                    </p>
-                </div>
-            </div>
-            <!-- CONTENEDOR DE BOTONES (Columna en móviles, Fila en PC) -->
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 mt-10 md:mt-14">
-                <a href="https://trucksbook.eu/company/224432"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="ranking-btn-primary w-full sm:w-auto">
-                    <i class="fas fa-building mr-2"></i> Ver Empresa
-                </a>
-                <a href="https://trucksbook.eu/company/224432"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="ranking-btn-secondary w-full sm:w-auto">
-                    <i class="fas fa-ranking-star mr-2"></i> Ver Ranking
-                </a>
             </div>
         </div>
     </div>
@@ -1327,7 +1304,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 </style>
 <!-- ANUNCIOS -->
-<section id="anuncios" class="bg-[#111111] py-16 md:py-24 relative overflow-hidden">
+<section id="anuncios" class="bg-[#111111] py-16 md:py-24 relative overflow-hidden alternating-light">
     <!-- EFECTOS DE LUCES EN EL FONDO -->
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#36024e]/5 blur-[130px] rounded-full pointer-events-none"></div>
     <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1447,7 +1424,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 </style>
 <!-- EVENTOS -->
-<section id="eventos" class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative overflow-hidden">
+<section id="eventos" class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative overflow-hidden alternating-dark">
     <!-- TITULO DE LA SECCIÓN -->
     <div class="text-center mb-12 md:mb-20 scroll-reveal">
         <span class="uppercase text-[#c8102e] text-xs md:text-sm font-bold tracking-[4px]">
@@ -1539,7 +1516,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </style>
 </section>
 <!-- VIDEOS -->
-<section id="videos" class="bg-[#111111] py-16 md:py-24 relative overflow-hidden">
+<section id="videos" class="bg-[#111111] py-16 md:py-24 relative overflow-hidden alternating-light">
     <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="text-center mb-12 md:mb-20 scroll-reveal">
@@ -1800,7 +1777,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </section>
 <!-- COMUNIDAD -->
-<section id="comunidad" class="max-w-screen-2xl mx-auto px-4 sm:px-8 py-16 md:py-24">
+<section id="comunidad" class="max-w-screen-2xl mx-auto px-4 sm:px-8 py-16 md:py-24 alternating-dark">
     <div class="text-center mb-12 md:mb-20 scroll-reveal">
         <span class="uppercase text-[#c8102e] text-xs font-bold tracking-[4px] block mb-3">
             Nuestro equipo
@@ -2448,7 +2425,7 @@ function cerrarPerfilAlClicarFuera(event) {
 }
 </style>
 <!-- CONTACTO / REDES -->
-<section id="contacto" class="bg-black py-16 md:py-24 border-t border-[#f5c451]/10 relative overflow-hidden">
+<section id="contacto" class="bg-black py-16 md:py-24 border-t border-[#f5c451]/10 relative overflow-hidden alternating-light">
     <!-- EFECTOS DE FONDO BLUR -->
     <div class="absolute top-0 left-0 w-72 md:w-96 h-72 md:h-96 bg-[#f5c451]/5 md:bg-[#f5c451]/10 blur-[100px] md:blur-[140px] rounded-full pointer-events-none"></div>
     <div class="absolute bottom-0 right-0 w-80 md:w-[420px] h-80 md:h-[420px] bg-[#36024e]/10 md:bg-[#36024e]/20 blur-[120px] md:blur-[160px] rounded-full pointer-events-none"></div>
