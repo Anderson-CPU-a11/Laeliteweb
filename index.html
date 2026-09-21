@@ -3285,5 +3285,225 @@ window.addEventListener('load', () => {
     }, 1800);
 });
 </script>
+<!-- RADIO LA ELITE FM -->
+<div id="radioPlayer">
+    <button id="radioToggle" onclick="radioTogglePlay()" aria-label="Reproducir o pausar la radio">
+        <i id="radioIconPlay" class="fas fa-play"></i>
+        <i id="radioIconPause" class="fas fa-pause" style="display:none"></i>
+    </button>
+    <div class="radio-info">
+        <div class="radio-title">LA ELITE FM</div>
+        <div class="radio-freq">100.9 · EN VIVO 24/7</div>
+        <div class="radio-eq paused" id="radioEq">
+            <span></span><span></span><span></span><span></span>
+        </div>
+    </div>
+    <div class="radio-volume">
+        <i id="radioVolIcon" class="fas fa-volume-up"></i>
+        <input type="range" id="radioVolume" min="0" max="100" value="100" oninput="radioSetVolume(this.value)">
+    </div>
+</div>
+<style>
+    #radioPlayer {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        z-index: 9998;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        background: rgba(17,17,17,.92);
+        backdrop-filter: blur(14px);
+        border: 1px solid rgba(245,196,81,.25);
+        border-radius: 60px;
+        padding: 10px 18px 10px 10px;
+        box-shadow: 0 18px 45px rgba(0,0,0,.6), 0 0 22px rgba(245,196,81,.08);
+        max-width: calc(100vw - 32px);
+    }
+    #radioToggle {
+        width: 52px;
+        height: 52px;
+        flex-shrink: 0;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #f5c451, #d9a32a);
+        color: #000;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 22px rgba(245,196,81,.35);
+        transition: transform .25s ease, box-shadow .25s ease;
+    }
+    #radioToggle:hover {
+        transform: scale(1.06);
+        box-shadow: 0 10px 26px rgba(245,196,81,.5);
+    }
+    .radio-info {
+        min-width: 118px;
+    }
+    .radio-title {
+        color: #fff;
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        line-height: 1;
+    }
+    .radio-freq {
+        color: #f5c451;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        margin-top: 3px;
+    }
+    .radio-eq {
+        display: flex;
+        align-items: flex-end;
+        gap: 3px;
+        height: 14px;
+        margin-top: 6px;
+    }
+    .radio-eq span {
+        width: 3px;
+        background: #f5c451;
+        border-radius: 2px;
+        height: 4px;
+        animation: radioEqAnim 1s ease-in-out infinite;
+    }
+    .radio-eq span:nth-child(2){ animation-delay: .2s; }
+    .radio-eq span:nth-child(3){ animation-delay: .4s; }
+    .radio-eq span:nth-child(4){ animation-delay: .6s; }
+    .radio-eq.paused span {
+        animation-play-state: paused;
+    }
+    .radio-eq.paused span:nth-child(2){ height: 8px; }
+    .radio-eq.paused span:nth-child(4){ height: 8px; }
+    @keyframes radioEqAnim {
+        0%,100% { height: 4px; }
+        50% { height: 14px; }
+    }
+    .radio-volume {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #f5c451;
+        font-size: 13px;
+    }
+    #radioVolume {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 90px;
+        height: 4px;
+        border-radius: 10px;
+        background: rgba(245,196,81,.25);
+        outline: none;
+    }
+    #radioVolume::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #f5c451;
+        cursor: pointer;
+        box-shadow: 0 0 10px rgba(245,196,81,.6);
+    }
+    #radioVolume::-moz-range-thumb {
+        width: 14px;
+        height: 14px;
+        border: none;
+        border-radius: 50%;
+        background: #f5c451;
+        cursor: pointer;
+        box-shadow: 0 0 10px rgba(245,196,81,.6);
+    }
+    @media (max-width: 640px) {
+        #radioPlayer {
+            left: 12px;
+            bottom: 12px;
+            gap: 10px;
+            padding: 8px 12px 8px 8px;
+        }
+        #radioToggle {
+            width: 46px;
+            height: 46px;
+        }
+        #radioVolume {
+            width: 50px;
+        }
+        .radio-info {
+            min-width: 92px;
+        }
+    }
+</style>
+<script>
+(function(){
+    var STREAM = 'https://radio.arkamax24.com/listen/la-elite-fm-100-9/radio.mp3';
+    var audio = new Audio(STREAM);
+    audio.preload = 'auto';
+    var playing = false;
+    var eq = document.getElementById('radioEq');
+    var iconPlay = document.getElementById('radioIconPlay');
+    var iconPause = document.getElementById('radioIconPause');
+
+    function syncUI(){
+        eq.classList.toggle('paused', !playing);
+        iconPlay.style.display = playing ? 'none' : '';
+        iconPause.style.display = playing ? '' : 'none';
+    }
+    function play(){
+        audio.volume = (parseInt(document.getElementById('radioVolume').value, 10) || 0) / 100;
+        var p = audio.play();
+        if (p && p.then){
+            p.then(function(){ playing = true; syncUI(); })
+             .catch(function(){ playing = false; syncUI(); });
+        }
+    }
+    function pause(){
+        audio.pause();
+        playing = false;
+        syncUI();
+    }
+    function restartStream(){
+        if (audio.src && audio.src.indexOf(STREAM) !== -1){
+            audio.load();
+        } else {
+            audio.src = STREAM;
+        }
+        play();
+    }
+    audio.addEventListener('error', function(){
+        if (playing){
+            setTimeout(restartStream, 4000);
+        }
+    });
+    setInterval(function(){
+        if (playing && audio.readyState === 0){
+            restartStream();
+        }
+    }, 10000);
+
+    window.radioTogglePlay = function(){
+        if (playing){ pause(); } else { play(); }
+    };
+    window.radioSetVolume = function(v){
+        v = Math.max(0, Math.min(100, parseInt(v, 10) || 0));
+        audio.volume = v / 100;
+        var icon = document.getElementById('radioVolIcon');
+        icon.className = v === 0 ? 'fas fa-volume-mute' : (v < 40 ? 'fas fa-volume-down' : 'fas fa-volume-up');
+    };
+
+    window.addEventListener('load', function(){
+        play();
+    });
+    function firstGesture(){
+        play();
+        window.removeEventListener('click', firstGesture);
+        window.removeEventListener('touchstart', firstGesture);
+    }
+    window.addEventListener('click', firstGesture);
+    window.addEventListener('touchstart', firstGesture);
+})();
+</script>
 </body>
 </html>
