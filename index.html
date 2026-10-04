@@ -1183,8 +1183,9 @@ document.addEventListener('DOMContentLoaded', () => {
             </p>
         </div>
 
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch">
         <!-- MOD 1: AQUÍ PUEDES CAMBIAR IMAGEN, NOMBRE, DESCRIPCIÓN Y LINK -->
-        <div class="max-w-md mx-auto scroll-reveal">
+        <div class="w-full scroll-reveal">
             <div class="event-card bg-[#181818] rounded-3xl border border-[#f5c451]/10 overflow-hidden shadow-2xl card-hover">
                 <!-- IMAGEN DEL MOD -->
                 <div class="relative w-full h-64 bg-black overflow-hidden">
@@ -1206,7 +1207,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         </div>
         <!-- MOD 2: AQUÍ PUEDES CAMBIAR IMAGEN, NOMBRE, DESCRIPCIÓN Y LINK -->
-        <div class="max-w-md mx-auto scroll-reveal">
+        <div class="w-full scroll-reveal">
             <div class="event-card bg-[#181818] rounded-3xl border border-[#f5c451]/10 overflow-hidden shadow-2xl card-hover">
                 <!-- IMAGEN DEL MOD -->
                 <div class="relative w-full h-64 bg-black overflow-hidden">
@@ -1234,7 +1235,6 @@ Un diseño creado para quienes desean llevar la presencia de LA ELITE con ellos 
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </section>
 <!-- ESTILOS EXCLUSIVOS -->
@@ -1417,7 +1417,7 @@ Un diseño creado para quienes desean llevar la presencia de LA ELITE con ellos 
             </p>
         </div>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div id="video-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 videos-collapsed">
 
             <!-- Video 1 -->
             <div class="group bg-[#181818] rounded-3xl overflow-hidden shadow-2xl border border-white/5 hover:border-[#f5c451]/30 transition-all duration-500 card-hover flex flex-col justify-between h-full scroll-reveal">
@@ -1959,6 +1959,11 @@ Un diseño creado para quienes desean llevar la presencia de LA ELITE con ellos 
 
         </div>
 
+        <div class="video-more-wrap">
+            <button id="videos-toggle" class="video-more-toggle" type="button" aria-expanded="false" aria-controls="video-grid">
+                Ver más vídeos <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+        </div>
     </div>
 
     <style>
@@ -3693,6 +3698,35 @@ window.addEventListener('scroll', () => {
         box-shadow: none !important;
     }
     .ranking-btn-primary:hover, .announcement-btn:hover, .event-btn:hover, .btn-video:hover { background: var(--elite-orange-bright) !important; }
+    #mods .grid > div { width: 100%; max-width: none; }
+    #mods .grid .event-card { height: 100%; }
+    #video-grid.videos-collapsed > :nth-child(n + 7) { display: none; }
+    .video-more-wrap { display: flex; justify-content: center; margin-top: 2rem; }
+    .video-more-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: .7rem;
+        min-height: 48px;
+        padding: .75rem 1.5rem;
+        border: 1px solid rgba(255,113,51,.55);
+        border-radius: 8px;
+        background: rgba(255,113,51,.1);
+        color: var(--elite-orange-bright);
+        font: inherit;
+        font-weight: 700;
+        transition: background .2s ease, color .2s ease, transform .2s ease;
+    }
+    .video-more-toggle:hover { background: var(--elite-orange); color: #111; transform: translateY(-2px); }
+    .video-more-toggle i { transition: transform .2s ease; }
+    .video-more-toggle[aria-expanded="true"] i { transform: rotate(180deg); }
+    .video-more-toggle[hidden] { display: none; }
+    @media (max-width: 1023px) {
+        #video-grid.videos-collapsed > :nth-child(n + 5) { display: none; }
+    }
+    @media (max-width: 639px) {
+        #video-grid.videos-collapsed > :nth-child(n + 3) { display: none; }
+    }
     #comunidad { max-width: 1320px; }
     #comunidad .member-card {
         min-height: 196px;
@@ -3803,6 +3837,30 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     search?.addEventListener('input', updateCommunity);
     updateCommunity();
+
+    const videoGrid = document.getElementById('video-grid');
+    const videosToggle = document.getElementById('videos-toggle');
+    const updateVideoLimit = () => {
+        if (!videoGrid || !videosToggle) return;
+        const columns = window.matchMedia('(max-width: 639px)').matches ? 1
+            : window.matchMedia('(max-width: 1023px)').matches ? 2 : 3;
+        const hasMoreVideos = videoGrid.children.length > columns * 2;
+        videosToggle.hidden = !hasMoreVideos;
+        if (!hasMoreVideos) {
+            videoGrid.classList.remove('videos-collapsed');
+            videosToggle.setAttribute('aria-expanded', 'true');
+        }
+    };
+    videosToggle?.addEventListener('click', () => {
+        const expanded = videosToggle.getAttribute('aria-expanded') === 'true';
+        videoGrid?.classList.toggle('videos-collapsed', expanded);
+        videosToggle.setAttribute('aria-expanded', String(!expanded));
+        videosToggle.innerHTML = expanded
+            ? 'Ver más vídeos <i class="fas fa-chevron-down" aria-hidden="true"></i>'
+            : 'Ver menos vídeos <i class="fas fa-chevron-up" aria-hidden="true"></i>';
+    });
+    updateVideoLimit();
+    window.addEventListener('resize', updateVideoLimit, { passive: true });
 
     cards.forEach((card) => {
         card.setAttribute('role', 'button');
