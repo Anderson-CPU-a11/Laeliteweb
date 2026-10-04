@@ -4,24 +4,25 @@
     <!-- META ETIQUETAS ESENCIALES -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARKAMAX | LA ÉLITE Comunidad ATS-ETS2</title>
+    <title>LA ÉLITE | Comunidad de simulación</title>
     <!-- SEO & METADATOS -->
     <meta name="author" content="Arkamax">
-    <meta name="description" content="La Élite - Comunidad exclusiva de American Truck Simulator y Euro Truck Simulator 2. Convoyes, rutas legendarias y eventos premium.">
-    <meta name="keywords" content="ATS, ETS2, American Truck Simulator, Euro Truck Simulator 2, convoyes ATS, comunidad ATS, La Elite, Mapkalo, arkamax24">
+    <meta name="description" content="Únete a La Élite: comunidad de American Truck Simulator y Euro Truck Simulator 2 en Colombia. Convoyes, rutas de Mapkalo, eventos y comunidad CRM.">
+    <meta name="keywords" content="ATS, CRM, Mapkalo, American Truck Simulator, Euro Truck Simulator 2, ETS2, convoyes, comunidad de simulación, La Élite, Arkamax">
+    <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#000000">
     <!-- OPEN GRAPH / SOCIAL MEDIA -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="LA ÉLITE | Comunidad ATS &amp; ETS2">
+    <meta property="og:title" content="LA ÉLITE | Comunidad de simulación">
     <meta property="og:description" content="Convoyes, eventos, rutas legendarias y la mejor comunidad ATS-ETS2 de Colombia.">
-    <meta property="og:image" content="logo-elite.png">
+    <meta property="og:image" content="../logo-elite.png">
     <!-- TWITTER CARDS -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="LA ÉLITE | Comunidad ATS &amp; ETS2">
+    <meta name="twitter:title" content="LA ÉLITE | Comunidad de simulación">
     <meta name="twitter:description" content="Convoyes, eventos, rutas legendarias y la mejor comunidad ATS-ETS2 de Colombia.">
-    <meta name="twitter:image" content="logo-elite.png">
+    <meta name="twitter:image" content="../logo-elite.png">
     <!-- FAVICON -->
-    <link rel="icon" type="image/png" href="logo-elite.png">
+    <link rel="icon" type="image/png" href="../logo-elite.png">
     <!-- RENDIMIENTO Y FUENTES (GOOGLE FONTS) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -97,7 +98,7 @@
            HERO SECTION CON ANIMACIÓN
         ========================= */
         .hero-bg {
-            background: linear-gradient(rgba(0,0,0,.76), rgba(0,0,0,.88)), url('ruta_aguardientera.png');
+            background: linear-gradient(rgba(0,0,0,.76), rgba(0,0,0,.88)), url('../Fotos/ruta_aguardientera.png');
             background-size: cover;
             background-position: center;
             animation: roadAnimation 80s linear infinite;
@@ -388,20 +389,6 @@
                 font-size: 13px !important;
             }
         }
-        /* ---- EVENTOS movil ---- */
-        @media (max-width: 639px) {
-            #eventos .grid {
-                grid-template-columns: 1fr !important;
-                gap: 1rem !important;
-            }
-            #eventos .relative {
-                height: 180px !important;
-            }
-            .event-btn {
-                height: 48px !important;
-                font-size: 14px !important;
-            }
-        }
         /* ---- VIDEOS movil ---- */
         @media (max-width: 639px) {
             #videos .grid {
@@ -575,11 +562,11 @@
     <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-[75px] sm:h-[90px]">
             <a href="#inicio" class="flex items-center gap-3 sm:gap-4 group">
-                <img src="logo-elite.png" alt="La Elite" class="h-12 sm:h-14 w-auto transition duration-300 group-hover:scale-105">
+                <img src="../logo-elite.png" alt="La Elite" class="h-12 sm:h-14 w-auto transition duration-300 group-hover:scale-105">
                 <div class="hidden sm:block">
-                    <h1 class="text-xl sm:text-2xl font-bold logo-font text-[#f5c451] leading-none neon-gold tracking-wide">
+                    <span class="text-xl sm:text-2xl font-bold logo-font text-[#f5c451] leading-none neon-gold tracking-wide">
                         LA ELITE
-                    </h1>
+                    </span>
                     <p class="text-[10px] uppercase tracking-[3px] text-gray-400 mt-1">
                         ATS &amp; ETS2
                     </p>
@@ -590,7 +577,6 @@
                 <a href="#requisitos" class="nav-link">Requisitos</a>
                 <a href="#mods" class="nav-link">Mods</a>
                 <a href="#anuncios" class="nav-link">Anuncios</a>
-                <a href="#eventos" class="nav-link">Eventos</a>
                 <a href="#videos" class="nav-link">Videos</a>
                 <a href="#comunidad" class="nav-link">Comunidad</a>
                 <a href="#contacto" class="nav-link">Contacto</a>
@@ -600,10 +586,12 @@
                    target="_blank"
                    rel="noopener noreferrer"
                    class="hidden md:flex items-center gap-2 bg-[#f5c451] text-black font-bold text-xs tracking-wider px-5 py-3 rounded-xl hover:bg-[#ffd56a] hover:shadow-[0_0_20px_rgba(245,196,81,0.4)] transition-all duration-300">
-                    <img src="discord-negro.png" alt="Discord" class="w-4 h-4 object-contain">
+                        <img src="../Logos/discord-negro.png" alt="Discord" class="w-4 h-4 object-contain">
                     <span>¡ÚNETE AL DISCORD</span>
                 </a>
                 <button onclick="toggleMobileMenu()"
+                    aria-controls="mobile-menu"
+                    aria-expanded="false"
                         aria-label="Abrir menú"
                         class="lg:hidden text-gray-400 hover:text-[#f5c451] text-xl p-2 focus:outline-none transition-colors duration-300">
                     <i id="menu-icon" class="fas fa-bars"></i>
@@ -617,13 +605,12 @@
             <a href="#requisitos" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2 border-b border-white/5">Requisitos</a>
             <a href="#mods" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2 border-b border-white/5">Mods</a>
             <a href="#anuncios" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2 border-b border-white/5">Anuncios</a>
-            <a href="#eventos" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2 border-b border-white/5">Eventos</a>
             <a href="#videos" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2 border-b border-white/5">Videos</a>
             <a href="#comunidad" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2 border-b border-white/5">Comunidad</a>
             <a href="#contacto" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2">Contacto</a>
             <a href="https://discord.gg/pRfNcqXKAC" target="_blank" rel="noopener noreferrer" 
                class="md:hidden flex items-center justify-center gap-2 bg-[#f5c451] text-black font-bold text-xs py-3 rounded-xl mt-2">
-                <img src="discord-negro.png" alt="Discord" class="w-4 h-4">
+                <img src="../Logos/discord-negro.png" alt="Discord" class="w-4 h-4">
                 <span>DISCORD</span>
             </a>
         </div>
@@ -637,10 +624,12 @@
             menu.classList.remove('hidden');
             icon.classList.remove('fa-bars');
             icon.classList.add('fa-times');
+            document.querySelector('#navbar button[aria-controls="mobile-menu"]')?.setAttribute('aria-expanded', 'true');
         } else {
             menu.classList.add('hidden');
             icon.classList.remove('fa-times');
             icon.classList.add('fa-bars');
+            document.querySelector('#navbar button[aria-controls="mobile-menu"]')?.setAttribute('aria-expanded', 'false');
         }
     }
     window.addEventListener('scroll', () => {
@@ -652,49 +641,6 @@
         }
     });
 </script>
-<div class="hidden lg:flex items-center gap-6 xl:gap-8 text-[13px] font-semibold uppercase tracking-[2px]">
-    <a href="#inicio" class="nav-link active-link">Inicio</a>
-    <a href="#requisitos" class="nav-link">Requisitos</a>
-    <a href="#mods" class="nav-link">Mods</a>
-    <a href="#anuncios" class="nav-link">Anuncios</a>
-    <a href="#eventos" class="nav-link">Eventos</a>
-    <a href="#videos" class="nav-link">Videos</a>
-    <a href="#comunidad" class="nav-link">Comunidad</a>
-    <a href="#contacto" class="nav-link">Contacto</a>
-</div>
-<div class="flex items-center gap-4">
-    <a href="https://discord.gg/CSAJCSah"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="discord-btn hidden md:flex">
-        <img src="discord-negro.png" alt="Discord" class="discord-icon w-5 h-5 object-contain">
-        <span>¡ÚNETE AL DISCORD</span>
-    </a>
-    <button onclick="toggleMobileMenu()"
-            aria-label="Abrir menú"
-            class="mobile-btn lg:hidden">
-        <i class="fas fa-bars"></i>
-    </button>
-</div>
-<div id="mobile-menu" class="hidden lg:hidden bg-[#0b0b0b]/95 backdrop-blur-xl border-t border-[#f5c451]/10 max-h-[calc(100vh-80px)] overflow-y-auto w-full transition-all duration-300">
-    <div class="px-6 sm:px-8 py-8 flex flex-col gap-3.5">
-        <a href="#inicio" onclick="toggleMobileMenu()" class="mobile-link">Inicio</a>
-        <a href="#requisitos" onclick="toggleMobileMenu()" class="mobile-link">Requisitos</a>
-        <a href="#mods" onclick="toggleMobileMenu()" class="mobile-link">Mods</a>
-        <a href="#anuncios" onclick="toggleMobileMenu()" class="mobile-link">Anuncios</a>
-        <a href="#eventos" onclick="toggleMobileMenu()" class="mobile-link">Eventos</a>
-        <a href="#videos" onclick="toggleMobileMenu()" class="mobile-link">Videos</a>
-        <a href="#comunidad" onclick="toggleMobileMenu()" class="mobile-link">Comunidad</a>
-        <a href="#contacto" onclick="toggleMobileMenu()" class="mobile-link">Contacto</a>
-        <a href="https://discord.gg/CSAJCSah"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="discord-btn-mobile">
-            <img src="discord-negro.png" alt="Discord" class="discord-icon-mobile w-5 h-5 object-contain">
-            <span>Discord Oficial</span>
-        </a>
-    </div>
-</div>
 <style>
     /* =========================
        NAV LINKS (DESKTOP)
@@ -843,7 +789,7 @@
             <div class="space-y-10">
                 <!-- LOGO -->
                 <div class="flex justify-center md:justify-start scroll-reveal">
-                    <img src="logo-elite.png"
+                    <img src="../logo-elite.png"
                          alt="La Elite"
                          class="h-36 md:h-52 drop-shadow-[0_0_45px_#f5c451] hover:scale-105 transition duration-500 animate-[pulse_5s_infinite]">
                 </div>
@@ -1242,7 +1188,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="event-card bg-[#181818] rounded-3xl border border-[#f5c451]/10 overflow-hidden shadow-2xl card-hover">
                 <!-- IMAGEN DEL MOD -->
                 <div class="relative w-full h-64 bg-black overflow-hidden">
-                    <img src="mod.png" alt="Mod La Elite" class="w-full h-full object-cover">
+                    <img src="../Logos/mod.png" alt="Mod La Elite" class="w-full h-full object-cover">
                 </div>
 
                 <div class="p-6 md:p-8">
@@ -1423,98 +1369,6 @@ document.addEventListener('DOMContentLoaded', () => {
         box-shadow: 0 12px 25px rgba(245, 196, 81, 0.25);
     }
 </style>
-<!-- EVENTOS -->
-<section id="eventos" class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative overflow-hidden alternating-dark">
-    <!-- TITULO DE LA SECCIÓN -->
-    <div class="text-center mb-12 md:mb-20 scroll-reveal">
-        <span class="uppercase text-[#c8102e] text-xs md:text-sm font-bold tracking-[4px]">
-            Próximos convoyes
-        </span>
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold logo-font mt-4 text-white">
-            Eventos de La Elite
-        </h2>
-        <p class="text-gray-400 mt-4 text-base md:text-lg max-w-2xl mx-auto">
-            En estos eventos todos pueden participar.
-        </p>
-    </div>
-    <!-- GRID DE EVENTOS -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-        <!-- TARJETA DE EVENTO -->
-        <div class="group bg-[#111111] rounded-3xl overflow-hidden border border-[#f5c451]/10 shadow-2xl hover:border-[#f5c451]/30 transition-all duration-300 card-hover scroll-reveal flex flex-col justify-between">
-            <div>
-                <!-- CABECERA: IMAGEN Y BADGE DE FECHA -->
-                <div class="relative overflow-hidden h-[220px] md:h-[260px]">
-                    <img src="logo-elite.png"
-                         alt="Evento La Elite"
-                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
-                    <!-- CAJA DE FECHA RESPONSIVA -->
-                    <div class="absolute top-4 left-4 bg-black/80 backdrop-blur-md border border-[#f5c451]/20 rounded-xl px-4 py-2.5 min-w-[100px] text-center">
-                        <p class="text-[#f5c451] text-lg md:text-2xl font-bold leading-tight">
-                            xxxx
-                        </p>
-                        <p class="text-white text-[10px] mt-0.5 uppercase tracking-[1px] font-medium">
-                            xxxx
-                        </p>
-                    </div>
-                </div>
-                <!-- CONTENIDO DEL EVENTO -->
-                <div class="p-6 md:p-8 flex flex-col gap-4">
-                    <!-- ETIQUETAS -->
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-xs font-semibold rounded-lg bg-black border border-[#5865F2]/40 text-gray-300">
-                            💬 Por Discord
-                        </span>
-                        <span class="px-3 py-1 text-xs font-semibold rounded-lg bg-black border border-[#f5c451]/20 text-gray-300">
-                            👥 Público
-                        </span>
-                    </div>
-                    <!-- DETALLES -->
-                    <div class="mt-2">
-                        <h3 class="text-xl md:text-2xl font-bold text-white leading-snug logo-font">
-                            xxxx
-                        </h3>
-                        <p class="text-gray-400 mt-3 text-sm md:text-base leading-relaxed">
-                            xxxx
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <!-- BOTÓN DE ACCIÓN INFERIOR -->
-            <div class="px-6 pb-6 md:px-8 md:pb-8">
-                <a href="https://discord.gg/rhdh5wTwpp"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="event-btn">
-                    🎯 Participar en el evento
-                </a>
-            </div>
-        </div>
-    </div>
-    <!-- ESTILOS EXCLUSIVOS -->
-    <style>
-        .event-btn {
-            width: 100%;
-            height: 52px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #f5c451;
-            color: black;
-            font-size: 15px;
-            font-weight: 800;
-            border-radius: 14px;
-            text-decoration: none;
-            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 8px 20px rgba(245, 196, 81, 0.1);
-        }
-        .event-btn:hover {
-            transform: translateY(-3px);
-            background: #ffd56a;
-            box-shadow: 0 12px 25px rgba(245, 196, 81, 0.25);
-        }
-    </style>
-</section>
 <!-- VIDEOS -->
 <section id="videos" class="bg-[#111111] py-16 md:py-24 relative overflow-hidden alternating-light">
     <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -2103,6 +1957,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .line-clamp-3 {
             display: -webkit-box;
             -webkit-box-orient: vertical;
+            line-clamp: 3;
             -webkit-line-clamp: 3;
             overflow: hidden;
         }
@@ -2122,17 +1977,24 @@ document.addEventListener('DOMContentLoaded', () => {
             Conductores, administradores y leyendas de la carretera
         </p>
     </div>
+    <div class="community-tools">
+        <label class="community-search" for="community-search">
+            <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+            <input id="community-search" type="search" placeholder="Buscar integrante o cargo…" autocomplete="off">
+        </label>
+        <p id="community-count" class="community-count" aria-live="polite"></p>
+    </div>
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-6 items-start">
         <div class="member-card owner-card scroll-reveal" onclick="abrirPerfil(this)"
              data-name="Arkamax" 
              data-role="Owner La Élite" 
              data-badge="OWNER"
              data-badge-style="owner-badge"
-             data-img="ark.png"
+             data-img="../Logos/ark.png"
              data-bio="Fundador y líder general de la comunidad LA ÉLITE. Encargado de coordinar las rutas oficiales, mantener el orden en convoy de simulación y traer el mejor contenido pesado en ruta a las plataformas digitales."
               data-youtube="https://www.youtube.com/@ARKAMAX24" data-tiktok="https://www.tiktok.com/search?q=arkamax&t=1783641297109" data-instagram="#" data-kick="https://kick.com/arkamax24" data-twitch="#">
             <div class="member-image">
-                <img src="ark.png" alt="Arkamax" loading="lazy">
+                <img src="../Logos/ark.png" alt="Arkamax" loading="lazy">
                 <span class="member-badge owner-badge">OWNER</span>
             </div>
             <h4>Arkamax</h4>
@@ -2143,11 +2005,11 @@ document.addEventListener('DOMContentLoaded', () => {
              data-role="Admin La Élite" 
              data-badge="ADMIN"
              data-badge-style="admin-badge"
-             data-img="andy.png"
+             data-img="https://www.arkamax24.com/andy.png"
              data-bio="Administrador y desarrollador técnico de la plataforma."
               data-youtube="https://www.youtube.com/@andersonmontoyaa" data-tiktok="https://www.tiktok.com/@andersonontoya" data-instagram="https://www.instagram.com/andersonmontoya_elt/" data-kick="https://kick.com/theander1" data-twitch="https://www.twitch.tv/andersonmontoyaelt">
             <div class="member-image">
-                <img src="andy.png" alt="Anderson Montoya" loading="lazy">
+                <img src="https://www.arkamax24.com/andy.png" alt="Anderson Montoya" loading="lazy">
                 <span class="member-badge admin-badge">ADMIN</span>
             </div>
             <h4>Anderson M.</h4>
@@ -2158,11 +2020,11 @@ document.addEventListener('DOMContentLoaded', () => {
              data-role="Admin La Élite" 
              data-badge="ADMIN"
              data-badge-style="admin-badge"
-             data-img="kofla.png"
+             data-img="../Integrantes/kofla.png"
              data-bio="Administrador de La Élite. Encargado de la moderación."
              data-youtube="#" data-tiktok="#" data-instagram="#" data-kick="#" data-twitch="#">
             <div class="member-image">
-                <img src="kofla.png" alt="Kofla" loading="lazy">
+                <img src="../Integrantes/kofla.png" alt="Kofla" loading="lazy">
                 <span class="member-badge admin-badge">ADMIN</span>
             </div>
             <h4>Kofla</h4>
@@ -2173,176 +2035,176 @@ document.addEventListener('DOMContentLoaded', () => {
              data-role="Admin La Élite" 
              data-badge="ADMIN"
              data-badge-style="admin-badge"
-             data-img="tavo.jpg"
+             data-img="../Fotos/tavo.jpg"
              data-bio="Administrador de La Élite. Encargado de la moderación."
              data-youtube="#" data-tiktok="#" data-instagram="#" data-kick="#" data-twitch="#">
             <div class="member-image">
-                <img src="tavo.jpg" alt="Tavo" loading="lazy">
+                <img src="../Fotos/tavo.jpg" alt="Tavo" loading="lazy">
                 <span class="member-badge admin-badge">ADMIN</span>
             </div>
             <h4>Tavo</h4>
             <p class="role-text text-red-500">Admin La Élite</p> 
         </div>
         <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
-             data-name="Caballero" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="ca.jpeg"
+             data-name="Caballero" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="../Fotos/ca.jpeg"
              data-bio="Conductor experimentado de la comunidad. Destacado por su impecable nivel de manejo y disciplina manteniendo la línea de convoy en rutas pesadas de alta montaña dentro de MapKalo."
              data-youtube="#" data-tiktok="https://www.tiktok.com/@caballero.del.lor?is_from_webapp=1&sender_device=pc" data-instagram="#" data-kick="#" data-twitch="#">
             <div class="member-image">
-                <img src="ca.jpeg" alt="Caballero" loading="lazy">
+                <img src="../Fotos/ca.jpeg" alt="Caballero" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Caballero</h4>
             <p class="role-text text-gray-400">Conductor</p>
         </div>
         <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
-             data-name="Andres Soriano" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="sori.png"
+             data-name="Andres Soriano" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="../Integrantes/sori.png"
              data-bio="Conductor dotado de gran técnica para maniobrar en tramos estrechos o trochas colombianas peligrosas. Colaborador constante en el canal de voz."
               data-youtube="#" data-tiktok="https://www.tiktok.com/@androo._.786?_r=1&_t=ZS-97uBUAlbn31" data-instagram="https://www.instagram.com/sori__786?igsh=MW10aTNuNm1hbzhlag==" data-kick="#" data-twitch="#">
             <div class="member-image">
-                <img src="sori.png" alt="Andres Soriano" loading="lazy">
+                <img src="../Integrantes/sori.png" alt="Andres Soriano" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Andres Soriano</h4>
             <p class="role-text text-gray-400">Conductor</p>
         </div>
         <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
-             data-name="Alex" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="alex.png"
+             data-name="Alex" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="../Integrantes/alex.png"
              data-bio="Integrante activo de las rutas oficiales de convoy de 128 jugadores. Siempre aportando orden, constancia y excelente presentación de camiones americanos en el asfalto."
              data-youtube="#" data-tiktok="#" data-instagram="#" data-kick="#" data-twitch="#">
             <div class="member-image">
-                <img src="alex.png" alt="Alex" loading="lazy">
+                <img src="../Integrantes/alex.png" alt="Alex" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Alex</h4>
             <p class="role-text text-gray-400">Conductor</p>
         </div>
         <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
-             data-name="Jose Gómez" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="logo-elite.png"
+             data-name="Jose Gómez" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="../logo-elite.png"
              data-bio="Piloto comprometido de nuestra división de transporte virtual. Ascendido al grupo exclusivo Élite gracias a sus méritos de puntualidad y excelente conducta en ruta."
              data-youtube="#" data-tiktok="#" data-instagram="#" data-kick="#" data-twitch="#">
             <div class="member-image">
-                <img src="logo-elite.png" alt="Jose Gómez" loading="lazy">
+                <img src="../logo-elite.png" alt="Jose Gómez" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Jose Gómez</h4>
             <p class="role-text text-gray-400">Conductor</p>
         </div>
         <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
-             data-name="Jose Trucks" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="josetruck.png"
+             data-name="Jose Trucks" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="../Integrantes/josetruck.png"
              data-bio="Apasionado del sim-racing y el transporte por carretera. Cumplidor estricto de las directrices de convoyes masivos y parte del corazón vial de La Élite."
              data-youtube="https://www.youtube.com/@JoseTrucks" data-tiktok="https://www.tiktok.com/@fortichgaming?_r=1&_t=ZS-98FapZcuxoD" data-instagram="#" data-kick="#" data-twitch="#">
             <div class="member-image">
-                <img src="josetruck.png" alt="Jose Trucks" loading="lazy">
+                <img src="../Integrantes/josetruck.png" alt="Jose Trucks" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Jose Trucks</h4>
             <p class="role-text text-gray-400">Conductor</p>
         </div>
         <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
-             data-name="Ñaño" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="ñaño.png"
+             data-name="Ñaño" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="../Fotos/ñaño.png"
              data-bio="Conductor representativo de la comunidad. Siempre aportando la mejor actitud, rutas fluidas y un estilo de conducción enfocado al máximo realismo posible."
              data-youtube="#" data-tiktok="#" data-instagram="#" data-kick="#" data-twitch="#">
             <div class="member-image">
-                <img src="ñaño.png" alt="Ñaño" loading="lazy">
+                <img src="../Fotos/ñaño.png" alt="Ñaño" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Ñaño</h4>
             <p class="role-text text-gray-400">Conductor</p>
         </div>
         <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
-             data-name="Benya" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="Benya.jpg"
+             data-name="Benya" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="../Integrantes/Benya.jpg"
              data-bio="Conductor activo en la comunidad. Respetado por sus compañeros gracias a su prudencia viales y excelente acoplamiento a las reglas del convoy oficial."
              data-youtube="#" data-tiktok="#" data-instagram="#" data-kick="#" data-twitch="#">
             <div class="member-image">
-                <img src="Benya.jpg" alt="Benya" loading="lazy">
+                <img src="../Integrantes/Benya.jpg" alt="Benya" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Benya</h4>
             <p class="role-text text-gray-400">Conductor</p>
         </div>
         <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
-             data-name="Fabian" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="fabian.jpg"
+             data-name="Fabian" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="../Fotos/fabian.jpg"
              data-bio="Apasionado de la mulas y motores custom. Conductor dedicado que equilibra la velocidad controlada y la ayuda técnica a compañeros en problemas."
               data-youtube="#" data-tiktok="https://www.tiktok.com/@userleon.16?_r=1&_t=ZS-97uwXKkJr9B" data-instagram="https://www.instagram.com/fabian_leon.r19?igsh=MWxlbG9pbWF0aWtsYQ==" data-kick="#" data-twitch="#">
             <div class="member-image">
-                <img src="fabian.jpg" alt="Fabian" loading="lazy">
+                <img src="../Fotos/fabian.jpg" alt="Fabian" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Fabian</h4>
             <p class="role-text text-gray-400">Conductor</p>
         </div>
         <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
-             data-name="Jose97n" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="97.jpg"
+             data-name="Jose97n" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="../Fotos/97.jpg"
              data-bio="Conductor de comportamiento vial excelente. Siempre presente en las rodadas semanales compartiendo su pasión por la simulación de camiones pesados."
              data-youtube="#" data-tiktok="#" data-instagram="#" data-kick="https://kick.com/jose97n" data-twitch="https://www.twitch.tv/jose97n">
             <div class="member-image">
-                <img src="97.jpg" alt="Jose97n" loading="lazy">
+                <img src="../Fotos/97.jpg" alt="Jose97n" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Jose97n</h4>
             <p class="role-text text-gray-400">Conductor</p>
         </div>
         <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
-             data-name="JekkoDaza" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="daza.jpg"
+             data-name="JekkoDaza" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="../Fotos/daza.jpg"
              data-bio="Miembro oficial de la familia Élite. Especializado en capturas de alta fidelidad visual en ruta y el despliegue ordenado de camiones en paradores."
              data-youtube="#" data-tiktok="#" data-instagram="#" data-kick="#" data-twitch="#">
             <div class="member-image">
-                <img src="daza.jpg" alt="Daza" loading="lazy">
+                <img src="../Fotos/daza.jpg" alt="Daza" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>JekkoDaza</h4>
             <p class="role-text text-gray-400">Conductor</p>
         </div>
         <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
-             data-name="Andres" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="andres.jpg"
+             data-name="Andres" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="../Fotos/andres.jpg"
              data-bio="Conductor oficial de la división. Demuestra un gran sentido de lealtad, disciplina grupal y puntualidad estricta en los puntos de salida de carga."
              data-youtube="#" data-tiktok="#" data-instagram="#" data-kick="#" data-twitch="#">
             <div class="member-image">
-                <img src="andres.jpg" alt="Andres" loading="lazy">
+                <img src="../Fotos/andres.jpg" alt="Andres" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Andres</h4>
             <p class="role-text text-gray-400">Conductor</p>
         </div>
         <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
-             data-name="Jhojan" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="jho.jpeg"
+             data-name="Jhojan" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="../Fotos/jho.jpeg"
              data-bio="Conductor oficial de la división. Demuestra un gran sentido de lealtad, disciplina grupal y puntualidad estricta en los puntos de salida de carga."
               data-youtube="https://youtube.com/@jhojan_truck-m6i?si=Mk9dpXZ4Y4C_NhVA" data-tiktok="https://www.tiktok.com/@jhojan.mateo8?_r=1&_t=ZS-989S3hZSK08" data-instagram="https://www.instagram.com/jhxjxn_00?igsh=MWozN3lmb2ZydDA4bA==" data-kick="#" data-twitch="#">
             <div class="member-image">
-                <img src="jho.jpeg" alt="Jhojan" loading="lazy">
+                <img src="../Fotos/jho.jpeg" alt="Jhojan" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Jhojan</h4>
             <p class="role-text text-gray-400">Conductor</p>
         </div>
         <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
-             data-name="BamBan" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="bmbn.jpg"
+             data-name="BamBan" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="../Fotos/bmbn.jpg"
              data-bio="Conductor oficial de la división. Demuestra un gran sentido de lealtad, disciplina grupal y puntualidad estricta en los puntos de salida de carga."
              data-youtube="https://youtube.com/@bamban023?si=3IcZqp-7jSSyisK2" data-tiktok="https://www.tiktok.com/@bamban.023?_r=1&_t=ZS-98Fx0ch1FYq" data-instagram="https://www.instagram.com/bamban023?stkn=OWI1enphcHNybjkz" data-kick="https://share.google/ShYYT0ABYjXg7HSYI" data-twitch="#">
             <div class="member-image">
-                <img src="bmbn.jpg" alt="Bamban" loading="lazy">
+                <img src="../Fotos/bmbn.jpg" alt="Bamban" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>BamBan</h4>
             <p class="role-text text-gray-400">Conductor</p>
         </div>
         <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
-             data-name="Mecato" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="mecato.png"
+             data-name="Mecato" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="../Integrantes/mecato.png"
              data-bio="Conductor oficial de la división. Demuestra un gran sentido de lealtad, disciplina grupal y puntualidad estricta en los puntos de salida de carga."
              data-youtube="" data-tiktok="" data-instagram="#" data-kick="" data-twitch="#">
             <div class="member-image">
-                <img src="mecato.png" alt="Mecato" loading="lazy">
+                <img src="../Integrantes/mecato.png" alt="Mecato" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Mecato</h4>
             <p class="role-text text-gray-400">Conductor</p>
         </div>
         <div class="member-card scroll-reveal" onclick="abrirPerfil(this)"
-             data-name="Emilio" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="emi.png"
+             data-name="Emilio" data-role="Conductor Elite" data-badge="Elite" data-badge-style="elite-badge" data-img="../Fotos/emi.png"
              data-bio="Conductor oficial de la división. Demuestra un gran sentido de lealtad, disciplina grupal y puntualidad estricta en los puntos de salida de carga."
              data-youtube="" data-tiktok="" data-instagram="#" data-kick="" data-twitch="#">
             <div class="member-image">
-                <img src="emi.png" alt="Emilio" loading="lazy">
+                <img src="../Fotos/emi.png" alt="Emilio" loading="lazy">
                 <span class="member-badge elite-badge">Elite</span>
             </div>
             <h4>Emilio</h4>
@@ -2350,7 +2212,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
     </div>
 </section>
-<div class="ventana-perfil-overlay" id="perfilModal" onclick="cerrarPerfilAlClicarFuera(event)">
+<div class="ventana-perfil-overlay" id="perfilModal" role="dialog" aria-modal="true" aria-label="Perfil de integrante" aria-hidden="true" onclick="cerrarPerfilAlClicarFuera(event)">
     <div class="ventana-perfil-contenedor">
         <button class="boton-cerrar-perfil" onclick="cerrarPerfil()">✕</button>
         <div class="ventana-perfil-scrollable">
@@ -2431,12 +2293,18 @@ function abrirPerfil(element) {
     // Si nadie tiene ninguna red, ocultamos la cabecera de las redes
     document.getElementById('pModalRedesBox').style.display = tieneRedes ? 'block' : 'none';
     // 4. Activar visualmente la ventana flotante y congelar el scroll de fondo de la web
-    document.getElementById('perfilModal').classList.add('ventana-activa');
+    const profileModal = document.getElementById('perfilModal');
+    profileModal.classList.add('ventana-activa');
+    profileModal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    document.querySelector('.boton-cerrar-perfil')?.focus();
 }
 function cerrarPerfil() {
     // Desactivar ventana flotante y regresar el scroll natural a la web
-    document.getElementById('perfilModal').classList.remove('ventana-activa');
+    const profileModal = document.getElementById('perfilModal');
+    if (!profileModal) return;
+    profileModal.classList.remove('ventana-activa');
+    profileModal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
 }
 function cerrarPerfilAlClicarFuera(event) {
@@ -2770,7 +2638,7 @@ function cerrarPerfilAlClicarFuera(event) {
                 <div class="grid sm:grid-cols-2 gap-4 md:gap-6">
                     <!-- DISCORD -->
                     <a href="https://discord.gg/rhdh5wTwpp" target="_blank" class="social-card bg-[#5865F2]">
-                        <img src="discord.jpg" alt="Discord" class="social-icon">
+                        <img src="../Logos/discord.jpg" alt="Discord" class="social-icon">
                         <div>
                             <h4 class="social-title">Discord Oficial</h4>
                             <p class="social-text">Convoyes, eventos y comunidad activa.</p>
@@ -2778,7 +2646,7 @@ function cerrarPerfilAlClicarFuera(event) {
                     </a>
                     <!-- TIKTOK -->
                     <a href="https://www.tiktok.com/@arkamax_24" target="_blank" class="social-card bg-[#111111] border border-[#25F4EE]/20 hover:border-[#25F4EE]/50">
-                        <img src="tiktok.webp" alt="TikTok" class="social-icon">
+                        <img src="../Logos/tiktok.webp" alt="TikTok" class="social-icon">
                         <div>
                             <h4 class="social-title text-white">TikTok</h4>
                             <p class="social-text text-gray-400">Clips, rutas y momentos legendarios.</p>
@@ -2786,7 +2654,7 @@ function cerrarPerfilAlClicarFuera(event) {
                     </a>
                     <!-- YOUTUBE -->
                     <a href="https://www.youtube.com/@ARKAMAX24" target="_blank" class="social-card bg-[#FF0000]">
-                        <img src="youtube.png" alt="YouTube" class="social-icon">
+                        <img src="../Logos/youtube.png" alt="YouTube" class="social-icon">
                         <div>
                             <h4 class="social-title">YouTube</h4>
                             <p class="social-text">Videos oficiales y contenido ATS.</p>
@@ -2794,7 +2662,7 @@ function cerrarPerfilAlClicarFuera(event) {
                     </a>
                     <!-- FACEBOOK -->
                     <a href="https://www.facebook.com/ARKAMAXOFICIAL" target="_blank" class="social-card bg-[#1877F2]">
-                        <img src="f.png" alt="Facebook" class="social-icon">
+                        <img src="../Logos/f.png" alt="Facebook" class="social-icon">
                         <div>
                             <h4 class="social-title">Facebook</h4>
                             <p class="social-text">Noticias, publicaciones y comunidad.</p>
@@ -2802,7 +2670,7 @@ function cerrarPerfilAlClicarFuera(event) {
                     </a>
                     <!-- WHATSAPP -->
                     <a href="https://whatsapp.com/channel/0029VbClP1KI7BeAPLzZcT3c" target="_blank" class="social-card bg-[#25D366]">
-                        <img src="whatsapp.png" alt="WhatsApp" class="social-icon">
+                        <img src="../Logos/whatsapp.png" alt="WhatsApp" class="social-icon">
                         <div>
                             <h4 class="social-title text-white">WhatsApp</h4>
                             <p class="social-text text-white/90">Canal oficial y anuncios rápidos.</p>
@@ -2810,7 +2678,7 @@ function cerrarPerfilAlClicarFuera(event) {
                     </a>
                     <!-- TRUCKSBOOK -->
                     <a href="https://trucksbook.eu/company/224432" target="_blank" class="social-card bg-[#00AEEF]">
-                        <img src="tb.jpg" alt="TrucksBook" class="social-icon">
+                        <img src="../Logos/tb.jpg" alt="TrucksBook" class="social-icon">
                         <div>
                             <h4 class="social-title">TrucksBook</h4>
                             <p class="social-text">Estadísticas oficiales y ranking.</p>
@@ -2821,12 +2689,6 @@ function cerrarPerfilAlClicarFuera(event) {
         </div>
     </div>
 </section>
-<!-- INICIO DEL FOOTER (Añadida la estructura que faltaba) -->
-<footer class="bg-[#0a0a0a] border-t border-white/5 py-12">
-    <div class="max-w-screen-2xl mx-auto px-4 sm:px-8">
-        <!-- Puedes mapear aquí las columnas del footer usando las clases CSS de abajo -->
-    </div>
-</footer>
 <!-- ESTILOS EXCLUSIVOS ENCAPSULADOS -->
 <style>
     /* Estilos Sección Redes */
@@ -3187,46 +3049,12 @@ window.addEventListener('load', () => {
     }
     // Activar disparadores visuales por Scroll
     initScrollAnimations();
-    // Despliegue automático de la ventana de noticias (1.8 Segundos)
-    setTimeout(() => {
-        openNews();
-    }, 1800);
     console.log(
         '%c?? LA ELITE  Sistema cargado correctamente.',
         'color:#f5c451; font-size:14px; font-weight:bold;'
     );
 });
 </script>
-<!-- =========================================
-     POPUP DE NOTICIAS (HTML ESTRUCTURAL UNIFICADO)
-========================================= -->
-<div class="news-overlay" id="newsOverlay">
-    <div class="news-box">
-        <!-- BOTÓN CERRAR -->
-        <button class="close-btn" onclick="closeNews()" aria-label="Cerrar noticias">
-            X
-        </button>
-        <!-- HEADER -->
-        <div class="news-header">
-            <p class="news-tag">Última noticia</p>
-            <h2 class="news-title">📰 Noticias</h2>
-        </div>
-        <!-- CONTENIDO -->
-        <div class="news-content">
-            <div class="news-text">
-                <h3>Información importante</h3>
-                <p>
-                    En <strong>LA ÉLITE</strong> existen dos niveles dentro de la comunidad: 
-                    la <strong>empresa</strong>, abierta a todos los usuarios, y 
-                    <strong>LA ÉLITE</strong>, un grupo exclusivo al que solo ingresan quienes demuestran compromiso, constancia y buena energía dentro de la comunidad.
-                </p>
-                <p style="margin-top:12px; font-weight:800; text-transform:uppercase; color:#f5c451; letter-spacing:2px;">
-                    Este criterio es fundamental para el ingreso
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- BOTÓN FLOTANTE PARA REABRIR NOTICIAS -->
 <button class="open-news" id="openBtn" onclick="openNews()" aria-label="Abrir noticias">
     📰 Noticias
@@ -3322,10 +3150,6 @@ window.addEventListener('load', () => {
     }
     startOnlineCounter();
     initScrollAnimations();
-    // Despliegue automático inicial (1.8 Segundos)
-    setTimeout(() => {
-        openNews();
-    }, 1800);
     console.log(
         '%c?? LA ELITE  Sistema cargado correctamente sin duplicados.',
         'color:#f5c451; font-size:14px; font-weight:bold;'
@@ -3509,14 +3333,6 @@ window.addEventListener('scroll', () => {
         navbar.classList.remove('bg-black/90', 'shadow-2xl');
     }
 });
-/**
- * Temporizador para lanzar el Popup automáticamente tras la carga
- */
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        openNews();
-    }, 1800);
-});
 </script>
 <!-- RADIO LA ELITE FM -->
 <div id="radioPlayer">
@@ -3673,7 +3489,7 @@ window.addEventListener('load', () => {
 (function(){
     var STREAM = 'https://radio.arkamax24.com/listen/la-elite-fm-100-9/radio.mp3';
     var audio = new Audio(STREAM);
-    audio.preload = 'auto';
+    audio.preload = 'none';
     var playing = false;
     var eq = document.getElementById('radioEq');
     var iconPlay = document.getElementById('radioIconPlay');
@@ -3726,17 +3542,274 @@ window.addEventListener('load', () => {
         icon.className = v === 0 ? 'fas fa-volume-mute' : (v < 40 ? 'fas fa-volume-down' : 'fas fa-volume-up');
     };
 
-    window.addEventListener('load', function(){
-        play();
-    });
-    function firstGesture(){
-        play();
-        window.removeEventListener('click', firstGesture);
-        window.removeEventListener('touchstart', firstGesture);
-    }
-    window.addEventListener('click', firstGesture);
-    window.addEventListener('touchstart', firstGesture);
 })();
+</script>
+<style id="elite-remaster">
+    :root {
+        --elite-orange: #ff7133;
+        --elite-orange-bright: #ff8a4c;
+        --elite-amber: #ffbf69;
+        --elite-surface: #111111;
+        --elite-line: rgba(255, 113, 51, .2);
+    }
+    html { scroll-padding-top: 92px; }
+    body {
+        background: #080808;
+        color: #f4f0ed;
+        font-family: 'Inter', sans-serif;
+        line-height: 1.65;
+    }
+    a:focus-visible, button:focus-visible, input:focus-visible, .member-card:focus-visible {
+        outline: 3px solid var(--elite-orange-bright);
+        outline-offset: 4px;
+    }
+    #navbar {
+        background: rgba(8, 8, 8, .88) !important;
+        border-color: var(--elite-line) !important;
+        box-shadow: 0 12px 38px rgba(0, 0, 0, .24);
+    }
+    #navbar > div:first-child > div { min-height: 76px; }
+    #navbar .nav-link {
+        color: #d4d0cd;
+        font-size: 11px;
+        letter-spacing: 1.3px;
+        padding: 10px 0;
+    }
+    #navbar .nav-link:hover, #navbar .nav-link.active-link { color: var(--elite-orange-bright) !important; }
+    #navbar .nav-link::after { background: var(--elite-orange); box-shadow: 0 0 14px rgba(255, 113, 51, .45); }
+    #navbar .bg-\[\#f5c451\] { background: var(--elite-orange) !important; }
+    #navbar #mobile-menu:not(.hidden) {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        border-color: var(--elite-line);
+        box-shadow: 0 24px 40px rgba(0, 0, 0, .45);
+    }
+    #navbar #mobile-menu a { border-color: rgba(255,255,255,.08); }
+    #navbar #mobile-menu a:hover { color: var(--elite-orange-bright); }
+    #navbar button[aria-controls="mobile-menu"] { color: var(--elite-orange-bright); }
+
+    #inicio.hero-bg {
+        min-height: min(900px, 100svh);
+        background-position: center 52%;
+        animation: none;
+        isolation: isolate;
+    }
+    #inicio::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background: linear-gradient(90deg, rgba(6,6,6,.87) 0%, rgba(6,6,6,.62) 53%, rgba(6,6,6,.18) 100%);
+    }
+    #inicio > .relative.z-10 { max-width: 1320px; }
+    #inicio .grid { gap: clamp(2rem, 5vw, 5rem); }
+    #inicio .space-y-10 > :not([hidden]) ~ :not([hidden]) { margin-top: 2rem; }
+    #inicio h1 { letter-spacing: -.07em !important; font-family: 'Inter', sans-serif !important; font-weight: 800; }
+    #inicio h1 span { color: var(--elite-orange-bright) !important; text-shadow: 0 5px 32px rgba(255, 113, 51, .22) !important; }
+    #inicio .text-2xl.md\:text-5xl { color: #fff !important; font-size: clamp(1.15rem, 2.3vw, 2rem); font-weight: 600; letter-spacing: .16em; }
+    #inicio .italic { font-style: normal; font-size: clamp(1rem, 1.6vw, 1.35rem); color: #e5ddd8; }
+    #inicio .bg-black\/60 {
+        background: rgba(13, 13, 13, .78) !important;
+        border: 1px solid var(--elite-line) !important;
+        border-left: 4px solid var(--elite-orange) !important;
+        border-radius: 8px 22px 22px 8px !important;
+        box-shadow: 0 25px 65px rgba(0,0,0,.38) !important;
+    }
+    #inicio .bg-black\/60 > p:first-child { color: var(--elite-orange-bright) !important; }
+    #inicio .hero-btn-primary {
+        background: var(--elite-orange) !important;
+        color: #111 !important;
+        border-radius: 8px !important;
+        box-shadow: 0 12px 35px rgba(255, 113, 51, .23) !important;
+        letter-spacing: .09em;
+    }
+    #inicio .hero-btn-primary:hover { background: var(--elite-orange-bright) !important; }
+    #inicio .hero-btn-secondary { border-radius: 8px !important; border-color: var(--elite-orange) !important; color: #fff !important; }
+    #inicio .hero-btn-secondary:hover { background: var(--elite-orange) !important; color: #111 !important; }
+    #inicio .absolute.bottom-10 { color: var(--elite-orange-bright) !important; }
+
+    section:not(#inicio) { position: relative; scroll-margin-top: 86px; }
+    section:not(#inicio) > .max-w-screen-2xl,
+    section:not(#inicio) > .container { max-width: 1240px; }
+    .alternating-light, .alternating-dark { background: #0d0d0d !important; }
+    #mods { background: #090909 !important; }
+    .section-title::after { background: linear-gradient(90deg, var(--elite-orange), var(--elite-amber)) !important; }
+    #requisitos h2, #mods h2, #anuncios h2, #videos h2, #comunidad h2, #contacto h2 { letter-spacing: -.035em; }
+    #requisitos .text-\[\#f5c451\], #mods .text-\[\#f5c451\], #anuncios .text-\[\#f5c451\],
+    #videos .text-\[\#f5c451\], #comunidad .text-\[\#f5c451\], #contacto .text-\[\#f5c451\] {
+        color: var(--elite-orange-bright) !important;
+    }
+    .event-card, #anuncios .group, #videos .group {
+        background: linear-gradient(145deg, #171513, #101010) !important;
+        border: 1px solid rgba(255,255,255,.075) !important;
+        border-radius: 12px !important;
+        box-shadow: 0 16px 38px rgba(0,0,0,.22);
+    }
+    .event-card:hover, #anuncios .group:hover, #videos .group:hover {
+        border-color: rgba(255,113,51,.48) !important;
+        box-shadow: 0 22px 50px rgba(0,0,0,.38), 0 0 30px rgba(255,113,51,.07);
+    }
+    .ranking-btn-primary, .announcement-btn, .event-btn, .btn-video {
+        background: var(--elite-orange) !important;
+        color: #111 !important;
+        border-radius: 8px !important;
+        box-shadow: none !important;
+    }
+    .ranking-btn-primary:hover, .announcement-btn:hover, .event-btn:hover, .btn-video:hover { background: var(--elite-orange-bright) !important; }
+    #comunidad { max-width: 1320px; }
+    #comunidad .member-card {
+        min-height: 196px;
+        background: linear-gradient(155deg, #191715, #101010) !important;
+        border: 1px solid rgba(255,255,255,.08) !important;
+        border-radius: 12px !important;
+        box-shadow: 0 12px 28px rgba(0,0,0,.18);
+    }
+    #comunidad .member-card:hover { border-color: rgba(255,113,51,.45) !important; }
+    #comunidad .member-image img { border-color: rgba(255,113,51,.35) !important; }
+    #comunidad .owner-card .member-image img { border-color: var(--elite-orange) !important; }
+    #comunidad .member-badge.owner-badge { background: var(--elite-orange) !important; }
+    #comunidad .role-text { color: #aaa !important; }
+    .community-tools { width: min(100%, 670px); margin: -2rem auto 2.3rem; }
+    .community-search {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 0 18px;
+        min-height: 56px;
+        color: var(--elite-orange-bright);
+        background: #111;
+        border: 1px solid rgba(255,113,51,.28);
+        border-radius: 10px;
+        box-shadow: 0 12px 30px rgba(0,0,0,.2);
+    }
+    .community-search:focus-within { border-color: var(--elite-orange); box-shadow: 0 0 0 3px rgba(255,113,51,.12); }
+    .community-search input { width: 100%; min-width: 0; color: #fff; background: transparent; border: 0; outline: 0; font: inherit; }
+    .community-search input::placeholder { color: #807a76; }
+    .community-count { min-height: 1.5em; margin: 9px 3px 0; color: #8e8883; font-size: .82rem; text-align: right; }
+    #contacto .social-card {
+        min-height: 112px;
+        background: #151311 !important;
+        border: 1px solid rgba(255,255,255,.08) !important;
+        border-radius: 12px !important;
+    }
+    #contacto .social-card:hover { border-color: rgba(255,113,51,.55) !important; background: #1d1916 !important; }
+    #contacto .social-icon { border-radius: 12px; }
+    #contacto .bg-\[\#f5c451\] { background: var(--elite-orange) !important; }
+    footer { background: #080808 !important; border-color: rgba(255,113,51,.18) !important; }
+    .news-box, .ventana-perfil-contenedor {
+        background: #12100f !important;
+        border: 1px solid rgba(255,113,51,.3) !important;
+        border-radius: 14px !important;
+    }
+    .news-tag, .news-text p[style], .p-role-text { color: var(--elite-orange-bright) !important; }
+    .close-btn:hover, .boton-cerrar-perfil:hover { background: var(--elite-orange) !important; color: #111 !important; }
+    #radioPlayer {
+        background: rgba(17,16,15,.96) !important;
+        border-color: rgba(255,113,51,.36) !important;
+        border-radius: 14px !important;
+    }
+    #radioToggle { background: var(--elite-orange) !important; }
+    .radio-freq, .radio-volume { color: var(--elite-orange-bright) !important; background: transparent !important; }
+    .radio-eq span { background-color: var(--elite-orange); }
+    #radioVolume { background: rgba(255, 255, 255, .2) !important; accent-color: var(--elite-orange); }
+    #radioVolume::-webkit-slider-thumb { background: var(--elite-orange-bright) !important; }
+    #radioVolume::-moz-range-thumb { background: var(--elite-orange-bright) !important; }
+    #openBtn { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .open-news { border-color: var(--elite-orange) !important; border-radius: 9px !important; }
+    .open-news.show-btn:hover { background: var(--elite-orange) !important; color: #111 !important; }
+    .missing-photo-fallback {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        color: #160d08;
+        background: linear-gradient(145deg, var(--elite-orange-bright), #c74b1d);
+        font-weight: 800;
+        letter-spacing: .08em;
+    }
+    .member-image .missing-photo-fallback, .member-image img { border-radius: 50%; }
+    .marco-imagen-grande .missing-photo-fallback { border-radius: 50%; }
+    @media (max-width: 1023px) {
+        #navbar .nav-link { font-size: 10px; letter-spacing: .8px; }
+    }
+    @media (max-width: 767px) {
+        #inicio::after { background: linear-gradient(180deg, rgba(6,6,6,.72), rgba(6,6,6,.65)); }
+        #inicio .grid { gap: 1.6rem; }
+        #inicio .grid > div:first-child { padding-top: 1.6rem; }
+        #inicio .grid > div:first-child > .space-y-10 { gap: 1.4rem; }
+        #inicio .bg-black\/60 { padding: 1.2rem !important; }
+        #inicio .absolute.bottom-10 { bottom: 1.1rem; }
+        #comunidad .grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: .7rem !important; }
+        #comunidad .member-card { min-height: 170px; }
+        #radioPlayer { bottom: 12px !important; left: 12px !important; max-width: calc(100vw - 24px); }
+        .open-news { right: 12px !important; bottom: 84px !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const search = document.getElementById('community-search');
+    const count = document.getElementById('community-count');
+    const cards = Array.from(document.querySelectorAll('#comunidad .member-card'));
+    const updateCommunity = () => {
+        const query = (search?.value || '').trim().toLocaleLowerCase('es');
+        let visible = 0;
+        cards.forEach((card) => {
+            const text = [card.dataset.name, card.dataset.role, card.dataset.bio].join(' ').toLocaleLowerCase('es');
+            const matches = text.includes(query);
+            card.hidden = !matches;
+            if (matches) visible += 1;
+        });
+        if (count) count.textContent = query ? `${visible} de ${cards.length} integrantes` : `${cards.length} integrantes`;
+    };
+    search?.addEventListener('input', updateCommunity);
+    updateCommunity();
+
+    cards.forEach((card) => {
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('aria-haspopup', 'dialog');
+        card.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                abrirPerfil(card);
+            }
+        });
+    });
+
+    document.querySelectorAll('a[target="_blank"]').forEach((link) => {
+        link.relList.add('noopener', 'noreferrer');
+    });
+    const showMissingPhoto = (image) => {
+        if (image.dataset.fallbackApplied) return;
+        image.dataset.fallbackApplied = 'true';
+        const parent = image.parentElement;
+        if (!parent || !parent.matches('.member-image, .marco-imagen-grande')) return;
+        const initials = (image.alt || 'LE').trim().split(/\s+/).slice(0, 2).map((part) => part[0]).join('').toUpperCase();
+        const fallback = document.createElement('span');
+        fallback.className = 'missing-photo-fallback';
+        fallback.setAttribute('aria-hidden', 'true');
+        fallback.textContent = initials;
+        image.hidden = true;
+        parent.append(fallback);
+    };
+    document.querySelectorAll('img').forEach((image) => {
+        image.addEventListener('error', () => showMissingPhoto(image));
+        if (image.complete && image.naturalWidth === 0) showMissingPhoto(image);
+    });
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            cerrarPerfil();
+            closeNews();
+            const menu = document.getElementById('mobile-menu');
+            if (menu && !menu.classList.contains('hidden')) toggleMobileMenu();
+        }
+    });
+});
 </script>
 </body>
 </html>
