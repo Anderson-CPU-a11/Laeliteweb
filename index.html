@@ -217,6 +217,10 @@
             opacity: 1;
             pointer-events: auto;
         }
+        /* Evita que el modal de perfil aparezca durante el primer render antes de cargar sus estilos propios. */
+        .ventana-perfil-overlay[hidden] {
+            display: none !important;
+        }
         .news-box {
             width: 90%;
             max-width: 440px;
@@ -2622,7 +2626,7 @@ Un diseño creado para quienes desean llevar la presencia de LA ELITE con ellos 
         </div>
     </div>
 </section>
-<div class="ventana-perfil-overlay" id="perfilModal" role="dialog" aria-modal="true" aria-label="Perfil de integrante" aria-hidden="true" onclick="cerrarPerfilAlClicarFuera(event)">
+<div class="ventana-perfil-overlay" id="perfilModal" role="dialog" aria-modal="true" aria-label="Perfil de integrante" aria-hidden="true" hidden onclick="cerrarPerfilAlClicarFuera(event)">
     <div class="ventana-perfil-contenedor">
         <button class="boton-cerrar-perfil" onclick="cerrarPerfil()">✕</button>
         <div class="ventana-perfil-scrollable">
@@ -2664,6 +2668,8 @@ Un diseño creado para quienes desean llevar la presencia de LA ELITE con ellos 
     </div>
 </div>
 <script>
+let perfilModalHideTimer;
+
 function abrirPerfil(element) {
     // 1. Extraer todos los datos dinámicos guardados en la tarjeta
     const name = element.getAttribute('data-name');
@@ -2709,6 +2715,8 @@ function abrirPerfil(element) {
     document.getElementById('pModalRedesBox').style.display = tieneRedes ? 'block' : 'none';
     // 4. Activar visualmente la ventana flotante y congelar el scroll de fondo de la web
     const profileModal = document.getElementById('perfilModal');
+    clearTimeout(perfilModalHideTimer);
+    profileModal.hidden = false;
     profileModal.classList.add('ventana-activa');
     profileModal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
@@ -2721,6 +2729,12 @@ function cerrarPerfil() {
     profileModal.classList.remove('ventana-activa');
     profileModal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    clearTimeout(perfilModalHideTimer);
+    perfilModalHideTimer = setTimeout(() => {
+        if (!profileModal.classList.contains('ventana-activa')) {
+            profileModal.hidden = true;
+        }
+    }, 400);
 }
 function cerrarPerfilAlClicarFuera(event) {
     // Si el usuario toca el fondo oscuro exterior, se cierra de inmediato
