@@ -795,7 +795,7 @@
 </style>
 
 </head>
-<body class="is-loading">
+<body class="is-loading halloween-season">
 <div id="loading-screen" role="status" aria-label="Cargando la página">
     <div class="loading-content">
         <img src="logo-elite.png" alt="Logo de La Élite" class="loading-logo">
@@ -854,6 +854,14 @@
     }, { once: true });
 })();
 </script>
+<div class="halloween-ambience" aria-hidden="true">
+    <span class="halloween-web halloween-web-left"></span>
+    <span class="halloween-web halloween-web-right"></span>
+    <span class="halloween-bat halloween-bat-one">🦇</span>
+    <span class="halloween-bat halloween-bat-two">🦇</span>
+    <span class="halloween-pumpkin halloween-pumpkin-one">🎃</span>
+    <span class="halloween-pumpkin halloween-pumpkin-two">🎃</span>
+</div>
 <nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-black/75 backdrop-blur-xl border-b border-[#f5c451]/10 transition-all duration-300">
     <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-[75px] sm:h-[90px]">
@@ -1091,6 +1099,7 @@
                 </div>
                 <!-- TITULOS -->
                 <div class="text-center md:text-left scroll-reveal">
+                    <div class="halloween-hero-stamp"><span aria-hidden="true">🎃</span> Especial de Halloween <span aria-hidden="true">🦇</span></div>
                     <h1 class="text-6xl md:text-[110px] font-serif logo-font tracking-[-5px] leading-none text-white">
                         <span class="text-[#f5c451] drop-shadow-[0_0_20px_#f5c451]">
                             LA ELITE
@@ -4433,6 +4442,131 @@ window.addEventListener('scroll', () => {
     }
     .mapkalo-order-badge { transition: transform 300ms var(--motion-ease), box-shadow 300ms ease; }
     .mapkalo-card:hover .mapkalo-order-badge { transform: translateY(-2px) scale(1.06); box-shadow: 0 8px 22px rgba(0,0,0,.78), 0 0 18px rgba(245,196,81,.2); }
+    /* TEMPORADA HALLOWEEN: naranja calabaza, violeta y detalles ambientales */
+    .halloween-season {
+        --elite-orange: #ff7417;
+        --elite-orange-bright: #ffc078;
+        --elite-amber: #9b5de5;
+        --elite-line: rgba(255,116,23,.26);
+    }
+    .halloween-ambience {
+        position: fixed;
+        inset: 0;
+        z-index: 30;
+        overflow: hidden;
+        pointer-events: none;
+    }
+    .halloween-web {
+        position: absolute;
+        top: -8px;
+        width: 190px;
+        height: 190px;
+        opacity: .16;
+        background:
+            repeating-conic-gradient(from 0deg at 0 0, transparent 0deg 13deg, rgba(196,164,255,.72) 13.2deg 13.7deg, transparent 14deg 24deg),
+            repeating-radial-gradient(circle at 0 0, transparent 0 17px, rgba(196,164,255,.62) 18px 19px, transparent 20px 27px);
+        mask-image: linear-gradient(135deg, #000 0%, transparent 77%);
+    }
+    .halloween-web-left { left: -8px; }
+    .halloween-web-right { right: -8px; transform: scaleX(-1); }
+    .halloween-bat, .halloween-pumpkin {
+        position: absolute;
+        display: block;
+        opacity: .38;
+        filter: drop-shadow(0 0 9px rgba(155,93,229,.38));
+        user-select: none;
+    }
+    .halloween-bat { font-size: 23px; animation: halloweenBatFloat 8s ease-in-out infinite; }
+    .halloween-bat-one { top: 24%; left: 3%; animation-delay: -2s; }
+    .halloween-bat-two { top: 61%; right: 4%; font-size: 18px; animation-delay: -5s; }
+    .halloween-pumpkin { font-size: 25px; opacity: .29; animation: halloweenPumpkinBob 5s ease-in-out infinite; }
+    .halloween-pumpkin-one { top: 39%; right: 2%; }
+    .halloween-pumpkin-two { bottom: 21%; left: 2%; font-size: 20px; animation-delay: -2.5s; }
+    @keyframes halloweenBatFloat {
+        0%, 100% { transform: translate3d(0,0,0) rotate(-5deg); }
+        50% { transform: translate3d(13px,-16px,0) rotate(6deg); }
+    }
+    @keyframes halloweenPumpkinBob {
+        0%, 100% { transform: translateY(0) rotate(-4deg); }
+        50% { transform: translateY(-9px) rotate(4deg); }
+    }
+    .halloween-hero-stamp {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        margin-bottom: 20px;
+        padding: 8px 14px;
+        border: 1px solid rgba(255,159,67,.5);
+        border-radius: 999px;
+        background: linear-gradient(100deg, rgba(67,31,91,.72), rgba(92,39,22,.72));
+        color: #ffd2a1;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: .2em;
+        text-transform: uppercase;
+        box-shadow: 0 7px 24px rgba(0,0,0,.24), 0 0 22px rgba(255,116,23,.1);
+        animation: halloweenStampGlow 3.4s ease-in-out infinite;
+    }
+    @keyframes halloweenStampGlow {
+        0%, 100% { box-shadow: 0 7px 24px rgba(0,0,0,.24), 0 0 16px rgba(255,116,23,.08); }
+        50% { box-shadow: 0 7px 26px rgba(0,0,0,.3), 0 0 25px rgba(155,93,229,.24); }
+    }
+    .halloween-season #navbar { border-color: rgba(255,116,23,.3) !important; }
+    .halloween-season #navbar .nav-link:hover,
+    .halloween-season #navbar .nav-link.active-link { color: #ffc078 !important; }
+    .halloween-season #navbar .nav-link::after { background: linear-gradient(90deg,#ff7417,#9b5de5); box-shadow: 0 0 14px rgba(255,116,23,.5); }
+    .halloween-season #inicio {
+        box-shadow: inset 0 0 170px rgba(74,32,105,.16), inset 0 -80px 120px rgba(111,43,15,.12);
+    }
+    .halloween-season #inicio h1 > span {
+        background-image: linear-gradient(115deg,#ffe5c3 2%,#ff7417 34%,#ffc078 50%,#9b5de5 76%,#f4d8ff 96%) !important;
+        filter: drop-shadow(0 4px 20px rgba(255,116,23,.32)) !important;
+    }
+    .halloween-season .section-title::after {
+        background: linear-gradient(90deg,#ff7417,#9b5de5) !important;
+        box-shadow: 0 0 14px rgba(255,116,23,.2);
+    }
+    .halloween-season .hero-btn-primary,
+    .halloween-season .ranking-btn-primary,
+    .halloween-season .announcement-btn,
+    .halloween-season .btn-video {
+        background: linear-gradient(110deg,#ff8a25,#ff7417 58%,#9b5de5) !important;
+        border-color: rgba(255,210,161,.45) !important;
+        color: #170b20 !important;
+    }
+    .halloween-season .hero-btn-primary:hover,
+    .halloween-season .ranking-btn-primary:hover,
+    .halloween-season .announcement-btn:hover,
+    .halloween-season .btn-video:hover { background: linear-gradient(110deg,#ffc078,#ff8a25 58%,#b07af2) !important; }
+    .halloween-season .hero-btn-secondary,
+    .halloween-season .ranking-btn-secondary { border-color: rgba(255,145,54,.75) !important; color: #ffd2a1 !important; }
+    .halloween-season .hero-btn-secondary:hover,
+    .halloween-season .ranking-btn-secondary:hover { background: #ff7417 !important; color: #170b20 !important; }
+    .halloween-season .mapkalo-section {
+        background: radial-gradient(ellipse at 92% 8%,rgba(155,93,229,.16),transparent 34%), linear-gradient(145deg,#130d1a 0%,#17131d 52%,#100d14 100%);
+        border-color: rgba(155,93,229,.28);
+    }
+    .halloween-season .mapkalo-kicker,
+    .halloween-season .mapkalo-card-label,
+    .halloween-season .mapkalo-title-accent { color: #ffc078; }
+    .halloween-season .mapkalo-title-accent { text-shadow: 0 0 22px rgba(255,116,23,.32); }
+    .halloween-season .mapkalo-card { border-color: rgba(155,93,229,.28); }
+    .halloween-season .mapkalo-card:hover { border-color: rgba(255,145,54,.72); box-shadow: 0 22px 50px rgba(0,0,0,.42),0 0 26px rgba(155,93,229,.14); }
+    .halloween-season .mapkalo-download { background: linear-gradient(110deg,#ff8a25,#ff7417 62%,#9b5de5); border-color: #ff8a25; color: #170b20; }
+    .halloween-season .mapkalo-download:hover { background: transparent; color: #ffd2a1; }
+    .halloween-season .mapkalo-order-badge { border-color: #ffc078; color: #ffc078; }
+    .halloween-season #radioPlayer { border-color: rgba(255,116,23,.42) !important; box-shadow: 0 18px 45px rgba(0,0,0,.6),0 0 22px rgba(155,93,229,.12); }
+    .halloween-season .community-search { border-color: rgba(255,116,23,.35); }
+    .halloween-season .community-search:focus-within { border-color: #ff8a25; box-shadow: 0 0 0 3px rgba(255,116,23,.14); }
+    @media (max-width: 639px) {
+        .halloween-web { width: 120px; height: 120px; opacity: .12; }
+        .halloween-bat-one { top: 19%; left: 1%; }
+        .halloween-bat-two { top: 68%; right: 1%; }
+        .halloween-pumpkin-one { top: 47%; right: 1%; font-size: 20px; }
+        .halloween-pumpkin-two { bottom: 24%; left: 1%; font-size: 18px; }
+        .halloween-hero-stamp { font-size: 9px; letter-spacing: .14em; }
+    }
     .missing-photo-fallback {
         position: absolute;
         inset: 0;
@@ -4462,6 +4596,7 @@ window.addEventListener('scroll', () => {
     }
     @media (prefers-reduced-motion: reduce) {
         *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+        .halloween-bat, .halloween-pumpkin, .halloween-hero-stamp { animation: none !important; }
         .scroll-reveal, .scroll-reveal.show { opacity: 1 !important; transform: none !important; }
         .event-card:hover, #anuncios .group:hover, #videos .group:hover,
         .mapkalo-card:hover, #comunidad .member-card:hover, #contacto .social-card:hover,
