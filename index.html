@@ -1561,6 +1561,7 @@ Un diseño creado para quienes desean llevar la presencia de LA ELITE con ellos 
             <!-- MOD 7: ACTUALIZACIÓN -->
             <article class="mapkalo-card mapkalo-update-card scroll-reveal">
                 <img src="actu.jpg" alt="Mapkalo Actualización" class="mapkalo-card-image">
+                <span class="mapkalo-order-badge" aria-label="Orden 7">07</span>
                 <div class="mapkalo-card-content">
                     <p class="mapkalo-card-label">NOVEDAD · ACTUALIZACIÓN</p>
                     <h3>Mapkalo Actualización</h3>
@@ -1572,6 +1573,7 @@ Un diseño creado para quienes desean llevar la presencia de LA ELITE con ellos 
             <!-- MOD 6: imagen 4.jpg -->
             <article class="mapkalo-card scroll-reveal">
                 <img src="4.jpg" alt="Mapkalo ATS4" class="mapkalo-card-image">
+                <span class="mapkalo-order-badge" aria-label="Orden 6">06</span>
                 <div class="mapkalo-card-content">
                     <p class="mapkalo-card-label">MAPKALO · ATS</p>
                     <h3>Mapkalo ATS4</h3>
@@ -1583,6 +1585,7 @@ Un diseño creado para quienes desean llevar la presencia de LA ELITE con ellos 
             <!-- MOD 5: imagen 1.jpg -->
             <article class="mapkalo-card scroll-reveal">
                 <img src="1.jpg" alt="Mapkalo ATS1" class="mapkalo-card-image">
+                <span class="mapkalo-order-badge" aria-label="Orden 5">05</span>
                 <div class="mapkalo-card-content">
                     <p class="mapkalo-card-label">MAPKALO · ATS</p>
                     <h3>Mapkalo ATS1</h3>
@@ -1594,6 +1597,7 @@ Un diseño creado para quienes desean llevar la presencia de LA ELITE con ellos 
             <!-- MOD 4: imagen model.jpg -->
             <article class="mapkalo-card scroll-reveal">
                 <img src="model.jpg" alt="Model Colombia" class="mapkalo-card-image">
+                <span class="mapkalo-order-badge" aria-label="Orden 4">04</span>
                 <div class="mapkalo-card-content">
                     <p class="mapkalo-card-label">MAPKALO · MODELO</p>
                     <h3>Model Colombia</h3>
@@ -1605,6 +1609,7 @@ Un diseño creado para quienes desean llevar la presencia de LA ELITE con ellos 
             <!-- MOD 3: imagen 2.jpg -->
             <article class="mapkalo-card scroll-reveal">
                 <img src="2.jpg" alt="Mapkalo ATS2" class="mapkalo-card-image">
+                <span class="mapkalo-order-badge" aria-label="Orden 3">03</span>
                 <div class="mapkalo-card-content">
                     <p class="mapkalo-card-label">MAPKALO · ATS</p>
                     <h3>Mapkalo ATS2</h3>
@@ -1616,6 +1621,7 @@ Un diseño creado para quienes desean llevar la presencia de LA ELITE con ellos 
             <!-- MOD 2: imagen 3.jpg -->
             <article class="mapkalo-card scroll-reveal">
                 <img src="3.jpg" alt="Mapkalo ATS3" class="mapkalo-card-image">
+                <span class="mapkalo-order-badge" aria-label="Orden 2">02</span>
                 <div class="mapkalo-card-content">
                     <p class="mapkalo-card-label">MAPKALO · ATS</p>
                     <h3>Mapkalo ATS3</h3>
@@ -1627,6 +1633,7 @@ Un diseño creado para quienes desean llevar la presencia de LA ELITE con ellos 
             <!-- MOD 1: imagen term.jpg -->
             <article class="mapkalo-card scroll-reveal">
                 <img src="term.jpg" alt="Terminales Mapkalo" class="mapkalo-card-image">
+                <span class="mapkalo-order-badge" aria-label="Orden 1">01</span>
                 <div class="mapkalo-card-content">
                     <p class="mapkalo-card-label">MAPKALO · TERMINALES</p>
                     <h3>Terminales Mapkalo</h3>
@@ -1667,6 +1674,7 @@ Un diseño creado para quienes desean llevar la presencia de LA ELITE con ellos 
     .mapkalo-back-link { color: #99f6e4; font-size: 13px; font-weight: 700; }
     .mapkalo-back-link:hover { color: white; }
     .mapkalo-card {
+        position: relative;
         display: flex;
         flex-direction: column;
         overflow: hidden;
@@ -1683,6 +1691,27 @@ Un diseño creado para quienes desean llevar la presencia de LA ELITE con ellos 
         box-shadow: 0 22px 50px rgba(0, 0, 0, .4), 0 0 24px rgba(45, 212, 191, .1);
     }
     .mapkalo-update-card { border-color: rgba(56, 189, 248, .42); }
+    .mapkalo-order-badge {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        z-index: 2;
+        display: grid;
+        width: 46px;
+        height: 46px;
+        place-items: center;
+        border: 2px solid #ffe19a;
+        border-radius: 12px;
+        background: rgba(5, 12, 15, .94);
+        color: #ffe19a;
+        font-size: 17px;
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: .04em;
+        text-shadow: 0 0 12px rgba(245,196,81,.45);
+        box-shadow: 0 5px 18px rgba(0,0,0,.72), 0 0 0 3px rgba(5,12,15,.62);
+        pointer-events: none;
+    }
     .mapkalo-image-placeholder {
         position: relative;
         display: flex;
