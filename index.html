@@ -26,7 +26,7 @@
     <!-- RENDIMIENTO Y FUENTES (GOOGLE FONTS) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <!-- SCRIPT DE TAILWIND Y HOJAS DE ESTILOS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -556,6 +556,147 @@
     }
 </style>
 
+<style id="homepage-gold-effects">
+    /* Identidad dorada y efectos cinematográficos para la portada */
+    #inicio {
+        isolation: isolate;
+    }
+    #inicio::before,
+    #inicio::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+    }
+    #inicio::before {
+        z-index: 1;
+        background:
+            radial-gradient(ellipse at 18% 28%, rgba(245, 196, 81, .16), transparent 32%),
+            radial-gradient(ellipse at 82% 78%, rgba(245, 196, 81, .12), transparent 34%),
+            linear-gradient(115deg, transparent 35%, rgba(255, 213, 106, .045) 50%, transparent 65%);
+        background-size: 150% 150%;
+        animation: goldAtmosphere 18s ease-in-out infinite alternate;
+    }
+    #inicio::after {
+        z-index: 2;
+        opacity: .28;
+        background-image: radial-gradient(circle, rgba(255, 224, 150, .9) 1px, transparent 1.7px);
+        background-size: 83px 83px;
+        mask-image: linear-gradient(to bottom, transparent, #000 20%, #000 78%, transparent);
+        animation: goldDust 32s linear infinite;
+    }
+    #inicio h1 {
+        font-family: 'Cinzel', 'Playfair Display', serif !important;
+        font-weight: 900 !important;
+        letter-spacing: .035em !important;
+        text-transform: uppercase;
+    }
+    #inicio h1 > span {
+        color: transparent !important;
+        background: linear-gradient(115deg, #fff4cf 2%, #f5c451 28%, #fff0bd 48%, #d99b25 70%, #ffe8a1 94%);
+        background-size: 220% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        filter: drop-shadow(0 4px 18px rgba(245, 196, 81, .28));
+        animation: goldTitleShine 8s ease-in-out infinite;
+    }
+    #inicio .hero-subtitle,
+    #inicio .hero-kicker {
+        font-family: 'Cinzel', 'Playfair Display', serif;
+        font-weight: 700;
+        text-shadow: 0 0 20px rgba(245, 196, 81, .3);
+    }
+    #inicio .hero-logo-wrap {
+        position: relative;
+        width: fit-content;
+        min-width: min(100%, 260px);
+        min-height: 220px;
+        max-width: 100%;
+        align-items: center;
+        justify-content: center;
+        isolation: isolate;
+    }
+    #inicio .hero-logo-wrap::before,
+    #inicio .hero-logo-wrap::after {
+        content: "";
+        position: absolute;
+        inset: 12%;
+        z-index: -1;
+        border: 1px solid rgba(255, 213, 106, .45);
+        border-radius: 50%;
+        box-shadow: 0 0 35px rgba(245, 196, 81, .2), inset 0 0 28px rgba(245, 196, 81, .12);
+        animation: logoOrbit 14s linear infinite;
+    }
+    #inicio .hero-logo-wrap::after {
+        inset: 4%;
+        border-color: rgba(255, 236, 183, .2);
+        animation-duration: 22s;
+        animation-direction: reverse;
+    }
+    #inicio .hero-logo-wrap img {
+        filter: drop-shadow(0 0 28px rgba(245, 196, 81, .55));
+    }
+    #inicio .hero-tagline {
+        color: #f7e8c2;
+        text-shadow: 0 2px 18px rgba(0, 0, 0, .7);
+    }
+    #inicio .hero-intro-panel {
+        border-color: rgba(245, 196, 81, .42) !important;
+        background: linear-gradient(135deg, rgba(16, 13, 7, .82), rgba(0, 0, 0, .7)) !important;
+        box-shadow: 0 18px 55px rgba(0, 0, 0, .45), inset 0 1px rgba(255, 232, 161, .12), 0 0 28px rgba(245, 196, 81, .08) !important;
+    }
+    #inicio .hero-btn-primary {
+        color: #1b1405;
+        background: linear-gradient(120deg, #ffe8a1, #f5c451 45%, #d99b25 100%);
+        border: 1px solid rgba(255, 239, 194, .8);
+        box-shadow: 0 12px 36px rgba(214, 159, 43, .28), inset 0 1px rgba(255, 255, 255, .55);
+    }
+    #inicio .hero-btn-primary:hover {
+        background: linear-gradient(120deg, #fff2c7, #ffd56a 55%, #efb83d);
+        box-shadow: 0 16px 42px rgba(245, 196, 81, .4), 0 0 24px rgba(245, 196, 81, .28);
+    }
+    #inicio .hero-btn-secondary {
+        border-color: rgba(255, 213, 106, .85);
+        color: #ffe7a7;
+        box-shadow: inset 0 0 22px rgba(245, 196, 81, .07), 0 0 22px rgba(245, 196, 81, .08);
+    }
+    #inicio .hero-btn-secondary:hover {
+        color: #1b1405;
+        background: linear-gradient(120deg, #ffe8a1, #f5c451);
+    }
+    @keyframes goldAtmosphere {
+        from { background-position: 0% 50%; }
+        to { background-position: 100% 50%; }
+    }
+    @keyframes goldDust {
+        from { background-position: 0 0; }
+        to { background-position: 83px -166px; }
+    }
+    @keyframes goldTitleShine {
+        0%, 65%, 100% { background-position: 0% center; }
+        82% { background-position: 100% center; }
+    }
+    @keyframes logoOrbit {
+        to { transform: rotate(360deg); }
+    }
+    @media (max-width: 639px) {
+        #inicio h1 { letter-spacing: .015em !important; }
+        #inicio::after { opacity: .18; }
+    }
+    @media (min-width: 768px) {
+        #inicio .hero-logo-wrap { margin-left: 0; margin-right: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        #inicio::before,
+        #inicio::after,
+        #inicio h1 > span,
+        #inicio .hero-logo-wrap::before,
+        #inicio .hero-logo-wrap::after {
+            animation: none !important;
+        }
+    }
+</style>
+
 </head>
 <body>
 <nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-black/75 backdrop-blur-xl border-b border-[#f5c451]/10 transition-all duration-300">
@@ -788,7 +929,7 @@
             <!-- IZQUIERDA -->
             <div class="space-y-10">
                 <!-- LOGO -->
-                <div class="flex justify-center md:justify-start scroll-reveal">
+                <div class="hero-logo-wrap flex justify-center md:justify-start scroll-reveal">
                     <img src="logo-elite.png"
                          alt="La Elite"
                          class="h-36 md:h-52 drop-shadow-[0_0_45px_#f5c451] hover:scale-105 transition duration-500 animate-[pulse_5s_infinite]">
@@ -800,11 +941,11 @@
                             LA ELITE
                         </span>
                     </h1>
-                    <p class="text-2xl md:text-5xl mt-5 text-[#f5c451] font-light tracking-[3px] neon-gold">
+                    <p class="hero-subtitle text-2xl md:text-5xl mt-5 text-[#f5c451] font-light tracking-[3px] neon-gold">
                         ATS &amp; ETS2
                     </p>
                     <div class="mt-10 max-w-xl mx-auto md:mx-0">
-                        <p class="text-2xl italic font-light leading-relaxed text-gray-200">
+                        <p class="hero-tagline text-2xl italic font-light leading-relaxed text-gray-200">
                             «Donde las mejores rutas se convierten en leyenda»
                         </p>
                     </div>
@@ -821,8 +962,8 @@
                     </button>
                 </div>
                 <!-- QUIENES SOMOS -->
-                <div class="max-w-2xl bg-black/60 backdrop-blur-xl border border-[#f5c451]/20 rounded-3xl p-8 shadow-2xl scroll-reveal">
-                    <p class="text-[#f5c451] uppercase text-sm tracking-[3px] mb-4">
+                <div class="hero-intro-panel max-w-2xl bg-black/60 backdrop-blur-xl border border-[#f5c451]/20 rounded-3xl p-8 shadow-2xl scroll-reveal">
+                    <p class="hero-kicker text-[#f5c451] uppercase text-sm tracking-[3px] mb-4">
                         Comunidad Exclusiva ATS &amp; ETS2
                     </p>
                     <h2 class="text-3xl font-bold mb-5 text-white">
@@ -3586,11 +3727,11 @@ window.addEventListener('scroll', () => {
 </script>
 <style id="elite-remaster">
     :root {
-        --elite-orange: #ff7133;
-        --elite-orange-bright: #ff8a4c;
-        --elite-amber: #ffbf69;
+        --elite-orange: #f5c451;
+        --elite-orange-bright: #ffe19a;
+        --elite-amber: #ffd56a;
         --elite-surface: #111111;
-        --elite-line: rgba(255, 113, 51, .2);
+        --elite-line: rgba(245, 196, 81, .2);
     }
     html { scroll-padding-top: 92px; }
     body {
@@ -3616,7 +3757,7 @@ window.addEventListener('scroll', () => {
         padding: 10px 0;
     }
     #navbar .nav-link:hover, #navbar .nav-link.active-link { color: var(--elite-orange-bright) !important; }
-    #navbar .nav-link::after { background: var(--elite-orange); box-shadow: 0 0 14px rgba(255, 113, 51, .45); }
+    #navbar .nav-link::after { background: var(--elite-orange); box-shadow: 0 0 14px rgba(245, 196, 81, .45); }
     #navbar .bg-\[\#f5c451\] { background: var(--elite-orange) !important; }
     #navbar #mobile-menu:not(.hidden) {
         position: absolute;
@@ -3639,17 +3780,21 @@ window.addEventListener('scroll', () => {
         content: "";
         position: absolute;
         inset: 0;
-        z-index: 0;
+        z-index: 2;
         pointer-events: none;
-        background: linear-gradient(90deg, rgba(6,6,6,.87) 0%, rgba(6,6,6,.62) 53%, rgba(6,6,6,.18) 100%);
+        opacity: .72;
+        background-image: linear-gradient(90deg, rgba(6,6,6,.87) 0%, rgba(6,6,6,.62) 53%, rgba(6,6,6,.18) 100%), radial-gradient(circle, rgba(255, 224, 150, .9) 1px, transparent 1.7px);
+        background-size: auto, 83px 83px;
+        mask-image: linear-gradient(to bottom, transparent, #000 20%, #000 78%, transparent);
+        animation: goldDust 32s linear infinite;
     }
     #inicio > .relative.z-10 { max-width: 1320px; }
     #inicio .grid { gap: clamp(2rem, 5vw, 5rem); }
     #inicio .space-y-10 > :not([hidden]) ~ :not([hidden]) { margin-top: 2rem; }
-    #inicio h1 { letter-spacing: -.07em !important; font-family: 'Inter', sans-serif !important; font-weight: 800; }
-    #inicio h1 span { color: var(--elite-orange-bright) !important; text-shadow: 0 5px 32px rgba(255, 113, 51, .22) !important; }
-    #inicio .text-2xl.md\:text-5xl { color: #fff !important; font-size: clamp(1.15rem, 2.3vw, 2rem); font-weight: 600; letter-spacing: .16em; }
-    #inicio .italic { font-style: normal; font-size: clamp(1rem, 1.6vw, 1.35rem); color: #e5ddd8; }
+    #inicio h1 { letter-spacing: .035em !important; font-family: 'Cinzel', 'Playfair Display', serif !important; font-weight: 900 !important; }
+    #inicio h1 span { color: transparent !important; background: linear-gradient(115deg, #fff4cf 2%, #f5c451 28%, #fff0bd 48%, #d99b25 70%, #ffe8a1 94%); background-size: 220% auto; -webkit-background-clip: text; background-clip: text; text-shadow: 0 5px 32px rgba(245, 196, 81, .22) !important; animation: goldTitleShine 8s ease-in-out infinite; }
+    #inicio .text-2xl.md\:text-5xl { color: var(--elite-orange-bright) !important; font-family: 'Cinzel', 'Playfair Display', serif; font-size: clamp(1.15rem, 2.3vw, 2rem); font-weight: 700; letter-spacing: .16em; }
+    #inicio .italic { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1rem, 1.6vw, 1.35rem); color: #f7e8c2; }
     #inicio .bg-black\/60 {
         background: rgba(13, 13, 13, .78) !important;
         border: 1px solid var(--elite-line) !important;
@@ -3662,11 +3807,11 @@ window.addEventListener('scroll', () => {
         background: var(--elite-orange) !important;
         color: #111 !important;
         border-radius: 8px !important;
-        box-shadow: 0 12px 35px rgba(255, 113, 51, .23) !important;
+        box-shadow: 0 12px 35px rgba(245, 196, 81, .23) !important;
         letter-spacing: .09em;
     }
     #inicio .hero-btn-primary:hover { background: var(--elite-orange-bright) !important; }
-    #inicio .hero-btn-secondary { border-radius: 8px !important; border-color: var(--elite-orange) !important; color: #fff !important; }
+    #inicio .hero-btn-secondary { border-radius: 8px !important; border-color: var(--elite-orange) !important; color: var(--elite-orange-bright) !important; }
     #inicio .hero-btn-secondary:hover { background: var(--elite-orange) !important; color: #111 !important; }
     #inicio .absolute.bottom-10 { color: var(--elite-orange-bright) !important; }
 
@@ -3688,8 +3833,8 @@ window.addEventListener('scroll', () => {
         box-shadow: 0 16px 38px rgba(0,0,0,.22);
     }
     .event-card:hover, #anuncios .group:hover, #videos .group:hover {
-        border-color: rgba(255,113,51,.48) !important;
-        box-shadow: 0 22px 50px rgba(0,0,0,.38), 0 0 30px rgba(255,113,51,.07);
+        border-color: rgba(245,196,81,.48) !important;
+        box-shadow: 0 22px 50px rgba(0,0,0,.38), 0 0 30px rgba(245,196,81,.07);
     }
     .ranking-btn-primary, .announcement-btn, .event-btn, .btn-video {
         background: var(--elite-orange) !important;
@@ -3709,9 +3854,9 @@ window.addEventListener('scroll', () => {
         gap: .7rem;
         min-height: 48px;
         padding: .75rem 1.5rem;
-        border: 1px solid rgba(255,113,51,.55);
+        border: 1px solid rgba(245,196,81,.55);
         border-radius: 8px;
-        background: rgba(255,113,51,.1);
+        background: rgba(245,196,81,.1);
         color: var(--elite-orange-bright);
         font: inherit;
         font-weight: 700;
@@ -3735,8 +3880,8 @@ window.addEventListener('scroll', () => {
         border-radius: 12px !important;
         box-shadow: 0 12px 28px rgba(0,0,0,.18);
     }
-    #comunidad .member-card:hover { border-color: rgba(255,113,51,.45) !important; }
-    #comunidad .member-image img { border-color: rgba(255,113,51,.35) !important; }
+    #comunidad .member-card:hover { border-color: rgba(245,196,81,.45) !important; }
+    #comunidad .member-image img { border-color: rgba(245,196,81,.35) !important; }
     #comunidad .owner-card .member-image img { border-color: var(--elite-orange) !important; }
     #comunidad .member-badge.owner-badge { background: var(--elite-orange) !important; }
     #comunidad .role-text { color: #aaa !important; }
@@ -3749,11 +3894,11 @@ window.addEventListener('scroll', () => {
         min-height: 56px;
         color: var(--elite-orange-bright);
         background: #111;
-        border: 1px solid rgba(255,113,51,.28);
+        border: 1px solid rgba(245,196,81,.28);
         border-radius: 10px;
         box-shadow: 0 12px 30px rgba(0,0,0,.2);
     }
-    .community-search:focus-within { border-color: var(--elite-orange); box-shadow: 0 0 0 3px rgba(255,113,51,.12); }
+    .community-search:focus-within { border-color: var(--elite-orange); box-shadow: 0 0 0 3px rgba(245,196,81,.12); }
     .community-search input { width: 100%; min-width: 0; color: #fff; background: transparent; border: 0; outline: 0; font: inherit; }
     .community-search input::placeholder { color: #807a76; }
     .community-count { min-height: 1.5em; margin: 9px 3px 0; color: #8e8883; font-size: .82rem; text-align: right; }
@@ -3763,20 +3908,20 @@ window.addEventListener('scroll', () => {
         border: 1px solid rgba(255,255,255,.08) !important;
         border-radius: 12px !important;
     }
-    #contacto .social-card:hover { border-color: rgba(255,113,51,.55) !important; background: #1d1916 !important; }
+    #contacto .social-card:hover { border-color: rgba(245,196,81,.55) !important; background: #1d1916 !important; }
     #contacto .social-icon { border-radius: 12px; }
     #contacto .bg-\[\#f5c451\] { background: var(--elite-orange) !important; }
-    footer { background: #080808 !important; border-color: rgba(255,113,51,.18) !important; }
+    footer { background: #080808 !important; border-color: rgba(245,196,81,.18) !important; }
     .news-box, .ventana-perfil-contenedor {
         background: #12100f !important;
-        border: 1px solid rgba(255,113,51,.3) !important;
+        border: 1px solid rgba(245,196,81,.3) !important;
         border-radius: 14px !important;
     }
     .news-tag, .news-text p[style], .p-role-text { color: var(--elite-orange-bright) !important; }
     .close-btn:hover, .boton-cerrar-perfil:hover { background: var(--elite-orange) !important; color: #111 !important; }
     #radioPlayer {
         background: rgba(17,16,15,.96) !important;
-        border-color: rgba(255,113,51,.36) !important;
+        border-color: rgba(245,196,81,.36) !important;
         border-radius: 14px !important;
     }
     #radioToggle { background: var(--elite-orange) !important; }
@@ -3804,7 +3949,7 @@ window.addEventListener('scroll', () => {
         #navbar .nav-link { font-size: 10px; letter-spacing: .8px; }
     }
     @media (max-width: 767px) {
-        #inicio::after { background: linear-gradient(180deg, rgba(6,6,6,.72), rgba(6,6,6,.65)); }
+        #inicio::after { opacity: .55; }
         #inicio .grid { gap: 1.6rem; }
         #inicio .grid > div:first-child { padding-top: 1.6rem; }
         #inicio .grid > div:first-child > .space-y-10 { gap: 1.4rem; }
