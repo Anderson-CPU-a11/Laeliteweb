@@ -1762,6 +1762,15 @@ Un diseño creado para quienes desean llevar la presencia de LA ELITE con ellos 
             </p>
         </div>
 
+        <div class="video-search-tools">
+            <label class="video-search" for="video-search-input">
+                <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+                <input id="video-search-input" type="search" placeholder="Buscar tutorial o tema…" autocomplete="off" aria-controls="video-grid">
+                <kbd>⌕</kbd>
+            </label>
+            <p id="video-search-count" class="video-search-count" aria-live="polite"></p>
+        </div>
+
         <div id="video-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 videos-collapsed">
 
             <!-- Video 1 -->
@@ -2304,6 +2313,7 @@ Un diseño creado para quienes desean llevar la presencia de LA ELITE con ellos 
 
         </div>
 
+        <p id="video-search-empty" class="video-search-empty" role="status" hidden>No encontramos tutoriales con ese término. Prueba con otra búsqueda.</p>
         <div class="video-more-wrap">
             <button id="videos-toggle" class="video-more-toggle" type="button" aria-expanded="false" aria-controls="video-grid">
                 Ver más vídeos <i class="fas fa-chevron-down" aria-hidden="true"></i>
@@ -2312,6 +2322,26 @@ Un diseño creado para quienes desean llevar la presencia de LA ELITE con ellos 
     </div>
 
     <style>
+        .video-search-tools { width: min(100%, 670px); margin: -2rem auto 2.3rem; }
+        .video-search {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-height: 56px;
+            padding: 0 16px;
+            border: 1px solid rgba(245,196,81,.28);
+            border-radius: 10px;
+            background: #111;
+            color: #ffe19a;
+            box-shadow: 0 12px 30px rgba(0,0,0,.2);
+        }
+        .video-search:focus-within { border-color: #f5c451; box-shadow: 0 0 0 3px rgba(245,196,81,.12); }
+        .video-search input { width: 100%; min-width: 0; border: 0; outline: 0; background: transparent; color: #fff; font: inherit; }
+        .video-search input::placeholder { color: #807a76; }
+        .video-search kbd { color: #807a76; font-size: 20px; }
+        .video-search-count { min-height: 1.5em; margin: 9px 3px 0; color: #8e8883; font-size: .82rem; text-align: right; }
+        .video-search-empty { margin: 2rem auto; color: #c8c0b8; text-align: center; }
+        #video-grid > [hidden] { display: none !important; }
         .btn-video {
             width: 100%;
             height: 52px;
@@ -4189,17 +4219,53 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const videoGrid = document.getElementById('video-grid');
     const videosToggle = document.getElementById('videos-toggle');
+    const videoSearch = document.getElementById('video-search-input');
+    const videoSearchCount = document.getElementById('video-search-count');
+    const videoSearchEmpty = document.getElementById('video-search-empty');
+    const videoCards = Array.from(videoGrid?.children || []);
+    const normalizeVideoText = (text) => text.toLocaleLowerCase('es').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     const updateVideoLimit = () => {
-        if (!videoGrid || !videosToggle) return;
+        if (!videoGrid) return;
+        const searching = Boolean(videoSearch?.value.trim());
+        if (searching) {
+            videoGrid.classList.remove('videos-collapsed');
+            if (videosToggle) videosToggle.hidden = true;
+            return;
+        }
         const columns = window.matchMedia('(max-width: 639px)').matches ? 1
             : window.matchMedia('(max-width: 1023px)').matches ? 2 : 3;
-        const hasMoreVideos = videoGrid.children.length > columns * 2;
-        videosToggle.hidden = !hasMoreVideos;
+        const hasMoreVideos = videoCards.length > columns * 2;
+        if (videosToggle) videosToggle.hidden = !hasMoreVideos;
         if (!hasMoreVideos) {
             videoGrid.classList.remove('videos-collapsed');
-            videosToggle.setAttribute('aria-expanded', 'true');
+            videosToggle?.setAttribute('aria-expanded', 'true');
+        } else {
+            const expanded = videosToggle?.getAttribute('aria-expanded') === 'true';
+            videoGrid.classList.toggle('videos-collapsed', !expanded);
+            if (videosToggle) {
+                videosToggle.innerHTML = expanded
+                    ? 'Ver menos vídeos <i class="fas fa-chevron-up" aria-hidden="true"></i>'
+                    : 'Ver más vídeos <i class="fas fa-chevron-down" aria-hidden="true"></i>';
+            }
         }
     };
+    const updateVideoSearch = () => {
+        const query = normalizeVideoText(videoSearch?.value.trim() || '');
+        let visible = 0;
+        videoCards.forEach((card) => {
+            const matches = normalizeVideoText(card.textContent || '').includes(query);
+            card.hidden = !matches;
+            if (matches) visible += 1;
+        });
+        if (videoSearchCount) {
+            videoSearchCount.textContent = query
+                ? `${visible} de ${videoCards.length} tutoriales encontrados`
+                : `${videoCards.length} tutoriales disponibles`;
+        }
+        if (videoSearchEmpty) videoSearchEmpty.hidden = visible > 0;
+        updateVideoLimit();
+    };
+    videoSearch?.addEventListener('input', updateVideoSearch);
     videosToggle?.addEventListener('click', () => {
         const expanded = videosToggle.getAttribute('aria-expanded') === 'true';
         videoGrid?.classList.toggle('videos-collapsed', expanded);
@@ -4208,7 +4274,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ? 'Ver más vídeos <i class="fas fa-chevron-down" aria-hidden="true"></i>'
             : 'Ver menos vídeos <i class="fas fa-chevron-up" aria-hidden="true"></i>';
     });
-    updateVideoLimit();
+    updateVideoSearch();
     window.addEventListener('resize', updateVideoLimit, { passive: true });
 
     cards.forEach((card) => {
