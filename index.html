@@ -700,9 +700,160 @@
         }
     }
 </style>
+<style id="loading-screen-styles">
+    body.is-loading { overflow: hidden; }
+    #loading-screen {
+        position: fixed;
+        inset: 0;
+        z-index: 1000000;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        overflow: hidden;
+        background: radial-gradient(ellipse at 50% 42%, rgba(245,196,81,.12), transparent 34%), #070707;
+        opacity: 1;
+        visibility: visible;
+        transition: opacity .45s ease, visibility .45s ease;
+    }
+    #loading-screen::before,
+    #loading-screen::after {
+        content: "";
+        position: absolute;
+        width: min(72vw, 520px);
+        aspect-ratio: 1;
+        border: 1px solid rgba(245,196,81,.10);
+        border-radius: 50%;
+        box-shadow: 0 0 80px rgba(245,196,81,.04), inset 0 0 70px rgba(245,196,81,.035);
+        pointer-events: none;
+    }
+    #loading-screen::after { width: min(58vw, 420px); border-style: dashed; opacity: .55; }
+    #loading-screen.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .loading-content {
+        position: relative;
+        z-index: 1;
+        width: min(100%, 360px);
+        text-align: center;
+    }
+    .loading-logo {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 24px;
+        object-fit: contain;
+        filter: drop-shadow(0 0 24px rgba(245,196,81,.42));
+        animation: loadingLogoPulse 2.2s ease-in-out infinite;
+    }
+    .loading-title {
+        color: #f5c451;
+        font-family: 'Cinzel', 'Playfair Display', serif;
+        font-size: clamp(24px, 5vw, 32px);
+        font-weight: 900;
+        letter-spacing: .18em;
+    }
+    .loading-caption {
+        margin-top: 7px;
+        color: #aaa39a;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .25em;
+        text-transform: uppercase;
+    }
+    .loading-track {
+        height: 7px;
+        margin-top: 34px;
+        overflow: hidden;
+        border: 1px solid rgba(245,196,81,.24);
+        border-radius: 999px;
+        background: rgba(255,255,255,.07);
+        box-shadow: 0 0 20px rgba(245,196,81,.08);
+    }
+    #loading-progress {
+        width: 0%;
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, #b77b18, #f5c451, #fff0bd);
+        box-shadow: 0 0 16px rgba(245,196,81,.6);
+        transition: width .16s ease-out;
+    }
+    .loading-status-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        margin-top: 12px;
+        color: #aaa39a;
+        font-size: 11px;
+        letter-spacing: .08em;
+    }
+    #loading-percentage { color: #f5c451; font-variant-numeric: tabular-nums; }
+    @keyframes loadingLogoPulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.045); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        #loading-screen, #loading-progress { transition-duration: .01ms; }
+        .loading-logo { animation: none; }
+    }
+</style>
 
 </head>
-<body>
+<body class="is-loading">
+<div id="loading-screen" role="status" aria-label="Cargando la página">
+    <div class="loading-content">
+        <img src="logo-elite.png" alt="Logo de La Élite" class="loading-logo">
+        <h1 class="loading-title">LA ÉLITE</h1>
+        <p class="loading-caption">Preparando tu próxima ruta</p>
+        <div class="loading-track" role="progressbar" aria-label="Progreso de carga" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div id="loading-progress"></div>
+        </div>
+        <div class="loading-status-row">
+            <span id="loading-status">Cargando recursos…</span>
+            <span id="loading-percentage">0%</span>
+        </div>
+    </div>
+</div>
+<script>
+(() => {
+    const loadingScreen = document.getElementById('loading-screen');
+    const progressBar = document.getElementById('loading-progress');
+    const progressTrack = document.querySelector('.loading-track');
+    const percentageLabel = document.getElementById('loading-percentage');
+    const statusLabel = document.getElementById('loading-status');
+    const startedAt = performance.now();
+    const minimumDuration = 5000;
+    let pageLoaded = document.readyState === 'complete';
+    let finished = false;
+
+    const setProgress = (value) => {
+        const progress = Math.max(0, Math.min(100, Math.round(value)));
+        progressBar.style.width = `${progress}%`;
+        progressTrack.setAttribute('aria-valuenow', String(progress));
+        percentageLabel.textContent = `${progress}%`;
+    };
+
+    const finishLoading = () => {
+        if (finished || !pageLoaded || performance.now() - startedAt < minimumDuration) return;
+        finished = true;
+        setProgress(100);
+        statusLabel.textContent = '¡Listos para rodar!';
+        window.setTimeout(() => {
+            loadingScreen.classList.add('is-hidden');
+            document.body.classList.remove('is-loading');
+            window.setTimeout(() => loadingScreen.remove(), 500);
+        }, 180);
+    };
+
+    const progressTimer = window.setInterval(() => {
+        const elapsed = performance.now() - startedAt;
+        setProgress(Math.min(94, (elapsed / minimumDuration) * 94));
+        finishLoading();
+        if (finished) window.clearInterval(progressTimer);
+    }, 50);
+
+    window.addEventListener('load', () => {
+        pageLoaded = true;
+        finishLoading();
+    }, { once: true });
+})();
+</script>
 <nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-black/75 backdrop-blur-xl border-b border-[#f5c451]/10 transition-all duration-300">
     <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-[75px] sm:h-[90px]">
