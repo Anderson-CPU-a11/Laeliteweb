@@ -620,24 +620,18 @@
     #inicio .hero-logo-wrap::after {
         content: "";
         position: absolute;
-        inset: 0;
-        z-index: 1;
-        pointer-events: none;
-        background:
-            radial-gradient(circle, #fff1bf 0 1px, transparent 2px) 12% 28% / 5px 5px no-repeat,
-            radial-gradient(circle, #f5c451 0 1.4px, transparent 2.5px) 84% 24% / 6px 6px no-repeat,
-            radial-gradient(circle, #ffe7a1 0 1px, transparent 2px) 76% 78% / 5px 5px no-repeat,
-            radial-gradient(circle, #f5c451 0 1px, transparent 2px) 22% 82% / 5px 5px no-repeat;
-        filter: drop-shadow(0 0 7px rgba(245, 196, 81, .9));
-        animation: goldLogoTwinkle 2.8s ease-in-out infinite alternate;
+        inset: 12%;
+        z-index: -1;
+        border: 1px solid rgba(255, 213, 106, .45);
+        border-radius: 50%;
+        box-shadow: 0 0 35px rgba(245, 196, 81, .2), inset 0 0 28px rgba(245, 196, 81, .12);
+        animation: logoOrbit 14s linear infinite;
     }
     #inicio .hero-logo-wrap::after {
-        background:
-            radial-gradient(circle, #fff4d4 0 1.5px, transparent 2.5px) 35% 14% / 6px 6px no-repeat,
-            radial-gradient(circle, #f5c451 0 1px, transparent 2px) 93% 54% / 5px 5px no-repeat,
-            radial-gradient(circle, #ffe7a1 0 1px, transparent 2px) 7% 66% / 5px 5px no-repeat;
-        animation-delay: .9s;
-        animation-duration: 3.6s;
+        inset: 4%;
+        border-color: rgba(255, 236, 183, .2);
+        animation-duration: 22s;
+        animation-direction: reverse;
     }
     #inicio .hero-logo-wrap img {
         filter: drop-shadow(0 0 28px rgba(245, 196, 81, .55));
@@ -682,9 +676,8 @@
         0%, 65%, 100% { background-position: 0% center; }
         82% { background-position: 100% center; }
     }
-    @keyframes goldLogoTwinkle {
-        from { opacity: .35; transform: scale(.94); }
-        to { opacity: 1; transform: scale(1.04); }
+    @keyframes logoOrbit {
+        to { transform: rotate(360deg); }
     }
     @media (max-width: 639px) {
         #inicio h1 { letter-spacing: .015em !important; }
