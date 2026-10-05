@@ -4361,6 +4361,78 @@ window.addEventListener('scroll', () => {
     #openBtn { opacity: 1; transform: translateY(0); pointer-events: auto; }
     .open-news { border-color: var(--elite-orange) !important; border-radius: 9px !important; }
     .open-news.show-btn:hover { background: var(--elite-orange) !important; color: #111 !important; }
+
+    /* Movimiento coherente en toda la experiencia */
+    :root {
+        --motion-ease: cubic-bezier(.22, 1, .36, 1);
+        --motion-fast: 220ms;
+        --motion-medium: 420ms;
+    }
+    .scroll-reveal {
+        transform: translate3d(0, 26px, 0) scale(.985) !important;
+        transition: opacity 680ms var(--motion-ease), transform 680ms var(--motion-ease) !important;
+        will-change: opacity, transform;
+    }
+    .scroll-reveal.show {
+        opacity: 1 !important;
+        transform: translate3d(0, 0, 0) scale(1) !important;
+    }
+    #requisitos .grid > .scroll-reveal:nth-child(2),
+    #mods .grid > .scroll-reveal:nth-child(2),
+    #mods-mapkalo .grid > .scroll-reveal:nth-child(2),
+    #anuncios .grid > .scroll-reveal:nth-child(2),
+    #videos .grid > .scroll-reveal:nth-child(2),
+    #comunidad .grid > .scroll-reveal:nth-child(2) { transition-delay: 70ms !important; }
+    #requisitos .grid > .scroll-reveal:nth-child(3),
+    #mods-mapkalo .grid > .scroll-reveal:nth-child(3),
+    #anuncios .grid > .scroll-reveal:nth-child(3),
+    #videos .grid > .scroll-reveal:nth-child(3),
+    #comunidad .grid > .scroll-reveal:nth-child(3) { transition-delay: 130ms !important; }
+    #requisitos .grid > .scroll-reveal:nth-child(4),
+    #mods-mapkalo .grid > .scroll-reveal:nth-child(4),
+    #videos .grid > .scroll-reveal:nth-child(4),
+    #comunidad .grid > .scroll-reveal:nth-child(4) { transition-delay: 190ms !important; }
+
+    #navbar .nav-link { transition: color var(--motion-fast) ease, opacity var(--motion-fast) ease; }
+    #navbar .nav-link::after { transition: width 360ms var(--motion-ease); }
+    #navbar #mobile-menu a { transition: color var(--motion-fast) ease, background-color var(--motion-fast) ease, padding-left var(--motion-fast) ease; }
+    .event-card, #anuncios .group, #videos .group, .mapkalo-card,
+    #comunidad .member-card, #contacto .social-card {
+        transition: transform var(--motion-medium) var(--motion-ease), border-color var(--motion-medium) ease, box-shadow var(--motion-medium) ease, background-color var(--motion-medium) ease !important;
+        will-change: transform;
+    }
+    .event-card:hover, #anuncios .group:hover, #videos .group:hover,
+    .mapkalo-card:hover, #comunidad .member-card:hover, #contacto .social-card:hover {
+        transform: translate3d(0, -6px, 0) scale(1.012);
+    }
+    #mods .event-card > div:first-child img,
+    .mapkalo-card-image, #contacto .social-icon, .member-image img {
+        transition: transform 650ms var(--motion-ease), filter 650ms var(--motion-ease) !important;
+    }
+    #mods .event-card:hover > div:first-child img,
+    .mapkalo-card:hover .mapkalo-card-image { transform: scale(1.045); }
+    #comunidad .member-card:hover .member-image img { transform: scale(1.07); }
+    #contacto .social-card:hover .social-icon { transform: scale(1.08) rotate(-3deg); }
+    .section-title::after {
+        transform: translateX(-50%) scaleX(.72);
+        transform-origin: center;
+        transition: transform 500ms var(--motion-ease), box-shadow 500ms ease;
+    }
+    .section-title:hover::after { transform: translateX(-50%) scaleX(1); box-shadow: 0 0 18px rgba(245,196,81,.28); }
+    .hero-btn-primary, .hero-btn-secondary, .ranking-btn-primary, .ranking-btn-secondary,
+    .announcement-btn, .btn-video, .video-more-toggle, .mapkalo-download,
+    #radioToggle, .red-btn, .boton-cerrar-perfil, .close-btn {
+        transition: transform var(--motion-fast) var(--motion-ease), color var(--motion-fast) ease,
+            background-color var(--motion-fast) ease, border-color var(--motion-fast) ease,
+            box-shadow var(--motion-fast) ease !important;
+    }
+    .hero-btn-primary:active, .hero-btn-secondary:active, .ranking-btn-primary:active,
+    .ranking-btn-secondary:active, .announcement-btn:active, .btn-video:active,
+    .video-more-toggle:active, .mapkalo-download:active, #radioToggle:active {
+        transform: translateY(1px) scale(.975);
+    }
+    .mapkalo-order-badge { transition: transform 300ms var(--motion-ease), box-shadow 300ms ease; }
+    .mapkalo-card:hover .mapkalo-order-badge { transform: translateY(-2px) scale(1.06); box-shadow: 0 8px 22px rgba(0,0,0,.78), 0 0 18px rgba(245,196,81,.2); }
     .missing-photo-fallback {
         position: absolute;
         inset: 0;
@@ -4390,6 +4462,13 @@ window.addEventListener('scroll', () => {
     }
     @media (prefers-reduced-motion: reduce) {
         *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+        .scroll-reveal, .scroll-reveal.show { opacity: 1 !important; transform: none !important; }
+        .event-card:hover, #anuncios .group:hover, #videos .group:hover,
+        .mapkalo-card:hover, #comunidad .member-card:hover, #contacto .social-card:hover,
+        #mods .event-card:hover > div:first-child img, .mapkalo-card:hover .mapkalo-card-image,
+        #comunidad .member-card:hover .member-image img, #contacto .social-card:hover .social-icon {
+            transform: none !important;
+        }
     }
 </style>
 <script>
