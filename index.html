@@ -883,7 +883,6 @@
                 <a href="#anuncios" class="nav-link">Anuncios</a>
                 <a href="#videos" class="nav-link">Videos</a>
                 <a href="#comunidad" class="nav-link">Comunidad</a>
-                <a href="#colaboraciones" class="nav-link">Colaboraciones</a>
                 <a href="#contacto" class="nav-link">Contacto</a>
             </div>
             <div class="flex items-center gap-3 sm:gap-4">
@@ -912,7 +911,6 @@
             <a href="#anuncios" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2 border-b border-white/5">Anuncios</a>
             <a href="#videos" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2 border-b border-white/5">Videos</a>
             <a href="#comunidad" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2 border-b border-white/5">Comunidad</a>
-            <a href="#colaboraciones" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2 border-b border-white/5">Colaboraciones</a>
             <a href="#contacto" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2">Contacto</a>
             <a href="https://discord.gg/pRfNcqXKAC" target="_blank" rel="noopener noreferrer" 
                class="md:hidden flex items-center justify-center gap-2 bg-[#f5c451] text-black font-bold text-xs py-3 rounded-xl mt-2">
@@ -1125,6 +1123,10 @@
                     <button onclick="document.getElementById('videos').scrollIntoView({ behavior: 'smooth' })"
                             class="hero-btn-secondary">
                         🎬 VIDEOS
+                    </button>
+                    <button onclick="document.getElementById('colaboraciones').scrollIntoView({ behavior: 'smooth' })"
+                            class="hero-btn-secondary">
+                        📋 COLABORACIONES
                     </button>
                 </div>
                 <!-- QUIENES SOMOS -->
@@ -1835,6 +1837,29 @@ Un diseño creado para quienes desean llevar la presencia de LA ELITE con ellos 
             <p class="text-gray-400 mt-4 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
                 Mantente informado sobre eventos, novedades, mantenimiento y actividades oficiales de La Elite.
             </p>
+        </div>
+        <!-- INFORMACIÓN IMPORTANTE DEL ANTIGUO SISTEMA DE NOTICIAS -->
+        <div class="bg-[#151515] rounded-3xl p-8 md:p-10 border border-[#f5c451]/10 shadow-2xl mb-12 scroll-reveal">
+            <h3 class="text-[#f5c451] text-lg font-bold mb-6 text-center tracking-[2px] uppercase">Información Importante</h3>
+            <div class="grid md:grid-cols-2 gap-6 mx-auto max-w-2xl">
+                <div>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        En <strong>LA ÉLITE</strong> existen dos niveles dentro de la comunidad: 
+                        la <strong>empresa</strong>, abierta a todos los usuarios, y 
+                        <strong>LA ÉLITE</strong>, un grupo exclusivo al que solo ingresan quienes demuestran compromiso, constancia y buena energía dentro de la comunidad.
+                    </p>
+                    <p class="text-[#f5c451] font-bold text-sm uppercase tracking-[2px]">
+                        Este criterio es fundamental para el ingreso
+                    </p>
+                </div>
+                <div>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        Los miembros de la empresa tienen acceso a convoyes abiertos y eventos comunitarios,
+                        mientras que el grupo LA ÉLITE ofrece experiencias más selectas y rutas premium
+                        dentro del mapa Mapkalo.
+                    </p>
+                </div>
+            </div>
         </div>
         <!-- GRID DE ANUNCIOS (3 Columnas en PC, 1 en Móvil) -->
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -3232,14 +3257,25 @@ function cerrarPerfilAlClicarFuera(event) {
 <section id="colaboraciones" class="bg-[#0d0d0d] py-16 md:py-24 border-t border-[#f5c451]/10 relative overflow-hidden">
     <div class="absolute -top-20 right-0 w-72 h-72 bg-[#f5c451]/10 blur-[120px] rounded-full pointer-events-none"></div>
     <div class="max-w-5xl mx-auto px-4 sm:px-8 relative z-10">
-        <div class="text-center mb-10 md:mb-14 scroll-reveal">
-            <span class="uppercase text-[#f5c451] text-xs md:text-sm font-bold tracking-[4px]">Crezcamos juntos</span>
-            <h2 class="text-3xl sm:text-5xl md:text-6xl font-bold logo-font mt-4 neon-gold tracking-wide text-white section-title">
-                Colabora con Arkamax
-            </h2>
-            <p class="text-gray-400 mt-8 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-                ¿Tienes una idea, marca o proyecto? Cualquier persona puede proponer una colaboración. Cuéntanos de qué se trata y envíala directamente al WhatsApp del Manager de Arkamax.
-            </p>
+        <div class="grid lg:grid-cols-2 gap-10 items-center mb-14 scroll-reveal">
+            <div class="text-center lg:text-left">
+                <span class="uppercase text-[#f5c451] text-xs md:text-sm font-bold tracking-[4px]">Crezcamos juntos</span>
+                <h2 class="text-3xl sm:text-5xl md:text-6xl font-bold logo-font mt-4 neon-gold tracking-wide text-white section-title">
+                    Colabora con Arkamax
+                </h2>
+                <p class="text-gray-400 mt-8 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+                    ¿Tienes una idea, marca o proyecto? Cualquier persona puede proponer una colaboración. Cuéntanos de qué se trata y envíala directamente al WhatsApp del Manager de Arkamax.
+                </p>
+            </div>
+            <div class="lg:col-span-1 bg-[#151515] rounded-3xl p-8 border border-[#f5c451]/10 shadow-2xl scroll-reveal">
+                <h3 class="text-[#f5c451] text-xl font-bold mb-6 text-center tracking-[2px] uppercase">Manager de la Comunidad</h3>
+                <div class="flex flex-col items-center gap-4">
+                    <img src="manager-anderson.png" alt="Anderson Montoya" class="w-24 h-24 rounded-full object-cover mx-auto">
+                    <h4 class="text-2xl font-bold text-white">Anderson Montoya</h4>
+                    <p class="text-gray-400 text-center text-sm">Comunidad Manager</p>
+                    <p class="text-gray-500 text-xs mt-2">319 515 4043</p>
+                </div>
+            </div>
         </div>
 
         <form class="max-w-3xl mx-auto bg-[#111111]/90 border border-[#f5c451]/15 rounded-3xl p-6 md:p-10 shadow-2xl scroll-reveal"
@@ -3647,30 +3683,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 </style>
-<div class="news-overlay" id="newsOverlay">
-    <div class="news-box">
-        <button class="close-btn" onclick="closeNews()" aria-label="Cerrar noticias">
-            X
-        </button>
-        <div class="news-header">
-            <p class="news-tag">Última noticia</p>
-            <h2 class="news-title">📰 Noticias</h2>
-        </div>
-        <div class="news-content">
-            <div class="news-text">
-                <h3>Información importante</h3>
-                <p>
-                    En <strong>LA ÉLITE</strong> existen dos niveles dentro de la comunidad: 
-                    la <strong>empresa</strong>, abierta a todos los usuarios, y 
-                    <strong>LA ÉLITE</strong>, un grupo exclusivo al que solo ingresan quienes demuestran compromiso, constancia y buena energía dentro de la comunidad.
-                </p>
-                <p style="margin-top:12px; font-weight:800; text-transform:uppercase; color:#f5c451; letter-spacing:2px;">
-                    Este criterio es fundamental para el ingreso
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
 <script>
 /**
  * Inicialización de configuración base para Tailwind
@@ -3735,19 +3747,6 @@ function initScrollAnimations() {
     });
 }
 /**
- * Controladores del Popup de Noticias
- */
-function openNews() {
-    const overlay = document.getElementById('newsOverlay');
-    if (!overlay) return;
-    overlay.classList.add('show');
-}
-function closeNews() {
-    const overlay = document.getElementById('newsOverlay');
-    if (!overlay) return;
-    overlay.classList.remove('show');
-}
-/**
  * Orquestador de Eventos en la carga global de la Página
  */
 window.addEventListener('load', () => {
@@ -3767,13 +3766,6 @@ window.addEventListener('load', () => {
     );
 });
 </script>
-<!-- BOTÓN FLOTANTE PARA REABRIR NOTICIAS -->
-<button class="open-news" id="openBtn" onclick="openNews()" aria-label="Abrir noticias">
-    📰 Noticias
-</button>
-<!-- =========================================
-     SCRIPT PRINCIPAL (LÓGICA UNIFICADA)
-========================================= -->
 <script>
 /**
  * Inicialización de configuración base para Tailwind
@@ -3835,23 +3827,6 @@ function initScrollAnimations() {
         el.style.transition = 'all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1)';
         observer.observe(el);
     });
-}
-/**
- * Controladores del Popup de Noticias e interaccición con el botónn flotante
- */
-function openNews() {
-    const overlay = document.getElementById('newsOverlay');
-    const openBtn = document.getElementById('openBtn');
-    if (!overlay) return;
-    overlay.classList.add('show');
-    if (openBtn) openBtn.classList.remove('show-btn');
-}
-function closeNews() {
-    const overlay = document.getElementById('newsOverlay');
-    const openBtn = document.getElementById('openBtn');
-    if (!overlay) return;
-    overlay.classList.remove('show');
-    if (openBtn) openBtn.classList.add('show-btn');
 }
 /**
  * Orquestador de Eventos en la carga de la página
@@ -4019,20 +3994,6 @@ window.addEventListener('load', () => {
 /**
  * Controladores del Popup de Noticias
  */
-function openNews() {
-    const overlay = document.getElementById('newsOverlay');
-    const openBtn = document.getElementById('openBtn');
-    if (!overlay) return;
-    overlay.classList.add('show');
-    if (openBtn) openBtn.classList.remove('show-btn');
-}
-function closeNews() {
-    const overlay = document.getElementById('newsOverlay');
-    const openBtn = document.getElementById('openBtn');
-    if (!overlay) return;
-    overlay.classList.remove('show');
-    if (openBtn) openBtn.classList.add('show-btn');
-}
 /**
  * Efecto Dinámico para la Barra de Navegación (Navbar) al hacer Scroll
  */
