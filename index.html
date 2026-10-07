@@ -1124,10 +1124,6 @@
                             class="hero-btn-secondary">
                         🎬 VIDEOS
                     </button>
-                    <button onclick="document.getElementById('colaboraciones').scrollIntoView({ behavior: 'smooth' })"
-                            class="hero-btn-secondary">
-                        📋 COLABORACIONES
-                    </button>
                 </div>
                 <!-- QUIENES SOMOS -->
                 <div class="hero-intro-panel max-w-2xl bg-black/60 backdrop-blur-xl border border-[#f5c451]/20 rounded-3xl p-8 shadow-2xl scroll-reveal">
@@ -1848,7 +1844,7 @@ Un diseño creado para quienes desean llevar la presencia de LA ELITE con ellos 
                         la <strong>empresa</strong>, abierta a todos los usuarios, y 
                         <strong>LA ÉLITE</strong>, un grupo exclusivo al que solo ingresan quienes demuestran compromiso, constancia y buena energía dentro de la comunidad.
                     </p>
-                    <p class="text-[#f5c451] font-bold text-sm uppercase tracking-[2px]">
+                    <p class="text-[#f5c451] font-bold text-sm uppercase tracking-[2px] text-center">
                         Este criterio es fundamental para el ingreso
                     </p>
                 </div>
@@ -3948,8 +3944,8 @@ window.addEventListener('load', () => {
     background: #c8102e;
     transform: rotate(90deg);
 }
-/* BOTÓN FLOTANTE PARA REABRIR */
-.open-news {
+/* BOTÓN FLOTANTE DE COLABORACIONES */
+.open-colab {
     position: fixed;
     bottom: 24px;
     right: 24px;
@@ -3963,15 +3959,13 @@ window.addEventListener('load', () => {
     cursor: pointer;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     z-index: 9999;
-    opacity: 0;
-    transform: translateY(20px);
-    pointer-events: none;
     transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-.open-news:hover {
+.open-colab:hover {
     background: #f5c451;
     color: black;
     transform: translateY(-3px);
+}
 }
 .open-news.show-btn {
     opacity: 1;
@@ -4025,6 +4019,11 @@ window.addEventListener('scroll', () => {
         <input type="range" id="radioVolume" min="0" max="100" value="100" oninput="radioSetVolume(this.value)">
     </div>
 </div>
+<!-- BOTÓN FLOTANTE DE COLABORACIONES -->
+<button id="collabBtn" class="open-colab fixed bottom-4 right-44 z-50 flex items-center gap-2 bg-[#111111]/92 backdrop-blur-xl border border-[#f5c451]/25 rounded-full p-2 shadow-2xl" onclick="document.getElementById('colaboraciones').scrollIntoView({ behavior: 'smooth' })">
+    <i class="fas fa-file-alt text-[#f5c451]"></i>
+    <span>Colab.</span>
+</button>
 <style>
     #radioPlayer {
         position: fixed;
