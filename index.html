@@ -4025,6 +4025,22 @@ window.addEventListener('scroll', () => {
     <span>Colaboraciones</span>
 </button>
 <style>
+    /* Posición del botón en escritorio */
+    .open-colab {
+        bottom: 24px;
+        right: 24px;
+    }
+    /* Posición en móviles - debajo de la radio */
+    @media (max-width: 639px) {
+        .open-colab {
+            bottom: 96px !important;
+            right: 24px !important;
+            width: calc(100vw - 48px);
+            justify-content: center;
+        }
+    }
+</style>
+<style>
     #radioPlayer {
         position: fixed;
         left: 20px;
