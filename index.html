@@ -883,6 +883,7 @@
                 <a href="#anuncios" class="nav-link">Anuncios</a>
                 <a href="#videos" class="nav-link">Videos</a>
                 <a href="#comunidad" class="nav-link">Comunidad</a>
+                <a href="#colaboraciones" class="nav-link">Colaboraciones</a>
                 <a href="#contacto" class="nav-link">Contacto</a>
             </div>
             <div class="flex items-center gap-3 sm:gap-4">
@@ -911,6 +912,7 @@
             <a href="#anuncios" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2 border-b border-white/5">Anuncios</a>
             <a href="#videos" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2 border-b border-white/5">Videos</a>
             <a href="#comunidad" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2 border-b border-white/5">Comunidad</a>
+            <a href="#colaboraciones" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2 border-b border-white/5">Colaboraciones</a>
             <a href="#contacto" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-[#f5c451] py-2">Contacto</a>
             <a href="https://discord.gg/pRfNcqXKAC" target="_blank" rel="noopener noreferrer" 
                class="md:hidden flex items-center justify-center gap-2 bg-[#f5c451] text-black font-bold text-xs py-3 rounded-xl mt-2">
@@ -3226,6 +3228,64 @@ function cerrarPerfilAlClicarFuera(event) {
     .perfil-datos-centro h3 { font-size: 22px; }
 }
 </style>
+<!-- COLABORACIONES -->
+<section id="colaboraciones" class="bg-[#0d0d0d] py-16 md:py-24 border-t border-[#f5c451]/10 relative overflow-hidden">
+    <div class="absolute -top-20 right-0 w-72 h-72 bg-[#f5c451]/10 blur-[120px] rounded-full pointer-events-none"></div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-8 relative z-10">
+        <div class="text-center mb-10 md:mb-14 scroll-reveal">
+            <span class="uppercase text-[#f5c451] text-xs md:text-sm font-bold tracking-[4px]">Crezcamos juntos</span>
+            <h2 class="text-3xl sm:text-5xl md:text-6xl font-bold logo-font mt-4 neon-gold tracking-wide text-white section-title">
+                Colabora con Arkamax
+            </h2>
+            <p class="text-gray-400 mt-8 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+                ¿Tienes una idea, marca o proyecto? Cualquier persona puede proponer una colaboración. Cuéntanos de qué se trata y te contactaremos por WhatsApp.
+            </p>
+        </div>
+
+        <form class="max-w-3xl mx-auto bg-[#111111]/90 border border-[#f5c451]/15 rounded-3xl p-6 md:p-10 shadow-2xl scroll-reveal"
+              onsubmit="solicitarColaboracion(event)">
+            <div class="grid sm:grid-cols-2 gap-5">
+                <label class="block text-sm font-semibold text-gray-200">
+                    Tu nombre
+                    <input name="nombre" type="text" required maxlength="80" autocomplete="name" placeholder="¿Cómo te llamas?"
+                           class="mt-2 w-full rounded-xl bg-black border border-white/10 px-4 py-3 text-white placeholder-gray-500 focus:border-[#f5c451] focus:outline-none">
+                </label>
+                <label class="block text-sm font-semibold text-gray-200">
+                    Red social o proyecto <span class="text-gray-500 font-normal">(opcional)</span>
+                    <input name="proyecto" type="text" maxlength="120" placeholder="@usuario, marca o comunidad"
+                           class="mt-2 w-full rounded-xl bg-black border border-white/10 px-4 py-3 text-white placeholder-gray-500 focus:border-[#f5c451] focus:outline-none">
+                </label>
+            </div>
+            <label class="block text-sm font-semibold text-gray-200 mt-5">
+                Cuéntanos tu propuesta
+                <textarea name="propuesta" required rows="4" maxlength="1000" placeholder="Describe brevemente la colaboración que tienes en mente..."
+                          class="mt-2 w-full rounded-xl bg-black border border-white/10 px-4 py-3 text-white placeholder-gray-500 focus:border-[#f5c451] focus:outline-none resize-y"></textarea>
+            </label>
+            <button type="submit" class="mt-6 w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-xl bg-[#25D366] px-7 py-4 font-bold text-white hover:bg-[#1fbd5b] hover:shadow-[0_0_24px_rgba(37,211,102,0.3)]">
+                <i class="fab fa-whatsapp text-xl" aria-hidden="true"></i>
+                Solicitar colaboración por WhatsApp
+            </button>
+            <p class="text-gray-500 text-xs mt-4">Se abrirá WhatsApp con tu solicitud lista para enviar a Arkamax.</p>
+        </form>
+    </div>
+</section>
+<script>
+    function solicitarColaboracion(event) {
+        event.preventDefault();
+        const form = event.currentTarget;
+        const datos = new FormData(form);
+        const nombre = datos.get('nombre').trim();
+        const proyecto = datos.get('proyecto').trim();
+        const propuesta = datos.get('propuesta').trim();
+        const mensaje = [
+            '¡Hola, Arkamax! Quiero proponer una colaboración.',
+            `Nombre: ${nombre}`,
+            proyecto ? `Red social o proyecto: ${proyecto}` : '',
+            `Propuesta: ${propuesta}`
+        ].filter(Boolean).join('\n');
+        window.open(`https://wa.me/573195154043?text=${encodeURIComponent(mensaje)}`, '_blank', 'noopener,noreferrer');
+    }
+</script>
 <!-- CONTACTO / REDES -->
 <section id="contacto" class="bg-black py-16 md:py-24 border-t border-[#f5c451]/10 relative overflow-hidden alternating-light">
     <!-- EFECTOS DE FONDO BLUR -->
