@@ -1568,6 +1568,15 @@ Un diseño creado para quienes desean llevar la presencia de LA ELITE con ellos 
             <p class="text-slate-300 mt-4 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
                 Mods y orden Mapkalo
             </p>
+            <div class="id-servidor-container text-center mt-4 mb-6">
+                <span class="id-servidor-texto text-gray-400 text-sm uppercase tracking-[2px] block mb-2">ID SERVER OFICIAL</span>
+                <div class="flex flex-col items-center gap-2">
+                    <input type="text" id="id-servidor-input" value="76561198068457760" readonly class="bg-black border border-[#f5c451]/20 rounded-lg px-4 py-3 text-white font-mono text-sm w-full max-w-xs focus:outline-none focus:border-[#f5c451]" aria-label="ID del servidor Mapkalo">
+                    <button id="copiar-id-btn" class="ranking-btn-primary w-full sm:w-auto text-left px-6 py-2">
+                        <i class="fas fa-copy mr-2"></i> Da clic para copiar el ID del server
+                    </button>
+                </div>
+            </div>
             <a href="#mods" class="mapkalo-back-link mt-6 inline-flex items-center gap-2">
                 <i class="fas fa-arrow-up"></i> Volver a Mods La Elite
             </a>
@@ -3304,6 +3313,14 @@ function cerrarPerfilAlClicarFuera(event) {
         ].filter(Boolean).join('\n');
         window.open(`https://wa.me/573195154043?text=${encodeURIComponent(mensaje)}`, '_blank', 'noopener,noreferrer');
     }
+</script>
+<script>
+    document.getElementById('copiar-id-btn')?.addEventListener('click', function() {
+        const input = document.getElementById('id-servidor-input');
+        input.select();
+        input.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(input.value);
+    });
 </script>
 <!-- CONTACTO / REDES -->
 <section id="contacto" class="bg-black py-16 md:py-24 border-t border-[#f5c451]/10 relative overflow-hidden alternating-light">
