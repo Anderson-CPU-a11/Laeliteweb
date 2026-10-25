@@ -202,8 +202,13 @@
         ========================= */
         .news-overlay {
             position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
             inset: 0;
             background: rgba(0,0,0,0.8);
+            -webkit-backdrop-filter: blur(8px);
             backdrop-filter: blur(8px);
             display: flex;
             align-items: center;
@@ -569,6 +574,10 @@
     #inicio::after {
         content: "";
         position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
         inset: 0;
         pointer-events: none;
     }
@@ -586,6 +595,7 @@
         opacity: .28;
         background-image: radial-gradient(circle, rgba(255, 224, 150, .9) 1px, transparent 1.7px);
         background-size: 83px 83px;
+        -webkit-mask-image: linear-gradient(to bottom, transparent, #000 20%, #000 78%, transparent);
         mask-image: linear-gradient(to bottom, transparent, #000 20%, #000 78%, transparent);
         animation: goldDust 32s linear infinite;
     }
@@ -704,6 +714,10 @@
     body.is-loading { overflow: hidden; }
     #loading-screen {
         position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
         inset: 0;
         z-index: 1000000;
         display: grid;
@@ -1217,7 +1231,8 @@
     font-weight:700;
     border-radius:20px;
     background:rgba(0,0,0,0.3);
-    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
     transition:0.35s;
 }
 .hero-btn-secondary:hover{
@@ -1308,7 +1323,8 @@ handleScrollAnimation();
     font-weight:700;
     border-radius:20px;
     background:rgba(0,0,0,0.35);
-    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
     transition:all 0.35s ease;
 }
 .hero-btn-secondary:hover{
@@ -3073,7 +3089,8 @@ function cerrarPerfilAlClicarFuera(event) {
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     position: relative;
     overflow: hidden;
-    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
     cursor: pointer; /* Transforma la tarjeta en botón cliqueable */
 }
 .member-card::before {
@@ -3148,9 +3165,14 @@ function cerrarPerfilAlClicarFuera(event) {
 /* --- ESTILOS DE LA VENTANA FLOTANTE CENTRAL --- */
 .ventana-perfil-overlay {
     position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     inset: 0;
     background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3927,9 +3949,14 @@ window.addEventListener('load', () => {
 /* OVERLAY Y ENTORNO BLUR */
 .news-overlay {
     position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     inset: 0;
     background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -4131,7 +4158,8 @@ window.addEventListener('scroll', () => {
         align-items: center;
         gap: 14px;
         background: rgba(17,17,17,.92);
-        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+            backdrop-filter: blur(14px);
         border: 1px solid rgba(245,196,81,.25);
         border-radius: 60px;
         padding: 10px 18px 10px 10px;
@@ -4367,12 +4395,17 @@ window.addEventListener('scroll', () => {
     #inicio::after {
         content: "";
         position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
         inset: 0;
         z-index: 2;
         pointer-events: none;
         opacity: .72;
         background-image: linear-gradient(90deg, rgba(6,6,6,.87) 0%, rgba(6,6,6,.62) 53%, rgba(6,6,6,.18) 100%), radial-gradient(circle, rgba(255, 224, 150, .9) 1px, transparent 1.7px);
         background-size: auto, 83px 83px;
+        -webkit-mask-image: linear-gradient(to bottom, transparent, #000 20%, #000 78%, transparent);
         mask-image: linear-gradient(to bottom, transparent, #000 20%, #000 78%, transparent);
         animation: goldDust 32s linear infinite;
     }
@@ -4602,6 +4635,10 @@ window.addEventListener('scroll', () => {
     }
     .halloween-ambience {
         position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
         inset: 0;
         z-index: 30;
         overflow: hidden;
@@ -4616,6 +4653,7 @@ window.addEventListener('scroll', () => {
         background:
             repeating-conic-gradient(from 0deg at 0 0, transparent 0deg 13deg, rgba(196,164,255,.72) 13.2deg 13.7deg, transparent 14deg 24deg),
             repeating-radial-gradient(circle at 0 0, transparent 0 17px, rgba(196,164,255,.62) 18px 19px, transparent 20px 27px);
+        -webkit-mask-image: linear-gradient(135deg, #000 0%, transparent 77%);
         mask-image: linear-gradient(135deg, #000 0%, transparent 77%);
     }
     .halloween-web-left { left: -8px; }
@@ -4720,6 +4758,10 @@ window.addEventListener('scroll', () => {
     }
     .missing-photo-fallback {
         position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
         inset: 0;
         display: grid;
         place-items: center;
