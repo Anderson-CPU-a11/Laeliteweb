@@ -23,7 +23,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Cinzel:wght@600;700;900&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-:root{--gold:#f5c451;--gold2:#ffd56a;--pur:#36024e;--pur2:#5b0a7a;--red:#c8102e;--bg:#0a0a0a;--line:rgba(245,196,81,.16);--tx:#f4f1ea;--mut:#a8a29a;--hd:'Barlow Condensed',sans-serif;--sr:'Cinzel',serif;--e:cubic-bezier(.2,.7,.2,1)}
+:root{--gold:#f5c451;--gold2:#ffd56a;--pur:#36024e;--pur2:#5b0a7a;--red:#c8102e;--bg:#0a0a0a;--line:rgba(245,196,81,.16);--tx:#f4f1ea;--mut:#a8a29a;--hd:'Barlow Condensed','Arial Narrow','Roboto Condensed',sans-serif;--sr:'Cinzel',serif;--e:cubic-bezier(.2,.7,.2,1)}
 *{box-sizing:border-box;margin:0}
 [hidden]{display:none!important}
 html{scroll-behavior:smooth;scroll-padding-top:80px}
@@ -262,6 +262,91 @@ section{padding:68px 0}.w{padding:0 18px}
 [data-r=left],[data-r=right]{translate:0 46px}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01ms!important}[data-r]{opacity:1;translate:none;scale:1}html{scroll-behavior:auto}}
+
+/* === Referencia: estructura tipo servidor === */
+.hero h1 span{display:block}
+.hero h1{font-size:clamp(60px,10.5vw,150px);line-height:.9}
+.hg{padding-bottom:24px}
+.hb{display:flex;align-items:center;justify-content:space-between;gap:28px;padding-top:22px;padding-bottom:28px;border-top:1px solid var(--line)}
+.rot{position:relative;flex:1;min-height:86px;max-width:520px}
+.rot>div{position:absolute;inset:0;opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s var(--e);pointer-events:none}
+.rot>div.on{opacity:1;transform:none}
+.rot h3{font-size:32px;color:var(--gold)}.rot p{color:#d6d1c8;font-size:16px}
+.scr{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:13px;color:var(--mut);text-align:center}
+.scr i{color:var(--gold);animation:bob .8s infinite alternate}
+.socs{display:flex;gap:10px}
+.soc{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);background:rgba(10,10,10,.6);color:var(--gold);font-size:19px;transition:background .25s,color .25s,transform .25s}
+.soc:hover{background:var(--gold);color:#1b1405;transform:translateY(-4px)}
+.ph2{position:relative}
+.ph2 img{width:100%;aspect-ratio:5/6;object-fit:cover;border-radius:20px;border:1px solid var(--line);box-shadow:0 30px 60px rgba(0,0,0,.6)}
+.ph2::before{content:"";position:absolute;inset:-12px;border-radius:28px;border:1px dashed rgba(245,196,81,.35);animation:pulse 6s ease-in-out infinite}
+.bd2{position:absolute;left:18px;bottom:18px;display:flex;align-items:center;gap:10px;padding:10px 18px;border-radius:99px;background:rgba(10,10,10,.86);backdrop-filter:blur(8px);border:1px solid var(--line);font-weight:600;color:var(--gold2)}
+.bd2::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold);animation:blink 1.4s infinite}
+.id{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;padding:28px 30px;background:linear-gradient(120deg,rgba(54,2,78,.7),#101010 70%);border-color:rgba(245,196,81,.35)}
+.idh{display:flex;align-items:center;gap:16px}
+.idh i{width:60px;height:60px;display:grid;place-items:center;border-radius:16px;background:var(--gold);color:#1b1405;font-size:26px;animation:ring 2s infinite}
+.idh h3{font-size:30px}.idh p{font-size:14px;color:var(--mut)}
+.idc span{display:block;margin-bottom:8px}.idr{display:flex;flex-wrap:wrap;gap:12px}
+.rd{position:relative;overflow:hidden;display:flex;align-items:center;gap:32px;padding:38px 42px;border-radius:24px;background:linear-gradient(120deg,rgba(54,2,78,.65),#101010);border:1px solid rgba(245,196,81,.35)}
+.rd::before{content:"";position:absolute;right:-80px;top:-80px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(245,196,81,.22),transparent 65%)}
+.pbtn{position:relative;z-index:1;flex:none;width:92px;height:92px;border-radius:50%;border:0;background:linear-gradient(120deg,#ffe8a1,var(--gold));color:#1b1405;font-size:32px;cursor:pointer;transition:transform .3s var(--e)}
+.pbtn:hover{transform:scale(1.08)}.rd.on .pbtn{animation:ring 1.5s infinite}
+.rdi{position:relative;z-index:1;flex:1}.rdi b{display:block;font:700 44px/1 var(--sr);color:var(--gold)}.rdi span{color:var(--mut)}
+.eqb{display:flex;gap:4px;align-items:flex-end;height:44px;margin-top:14px}
+.eqb i{flex:1;max-width:8px;height:20%;background:linear-gradient(var(--gold2),var(--pur2));border-radius:3px}
+.eqb.on i{animation:eq 1s ease-in-out infinite alternate}.eqb.on i:nth-child(3n){animation-delay:.2s}.eqb.on i:nth-child(3n+1){animation-delay:.45s;animation-duration:.8s}.eqb.on i:nth-child(4n){animation-duration:1.3s}
+.vol{position:relative;z-index:1;display:flex;align-items:center;gap:12px;color:var(--gold)}.vol input{width:140px;accent-color:var(--gold)}
+.gh{font-size:34px;margin:0 0 24px;padding-left:16px;border-left:4px solid var(--gold);display:flex;align-items:baseline;gap:14px}
+.gh small{font:400 15px 'Public Sans',sans-serif;color:var(--mut)}#g1+.gh{margin-top:64px}
+.dir{grid-template-columns:repeat(4,1fr)}.g6{grid-template-columns:repeat(6,1fr)}
+.lg .ph{aspect-ratio:4/5}
+.ov{position:absolute;inset:auto 0 0;z-index:1;padding:70px 16px 16px;background:linear-gradient(transparent,rgba(10,10,10,.96) 55%)}
+.ov h4{margin:0;font-size:28px;color:#fff}.ov p{font-size:14px;color:var(--gold)}
+.ov small{display:block;max-height:0;overflow:hidden;opacity:0;font-size:13px;line-height:1.45;color:#d6d1c8;transition:max-height .5s var(--e),opacity .4s,margin .4s}
+.m:hover .ov small,.m:focus-visible .ov small{max-height:130px;opacity:1;margin-top:8px}
+.pg{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:36px}
+.pg button{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:#141414;color:var(--gold);font-size:22px;cursor:pointer;transition:background .25s,color .25s}
+.pg button:hover:not(:disabled){background:var(--gold);color:#1b1405}.pg button:disabled{opacity:.35;cursor:default}.pg span{color:var(--mut);font-size:15px}
+footer .fg{display:grid;grid-template-columns:1.3fr 1.4fr auto;gap:40px;align-items:center;padding-bottom:32px}
+.fb{display:flex;align-items:center;gap:16px}.fb img{height:56px;width:auto;filter:drop-shadow(0 0 10px rgba(245,196,81,.5))}
+.fb b{font:700 26px var(--sr);color:var(--gold);display:block;line-height:1.1}.fb p{font-size:14px}
+.fl{display:flex;flex-wrap:wrap;gap:8px 22px}.fl a{font:600 18px var(--hd);letter-spacing:.04em;color:#d6d1c8;transition:color .25s}.fl a:hover{color:var(--gold)}
+.fs{display:flex;gap:10px}
+footer .fc{border-top:1px solid var(--line);padding-top:24px}
+@media(max-width:1000px){.hb{flex-wrap:wrap}.scr{display:none}.dir{grid-template-columns:repeat(2,1fr)}.g6{grid-template-columns:repeat(3,1fr)}footer .fg,.id{grid-template-columns:1fr}.rd{flex-wrap:wrap}}
+@media(max-width:700px){.g6,.dir{grid-template-columns:repeat(2,1fr)}.rd{flex-direction:column;text-align:center;padding:30px 22px}.hb{flex-direction:column;align-items:flex-start}.rot{width:100%}.ov small{display:none}}
+
+/* === Correcciones === */
+.hero>.w{width:100%}
+.brand,.nav .btn,.links a{white-space:nowrap}
+.brand>span,.brand b,.brand small{white-space:nowrap}
+.nav .btn{min-height:44px;padding:0 20px;font-size:18px;flex:none}
+.links{gap:clamp(12px,1.5vw,20px)}.links a{font-size:18px}
+@media(max-width:1280px){
+.links{display:none;position:absolute;left:0;right:0;top:100%;background:rgba(10,10,10,.97);flex-direction:column;gap:0;padding:8px 24px 20px;border-bottom:1px solid var(--line)}
+.nav.open .links{display:flex}.links a{padding:14px 0;border-bottom:1px solid var(--line)}
+.burger{display:block}.nav .btn{display:none}}
+@media(max-width:1000px){.orb{order:-1;max-width:210px;margin:8px auto 0}.hg{padding-top:36px;gap:28px}.ht{text-align:left}}
+@media(max-width:700px){.orb{max-width:170px}.hero h1{font-size:clamp(54px,17vw,96px)}.hb{gap:20px}}
+/* === Nuevo: pasos, FAQ, subir === */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;position:relative}
+.steps::before{content:"";position:absolute;left:12%;right:12%;top:46px;height:2px;background:repeating-linear-gradient(90deg,var(--gold) 0 16px,transparent 16px 30px);opacity:.5;animation:dash2 1.5s linear infinite}
+@keyframes dash2{to{background-position:30px 0}}
+.st{position:relative;z-index:1;text-align:center;padding:30px 26px;background:linear-gradient(145deg,#1a1a1a,#101010);border:1px solid var(--line);border-radius:16px;transition:transform .35s var(--e),border-color .3s}
+.st:hover{transform:translateY(-8px);border-color:rgba(245,196,81,.5)}
+.st b{display:grid;place-items:center;width:62px;height:62px;margin:0 auto 18px;border-radius:50%;background:linear-gradient(120deg,var(--gold2),var(--gold));color:#1b1405;font:700 30px var(--hd);box-shadow:0 0 0 8px rgba(245,196,81,.12)}
+.st h3{font-size:30px;margin-bottom:8px}.st p{color:var(--mut);font-size:16px}.st .btn{margin-top:18px}
+.faq{max-width:860px;margin:0 auto;display:grid;gap:14px}
+.faq details{background:linear-gradient(145deg,#1a1a1a,#101010);border:1px solid var(--line);border-radius:14px;transition:border-color .3s}
+.faq details[open]{border-color:rgba(245,196,81,.5)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 26px;font:700 24px var(--hd)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:rgba(245,196,81,.12);color:var(--gold);font:400 24px var(--hd);transition:transform .35s var(--e),background .3s}
+.faq details[open] summary::after{transform:rotate(45deg);background:var(--gold);color:#1b1405}
+.faq details p{padding:0 26px 22px;color:var(--mut);animation:up .5s var(--e)}
+#top{position:fixed;right:18px;bottom:18px;z-index:60;width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:rgba(17,17,17,.92);color:var(--gold);font-size:18px;cursor:pointer;opacity:0;pointer-events:none;transform:translateY(20px);transition:opacity .3s,transform .3s,background .25s,color .25s}
+#top.show{opacity:1;pointer-events:auto;transform:none}#top:hover{background:var(--gold);color:#1b1405}
+@media(max-width:900px){.steps{grid-template-columns:1fr}.steps::before{display:none}}
 </style>
 <noscript><style>[data-r]{opacity:1;translate:none;scale:1}</style></noscript>
 </head>
@@ -281,7 +366,7 @@ section{padding:68px 0}.w{padding:0 18px}
 <section class="hero" id="inicio">
 <canvas id="dust" aria-hidden="true"></canvas>
 <div class="w hg"><div class="ht">
-<h1>La Elite</h1>
+<h1><span>La</span><span>Elite</span></h1>
 <p class="sub">ATS &amp; ETS2</p>
 <div class="road" aria-hidden="true"><i class="fas fa-truck-moving"></i></div>
 <p class="tag">«Donde las mejores rutas se convierten en leyenda»</p>
@@ -292,20 +377,31 @@ section{padding:68px 0}.w{padding:0 18px}
 </div>
 <div class="orb" data-r="scale" aria-hidden="true"><span class="r1"></span><span class="r2"></span><img src="logo-elite.png" alt=""></div>
 </div>
+<div class="w hb">
+<div class="rot">
+<div class="on"><h3>Rutas épicas</h3><p>Recorre el mapa Mapkalo junto a la comunidad.</p></div>
+<div><h3>Convoyes profesionales</h3><p>Organización, respeto y conducción limpia.</p></div>
+<div><h3>Eventos legendarios</h3><p>Actividades oficiales que se convierten en leyenda.</p></div>
+<div><h3>Hermandad entre conductores</h3><p>Pasión por el transporte pesado, dentro y fuera de la ruta.</p></div>
+</div>
+<p class="scr"><i class="fas fa-chevron-down"></i>Desplázate para descubrir la leyenda</p>
+<div class="socs"><a class="soc" href="https://discord.gg/rhdh5wTwpp" target="_blank" rel="noopener noreferrer" aria-label="Discord"><i class="fab fa-discord"></i></a><a class="soc" href="https://www.youtube.com/@ARKAMAX24" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a class="soc" href="https://www.tiktok.com/@arkamax_24" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a><a class="soc" href="https://whatsapp.com/channel/0029VbClP1KI7BeAPLzZcT3c" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a><a class="soc" href="https://www.facebook.com/ARKAMAXOFICIAL" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></div>
+</div>
 </section>
-<div class="mq" aria-hidden="true"><div><span>ATS &amp; ETS2</span><span>Mapkalo</span><span>Convoyes de 128 jugadores</span><span>Rutas legendarias</span><span>La Elite FM 100.9</span><span>Hermandad sobre ruedas</span><span>ATS &amp; ETS2</span><span>Mapkalo</span><span>Convoyes de 128 jugadores</span><span>Rutas legendarias</span><span>La Elite FM 100.9</span><span>Hermandad sobre ruedas</span></div></div>
+<div class="mq" aria-hidden="true"><div><span>ATS &amp; ETS2</span><span>Mapkalo</span><span>Rutas legendarias</span><span>Convoyes profesionales</span><span>Eventos oficiales</span><span>Mods exclusivos</span><span>Hermandad sobre ruedas</span><span>ATS &amp; ETS2</span><span>Mapkalo</span><span>Rutas legendarias</span><span>Convoyes profesionales</span><span>Eventos oficiales</span><span>Mods exclusivos</span><span>Hermandad sobre ruedas</span></div></div>
 
 <section id="nosotros">
 <div class="w us">
 <div>
 <h2>Somos La Elite</h2>
 <p>La comunidad premium de American Truck Simulator y Euro Truck Simulator 2 enfocada en rutas épicas, convoyes profesionales y eventos legendarios dentro del mapa <strong>Mapkalo</strong>. Pasión por el transporte pesado, respeto y hermandad entre conductores élite.</p>
-<p>Comunidad exclusiva ATS &amp; ETS2.</p>
-</div>
+
 <div class="lv">
 <div><h3>La empresa</h3><p>Abierta a todos los usuarios. Sus miembros tienen acceso a convoyes abiertos y eventos comunitarios.</p></div>
 <div class="g"><h3>LA ÉLITE</h3><p>Grupo exclusivo al que solo ingresan quienes demuestran compromiso, constancia y buena energía. Ofrece experiencias más selectas y rutas premium dentro del mapa Mapkalo.</p><p class="note">Este criterio es fundamental para el ingreso.</p></div>
 </div>
+</div>
+<div class="ph2"><img src="ruta_aguardientera.png" alt="Ruta de La Elite en Mapkalo" loading="lazy"><span class="bd2">Comunidad exclusiva ATS &amp; ETS2</span></div>
 </div>
 </section>
 
@@ -319,6 +415,17 @@ section{padding:68px 0}.w{padding:0 18px}
 <div><i class="fas fa-truck"></i><h3>Conducción limpia</h3><p>Manejar correctamente durante convoyes y evitar accidentes, choques o desorden en carretera.</p></div>
 <div><i class="fas fa-clock"></i><h3>Compromiso</h3><p>Tener responsabilidad y compromiso con la comunidad y los eventos oficiales de La Elite.</p></div>
 <div><i class="fas fa-crown"></i><h3>Representar La Elite</h3><p>Llevar el nombre del club con disciplina. El tag oficial en el juego solo podrá ser usado por miembros aprobados.</p></div>
+</div>
+</div>
+</section>
+
+<section class="alt" id="unete">
+<div class="w">
+<div class="sh"><h2>Cómo unirte</h2><p>Tres pasos para empezar a rodar con La Elite.</p></div>
+<div class="steps">
+<div class="st"><b>1</b><h3>Entra al Discord</h3><p>Es obligatorio para comunicación, organización y asistencia en convoyes.</p><a class="btn p" href="https://discord.gg/rhdh5wTwpp" target="_blank" rel="noopener noreferrer"><i class="fab fa-discord"></i> Ir al Discord</a></div>
+<div class="st"><b>2</b><h3>Prepara tu juego</h3><p>Instala los mods de Mapkalo en orden y conéctate con el ID oficial del servidor.</p><a class="btn o" href="#mods-mapkalo">Ver mods Mapkalo</a></div>
+<div class="st"><b>3</b><h3>Demuestra tu compromiso</h3><p>Sé activo, respetuoso y de conducción limpia en los convoyes para entrar a La Élite.</p><a class="btn o" href="#requisitos">Ver requisitos</a></div>
 </div>
 </div>
 </section>
@@ -343,7 +450,7 @@ Un diseño creado para quienes desean llevar la presencia de LA ELITE con ellos 
 <section class="dk" id="mods-mapkalo">
 <div class="w">
 <div class="sh"><div><h2>Mods Mapkalo</h2></div><div><p>Mods y orden Mapkalo. Instálalos siguiendo la numeración, del 1 al 14.</p><a class="lk" href="#mods">↑ Volver a Mods La Elite</a></div></div>
-<div class="id"><span>ID server oficial</span><input id="sid" type="text" value="85568392936879827" readonly aria-label="ID del servidor Mapkalo"><button class="btn p" id="cp" type="button"><i class="fas fa-copy"></i> Da clic para copiar el ID del server</button></div>
+<div class="id"><div class="idh"><i class="fas fa-server"></i><div><h3>Servidor Mapkalo</h3><p>Orden de instalación y ID oficial</p></div></div><div class="idc"><span>ID server oficial</span><div class="idr"><input id="sid" type="text" value="85568392936879827" readonly aria-label="ID del servidor Mapkalo"><button class="btn p" id="cp" type="button"><i class="fas fa-copy"></i> Da clic para copiar el ID del server</button></div></div></div>
 <div class="mg" id="mg"></div>
 </div>
 </section>
@@ -380,11 +487,26 @@ Un diseño creado para quienes desean llevar la presencia de LA ELITE con ellos 
 </div>
 </section>
 
+<section class="dk" id="radio-fm">
+<div class="w">
+<div class="sh"><h2>Radio La Elite FM</h2><p>100.9 · En vivo 24/7</p></div>
+<div class="rd" id="rd">
+<button class="pbtn" id="rb2" aria-label="Reproducir o pausar la radio"><i class="fas fa-play" id="ri2"></i></button>
+<div class="rdi"><b>LA ELITE FM</b><span>100.9 · EN VIVO 24/7</span><div class="eqb" id="eq2" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+<label class="vol"><i class="fas fa-volume-up"></i><input type="range" id="rv2" min="0" max="100" value="100" aria-label="Volumen"></label>
+</div>
+</div>
+</section>
+
 <section id="comunidad">
 <div class="w">
 <div class="sh"><h2>Integrantes de La Elite</h2><p>Conductores, administradores y leyendas de la carretera.</p></div>
 <div class="tools"><label class="srch" for="cs"><i class="fas fa-magnifying-glass"></i><input id="cs" type="search" placeholder="Buscar integrante o cargo…" autocomplete="off"></label><p class="cnt" id="cc" aria-live="polite"></p></div>
-<div class="cg" id="cg"></div>
+<div id="cg">
+<h3 class="gh" id="gh1">Dirección <small id="n1"></small></h3><div class="cg dir" id="g1"></div>
+<h3 class="gh" id="gh2">Conductores Elite <small id="n2"></small></h3><div class="cg g6" id="g2"></div>
+<div class="pg" id="pg"><button id="pp" aria-label="Anterior">‹</button><span id="pt"></span><button id="pn2" aria-label="Siguiente">›</button></div>
+</div>
 </div>
 </section>
 
@@ -398,6 +520,20 @@ Un diseño creado para quienes desean llevar la presencia de LA ELITE con ellos 
 <div class="sc" id="ps"></div>
 </div>
 </dialog>
+
+<section id="faq">
+<div class="w">
+<div class="sh"><h2>Preguntas frecuentes</h2><p>Lo básico que necesitas saber antes de unirte.</p></div>
+<div class="faq">
+<details><summary>¿Qué es La Elite?</summary><p>La comunidad premium de American Truck Simulator y Euro Truck Simulator 2 enfocada en rutas épicas, convoyes profesionales y eventos legendarios dentro del mapa Mapkalo.</p></details>
+<details><summary>¿Cualquiera puede entrar?</summary><p>La empresa está abierta a todos los usuarios. La Élite es un grupo exclusivo al que solo ingresan quienes demuestran compromiso, constancia y buena energía.</p></details>
+<details><summary>¿Necesito Discord?</summary><p>Sí. Es obligatorio para la comunicación, la organización y la asistencia en convoyes.</p></details>
+<details><summary>¿Cómo me conecto al servidor?</summary><p>Instala los mods de Mapkalo siguiendo el orden del 1 al 14 y copia el ID oficial del servidor desde la sección Mods Mapkalo.</p></details>
+<details><summary>¿Puedo usar el tag de La Elite?</summary><p>El tag oficial en el juego solo podrá ser usado por miembros aprobados.</p></details>
+<details><summary>¿Puedo proponer una colaboración?</summary><p>Sí, cualquier persona puede hacerlo desde la sección Colaboraciones, que envía tu propuesta al WhatsApp del Manager de Arkamax.</p></details>
+</div>
+</div>
+</section>
 
 <section class="alt" id="colaboraciones">
 <div class="w">
@@ -438,10 +574,12 @@ Un diseño creado para quienes desean llevar la presencia de LA ELITE con ellos 
 </section>
 
 <footer>
+<div class="w fg"><div class="fb"><img src="logo-elite.png" alt="La Elite"><div><b>LA ELITE</b><p>Comunidad Oficial ATS-ETS2</p></div></div><nav class="fl" aria-label="Pie de página"><a href="#inicio">Inicio</a><a href="#requisitos">Requisitos</a><a href="#mods">Mods</a><a href="#anuncios">Anuncios</a><a href="#videos">Videos</a><a href="#comunidad">Comunidad</a><a href="#colaboraciones">Colaboraciones</a><a href="#contacto">Contacto</a></nav><div class="fs"><a class="soc" href="https://discord.gg/rhdh5wTwpp" target="_blank" rel="noopener noreferrer" aria-label="Discord"><i class="fab fa-discord"></i></a><a class="soc" href="https://www.youtube.com/@ARKAMAX24" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a class="soc" href="https://www.tiktok.com/@arkamax_24" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a><a class="soc" href="https://whatsapp.com/channel/0029VbClP1KI7BeAPLzZcT3c" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a><a class="soc" href="https://www.facebook.com/ARKAMAXOFICIAL" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></div></div>
 <div class="w" style="display:block"><div class="road" aria-hidden="true"><i class="fas fa-truck-moving"></i></div></div>
-<div class="w"><p>© 2026 LA ÉLITE © Comunidad Oficial ATS-ETS2</p><p>Diseñado por Anderson Montoya</p></div>
+<div class="w fc"><p>© 2026 LA ÉLITE © Comunidad Oficial ATS-ETS2</p><p>Diseñado por Anderson Montoya</p></div>
 </footer>
 
+<button id="top" aria-label="Volver arriba"><i class="fas fa-chevron-up"></i></button>
 <div id="radio">
 <button id="rb" aria-label="Reproducir o pausar la radio"><i class="fas fa-play" id="ri"></i></button>
 <div><b>LA ELITE FM</b><small>100.9 · En vivo 24/7</small></div>
@@ -489,19 +627,19 @@ const V=[ // [título, id o URL, es canción]
 ['🔥 ¡DESCARGA GRATIS Y COPIA TU PERFIL DE ATS/ETS2! 🚛 | TRUCK TOOLS PASO A PASO','u9R4qkz-dS4']];
 const M=[ // [nombre, cargo, insignia, foto, bio, [youtube, tiktok, instagram, kick, twitch]]
 ['Arkamax','Owner La Élite','OWNER','ark.png','Fundador y líder general de LA ÉLITE. Coordina las rutas oficiales, contribuye al orden de los convoyes y comparte contenido sobre transporte pesado en sus plataformas digitales.',['https://www.youtube.com/@ARKAMAX24','https://www.tiktok.com/search?q=arkamax&t=1783641297109','','https://kick.com/arkamax24','']],
-['Anderson M.','Admin La Élite','ADMIN','andy.png','Manager de Arkamax, Administrador y desarrollador técnico de la plataforma. Apoya la gestión y el funcionamiento de las herramientas digitales de la comunidad.',['https://www.youtube.com/@andersonmontoyaa','https://www.tiktok.com/@andersonontoya','https://www.instagram.com/andersonmontoya_elt/','https://kick.com/theander1','https://www.twitch.tv/andersonmontoyaelt']],
+['Anderson M.','Admin La Élite','ADMIN','andy.png','Administrador y desarrollador técnico de la plataforma. Apoya la gestión y el funcionamiento de las herramientas digitales de la comunidad.',['https://www.youtube.com/@andersonmontoyaa','https://www.tiktok.com/@andersonontoya','https://www.instagram.com/andersonmontoya_elt/','https://kick.com/theander1','https://www.twitch.tv/andersonmontoyaelt']],
 ['Kofla','Admin La Élite','ADMIN','kofla.png','Administrador de La ÉLITE, responsable de apoyar la moderación y el cumplimiento de las normas de la comunidad.',[]],
 ['Tavo','Admin La Élite','ADMIN','tavo.jpg','Administrador de La ÉLITE. Colabora en la moderación y ayuda a mantener el orden dentro de la comunidad.',[]],
-['Caballero','Conductor Elite','Elite','ca.jpeg','Creador de Mods de skins de la comunidad. Conductor activo de la comunidad.',['','https://www.tiktok.com/@caballero.del.lor?is_from_webapp=1&sender_device=pc']],
-['Andres Soriano','Conductor Elite','Elite','sori.png','Se destaca por su habilidad para maniobrar. También participa con frecuencia en el canal de voz de la comunidad.',['','https://www.tiktok.com/@androo._.786?_r=1&_t=ZS-97uBUAlbn31','https://www.instagram.com/sori__786?igsh=MW10aTNuNm1hbzhlag==']],
+['Caballero','Conductor Elite','Elite','ca.jpeg','Conductor experimentado, reconocido por su manejo y disciplina en la línea del convoy. Disfruta especialmente las rutas de carga y alta montaña de MapKalo.',['','https://www.tiktok.com/@caballero.del.lor?is_from_webapp=1&sender_device=pc']],
+['Andres Soriano','Conductor Elite','Elite','sori.png','Se destaca por su habilidad para maniobrar en tramos estrechos y trochas colombianas. También participa con frecuencia en el canal de voz de la comunidad.',['','https://www.tiktok.com/@androo._.786?_r=1&_t=ZS-97uBUAlbn31','https://www.instagram.com/sori__786?igsh=MW10aTNuNm1hbzhlag==']],
 ['Alex','Conductor Elite','Elite','alex.png','Participa activamente en los convoyes oficiales de hasta 128 jugadores, aportando orden y constancia, con sus camiones americanos siempre bien presentados.',[]],
 ['Jose Trucks','Conductor Elite','Elite','josetruck.png','Apasionado del sim-racing y del transporte por carretera. Sigue las directrices de los convoyes masivos y forma parte del equipo de La ÉLITE.',['https://www.youtube.com/@JoseTrucks','https://www.tiktok.com/@fortichgaming?_r=1&_t=ZS-98FapZcuxoD']],
 ['Benya','Conductor Elite','Elite','Benya.jpg','Conductor activo y apreciado por sus compañeros. Se distingue por su prudencia al volante y por respetar las reglas de los convoyes oficiales.',[]],
 ['Fabian','Conductor Elite','Elite','fabian.jpg','Apasionado de las mulas y los motores personalizados. En ruta combina una conducción controlada con disposición para brindar apoyo técnico a sus compañeros.',['','https://www.tiktok.com/@userleon.16?_r=1&_t=ZS-97uwXKkJr9B','https://www.instagram.com/fabian_leon.r19?igsh=MWxlbG9pbWF0aWtsYQ==']],
 ['JekkoDaza','Conductor Elite','Elite','daza.jpg','Miembro oficial de La ÉLITE, enfocado en capturar imágenes de alta fidelidad durante las rutas y organizar la presentación de los camiones en los paradores.',[]],
 ['Andres','Conductor Elite','Elite','andres.jpg','Conductor oficial de la división. Se caracteriza por su lealtad al equipo, disciplina en grupo y puntualidad en los puntos de salida.',[]],
-['Jhojan','Conductor Elite','Elite','jho.jpeg','Conductor oficial de La ÉLITE. Su compromiso con el grupo se refleja en la disciplina y la puntualidad al reunirse. Organizador oficial del discord.',['https://youtube.com/@jhojan_truck-m6i?si=Mk9dpXZ4Y4C_NhVA','https://www.tiktok.com/@jhojan.mateo8?_r=1&_t=ZS-989S3hZSK08','https://www.instagram.com/jhxjxn_00?igsh=MWozN3lmb2ZydDA4bA==']],
-['BamBan','Conductor Elite','Elite','bmbn.jpg','Forma parte de la división oficial de conductores, streamer de la plataforma Kick.',['https://youtube.com/@bamban023?si=3IcZqp-7jSSyisK2','https://www.tiktok.com/@bamban.023?_r=1&_t=ZS-98Fx0ch1FYq','https://www.instagram.com/bamban023?stkn=OWI1enphcHNybjkz','https://share.google/ShYYT0ABYjXg7HSYI']],
+['Jhojan','Conductor Elite','Elite','jho.jpeg','Conductor oficial de La ÉLITE. Su compromiso con el grupo se refleja en la disciplina y la puntualidad al reunirse para las salidas.',['https://youtube.com/@jhojan_truck-m6i?si=Mk9dpXZ4Y4C_NhVA','https://www.tiktok.com/@jhojan.mateo8?_r=1&_t=ZS-989S3hZSK08','https://www.instagram.com/jhxjxn_00?igsh=MWozN3lmb2ZydDA4bA==']],
+['BamBan','Conductor Elite','Elite','bmbn.jpg','Forma parte de la división oficial de conductores y aporta lealtad, disciplina y puntualidad a la organización de cada salida.',['https://youtube.com/@bamban023?si=3IcZqp-7jSSyisK2','https://www.tiktok.com/@bamban.023?_r=1&_t=ZS-98Fx0ch1FYq','https://www.instagram.com/bamban023?stkn=OWI1enphcHNybjkz','https://share.google/ShYYT0ABYjXg7HSYI']],
 ['Mecato','Conductor Elite','Elite','mecato.png','Conductor oficial de la división. Su ficha destaca el compromiso con sus compañeros, la disciplina grupal y la puntualidad en las salidas.',[]],
 ['Emilio','Conductor Elite','Elite','emi.png','Integrante de la división oficial de conductores, comprometido con la lealtad al equipo, la disciplina y la puntualidad en cada punto de encuentro.',[]]];
 const RED=[['fa-youtube','fab','YouTube'],['fa-tiktok','fab','TikTok'],['fa-instagram','fab','Instagram'],['fa-video','fas','Kick'],['fa-twitch','fab','Twitch']];
@@ -520,10 +658,16 @@ $('#vs').oninput=rv;$('#vt').onclick=()=>{vOpen=!vOpen;rv()};addEventListener('r
 
 /* ===== COMUNIDAD ===== */
 const cls=b=>b==='OWNER'?'o':b==='ADMIN'?'a':'',ini=`onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'ini',textContent:this.alt.slice(0,2).toUpperCase()}))"`;
-function rc(){const q=n($('#cs').value.trim()),f=M.filter(m=>n(m[0]+' '+m[1]+' '+m[4]).includes(q));
-$('#cg').innerHTML=f.map((m,ix)=>`<button class="m ${cls(m[2])}" data-r="up" style="--d:${ix%6}" data-i="${M.indexOf(m)}"><div class="ph"><img src="${m[3]}" alt="${m[0]}" loading="lazy" ${ini}><span class="bg ${cls(m[2])}">${m[2]}</span></div><h4>${m[0]}</h4><p>${m[1]==='Conductor Elite'?'Conductor':m[1]}</p></button>`).join('');
+let pgI=0,lz=0;
+const card=(m,ix,lg)=>`<button class="m ${lg?'lg ':''}${cls(m[2])}" data-r="up" style="--d:${ix%6}" data-i="${M.indexOf(m)}"><div class="ph"><img src="${m[3]}" alt="${m[0]}" loading="lazy" ${ini}><span class="bg ${cls(m[2])}">${m[2]}</span>${lg?`<div class="ov"><h4>${m[0]}</h4><p>${m[1]}</p><small>${m[4]}</small></div>`:''}</div>${lg?'':`<h4>${m[0]}</h4><p>${m[1]==='Conductor Elite'?'Conductor':m[1]}</p>`}</button>`;
+function rc(){const q=n($('#cs').value.trim()),f=M.filter(m=>n(m[0]+' '+m[1]+' '+m[4]).includes(q)),isD=m=>m[2]==='OWNER'||m[2]==='ADMIN',d=f.filter(isD),c=f.filter(m=>!isD(m)),sz=lz=innerWidth<700?4:6,pages=Math.max(1,Math.ceil(c.length/sz));
+if(q)pgI=0;pgI=Math.min(pgI,pages-1);const v=q?c:c.slice(pgI*sz,pgI*sz+sz);
+$('#g1').innerHTML=d.map((m,i)=>card(m,i,1)).join('');$('#g2').innerHTML=v.map((m,i)=>card(m,i)).join('');
+$('#n1').textContent=`${d.length} miembros`;$('#n2').textContent=`${c.length} miembros`;
+$('#pg').hidden=!!q||pages<2;$('#pt').textContent=`${pgI*sz+1} – ${Math.min(c.length,pgI*sz+sz)} de ${c.length}`;$('#pp').disabled=pgI===0;$('#pn2').disabled=pgI>=pages-1;
+$('#gh1').hidden=$('#g1').hidden=!d.length;$('#gh2').hidden=$('#g2').hidden=!c.length;
 $('#cc').textContent=q?`${f.length} de ${M.length} integrantes`:`${M.length} integrantes`;ob()}
-$('#cs').oninput=rc;rc();
+$('#cs').oninput=rc;$('#pp').onclick=()=>{pgI--;rc()};$('#pn2').onclick=()=>{pgI++;rc()};addEventListener('resize',()=>{if((innerWidth<700?4:6)!==lz)rc()});rc();
 const dlg=$('#pm');
 $('#cg').onclick=e=>{const b=e.target.closest('.m');if(!b)return;const m=M[b.dataset.i],i=$('#pi');
 i.hidden=false;i.src=m[3];i.alt=m[0];$('#pb').textContent=m[2];$('#pb').className='bg '+cls(m[2]);$('#pn').textContent=m[0];$('#pr').textContent=m[1];$('#pbio').textContent=m[4];
@@ -544,21 +688,24 @@ addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open
 
 /* ===== RADIO ===== */
 (()=>{const S='https://radio.arkamax24.com/listen/la-elite-fm-100-9/radio.mp3',a=new Audio(S);a.preload='none';let on=false;
-const ui=()=>{$('#radio').classList.toggle('on',on);$('#eq').classList.toggle('on',on);$('#ri').className=on?'fas fa-pause':'fas fa-play'},
+const ui=()=>{$('#radio').classList.toggle('on',on);$('#eq').classList.toggle('on',on);$('#ri').className=on?'fas fa-pause':'fas fa-play';$('#rd').classList.toggle('on',on);$('#eq2').classList.toggle('on',on);$('#ri2').className=on?'fas fa-pause':'fas fa-play'},
 play=()=>{a.volume=($('#rv').value||0)/100;const p=a.play();p&&p.then(()=>{on=true;ui()}).catch(()=>{on=false;ui()})},
 restart=()=>{a.src=S;play()};
 a.addEventListener('error',()=>{if(on)setTimeout(restart,4000)});
 setInterval(()=>{if(on&&a.readyState===0)restart()},10000);
-$('#rb').onclick=()=>{if(on){a.pause();on=false;ui()}else play()};
-$('#rv').oninput=e=>{a.volume=e.target.value/100}})();
+const tg=()=>{if(on){a.pause();on=false;ui()}else play()};$('#rb').onclick=tg;$('#rb2').onclick=tg;
+[$('#rv'),$('#rv2')].forEach(r=>r.oninput=e=>{a.volume=e.target.value/100;$('#rv').value=$('#rv2').value=e.target.value})})();
 
 /* ===== ANIMACIONES ===== */
-[['.sh>*','up'],['.us>*','up'],['.rq>div','up'],['.lv>div','right'],['.mod img','left'],['.mod>div','right'],['.an article','up'],['.co>*','up'],['form','up'],['.sl a','right'],['.ct>div:first-child','left'],['.id','up'],['.tools','up'],['.stats div','up']].forEach(([q,r])=>document.querySelectorAll(q).forEach((e,i)=>{e.dataset.r=r;e.style.setProperty('--d',i%4)}));
+$('#top').onclick=()=>scrollTo({top:0,behavior:'smooth'});
+const orb=$('.orb');addEventListener('pointermove',e=>{if(innerWidth>1000&&orb)orb.style.transform=`translate(${(e.clientX/innerWidth-.5)*-22}px,${(e.clientY/innerHeight-.5)*-22}px)`},{passive:true});
+(()=>{const r=[...document.querySelectorAll('.rot>div')];let i=0;if(r.length)setInterval(()=>{r[i].classList.remove('on');i=(i+1)%r.length;r[i].classList.add('on')},4200)})();
+[['.sh>*','up'],['.us>*','up'],['.rq>div','up'],['.lv>div','right'],['.mod img','left'],['.mod>div','right'],['.an article','up'],['.co>*','up'],['form','up'],['.sl a','right'],['.ct>div:first-child','left'],['.id','up'],['.tools','up'],['.stats div','up'],['.st','up'],['.faq details','up'],['.ph2','right'],['.rd','up'],['.gh','up']].forEach(([q,r])=>document.querySelectorAll(q).forEach((e,i)=>{e.dataset.r=r;e.style.setProperty('--d',i%4)}));
 ob();
 const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;co.unobserve(e.target);const el=e.target,t=+el.dataset.n,d=+el.dataset.d||0,t0=performance.now();(function f(now){const k=Math.min(1,(now-t0)/1800),v=t*(1-Math.pow(1-k,3));el.textContent=v.toFixed(d);if(k<1)requestAnimationFrame(f)})(t0)}),{threshold:.6});
 document.querySelectorAll('[data-n]').forEach(e=>co.observe(e));
 const spb=$('#sp'),spy=[...document.querySelectorAll('.links a')].map(a=>[a,$(a.getAttribute('href'))]);
-addEventListener('scroll',()=>{const h=document.documentElement;spb.style.transform=`scaleX(${scrollY/(h.scrollHeight-innerHeight)})`;nav.classList.toggle('sc',scrollY>40);let cur=null;spy.forEach(([a,s])=>{if(s&&s.getBoundingClientRect().top<innerHeight*.4)cur=a});spy.forEach(([a])=>a.classList.toggle('on',a===cur))},{passive:true});
+addEventListener('scroll',()=>{$('#top').classList.toggle('show',scrollY>700);const h=document.documentElement;spb.style.transform=`scaleX(${scrollY/(h.scrollHeight-innerHeight)})`;nav.classList.toggle('sc',scrollY>40);let cur=null;spy.forEach(([a,s])=>{if(s&&s.getBoundingClientRect().top<innerHeight*.4)cur=a});spy.forEach(([a])=>a.classList.toggle('on',a===cur))},{passive:true});
 addEventListener('pointermove',e=>{$('#cg2').style.transform=`translate(${e.clientX}px,${e.clientY}px)`;const t=e.target.closest('.mk,.an article,.v,.rq>div,.lv>div,.mgr,.sl a');if(t){t.classList.add('fx');const r=t.getBoundingClientRect();t.style.setProperty('--mx',e.clientX-r.left+'px');t.style.setProperty('--my',e.clientY-r.top+'px')}},{passive:true});
 (()=>{if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;const c=$('#dust'),x=c.getContext('2d');let w,h;const P=[],rs=()=>{w=c.width=c.offsetWidth;h=c.height=c.offsetHeight};rs();addEventListener('resize',rs);
 for(let i=0;i<70;i++)P.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.8+.4,v:Math.random()*.5+.15,a:Math.random()*6});
